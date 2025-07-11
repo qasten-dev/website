@@ -19,9 +19,10 @@ body {
     gap: 2rem;
 }
 
-h1 {
+.logo {
     font-size: clamp(4rem, 8vw, 4.5rem);
     margin: 0;
+    font-family: "JetBrains Mono", monospace;
 }
 
 h2 {
