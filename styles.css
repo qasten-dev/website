@@ -15,6 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
     gap: 2rem;
 }
@@ -31,4 +32,44 @@ h2 {
 
 p {
     font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.social-link svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.social-link.linkedin:hover {
+    background-color: #0077b5;
+    color: white;
+}
+
+.social-link.twitter:hover {
+    background-color: #000000;
+    color: white;
 }
