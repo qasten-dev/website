@@ -3,68 +3,81 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-    <div class="mx-auto max-w-6xl">
-        <header class="flex items-center justify-between px-6 pt-6">
-            <div class="font-logo flex-1 text-3xl font-bold text-black">>Qasten</div>
+  <div class="mx-auto max-w-6xl">
+    <header class="flex items-center justify-between px-6 pt-6">
+      <div class="font-logo flex-1 text-3xl font-bold text-black">>Qasten</div>
 
-            <nav class="flex items-center space-x-2 font-medium sm:space-x-6 md:space-x-12">
-                <a href="#" class="rounded-lg px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-black"> Blog </a>
-                <a href="#" class="rounded-lg px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-black"> About us </a>
-            </nav>
+      <nav
+        class="flex items-center space-x-2 font-medium sm:space-x-6 md:space-x-12"
+      >
+        <a
+          href="#"
+          class="rounded-lg px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-black"
+        >
+          Blog
+        </a>
+        <a
+          href="#"
+          class="rounded-lg px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-black"
+        >
+          About us
+        </a>
+      </nav>
 
-            <div class="flex flex-1 justify-end">
-                <a
-                    class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
-                    >Contact us</a
-                >
-            </div>
-        </header>
-        <main class="relative px-6 py-28 text-center">
-            <div class="dotted-background pointer-events-none absolute inset-0 -z-1">
-                <div class="absolute h-full w-full bg-radial from-40% to-white"></div>
-            </div>
-            <div class="fade-in-up flex flex-col items-center">
-                <h1 class="text-6xl leading-tight font-bold text-black lg:text-8xl">
-                    Enterprise AI <br /> under your control
-                </h1>
+      <div class="flex flex-1 justify-end">
+        <a
+          class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
+          >Contact us</a
+        >
+      </div>
+    </header>
+    <main class="relative px-6 py-28 text-center">
+      <div class="dotted-background pointer-events-none absolute inset-0 -z-1">
+        <div class="absolute h-full w-full bg-radial from-40% to-white"></div>
+      </div>
+      <div class="fade-in-up flex flex-col items-center">
+        <h1 class="text-6xl leading-tight font-bold text-black lg:text-8xl">
+          Enterprise AI <br /> under your control
+        </h1>
 
-                <p class="my-8 text-xl leading-relaxed text-gray-600">
-                    One-click deployable platform to empower your employees
-                    <br />
-                    with AI while keeping security, compliance, and costs under control.
-                </p>
+        <p class="my-8 text-xl leading-relaxed text-gray-600">
+          One-click deployable platform to empower your employees
+          <br />
+          with AI while keeping security, compliance, and costs under control.
+        </p>
 
-                <a
-                    class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
-                    >Contact us</a
-                >
-            </div>
-        </main>
-    </div>
+        <a
+          class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
+          >Contact us</a
+        >
+      </div>
+    </main>
+  </div>
 </Layout>
 
 <style>
-    .dotted-background {
-        background-image: radial-gradient(var(--color-gray-200) 1px, transparent 1px),
-            radial-gradient(var(--color-gray-200) 1px, transparent 1px);
-        background-position:
-            0 0,
-            12px 12px;
-        background-size: 24px 24px;
-    }
+  .dotted-background {
+    background-image:
+      radial-gradient(var(--color-gray-200) 1px, transparent 1px),
+      radial-gradient(var(--color-gray-200) 1px, transparent 1px);
+    background-position:
+      0 0,
+      12px 12px;
+    background-size: 24px 24px;
+  }
 
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-    .fade-in-up {
-        animation: fadeInUp 1s ease-out;
-    }
+  .fade-in-up {
+    animation: fadeInUp 1s ease-out;
+  }
 </style>
