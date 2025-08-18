@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import librechat from "../assets/librechat.webp";
 ---
 
 <Layout>
@@ -31,26 +33,32 @@ import Layout from "../layouts/Layout.astro";
         >
       </div>
     </header>
-    <main class="relative px-6 py-28 text-center">
-      <div class="dotted-background pointer-events-none absolute inset-0 -z-1">
-        <div class="absolute h-full w-full bg-radial from-40% to-white"></div>
-      </div>
-      <div class="fade-in-up flex flex-col items-center">
-        <h1 class="text-6xl leading-tight font-bold text-black lg:text-8xl">
-          Enterprise AI <br /> under your control
-        </h1>
-
-        <p class="my-8 text-xl leading-relaxed text-gray-600">
-          One-click deployable platform to empower your employees
-          <br />
-          with AI while keeping security, compliance, and costs under control.
-        </p>
-
-        <a
-          class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
-          >Contact us</a
+    <main>
+      <div class="relative px-6 pt-24 pb-16 text-center">
+        <div
+          class="dotted-background pointer-events-none absolute inset-0 -z-1"
         >
+          <div class="absolute h-full w-full bg-radial from-40% to-white"></div>
+        </div>
+
+        <div class="fade-in-up flex flex-col items-center">
+          <h1 class="text-6xl leading-tight font-bold text-black lg:text-8xl">
+            Enterprise AI <br /> under your control
+          </h1>
+
+          <p class="my-8 text-xl leading-relaxed text-gray-600">
+            One-click deployable platform to empower your employees
+            <br />
+            with AI while keeping security, compliance, and costs under control.
+          </p>
+
+          <a
+            class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
+            >Contact us</a
+          >
+        </div>
       </div>
+      <Image src={librechat} alt="" priority class="fade-in-up" />
     </main>
   </div>
 </Layout>
