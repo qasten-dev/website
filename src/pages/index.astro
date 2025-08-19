@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import librechat from "../assets/librechat.webp";
+import FeatureBlock from "../components/FeatureBlock.astro";
 ---
 
 <Layout>
@@ -50,7 +51,8 @@ import librechat from "../assets/librechat.webp";
           <p class="my-8 text-xl leading-relaxed text-gray-600">
             Empower your employees with ready-to-use AI apps,
             <br />
-            while keeping security, compliance, and costs under control.
+            while keeping <b>security</b>, <b>compliance</b>, and <b>costs</b> under
+            control.
           </p>
 
           <a
@@ -66,6 +68,51 @@ import librechat from "../assets/librechat.webp";
           priority
           class="fade-in-up rounded-lg shadow-xl/25"
         />
+      </div>
+
+      <div class="pt-36">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-black">
+            Everything you need for safe AI adoption
+          </h2>
+          <p class="mt-4 text-xl text-gray-600">
+            Because employees already use public AI tools, <br />and that means
+            <b>data leaks</b>, <b>compliance risks</b>, and <b>no visibility</b
+            >.
+          </p>
+        </div>
+
+        <div class="mt-36 space-y-64">
+          <FeatureBlock title="Full Visibility & Governance" image={librechat}
+            >Know who uses AI, for what, and with which data. Every interaction
+            is logged, attributed, and auditable. Track usage by team, monitor
+            costs, and ensure compliance from day one.</FeatureBlock
+          >
+          <FeatureBlock
+            title="Built-in PII Redaction"
+            image={librechat}
+            imageLeft
+            >Sensitive data stays in your hands, not in the model. Our adaptive
+            redaction engine automatically detects and masks PII before it
+            leaves your infrastructure, with continuous learning from user
+            feedback.</FeatureBlock
+          >
+          <FeatureBlock
+            title="Guardrails & Policy Enforcement"
+            image={librechat}
+            >Define what's acceptable, and enforce it. Set custom rules to
+            prevent prompt injection, data exfiltration, or non-compliant use.
+            Quotas and access controls keep AI aligned with corporate policy.</FeatureBlock
+          >
+          <FeatureBlock
+            title="Pre-Integrated Employee Apps"
+            image={librechat}
+            imageLeft
+            >AI your workforce can actually use safely. Kickstart adoption with
+            ready-to-use apps like an enterprise chatbot and template-based
+            assistants. Employees get productivity; you keep oversight.</FeatureBlock
+          >
+        </div>
       </div>
     </main>
   </div>

@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+const { title, image, imageLeft } = Astro.props;
+---
+
+<div class="mx-8 grid grid-cols-1 items-center gap-x-16 gap-y-8 md:grid-cols-2">
+  <div class={imageLeft ? "md:order-2" : ""}>
+    <h2 class="text-3xl font-bold text-black">{title}</h2>
+    <p class="mt-4 text-lg text-gray-600">
+      <slot />
+    </p>
+  </div>
+  <Image src={image} alt="" class="w-full rounded-lg shadow-xl/25" />
+</div>
