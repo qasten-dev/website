@@ -63,6 +63,37 @@ const translations = {
       hiddenUsage:
         "of employees admitted to hiding their AI usage from their employer",
     },
+    faq: {
+      title: "Frequently Asked Questions",
+      subtitle: "Everything you need to know about Qasten.",
+      content: [
+        {
+          question: "How is Qasten different from ChatGPT Enterprise?",
+          answer:
+            "ChatGPT Enterprise is SaaS in OpenAI's cloud and tied to their models. Qasten runs on your infra (on-prem or private cloud) or as SaaS, is model-agnostic, and adds governance: audit logs, PII redaction, policy enforcement, and cost controls.",
+        },
+        {
+          question: "How is Qasten different from existing AI gateways?",
+          answer:
+            "AI gateways target developers with APIs and observability. Qasten is for employees and security teams: ready-to-use apps like a secure chatbot plus built-in PII redaction, guardrails, and governance for safe company-wide adoption.",
+        },
+        {
+          question: "How does Qasten protect our sensitive data?",
+          answer:
+            "Qasten's PII redactor masks sensitive data before it reaches any model. You can enforce custom policies, access controls, and guardrails to block risky queries and prevent leaks, whether on-prem, private cloud, or SaaS.",
+        },
+        {
+          question: "Can our existing AI tools integrate with Qasten?",
+          answer:
+            "Yes. Qasten acts as a central governance layer. Through its OpenAI-compatible API and connectors, you can integrate existing tools and get unified logging, cost tracking, and policy enforcement across vendors and models.",
+        },
+        {
+          question: "How do we start using Qasten?",
+          answer:
+            "Contact us. We deploy inside your infra for strict compliance needs or offer Qasten as managed SaaS for speed. Both give the same governance, redaction, and observability features.",
+        },
+      ],
+    },
   },
 
   fr: {
@@ -115,6 +146,38 @@ const translations = {
         "des organisations ont connu des fuites de données dues à l'utilisation d'outils d'IA par leurs employés",
       hiddenUsage:
         "des employés ont admis cacher leur utilisation de l'IA à leur employeur",
+    },
+    faq: {
+      title: "Foire aux Questions",
+      subtitle: "Tout ce que vous devez savoir sur Qasten.",
+      content: [
+        {
+          question: "En quoi Qasten est-il différent de ChatGPT Enterprise ?",
+          answer:
+            "ChatGPT Enterprise est un SaaS hébergé chez OpenAI et limité à leurs modèles. Qasten s'exécute dans votre infra (on-prem ou cloud privé) ou en SaaS, est agnostique aux modèles et ajoute gouvernance : journaux d'audit, redaction PII, politiques et suivi des coûts.",
+        },
+        {
+          question: "En quoi Qasten est-il différent d'une AI gateway ?",
+          answer:
+            "Les AI gateways visent les développeurs avec API et observabilité. Qasten est conçu pour les employés et la sécurité : apps prêtes à l'emploi comme un chatbot sécurisé, avec redaction PII, garde-fous et gouvernance pour une adoption unifiée.",
+        },
+        {
+          question: "Comment Qasten protège-t-il nos données sensibles ?",
+          answer:
+            "Le redactor PII de Qasten masque automatiquement les données sensibles avant tout modèle. Vous appliquez politiques, contrôles d'accès et garde-fous pour bloquer les requêtes à risque, en on-prem, cloud privé ou SaaS.",
+        },
+        {
+          question:
+            "Nos outils d'IA existants peuvent-ils s'intégrer à Qasten ?",
+          answer:
+            "Oui. Qasten sert de couche centrale de gouvernance. Via son API compatible OpenAI et ses connecteurs, vous intégrez vos outils existants et obtenez une vue unifiée avec logs, coûts et politiques centralisés.",
+        },
+        {
+          question: "Comment commencer à utiliser Qasten ?",
+          answer:
+            "Contactez-nous. Nous déployons dans votre infra pour les besoins de conformité stricte ou en SaaS managé pour plus de rapidité. Les deux offrent les mêmes fonctions de gouvernance, redaction et observabilité.",
+        },
+      ],
     },
   },
 };

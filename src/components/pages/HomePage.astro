@@ -108,8 +108,8 @@ const contactSuccessUrl = new URL(
         </div>
       </section>
 
-      <div class="pt-36">
-        <div class="text-center">
+      <div class="mt-28">
+        <div class="px-8 text-center">
           <h2 class="text-3xl font-bold text-black" set:html={t.bridge.title} />
 
           <p
@@ -146,6 +146,33 @@ const contactSuccessUrl = new URL(
           />
         </div>
       </div>
+
+      <section class="mx-auto mt-36 max-w-4xl px-8">
+        <h2 class="text-center text-3xl font-bold text-black">
+          {t.faq.title}
+        </h2>
+        <p class="mt-2 text-center text-lg text-gray-500">
+          {t.faq.subtitle}
+        </p>
+
+        <div class="mt-12 divide-y divide-slate-200">
+          {
+            t.faq.content.map(({ question, answer }) => (
+              <details class="group py-6">
+                <summary class="flex cursor-pointer items-center justify-between text-lg font-medium text-black">
+                  {question}
+                  <Icon
+                    name="mdi:keyboard-arrow-down"
+                    size="32"
+                    class="ml-2 transition-transform duration-300 group-open:rotate-180"
+                  />
+                </summary>
+                <p class="mt-4 text-gray-600">{answer}</p>
+              </details>
+            ))
+          }
+        </div>
+      </section>
 
       <form
         id="contact-us"
