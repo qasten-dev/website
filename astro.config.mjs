@@ -8,9 +8,12 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.qasten.com",
+  i18n: {
+    locales: ["fr", "en"],
+    defaultLocale: "en",
+  },
   vite: {
     plugins: [tailwindcss()],
   },
-
   integrations: [icon()],
 });
