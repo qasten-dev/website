@@ -1,6 +1,15 @@
 ---
 import BackgroundStripes from "@/components/BackgroundStripes.astro";
 import "@/styles/global.css";
+import { locales } from "@/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const { currentLocale } = Astro;
+const { pathname } = Astro.url;
+
+const localeFreePathname = pathname.startsWith(`/${currentLocale}/`)
+  ? pathname.replace(`/${currentLocale}`, "")
+  : pathname;
 ---
 
 <!doctype html>
@@ -20,6 +29,24 @@ import "@/styles/global.css";
   <body class="font-inter">
     <BackgroundStripes />
     <slot />
+
+    <div class="py-12">
+      <select
+        class="mx-auto block w-full max-w-16 rounded-lg border border-slate-200 bg-slate-50 p-2.5 text-sm focus:border-2 focus:border-black"
+        onchange="location = this.value"
+      >
+        {
+          locales.map((locale) => (
+            <option
+              value={getRelativeLocaleUrl(locale, localeFreePathname)}
+              selected={locale === currentLocale}
+            >
+              {locale.toUpperCase()}
+            </option>
+          ))
+        }
+      </select>
+    </div>
   </body>
 </html>
 

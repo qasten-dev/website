@@ -1,9 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { getTranslations, getSafeCurrentLocale } from "@/i18n";
 
-const { translations, locale } = Astro.props;
-const t = translations[locale];
+const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
+const t = getTranslations(currentLocale);
 ---
 
 <Layout>
@@ -16,7 +17,7 @@ const t = translations[locale];
         {t.success.subtitle}
       </p>
       <a
-        href={getRelativeLocaleUrl(locale, "/")}
+        href={getRelativeLocaleUrl(currentLocale, "/")}
         class="mt-8 flex w-fit cursor-pointer items-center space-x-2 self-center rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
         >{t.success.back}</a
       >
