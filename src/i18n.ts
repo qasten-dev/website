@@ -37,6 +37,11 @@ export const translations = {
       title: "Contact us",
       send: "Send",
     },
+    success: {
+      title: "Thank you for contacting us!",
+      subtitle: "Our team will get back to you shortly.",
+      back: "Go back",
+    },
   },
 
   fr: {
@@ -76,6 +81,11 @@ export const translations = {
     form: {
       title: "Nous contacter",
       send: "Envoyer",
+    },
+    success: {
+      title: "Merci de nous avoir contactés !",
+      subtitle: "Notre équipe vous répondra sous peu.",
+      back: "Retour",
     },
   },
 };

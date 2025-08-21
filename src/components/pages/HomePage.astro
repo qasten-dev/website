@@ -4,12 +4,19 @@ import { Image } from "astro:assets";
 import librechat from "@/assets/librechat.webp";
 import FeatureBlock from "@/components/FeatureBlock.astro";
 import { Icon } from "astro-icon/components";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
-const baseFormRedirectURL = import.meta.env.DEV
+const formRedirectBaseURL = import.meta.env.DEV
   ? Astro.url.origin
-  : Astro.site?.toString().replace(/\/$/, "");
+  : Astro.site?.toString();
 
-const { t } = Astro.props;
+const { translations, locale } = Astro.props;
+const t = translations[locale];
+
+const contactSuccessUrl = new URL(
+  getRelativeLocaleUrl(locale, "contact-success"),
+  formRedirectBaseURL,
+).toString();
 ---
 
 <Layout>
@@ -129,11 +136,7 @@ const { t } = Astro.props;
         method="post"
         class="mx-auto mt-36 flex max-w-3xl flex-col rounded-lg border-1 border-gray-400 bg-slate-100 p-4"
       >
-        <input
-          type="hidden"
-          name="_redirect"
-          value={`${baseFormRedirectURL}/contact-success`}
-        />
+        <input type="hidden" name="_redirect" value={contactSuccessUrl} />
         <h3 class="text-center text-2xl font-semibold">{t.form.title}</h3>
         <label for="email" class="mt-8 text-sm font-medium">Email</label>
         <input
