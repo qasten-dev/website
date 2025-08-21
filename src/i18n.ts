@@ -23,10 +23,10 @@ const translations = {
       subtitle:
         "Empower your employees with ready-to-use AI apps,<br /> while keeping <b>security</b>, <b>compliance</b>, and <b>costs</b> under control.",
     },
-    section1: {
-      title: "Everything you need for safe AI adoption",
+    bridge: {
+      title: "Be the company that embraces AI safely",
       subtitle:
-        "Because employees already use public AI tools, <br /> and that means <b>data leaks</b>, <b>compliance risks</b>, and <b>no visibility</b>.",
+        "Your employees are already using AI. Give them the tools to be productive, with <b>security</b>,<b>visibility</b>, and <b>control</b>",
     },
     features: {
       visibility: {
@@ -55,6 +55,14 @@ const translations = {
       subtitle: "Our team will get back to you shortly.",
       back: "Go back",
     },
+    stats: {
+      sensitiveData:
+        "of corporate data pasted into AI tools is considered <b>sensitive</b>",
+      dataLeakage:
+        "of organizations have experienced data leakage due to employees using AI tools",
+      hiddenUsage:
+        "of employees admitted to hiding their AI usage from their employer",
+    },
   },
 
   fr: {
@@ -68,10 +76,10 @@ const translations = {
       subtitle:
         "Donnez à vos employés des applications IA prêtes à l'emploi,<br /> tout en gardant la <b>sécurité</b>, la <b>conformité</b> et les <b>coûts</b> sous contrôle.",
     },
-    section1: {
-      title: "Tout ce qu'il faut pour une adoption sûre de l'IA",
+    bridge: {
+      title: "Soyez l'entreprise qui adopte l'IA en toute sécurité",
       subtitle:
-        "Parce que les employés utilisent déjà des outils d'IA publics, <br /> et cela entraîne des <b>fuites de données</b>, des <b>risques de conformité</b> et <b>aucune visibilité</b>.",
+        "Vos employés utilisent déjà l'IA. Donnez-leur les outils pour être productifs, avec <b>sûreté</b>, <b>visibilité</b> et <b>contrôle</b>",
     },
     features: {
       visibility: {
@@ -99,6 +107,14 @@ const translations = {
       title: "Merci de nous avoir contactés !",
       subtitle: "Notre équipe vous répondra sous peu.",
       back: "Retour",
+    },
+    stats: {
+      sensitiveData:
+        "des données d'entreprise collées dans des outils d'IA sont considérées comme <b>sensible</b>",
+      dataLeakage:
+        "des organisations ont connu des fuites de données dues à l'utilisation d'outils d'IA par leurs employés",
+      hiddenUsage:
+        "des employés ont admis cacher leur utilisation de l'IA à leur employeur",
     },
   },
 };

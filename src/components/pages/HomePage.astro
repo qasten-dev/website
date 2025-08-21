@@ -90,16 +90,31 @@ const contactSuccessUrl = new URL(
         />
       </div>
 
+      <section class="mt-36 px-12">
+        <div
+          class="mx-auto grid max-w-6xl items-center gap-x-24 gap-y-4 text-center md:grid-flow-col md:grid-rows-3 md:gap-y-0"
+        >
+          <p class="text-5xl font-bold text-black">34.8%</p>
+          <p class="text-lg text-gray-600" set:html={t.stats.sensitiveData} />
+          <p class="text-sm text-gray-400">HRD Magazine, 2025</p>
+
+          <p class="mt-8 text-5xl font-bold text-black md:mt-0">68%</p>
+          <p class="text-lg text-gray-600" set:html={t.stats.dataLeakage} />
+          <p class="text-sm text-gray-400">Security Magazine, 2025</p>
+
+          <p class="mt-8 text-5xl font-bold text-black md:mt-0">1,200+</p>
+          <p class="text-lg text-gray-600" set:html={t.stats.hiddenUsage} />
+          <p class="text-sm text-gray-400">Business Insider, 2025</p>
+        </div>
+      </section>
+
       <div class="pt-36">
         <div class="text-center">
-          <h2
-            class="text-3xl font-bold text-black"
-            set:html={t.section1.title}
-          />
+          <h2 class="text-3xl font-bold text-black" set:html={t.bridge.title} />
 
           <p
-            class="mt-4 text-xl text-gray-600"
-            set:html={t.section1.subtitle}
+            class="mx-auto mt-4 max-w-3xl text-xl text-gray-600"
+            set:html={t.bridge.subtitle}
           />
         </div>
 
