@@ -4,21 +4,19 @@ import { Image } from "astro:assets";
 import librechat from "@/assets/librechat.webp";
 import FeatureBlock from "@/components/FeatureBlock.astro";
 import { Icon } from "astro-icon/components";
-import { getRelativeLocaleUrl } from "astro:i18n";
-import { getTranslations, getSafeCurrentLocale } from "@/i18n";
+import { getTranslations } from "@/utils/i18n";
+import { CONTACT_FORM_URL, getRedirectUrl } from "@/utils/forms";
 
-const formRedirectBaseURL = import.meta.env.DEV
-  ? Astro.url.origin
-  : Astro.site?.toString();
-
-const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
+const { currentLocale } = Astro;
 
 const t = getTranslations(currentLocale);
 
-const contactSuccessUrl = new URL(
-  getRelativeLocaleUrl(currentLocale, "contact-success"),
-  formRedirectBaseURL,
-).toString();
+const contactSuccessUrl = getRedirectUrl({
+  path: "contact-success",
+  url: Astro.url,
+  site: Astro.site,
+  currentLocale,
+});
 ---
 
 <Layout>
@@ -33,13 +31,13 @@ const contactSuccessUrl = new URL(
           href="#"
           class="rounded-lg px-4 py-2 text-gray-600 hover:bg-slate-200 hover:text-black"
         >
-          {t.nav.blog}
+          Blog
         </a>
         <a
           href="#"
           class="rounded-lg px-4 py-2 text-gray-600 hover:bg-slate-200 hover:text-black"
         >
-          {t.nav.about}
+          {t.aboutUs}
         </a>
       </nav>
 
@@ -48,7 +46,7 @@ const contactSuccessUrl = new URL(
           class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
           href="#contact-us"
         >
-          {t.cta}
+          {t.contactUs}
         </a>
       </div>
     </header>
@@ -76,7 +74,7 @@ const contactSuccessUrl = new URL(
             class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
             href="#contact-us"
           >
-            {t.cta}
+            {t.contactUs}
           </a>
         </div>
       </div>
@@ -176,12 +174,12 @@ const contactSuccessUrl = new URL(
 
       <form
         id="contact-us"
-        action="https://submit-form.com/BLVOfRwps"
+        action={CONTACT_FORM_URL}
         method="post"
         class="mx-auto mt-36 flex max-w-3xl flex-col rounded-lg border-1 border-slate-200 bg-slate-50 p-4"
       >
         <input type="hidden" name="_redirect" value={contactSuccessUrl} />
-        <h3 class="text-center text-2xl font-semibold">{t.form.title}</h3>
+        <h3 class="text-center text-2xl font-semibold">{t.contactUs}</h3>
         <label for="email" class="mt-8 text-sm font-medium">Email</label>
         <input
           name="email"
@@ -202,7 +200,7 @@ const contactSuccessUrl = new URL(
           type="submit"
           class="mt-4 flex w-fit min-w-24 cursor-pointer items-center gap-2 space-x-2 self-center rounded-lg border-2 border-black bg-black px-4 py-2 text-center font-medium text-white transition hover:bg-white hover:text-black"
         >
-          {t.form.send}
+          {t.send}
           <Icon name="mdi:send" />
         </button>
       </form>

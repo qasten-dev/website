@@ -1,0 +1,28 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getTranslations, getSafeCurrentLocale } from "@/utils/i18n";
+import { Icon } from "astro-icon/components";
+
+const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
+const t = getTranslations(currentLocale);
+
+const { title, subtitle } = Astro.props;
+---
+
+<div class="p-8">
+  <div
+    class="mx-auto mt-36 flex max-w-2xl flex-col gap-y-4 rounded-lg px-2 py-8 text-center"
+  >
+    <h1 class="text-2xl font-semibold">{title}</h1>
+    <p class="text-lg text-gray-600">
+      {subtitle}
+    </p>
+    <a
+      href={getRelativeLocaleUrl(currentLocale, "/")}
+      class="mt-8 flex w-fit cursor-pointer items-center space-x-2 self-center rounded-lg bg-black px-4 py-2 font-medium text-white transition hover:bg-slate-300 hover:text-black"
+      >{t.back}
+
+      <Icon name="mdi:arrow-back" class="ml-2" />
+    </a>
+  </div>
+</div>

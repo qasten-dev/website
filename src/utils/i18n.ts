@@ -1,23 +1,20 @@
 import { DEFAULT_LOCALE } from "@/../astro.config.mjs";
 
 export function getTranslations(locale: string | undefined) {
-  const safeLocale = locale === "fr" ? locale : DEFAULT_LOCALE;
+  const safeLocale = getSafeCurrentLocale(locale);
   return translations[safeLocale];
 }
 
 export function getSafeCurrentLocale(locale: string | undefined) {
-  return locale || DEFAULT_LOCALE;
+  return locale === "fr" ? locale : DEFAULT_LOCALE;
 }
 
 export { locales } from "@/../astro.config.mjs";
 
 const translations = {
   en: {
-    nav: {
-      blog: "Blog",
-      about: "About us",
-    },
-    cta: "Contact us",
+    aboutUs: "About us",
+    contactUs: "Contact us",
     hero: {
       title: "Enterprise AI <br /> under your control",
       subtitle:
@@ -46,15 +43,16 @@ const translations = {
         body: "AI your workforce can actually use safely. Kickstart adoption with ready-to-use apps like an enterprise chatbot and template-based assistants. Employees get productivity; you keep oversight.",
       },
     },
-    form: {
-      title: "Contact us",
-      send: "Send",
-    },
-    success: {
+    send: "Send",
+    contactSuccess: {
       title: "Thank you for contacting us!",
       subtitle: "Our team will get back to you shortly.",
-      back: "Go back",
     },
+    subscriptionSuccess: {
+      title: "Thank you for your interest!",
+      subtitle: "We'll keep you updated with the latest from Qasten.",
+    },
+    back: "Go back",
     stats: {
       sensitiveData:
         "of corporate data pasted into AI tools is considered <b>sensitive</b>",
@@ -73,7 +71,7 @@ const translations = {
             "ChatGPT Enterprise is SaaS in OpenAI's cloud and tied to their models. Qasten runs on your infra (on-prem or private cloud) or as SaaS, is model-agnostic, and adds governance: audit logs, PII redaction, policy enforcement, and cost controls.",
         },
         {
-          question: "How is Qasten different from existing AI gateways?",
+          question: "How is Qasten different from other AI gateways?",
           answer:
             "AI gateways target developers with APIs and observability. Qasten is for employees and security teams: ready-to-use apps like a secure chatbot plus built-in PII redaction, guardrails, and governance for safe company-wide adoption.",
         },
@@ -94,14 +92,19 @@ const translations = {
         },
       ],
     },
+    footer: {
+      stayUpdated: "Stay Updated",
+      subscribeCta: "Subscribe to receive product updates and announcements.",
+      emailPlaceholder: "Enter your email",
+      subscribe: "Subscribe",
+      languageLabel: "Language:",
+      copyright: "© 2025 Qasten. All rights reserved.",
+    },
   },
 
   fr: {
-    nav: {
-      blog: "Blog",
-      about: "À propos",
-    },
-    cta: "Nous contacter",
+    aboutUs: "À propos",
+    contactUs: "Nous contacter",
     hero: {
       title: "IA d'entreprise <br /> sous votre contrôle",
       subtitle:
@@ -130,15 +133,18 @@ const translations = {
         body: "Une IA que vos équipes peuvent utiliser en toute sécurité. Accélérez l'adoption avec des applications prêtes à l'emploi comme un chatbot d'entreprise et des assistants basés sur des modèles. Vos employés gagnent en productivité ; vous gardez la supervision.",
       },
     },
-    form: {
-      title: "Nous contacter",
-      send: "Envoyer",
-    },
-    success: {
+    send: "Envoyer",
+    contactSuccess: {
       title: "Merci de nous avoir contactés !",
       subtitle: "Notre équipe vous répondra sous peu.",
-      back: "Retour",
     },
+    subscriptionSuccess: {
+      title: "Merci pour votre intérêt !",
+      subtitle:
+        "Nous vous tiendrons informé des dernières nouvelles de Qasten.",
+    },
+    back: "Retour",
+
     stats: {
       sensitiveData:
         "des données d'entreprise collées dans des outils d'IA sont considérées comme <b>sensible</b>",
@@ -178,6 +184,15 @@ const translations = {
             "Contactez-nous. Nous déployons dans votre infra pour les besoins de conformité stricte ou en SaaS managé pour plus de rapidité. Les deux offrent les mêmes fonctions de gouvernance, redaction et observabilité.",
         },
       ],
+    },
+    footer: {
+      stayUpdated: "Restez informé",
+      subscribeCta:
+        "Abonnez-vous pour recevoir les mises à jour produit et les annonces.",
+      emailPlaceholder: "Entrez votre adresse e-mail",
+      subscribe: "S'abonner",
+      languageLabel: "Langue :",
+      copyright: "© 2025 Qasten. Tous droits réservés.",
     },
   },
 };
