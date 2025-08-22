@@ -97,9 +97,9 @@ const translations = {
       subscribeCta: "Subscribe to receive product updates and announcements.",
       emailPlaceholder: "Enter your email",
       subscribe: "Subscribe",
-      languageLabel: "Language:",
       copyright: "© 2025 Qasten. All rights reserved.",
     },
+    privacyPolicy: "Privacy policy",
   },
 
   fr: {
@@ -191,8 +191,8 @@ const translations = {
         "Abonnez-vous pour recevoir les mises à jour produit et les annonces.",
       emailPlaceholder: "Entrez votre adresse e-mail",
       subscribe: "S'abonner",
-      languageLabel: "Langue :",
       copyright: "© 2025 Qasten. Tous droits réservés.",
     },
+    privacyPolicy: "Politique de confidentialité",
   },
 };

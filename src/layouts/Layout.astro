@@ -1,5 +1,6 @@
 ---
 import BackgroundStripes from "@/components/BackgroundStripes.astro";
+import LanguageButton from "@/components/LanguageButton.astro";
 import "@/styles/global.css";
 import { getRedirectUrl, SUBSCRIBE_FORM_URL } from "@/utils/forms";
 import { getSafeCurrentLocale, getTranslations, locales } from "@/utils/i18n";
@@ -7,12 +8,6 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 const t = getTranslations(currentLocale);
-
-const { pathname } = Astro.url;
-
-const localeFreePathname = pathname.startsWith(`/${currentLocale}/`)
-  ? pathname.replace(`/${currentLocale}`, "")
-  : pathname;
 
 const subscribeSuccessUrl = getRedirectUrl({
   path: "subscription-success",
@@ -43,37 +38,40 @@ const subscribeSuccessUrl = getRedirectUrl({
 
     <!-- Force sticky footer -->
     <main class="flex-1"></main>
-    <footer class="mx-auto mt-48 w-full max-w-5xl pb-4">
-      <div class="mx-auto flex justify-between gap-24 px-4">
+    <footer class="mx-auto mt-48 w-full bg-black p-4 pt-8">
+      <div class="mx-auto flex max-w-6xl justify-between gap-24 px-4">
         <div>
-          <h3 class="mb-4 font-semibold">Qasten</h3>
-          <ul class="space-y-4 text-sm text-gray-500">
+          <h3 class="font-logo mb-4 text-lg font-bold text-white">>Qasten</h3>
+          <ul class="space-y-4 text-sm text-neutral-400">
             <li>
               <a
                 href={getRelativeLocaleUrl(currentLocale, "#contact-us")}
-                class="hover:text-black">{t.contactUs}</a
+                class="hover:text-white">{t.contactUs}</a
               >
             </li>
             <li>
-              <a href="#" class="hover:text-black">{t.aboutUs}</a>
+              <a href="#" class="hover:text-white">{t.aboutUs}</a>
             </li>
             <li>
-              <a href="#" class="hover:text-black">Blog</a>
+              <a href="#" class="hover:text-white">Blog</a>
             </li>
             <li>
               <a
                 href="https://www.linkedin.com/company/qasten"
                 target="_blank"
                 rel="noopener"
-                class="hover:text-black">LinkedIn</a
+                class="hover:text-white">LinkedIn</a
               >
+            </li>
+            <li>
+              <a href="#" class="hover:text-white">{t.privacyPolicy}</a>
             </li>
           </ul>
         </div>
 
         <div>
-          <h3 class="font-semibold">{t.footer.stayUpdated}</h3>
-          <p class="mt-2 text-sm text-gray-500">
+          <h3 class="font-semibold text-white">{t.footer.stayUpdated}</h3>
+          <p class="mt-2 text-sm text-gray-400">
             {t.footer.subscribeCta}
           </p>
           <form class="mt-4 flex" action={SUBSCRIBE_FORM_URL} method="post">
@@ -83,43 +81,26 @@ const subscribeSuccessUrl = getRedirectUrl({
               type="email"
               name="email"
               placeholder={t.footer.emailPlaceholder}
-              class="w-full rounded-l-md bg-white px-3 py-1.5 text-sm/6 text-gray-600 outline-1 -outline-offset-1 outline-slate-300 focus:outline-2 focus:-outline-offset-2 focus:outline-black"
+              class="w-full rounded-l-md bg-white px-3 py-1.5 text-sm/6 text-gray-600 focus:outline-0"
             />
             <button
               type="submit"
-              class="cursor-pointer rounded-r-md bg-black px-4 py-2 font-medium text-white transition hover:bg-slate-300 hover:text-black"
+              class="cursor-pointer rounded-r-md border-2 border-white px-4 py-2 font-medium text-slate-100 transition hover:bg-white hover:text-black"
             >
-              Subscribe
+              {t.footer.subscribe}
             </button>
           </form>
-          <div class="mt-8 flex items-center gap-4">
-            <label for="language-select" class="text-sm font-medium"
-              >{t.footer.languageLabel}</label
-            >
-            <select
-              class="block rounded-lg border border-slate-300 bg-slate-100 p-2 text-sm focus:border-2 focus:border-black"
-              id="language-select"
-              onchange="location = this.value"
-            >
-              {
-                locales.map((locale) => (
-                  <option
-                    value={getRelativeLocaleUrl(locale, localeFreePathname)}
-                    selected={locale === currentLocale}
-                  >
-                    {locale.toUpperCase()}
-                  </option>
-                ))
-              }
-            </select>
-          </div>
         </div>
       </div>
 
-      <div
-        class="mx-auto mt-4 max-w-6xl border-t border-gray-200 pt-4 text-center text-sm text-gray-500"
-      >
-        {t.footer.copyright}
+      <div class="mx-auto mt-8 flex max-w-6xl items-center justify-between">
+        <div class="text-sm text-neutral-400">
+          {t.footer.copyright}
+        </div>
+        <div class="inline-flex">
+          <LanguageButton locale="en" isLeft />
+          <LanguageButton locale="fr" />
+        </div>
       </div>
     </footer>
   </body>

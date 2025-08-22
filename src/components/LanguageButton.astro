@@ -1,0 +1,28 @@
+---
+import { getSafeCurrentLocale } from "@/utils/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
+const { locale, isLeft } = Astro.props;
+const { pathname } = Astro.url;
+
+const selected = locale === currentLocale;
+
+const localeFreePathname = pathname.startsWith(`/${currentLocale}/`)
+  ? pathname.replace(`/${currentLocale}`, "")
+  : pathname;
+---
+
+<button
+  class={`px-4 py-2 text-sm font-medium transition border-white border-2 ${
+    selected
+      ? "bg-white text-black"
+      : " text-white  hover:bg-white hover:text-black  cursor-pointer"
+  } ${isLeft ? "rounded-l-lg border-r-0" : "rounded-r-lg"}`}
+  disabled={selected}
+  onclick={selected
+    ? undefined
+    : `location='${getRelativeLocaleUrl(locale, localeFreePathname)}'`}
+>
+  {locale.toUpperCase()}
+</button>
