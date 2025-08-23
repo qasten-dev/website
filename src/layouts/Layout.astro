@@ -15,6 +15,11 @@ const subscribeSuccessUrl = getRedirectUrl({
   site: Astro.site,
   currentLocale,
 });
+
+const contactUsUrl = getRelativeLocaleUrl(
+  currentLocale,
+  "/#contact-us",
+).replace(/\/$/, "");
 ---
 
 <!doctype html>
@@ -34,6 +39,41 @@ const subscribeSuccessUrl = getRedirectUrl({
 
   <body class="font-inter flex min-h-screen flex-col">
     <BackgroundStripes />
+    <header
+      class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 pt-6"
+    >
+      <a
+        class="font-logo flex-1 cursor-pointer text-3xl font-bold text-black"
+        href={getRelativeLocaleUrl(currentLocale, "/")}>>Qasten</a
+      >
+
+      <nav
+        class="flex items-center space-x-2 font-medium sm:space-x-6 md:space-x-12"
+      >
+        <a
+          href={getRelativeLocaleUrl(currentLocale, "blog")}
+          class="rounded-lg px-4 py-2 text-gray-600 hover:bg-slate-200 hover:text-black"
+        >
+          Blog
+        </a>
+        <a
+          href="#"
+          class="rounded-lg px-4 py-2 text-gray-600 hover:bg-slate-200 hover:text-black"
+        >
+          {t.aboutUs}
+        </a>
+      </nav>
+
+      <div class="flex flex-1 justify-end">
+        <a
+          class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
+          href={contactUsUrl}
+        >
+          {t.contactUs}
+        </a>
+      </div>
+    </header>
+
     <slot />
 
     <!-- Force sticky footer -->
@@ -48,10 +88,7 @@ const subscribeSuccessUrl = getRedirectUrl({
           >
           <ul class="space-y-4 text-sm text-neutral-400">
             <li>
-              <a
-                href={getRelativeLocaleUrl(currentLocale, "#contact-us")}
-                class="hover:text-white">{t.contactUs}</a
-              >
+              <a href={contactUsUrl} class="hover:text-white">{t.contactUs}</a>
             </li>
             <li>
               <a href="#" class="hover:text-white">{t.aboutUs}</a>
