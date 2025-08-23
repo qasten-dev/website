@@ -6,10 +6,19 @@ import FeatureBlock from "@/components/FeatureBlock.astro";
 import { Icon } from "astro-icon/components";
 import { getTranslations } from "@/utils/i18n";
 import { CONTACT_FORM_URL, getRedirectUrl } from "@/utils/forms";
+import { getPosts } from "@/utils/blog";
+import BlogGrid from "../BlogGrid.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getSafeCurrentLocale } from "@/utils/i18n";
 
-const { currentLocale } = Astro;
+const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 
 const t = getTranslations(currentLocale);
+
+const highlightedPostsSlugs = ["first-post", "second-post", "fourth-post"];
+const posts = getPosts(currentLocale).filter(([slug, _]) =>
+  highlightedPostsSlugs.includes(slug),
+);
 
 const contactSuccessUrl = getRedirectUrl({
   path: "contact-success",
@@ -79,7 +88,10 @@ const contactSuccessUrl = getRedirectUrl({
 
       <div class="mt-28">
         <div class="px-8 text-center">
-          <h2 class="text-3xl font-bold text-black" set:html={t.bridge.title} />
+          <h2
+            class="text-4xl font-semibold text-black"
+            set:html={t.bridge.title}
+          />
 
           <p
             class="mx-auto mt-4 max-w-3xl text-xl text-gray-600"
@@ -116,8 +128,23 @@ const contactSuccessUrl = getRedirectUrl({
         </div>
       </div>
 
-      <section class="mx-auto mt-36 max-w-4xl px-8">
-        <h2 class="text-center text-3xl font-bold text-black">
+      <section class="mx-auto mt-48 px-8">
+        <h2 class="mb-12 text-center text-4xl font-semibold text-black">
+          {t.deepDives}
+        </h2>
+
+        <BlogGrid posts={posts} />
+
+        <a
+          class="mx-auto mt-12 flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
+          href={getRelativeLocaleUrl(currentLocale, "blog")}
+        >
+          {t.learnMore}
+        </a>
+      </section>
+
+      <section class="mx-auto mt-48 max-w-4xl px-8">
+        <h2 class="text-center text-4xl font-semibold text-black">
           {t.faq.title}
         </h2>
         <p class="mt-2 text-center text-lg text-gray-500">

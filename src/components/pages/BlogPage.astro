@@ -1,33 +1,15 @@
 ---
 import Layout from "@/layouts/LayoutWithHeader.astro";
-import type { Blog } from "@/utils/blog";
-import path from "node:path";
-import BlogCard from "../BlogCard.astro";
+import { getPosts } from "@/utils/blog";
+import BlogGrid from "../BlogGrid.astro";
 
-const { dir } = Astro.props;
-
-const posts = Object.entries(
-  import.meta.glob<Blog>("@/pages/**/blog/*.astro", { eager: true }),
-)
-  .filter(([filePath]) => path.parse(filePath).dir === dir)
-  .map(([filePath, blog]) => {
-    return [path.parse(filePath).name, blog] as const;
-  })
-  .sort((a, b) => {
-    return a[1].metadata.date.getTime() - b[1].metadata.date.getTime();
-  });
+const posts = getPosts(Astro.currentLocale);
 ---
 
 <Layout>
   <main class="mx-auto mt-24 w-full max-w-6xl px-4">
-    <h1 class="text-center text-6xl font-semibold">Blog</h1>
+    <h1 class="mb-24 text-center text-6xl font-semibold">Blog</h1>
 
-    <div class="mt-24 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        posts.map(([path, { metadata }]) => (
-          <BlogCard metadata={metadata} path={path} />
-        ))
-      }
-    </div>
+    <BlogGrid posts={posts} />
   </main>
 </Layout>

@@ -100,6 +100,8 @@ const translations = {
       copyright: "© 2025 Qasten. All rights reserved.",
     },
     privacyPolicy: "Privacy policy",
+    deepDives: "Deep Dives",
+    learnMore: "Learn more",
   },
 
   fr: {
@@ -194,5 +196,7 @@ const translations = {
       copyright: "© 2025 Qasten. Tous droits réservés.",
     },
     privacyPolicy: "Politique de confidentialité",
+    deepDives: "Pour approfondir",
+    learnMore: "Voir plus",
   },
 };
