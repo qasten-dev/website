@@ -1,0 +1,21 @@
+---
+import Layout from "@/layouts/BlogLayout.astro";
+import librechat from "@/assets/librechat.webp";
+import { type Metadata } from ".";
+
+export const metadata: Metadata = {
+  title: "Second post",
+  summary: "Short summary",
+  date: new Date("June 1, 2025"),
+  lengthMinutes: 5,
+  image: {
+    src: librechat,
+    alt: "Placeholder",
+  },
+  author: "",
+};
+---
+
+<Layout metadata={metadata}>
+  <p></p>
+</Layout>

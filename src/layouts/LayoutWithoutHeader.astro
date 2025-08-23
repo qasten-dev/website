@@ -3,7 +3,7 @@ import BackgroundStripes from "@/components/BackgroundStripes.astro";
 import LanguageButton from "@/components/LanguageButton.astro";
 import "@/styles/global.css";
 import { getRedirectUrl, SUBSCRIBE_FORM_URL } from "@/utils/forms";
-import { getSafeCurrentLocale, getTranslations, locales } from "@/utils/i18n";
+import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
@@ -41,7 +41,11 @@ const subscribeSuccessUrl = getRedirectUrl({
     <footer class="mx-auto mt-48 w-full bg-black p-4 pt-8">
       <div class="mx-auto flex max-w-6xl justify-between gap-24 px-4">
         <div>
-          <h3 class="font-logo mb-4 text-lg font-bold text-white">>Qasten</h3>
+          <a href={getRelativeLocaleUrl(currentLocale, "/")}
+            ><h3 class="font-logo mb-4 text-lg font-bold text-white">
+              >Qasten
+            </h3></a
+          >
           <ul class="space-y-4 text-sm text-neutral-400">
             <li>
               <a

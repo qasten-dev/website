@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import Layout from "@/layouts/LayoutWithHeader.astro";
 import { Image } from "astro:assets";
 import librechat from "@/assets/librechat.webp";
 import FeatureBlock from "@/components/FeatureBlock.astro";
@@ -21,35 +21,6 @@ const contactSuccessUrl = getRedirectUrl({
 
 <Layout>
   <div class="mx-auto max-w-6xl">
-    <header class="flex items-center justify-between px-6 pt-6">
-      <div class="font-logo flex-1 text-3xl font-bold text-black">>Qasten</div>
-
-      <nav
-        class="flex items-center space-x-2 font-medium sm:space-x-6 md:space-x-12"
-      >
-        <a
-          href="#"
-          class="rounded-lg px-4 py-2 text-gray-600 hover:bg-slate-200 hover:text-black"
-        >
-          Blog
-        </a>
-        <a
-          href="#"
-          class="rounded-lg px-4 py-2 text-gray-600 hover:bg-slate-200 hover:text-black"
-        >
-          {t.aboutUs}
-        </a>
-      </nav>
-
-      <div class="flex flex-1 justify-end">
-        <a
-          class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
-          href="#contact-us"
-        >
-          {t.contactUs}
-        </a>
-      </div>
-    </header>
     <main>
       <div class="relative px-6 pt-24 pb-16 text-center">
         <div class="absolute -z-2 h-full w-full bg-white"></div>
