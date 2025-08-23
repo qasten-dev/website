@@ -1,13 +1,12 @@
 ---
 import Layout from "@/layouts/BlogLayout.astro";
 import { type Metadata } from "@/pages/blog";
+import { metadata as enMetadata } from "@/pages/blog/third-post.astro";
 
 export const metadata: Metadata = {
-  title: "Third post",
-  summary: "Short summary",
-  lengthMinutes: 5,
-  date: new Date("July 1, 2025"),
-  author: "",
+  ...enMetadata,
+  title: "Troisième post",
+  summary: "Resumé court",
 };
 ---
 

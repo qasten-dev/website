@@ -57,7 +57,10 @@ const subscribeSuccessUrl = getRedirectUrl({
               <a href="#" class="hover:text-white">{t.aboutUs}</a>
             </li>
             <li>
-              <a href="#" class="hover:text-white">Blog</a>
+              <a
+                href={getRelativeLocaleUrl(currentLocale, "blog")}
+                class="hover:text-white">Blog</a
+              >
             </li>
             <li>
               <a
