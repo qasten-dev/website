@@ -1,15 +1,10 @@
 ---
 import Layout from "@/layouts/LayoutWithHeader.astro";
 import type { Blog } from "@/utils/blog";
-import { formatDate } from "@/utils/blog";
-import { getSafeCurrentLocale } from "@/utils/i18n";
-import { Image } from "astro:assets";
-import { getRelativeLocaleUrl } from "astro:i18n";
 import path from "node:path";
+import BlogCard from "../BlogCard.astro";
 
 const { dir } = Astro.props;
-
-const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 
 const posts = Object.entries(
   import.meta.glob<Blog>("@/pages/**/blog/*.astro", { eager: true }),
@@ -30,32 +25,7 @@ const posts = Object.entries(
     <div class="mt-24 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {
         posts.map(([path, { metadata }]) => (
-          <a
-            href={getRelativeLocaleUrl(currentLocale, `/blog/${path}`)}
-            class="block overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:bg-gray-100 hover:shadow-md"
-          >
-            {metadata.image ? (
-              <Image
-                src={metadata.image.src}
-                alt={metadata.image.alt}
-                class="h-48 object-cover"
-              />
-            ) : (
-              <div class="font-logo flex h-48 items-center justify-center bg-black text-2xl font-bold text-white">
-                >Qasten
-              </div>
-            )}
-
-            <div class="p-4">
-              <h2 class="text-lg font-semibold">{metadata.title}</h2>
-              <p class="mt-2 text-xs text-gray-400">
-                {formatDate(metadata.date)}
-              </p>
-              <p class="mt-3 line-clamp-2 text-sm text-gray-600">
-                {metadata.summary}
-              </p>
-            </div>
-          </a>
+          <BlogCard metadata={metadata} path={path} />
         ))
       }
     </div>
