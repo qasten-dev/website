@@ -24,6 +24,7 @@ const lgClass = numCols === 3 ? "lg:grid-cols-3" : "";
             src={metadata.image.src}
             alt={metadata.image.alt}
             class="h-48 object-cover"
+            loading="eager"
           />
         ) : (
           <div class="font-logo flex h-48 items-center justify-center bg-black text-2xl font-bold text-white">
