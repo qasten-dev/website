@@ -2,6 +2,10 @@
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import librechat from "@/assets/librechat.webp";
+import models from "@/assets/models.webp";
+import dashboard from "@/assets/dashboard.png";
+import redaction from "@/assets/redaction.png";
+import guardrail from "@/assets/guardrail.png";
 import FeatureBlock from "@/components/FeatureBlock.astro";
 import { Icon } from "astro-icon/components";
 import { getTranslations } from "@/utils/i18n";
@@ -15,7 +19,12 @@ const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 
 const t = getTranslations(currentLocale);
 
-const highlightedPostsSlugs = ["first-post", "second-post", "fourth-post"];
+const highlightedPostsSlugs = [
+  "first-post",
+  "second-post",
+  "third-post",
+  "fourth-post",
+];
 const posts = getPosts(currentLocale).filter(([slug, _]) =>
   highlightedPostsSlugs.includes(slug),
 );
@@ -70,73 +79,81 @@ const contactSuccessUrl = getRedirectUrl({
 
       <section class="mt-36 px-12">
         <div
-          class="mx-auto grid max-w-6xl items-center gap-x-24 gap-y-4 text-center md:grid-flow-col md:grid-rows-3 md:gap-y-0"
+          class="mx-auto grid grid-cols-1 justify-items-center gap-y-12 text-center md:grid-cols-3"
         >
-          <p class="text-5xl font-bold text-black">34.8%</p>
-          <p class="text-lg text-gray-600" set:html={t.stats.sensitiveData} />
-          <p class="text-sm text-gray-400">HRD Magazine, 2025</p>
+          <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
+            <p class="text-5xl font-bold text-black">34.8%</p>
+            <p class="text-lg text-gray-600" set:html={t.stats.sensitiveData} />
+            <p class="text-sm text-gray-400">HRD Magazine, 2025</p>
+          </div>
 
-          <p class="mt-8 text-5xl font-bold text-black md:mt-0">68%</p>
-          <p class="text-lg text-gray-600" set:html={t.stats.dataLeakage} />
-          <p class="text-sm text-gray-400">Security Magazine, 2025</p>
+          <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
+            <p class="text-5xl font-bold text-black">68%</p>
+            <p class="text-lg text-gray-600" set:html={t.stats.dataLeakage} />
+            <p class="text-sm text-gray-400">Security Magazine, 2025</p>
+          </div>
 
-          <p class="mt-8 text-5xl font-bold text-black md:mt-0">1,200+</p>
-          <p class="text-lg text-gray-600" set:html={t.stats.hiddenUsage} />
-          <p class="text-sm text-gray-400">Business Insider, 2025</p>
+          <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
+            <p class="text-5xl font-bold text-black">1,200+</p>
+            <p class="text-lg text-gray-600" set:html={t.stats.hiddenUsage} />
+            <p class="text-sm text-gray-400">Business Insider, 2025</p>
+          </div>
         </div>
       </section>
 
-      <div class="mt-28">
-        <div class="px-8 text-center">
-          <h2
-            class="text-4xl font-semibold text-black"
-            set:html={t.bridge.title}
-          />
+      <section
+        class="relative left-1/2 mt-28 w-screen -translate-x-1/2 bg-black py-24 text-center"
+      >
+        <h2
+          class="text-5xl font-semibold text-white"
+          set:html={t.bridge.title}
+        />
 
-          <p
-            class="mx-auto mt-4 max-w-3xl text-xl text-gray-600"
-            set:html={t.bridge.subtitle}
-          />
-        </div>
+        <p
+          class="mx-auto mt-6 max-w-3xl text-xl text-gray-200"
+          set:html={t.bridge.subtitle}
+        />
+      </section>
 
-        <div class="mt-36 space-y-64">
+      <section>
+        <div class="mt-36 space-y-36">
           <FeatureBlock
             title={t.features.visibility.title}
             body={t.features.visibility.body}
-            image={librechat}
+            image={dashboard}
           />
 
           <FeatureBlock
             title={t.features.pii.title}
             body={t.features.pii.body}
-            image={librechat}
+            image={redaction}
             imageLeft
           />
 
           <FeatureBlock
             title={t.features.guardrails.title}
             body={t.features.guardrails.body}
-            image={librechat}
+            image={guardrail}
           />
 
           <FeatureBlock
             title={t.features.apps.title}
             body={t.features.apps.body}
-            image={librechat}
+            image={models}
             imageLeft
           />
         </div>
-      </div>
+      </section>
 
-      <section class="mx-auto mt-48 px-8">
-        <h2 class="mb-12 text-center text-4xl font-semibold text-black">
+      <section class="mx-auto mt-48 px-8 py-24">
+        <h2 class="mb-12 text-center text-5xl font-semibold text-black">
           {t.deepDives}
         </h2>
 
-        <BlogGrid posts={posts} />
+        <BlogGrid posts={posts} numCols={2} />
 
         <a
-          class="mx-auto mt-12 flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
+          class="mx-auto mt-12 flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-6 py-3 font-medium text-white transition hover:bg-white hover:text-black"
           href={getRelativeLocaleUrl(currentLocale, "blog")}
         >
           {t.learnMore}

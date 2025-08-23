@@ -4,11 +4,15 @@ import { getSafeCurrentLocale } from "@/utils/i18n";
 import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
-const { posts } = Astro.props as { posts: [string, Blog][] };
+const { posts, numCols = 3 } = Astro.props as {
+  posts: [string, Blog][];
+  numCols?: 2 | 3;
+};
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
+const lgClass = numCols === 3 ? "lg:grid-cols-3" : "";
 ---
 
-<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+<div class=`grid gap-8 sm:grid-cols-2 ${lgClass}`>
   {
     posts.map(([path, { metadata }]) => (
       <a

@@ -1,5 +1,7 @@
 ---
 import Layout from "@/layouts/BlogLayout.astro";
+import camera from "@/assets/camera.jpg";
+
 import { type Metadata } from "@/utils/blog";
 
 export const metadata: Metadata = {
@@ -8,6 +10,10 @@ export const metadata: Metadata = {
   lengthMinutes: 5,
   date: new Date("July 1, 2025"),
   author: "",
+  image: {
+    src: camera,
+    alt: "Placeholder",
+  },
 };
 ---
 
