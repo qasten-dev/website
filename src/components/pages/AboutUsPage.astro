@@ -1,0 +1,106 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import farouk from "@/assets/farouk.png";
+import youssef from "@/assets/youssef.png";
+import achraf from "@/assets/achraf.jpeg";
+import { Icon } from "astro-icon/components";
+import { getTranslations } from "@/utils/i18n";
+
+const t = getTranslations(Astro.currentLocale);
+---
+
+<Layout>
+  <main class="mx-auto mt-12 w-full max-w-6xl px-4">
+    <section class="mt-8 text-center">
+      <h1 class="text-6xl font-semibold">{t.about.title}</h1>
+      <p class="mx-auto mt-8 max-w-2xl text-lg text-gray-600">
+        {t.about.tagline}
+      </p>
+    </section>
+
+    <section class="mt-24">
+      <h2 class="text-center text-3xl font-semibold">{t.about.ourStory}</h2>
+      <p class="mt-12 leading-relaxed text-gray-700">
+        {t.about.story[0]}
+      </p>
+      <p
+        class="mt-4 leading-relaxed text-gray-700"
+        set:html={t.about.story[1]}
+      />
+    </section>
+
+    <section class="mt-24">
+      <h2 class="text-center text-3xl font-semibold">{t.about.ourValues}</h2>
+      <div class="mt-8 grid gap-8 text-center md:grid-cols-3">
+        <div class="p-6">
+          <Icon name="mdi:shield-check" class="mx-auto text-4xl" />
+          <h3 class="mt-2 text-xl font-semibold">
+            {t.about.securityFirst.title}
+          </h3>
+          <p class="mt-2 text-gray-600">
+            {t.about.securityFirst.body}
+          </p>
+        </div>
+        <div class="p-6">
+          <Icon name="mdi:lightning-bolt" class="mx-auto text-4xl" />
+          <h3 class="mt-2 text-xl font-semibold">
+            {t.about.empowerment.title}
+          </h3>
+          <p class="mt-2 text-gray-600">
+            {t.about.empowerment.body}
+          </p>
+        </div>
+        <div class="p-6">
+          <Icon name="mdi:magnify" class="mx-auto text-4xl" />
+          <h3 class="mt-2 text-xl font-semibold">{t.about.clarity.title}</h3>
+          <p class="mt-2 text-gray-600">
+            {t.about.clarity.body}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-24">
+      <h2 class="text-center text-3xl font-semibold">
+        {t.about.meetTheFounders}
+      </h2>
+      <div class="mt-8 grid gap-8 md:grid-cols-3">
+        <div class="p-6 text-center">
+          <div class="mx-auto h-24 w-24 overflow-hidden rounded-full">
+            <Image
+              src={farouk}
+              alt="Faiz Farouk"
+              class="origin-top scale-120 rounded-full object-cover"
+            />
+          </div>
+          <h3 class="mt-2 text-xl font-semibold">Faiz Farouk</h3>
+          <p class="text-sm font-medium text-gray-500">CEO</p>
+          <p class="mt-4 text-sm text-gray-600" set:html={t.about.farouk} />
+        </div>
+        <div class="p-6 text-center">
+          <Image
+            src={youssef}
+            alt="Youssef Doubli"
+            class="mx-auto h-24 w-24 rounded-full object-cover"
+          />
+          <h3 class="mt-2 text-xl font-semibold">Youssef Doubli</h3>
+          <p class="text-sm font-medium text-gray-500">CPTO</p>
+          <p class="mt-4 text-sm text-gray-600" set:html={t.about.youssef} />
+        </div>
+        <div class="p-6 text-center">
+          <div class="mx-auto h-24 w-24 overflow-hidden rounded-full">
+            <Image
+              src={achraf}
+              alt="Achraf El Masdouri"
+              class="origin-top scale-150 rounded-full object-cover"
+            />
+          </div>
+          <h3 class="mt-2 text-xl font-semibold">Achraf El Masdouri</h3>
+          <p class="text-sm font-medium text-gray-500">COO</p>
+          <p class="mt-4 text-sm text-gray-600" set:html={t.about.achraf} />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

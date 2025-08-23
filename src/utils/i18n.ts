@@ -102,6 +102,37 @@ const translations = {
     privacyPolicy: "Privacy policy",
     deepDives: "Deep Dives",
     learnMore: "Learn more",
+    about: {
+      title: "About Qasten",
+      tagline:
+        "Empowering every company to adopt AI with confidence. We build private AI platforms that put security, governance, and control back in your hands.",
+      ourStory: "Our Story",
+      ourValues: "Our Values",
+      meetTheFounders: "Meet the Founders",
+      story: [
+        "We've seen first-hand how large enterprises struggled to integrate AI into their workflows. Each of us came from companies where teams rolled out internal tools: powerful, but often fragmented, complex, or limited to those with the biggest budgets.",
+
+        "We founded Qasten with a simple idea: <b>every company, from fast-growing startups to global enterprises, should have access to AI platforms with the same level of control and reliability once reserved for large tech organizations.</b>",
+      ],
+      securityFirst: {
+        title: "Security First",
+        body: "Your data never leaves your infrastructure.",
+      },
+      empowerment: {
+        title: "Empowerment",
+        body: "AI should accelerate employees, not restrict them.",
+      },
+      clarity: {
+        title: "Clarity",
+        body: "Transparent governance, observability, and cost visibility.",
+      },
+      farouk:
+        "Former Software Engineer at <b>AWS</b> and <b>Uber</b>, expert in cloud platforms.",
+      youssef:
+        "Former Software Engineer at <b>Datadog</b>, expert in data engineering and large-scale systems.",
+      achraf:
+        "Former Red Teamer at <b>OpenAI</b> and CyberSecurity expert at <b>Accor</b>",
+    },
   },
 
   fr: {
@@ -198,5 +229,36 @@ const translations = {
     privacyPolicy: "Politique de confidentialité",
     deepDives: "Pour approfondir",
     learnMore: "Voir plus",
+    about: {
+      title: "À propos de Qasten",
+      tagline:
+        "Permettre à chaque entreprise d'adopter l'IA en toute confiance. Nous construisons des plateformes d'IA privées qui redonnent sécurité, gouvernance et contrôle à vos équipes.",
+      ourStory: "Notre histoire",
+      ourValues: "Nos valeurs",
+      meetTheFounders: "Rencontrez les fondateurs",
+      story: [
+        "Nous avons constaté de première main comment de grandes entreprises peinaient à intégrer l'IA dans leurs processus. Chacun de nous vient d'organisations où des outils internes étaient déployés : puissants, mais souvent fragmentés, complexes, ou réservés à ceux disposant des budgets les plus élevés.",
+
+        "Nous avons fondé Qasten avec une idée simple : <b>toute entreprise, des startups en forte croissance aux grands groupes internationaux, devrait pouvoir accéder à des plateformes d'IA offrant le même niveau de contrôle et de fiabilité autrefois réservé aux géants de la tech.</b>",
+      ],
+      securityFirst: {
+        title: "La sécurité avant tout",
+        body: "Vos données ne quittent jamais votre infrastructure.",
+      },
+      empowerment: {
+        title: "Autonomisation",
+        body: "L'IA doit accélérer vos collaborateurs, pas les contraindre.",
+      },
+      clarity: {
+        title: "Clarté",
+        body: "Gouvernance transparente, observabilité et visibilité des coûts.",
+      },
+      farouk:
+        "Ancien ingénieur logiciel chez <b>AWS</b> et <b>Uber</b>, expert en plateformes cloud.",
+      youssef:
+        "Ancien ingénieur logiciel chez <b>Datadog</b>, expert en ingénierie des données et systèmes à grande échelle.",
+      achraf:
+        "Ancien Red Teamer chez <b>OpenAI</b> et expert en cybersécurité chez <b>Accor</b>",
+    },
   },
 };

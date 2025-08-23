@@ -15,7 +15,9 @@ const { metadata } = Astro.props as { metadata: Metadata };
         By {metadata.author} &nbsp;|&nbsp; {metadata.lengthMinutes} min read
       </p>
     </div>
-    <article class="mx-auto mt-8 w-full max-w-4xl text-lg font-medium">
+    <article
+      class="mx-auto mt-8 w-full max-w-4xl leading-relaxed text-gray-700"
+    >
       {
         metadata.image && (
           <Image

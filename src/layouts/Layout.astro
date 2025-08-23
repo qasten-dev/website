@@ -57,7 +57,7 @@ const contactUsUrl = getRelativeLocaleUrl(
           Blog
         </a>
         <a
-          href="#"
+          href={getRelativeLocaleUrl(currentLocale, "about-us")}
           class="rounded-lg px-4 py-2 text-gray-600 hover:bg-slate-200 hover:text-black"
         >
           {t.aboutUs}
@@ -91,7 +91,10 @@ const contactUsUrl = getRelativeLocaleUrl(
               <a href={contactUsUrl} class="hover:text-white">{t.contactUs}</a>
             </li>
             <li>
-              <a href="#" class="hover:text-white">{t.aboutUs}</a>
+              <a
+                href={getRelativeLocaleUrl(currentLocale, "about-us")}
+                class="hover:text-white">{t.aboutUs}</a
+              >
             </li>
             <li>
               <a
