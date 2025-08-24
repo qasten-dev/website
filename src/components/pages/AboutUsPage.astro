@@ -21,13 +21,12 @@ const t = getTranslations(Astro.currentLocale);
 
     <section class="mt-24">
       <h2 class="text-center text-3xl font-semibold">{t.about.ourStory}</h2>
-      <p class="mt-12 leading-relaxed text-gray-700">
-        {t.about.story[0]}
-      </p>
-      <p
-        class="mt-4 leading-relaxed text-gray-700"
-        set:html={t.about.story[1]}
-      />
+      <div class="text-base leading-relaxed text-gray-700">
+        <p class="mt-12">
+          {t.about.story[0]}
+        </p>
+        <p class="mt-8" set:html={t.about.story[1]} />
+      </div>
     </section>
 
     <section class="mt-24">
