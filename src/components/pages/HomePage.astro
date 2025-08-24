@@ -38,206 +38,199 @@ const contactSuccessUrl = getRedirectUrl({
 ---
 
 <Layout>
-  <div class="mx-auto max-w-6xl">
-    <main>
-      <div class="relative px-6 pt-24 pb-16 text-center">
-        <div class="hidden sm:block">
-          <div class="absolute -z-20 h-full w-full bg-white"></div>
-          <div
-            class="dotted-background pointer-events-none absolute inset-0 -z-10"
-          >
-            <div class="absolute h-full w-full bg-radial from-40% to-white">
-            </div>
-          </div>
-        </div>
-
-        <div class="fade-in-up flex flex-col items-center">
-          <h1
-            class="text-6xl leading-tight font-bold text-black lg:text-8xl"
-            set:html={t.hero.title}
-          />
-
-          <p
-            class="my-8 text-xl leading-relaxed text-gray-600"
-            set:html={t.hero.subtitle}
-          />
-
-          <a
-            class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
-            href="#contact-us"
-          >
-            {t.contactUs}
-          </a>
-        </div>
-      </div>
-
-      <div class="px-8">
-        <Image
-          src={librechat}
-          alt=""
-          priority
-          class="fade-in-up rounded-lg shadow-xl/25"
-        />
-      </div>
-
-      <section class="mt-36 px-12">
+  <main class="mx-auto max-w-6xl">
+    <div class="relative px-6 pt-24 pb-16 text-center">
+      <div class="hidden sm:block">
+        <div class="absolute -z-20 h-full w-full bg-white"></div>
         <div
-          class="mx-auto grid grid-cols-1 justify-items-center gap-y-12 text-center md:grid-cols-3"
+          class="dotted-background pointer-events-none absolute inset-0 -z-10"
         >
-          <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
-            <p class="text-5xl font-bold text-black">34.8%</p>
-            <p class="text-lg text-gray-600" set:html={t.stats.sensitiveData} />
-            <p class="text-sm text-gray-400">HRD Magazine, 2025</p>
-          </div>
-
-          <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
-            <p class="text-5xl font-bold text-black">68%</p>
-            <p class="text-lg text-gray-600" set:html={t.stats.dataLeakage} />
-            <p class="text-sm text-gray-400">Security Magazine, 2025</p>
-          </div>
-
-          <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
-            <p class="text-5xl font-bold text-black">1,200+</p>
-            <p class="text-lg text-gray-600" set:html={t.stats.hiddenUsage} />
-            <p class="text-sm text-gray-400">Business Insider, 2025</p>
-          </div>
+          <div class="absolute h-full w-full bg-radial from-40% to-white"></div>
         </div>
-      </section>
+      </div>
 
-      <section
-        class="relative left-1/2 mt-28 w-screen -translate-x-1/2 bg-black py-24 text-center"
-      >
-        <h2
-          class="text-5xl font-semibold text-white"
-          set:html={t.bridge.title}
+      <div class="fade-in-up flex flex-col items-center">
+        <h1
+          class="text-6xl leading-tight font-bold text-black lg:text-8xl"
+          set:html={t.hero.title}
         />
 
         <p
-          class="mx-auto mt-6 max-w-3xl text-xl text-gray-200"
-          set:html={t.bridge.subtitle}
+          class="my-8 text-xl leading-relaxed text-gray-600"
+          set:html={t.hero.subtitle}
         />
-      </section>
-
-      <section>
-        <div class="mt-36 space-y-36">
-          <FeatureBlock
-            title={t.features.visibility.title}
-            body={t.features.visibility.body}
-            image={dashboard}
-          />
-
-          <FeatureBlock
-            title={t.features.pii.title}
-            body={t.features.pii.body}
-            image={redaction}
-            imageLeft
-          />
-
-          <FeatureBlock
-            title={t.features.guardrails.title}
-            body={t.features.guardrails.body}
-            image={guardrail}
-          />
-
-          <FeatureBlock
-            title={t.features.apps.title}
-            body={t.features.apps.body}
-            image={models}
-            imageLeft
-          />
-        </div>
-      </section>
-
-      <section class="mx-auto mt-48 px-8 py-24">
-        <h2 class="mb-12 text-center text-5xl font-semibold text-black">
-          {t.deepDives}
-        </h2>
-
-        <BlogGrid posts={posts} numCols={2} />
 
         <a
-          class="mx-auto mt-12 flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-6 py-3 font-medium text-white transition hover:bg-white hover:text-black"
-          href={getRelativeLocaleUrl(currentLocale, "blog")}
+          class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
+          href="#contact-us"
         >
-          {t.learnMore}
+          {t.contactUs}
         </a>
-      </section>
-
-      <section class="mx-auto mt-48 max-w-4xl px-8">
-        <h2 class="text-center text-4xl font-semibold text-black">
-          {t.faq.title}
-        </h2>
-        <p class="mt-2 text-center text-lg text-gray-500">
-          {t.faq.subtitle}
-        </p>
-
-        <div class="mt-12 divide-y divide-slate-200">
-          {
-            t.faq.content.map(({ question, answer }) => (
-              <details class="group py-6">
-                <summary class="flex cursor-pointer items-center justify-between text-lg font-medium text-black">
-                  {question}
-                  <Icon
-                    name="mdi:keyboard-arrow-down"
-                    size="32"
-                    class="ml-2 transition-transform duration-300 group-open:rotate-180"
-                  />
-                </summary>
-                <p class="mt-4 text-gray-600">{answer}</p>
-              </details>
-            ))
-          }
-        </div>
-      </section>
-
-      <div class="mx-auto px-8">
-        <form
-          id="contact-us"
-          action={CONTACT_FORM_URL}
-          method="post"
-          class="mx-auto mt-36 max-w-2xl rounded-2xl border border-gray-200 bg-white p-8 shadow-sm hover:shadow-md"
-        >
-          <input type="hidden" name="_redirect" value={contactSuccessUrl} />
-
-          <h3 class="text-center text-3xl font-semibold tracking-tight">
-            {t.contactUs}
-          </h3>
-
-          <label
-            for="email"
-            class="mt-12 block text-sm font-medium text-gray-600">Email</label
-          >
-          <input
-            name="email"
-            id="email"
-            type="email"
-            required
-            class="mt-2 w-full rounded-xl border border-gray-300 px-4 py-2 text-gray-600 transition focus:ring-2 focus:ring-black focus:outline-none"
-          />
-
-          <label
-            for="message"
-            class="mt-8 block text-sm font-medium text-gray-600">Message</label
-          >
-          <textarea
-            name="message"
-            id="message"
-            rows="5"
-            required
-            class="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-600 transition focus:ring-2 focus:ring-black focus:outline-none"
-          ></textarea>
-
-          <button
-            type="submit"
-            class="mx-auto mt-6 flex cursor-pointer items-center gap-2 rounded-xl border-2 border-black bg-black px-4 py-2 font-medium text-white shadow-sm transition hover:bg-white hover:text-black"
-          >
-            {t.send}
-            <Icon name="mdi:send" />
-          </button>
-        </form>
       </div>
-    </main>
-  </div>
+    </div>
+
+    <div class="px-8">
+      <Image
+        src={librechat}
+        alt=""
+        priority
+        class="fade-in-up rounded-lg shadow-xl/25"
+      />
+    </div>
+
+    <section class="mt-36 px-12">
+      <div
+        class="mx-auto grid grid-cols-1 justify-items-center gap-y-12 text-center md:grid-cols-3"
+      >
+        <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
+          <p class="text-5xl font-bold text-black">34.8%</p>
+          <p class="text-lg text-gray-600" set:html={t.stats.sensitiveData} />
+          <p class="text-sm text-gray-400">HRD Magazine, 2025</p>
+        </div>
+
+        <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
+          <p class="text-5xl font-bold text-black">68%</p>
+          <p class="text-lg text-gray-600" set:html={t.stats.dataLeakage} />
+          <p class="text-sm text-gray-400">Security Magazine, 2025</p>
+        </div>
+
+        <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
+          <p class="text-5xl font-bold text-black">1,200+</p>
+          <p class="text-lg text-gray-600" set:html={t.stats.hiddenUsage} />
+          <p class="text-sm text-gray-400">Business Insider, 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="relative left-1/2 mt-28 w-screen -translate-x-1/2 bg-black py-24 text-center"
+    >
+      <h2 class="text-5xl font-semibold text-white" set:html={t.bridge.title} />
+
+      <p
+        class="mx-auto mt-6 max-w-3xl text-xl text-gray-200"
+        set:html={t.bridge.subtitle}
+      />
+    </section>
+
+    <section>
+      <div class="mt-36 space-y-36">
+        <FeatureBlock
+          title={t.features.visibility.title}
+          body={t.features.visibility.body}
+          image={dashboard}
+        />
+
+        <FeatureBlock
+          title={t.features.pii.title}
+          body={t.features.pii.body}
+          image={redaction}
+          imageLeft
+        />
+
+        <FeatureBlock
+          title={t.features.guardrails.title}
+          body={t.features.guardrails.body}
+          image={guardrail}
+        />
+
+        <FeatureBlock
+          title={t.features.apps.title}
+          body={t.features.apps.body}
+          image={models}
+          imageLeft
+        />
+      </div>
+    </section>
+
+    <section class="mx-auto mt-48 px-8 py-24">
+      <h2 class="mb-12 text-center text-5xl font-semibold text-black">
+        {t.deepDives}
+      </h2>
+
+      <BlogGrid posts={posts} numCols={2} />
+
+      <a
+        class="mx-auto mt-12 flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-6 py-3 font-medium text-white transition hover:bg-white hover:text-black"
+        href={getRelativeLocaleUrl(currentLocale, "blog")}
+      >
+        {t.learnMore}
+      </a>
+    </section>
+
+    <section class="mx-auto mt-48 max-w-4xl px-8">
+      <h2 class="text-center text-4xl font-semibold text-black">
+        {t.faq.title}
+      </h2>
+      <p class="mt-2 text-center text-lg text-gray-500">
+        {t.faq.subtitle}
+      </p>
+
+      <div class="mt-12 divide-y divide-slate-200">
+        {
+          t.faq.content.map(({ question, answer }) => (
+            <details class="group py-6">
+              <summary class="flex cursor-pointer items-center justify-between text-lg font-medium text-black">
+                {question}
+                <Icon
+                  name="mdi:keyboard-arrow-down"
+                  size="32"
+                  class="ml-2 transition-transform duration-300 group-open:rotate-180"
+                />
+              </summary>
+              <p class="mt-4 text-gray-600">{answer}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <div class="mx-auto px-8">
+      <form
+        id="contact-us"
+        action={CONTACT_FORM_URL}
+        method="post"
+        class="mx-auto mt-36 max-w-2xl rounded-2xl border border-gray-200 bg-white p-8 shadow-sm hover:shadow-md"
+      >
+        <input type="hidden" name="_redirect" value={contactSuccessUrl} />
+
+        <h3 class="text-center text-3xl font-semibold tracking-tight">
+          {t.contactUs}
+        </h3>
+
+        <label for="email" class="mt-12 block text-sm font-medium text-gray-600"
+          >Email</label
+        >
+        <input
+          name="email"
+          id="email"
+          type="email"
+          required
+          class="mt-2 w-full rounded-xl border border-gray-300 px-4 py-2 text-gray-600 transition focus:ring-2 focus:ring-black focus:outline-none"
+        />
+
+        <label
+          for="message"
+          class="mt-8 block text-sm font-medium text-gray-600">Message</label
+        >
+        <textarea
+          name="message"
+          id="message"
+          rows="5"
+          required
+          class="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-600 transition focus:ring-2 focus:ring-black focus:outline-none"
+        ></textarea>
+
+        <button
+          type="submit"
+          class="mx-auto mt-6 flex cursor-pointer items-center gap-2 rounded-xl border-2 border-black bg-black px-4 py-2 font-medium text-white shadow-sm transition hover:bg-white hover:text-black"
+        >
+          {t.send}
+          <Icon name="mdi:send" />
+        </button>
+      </form>
+    </div>
+  </main>
 
   <style>
     .dotted-background {
