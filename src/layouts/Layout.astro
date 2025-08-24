@@ -166,11 +166,11 @@ const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
       </div>
 
       <div class="mx-auto mt-8 flex max-w-6xl items-center justify-between">
-        <div class="text-sm text-neutral-400">
+        <div class="text-xs text-neutral-400 sm:text-sm">
           {t.footer.copyright}
         </div>
-        <div class="inline-flex">
-          <LanguageButton locale="en" isLeft />
+        <div class="sm:space-x-2">
+          <LanguageButton locale="en" />
           <LanguageButton locale="fr" />
         </div>
       </div>
