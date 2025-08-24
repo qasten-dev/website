@@ -141,7 +141,10 @@ const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
               >
             </li>
             <li>
-              <a href="#" class="hover:text-white">{t.privacyPolicy}</a>
+              <a
+                href={getRelativeLocaleUrl(currentLocale, "privacy-policy")}
+                class="hover:text-white">{t.privacyPolicy}</a
+              >
             </li>
           </ul>
         </div>
