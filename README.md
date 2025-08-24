@@ -1,6 +1,6 @@
 # Website
 
-The [qasten.com](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_recommended-extensions) website.
+The [qasten.com](https://www.qasten.com) website.
 
 ## How to contribute
 
@@ -17,7 +17,7 @@ _Note: The following commands use pnpm, but you can use other package managers._
 
 ## Favicon
 
-Favicon was generated on https://favicon.io/ with the following config:
+Favicon was generated on [favicon.io](https://favicon.io/) with the following config:
 
 - Font Title: JetBrains Mono
 - Font Size: 125
