@@ -1,15 +1,11 @@
-import { DEFAULT_LOCALE } from "@/../astro.config.mjs";
-
 export function getTranslations(locale: string | undefined) {
   const safeLocale = getSafeCurrentLocale(locale);
   return translations[safeLocale];
 }
 
 export function getSafeCurrentLocale(locale: string | undefined) {
-  return locale === "fr" ? locale : DEFAULT_LOCALE;
+  return locale === "fr" ? locale : "en";
 }
-
-export { locales } from "@/../astro.config.mjs";
 
 const translations = {
   en: {
