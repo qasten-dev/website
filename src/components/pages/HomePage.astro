@@ -185,12 +185,11 @@ const contactSuccessUrl = getRedirectUrl({
       </div>
     </section>
 
-    <div class="mx-auto px-8">
+    <div class="mx-auto mt-24 px-8 pt-12" id="contact-us">
       <form
-        id="contact-us"
         action={CONTACT_FORM_URL}
         method="post"
-        class="mx-auto mt-36 max-w-2xl rounded-2xl border border-gray-200 bg-white p-8 shadow-sm hover:shadow-md"
+        class="mx-auto max-w-2xl rounded-2xl border border-gray-200 bg-white p-8 shadow-sm hover:shadow-md"
       >
         <input type="hidden" name="_redirect" value={contactSuccessUrl} />
 

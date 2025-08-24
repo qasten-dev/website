@@ -3,7 +3,7 @@ import { getSafeCurrentLocale } from "@/utils/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
-const { locale } = Astro.props;
+const { size, locale } = Astro.props;
 const { pathname } = Astro.url;
 
 const selected = locale === currentLocale;
@@ -11,14 +11,16 @@ const selected = locale === currentLocale;
 const localeFreePathname = pathname.startsWith(`/${currentLocale}/`)
   ? pathname.replace(`/${currentLocale}`, "")
   : pathname;
+
+const selectedClasses = selected
+  ? "bg-white text-black"
+  : "text-white inset-ring-2 inset-ring-white hover:bg-white hover:text-black cursor-pointer";
+
+const sizeClasses = size === "lg" ? "px-6 py-3 text-lg" : "px-4 py-2 text-sm";
 ---
 
 <button
-  class={`px-4 py-2 text-sm rounded-xl font-medium transition ${
-    selected
-      ? "bg-white text-black"
-      : "text-white inset-ring-2 inset-ring-white hover:bg-white hover:text-black cursor-pointer"
-  }`}
+  class={`${sizeClasses} rounded-xl font-medium transition ${selectedClasses}`}
   disabled={selected}
   onclick={selected
     ? undefined

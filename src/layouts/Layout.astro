@@ -103,6 +103,10 @@ const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
           <a href={blogURL}> Blog </a>
           <a href={aboutUsURL}> {t.aboutUs} </a>
           <a href={contactUsURL}> {t.contactUs} </a>
+          <div class="space-x-2">
+            <LanguageButton locale="en" size="lg" />
+            <LanguageButton locale="fr" size="lg" />
+          </div>
         </nav>
       </div>
     </header>
