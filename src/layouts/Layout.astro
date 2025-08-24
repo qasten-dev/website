@@ -16,10 +16,13 @@ const subscribeSuccessUrl = getRedirectUrl({
   currentLocale,
 });
 
-const contactUsUrl = getRelativeLocaleUrl(
+const contactUsURL = getRelativeLocaleUrl(
   currentLocale,
   "/#contact-us",
 ).replace(/\/$/, "");
+
+const blogURL = getRelativeLocaleUrl(currentLocale, "blog");
+const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
 ---
 
 <!doctype html>
@@ -42,35 +45,65 @@ const contactUsUrl = getRelativeLocaleUrl(
     <header
       class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 pt-6"
     >
-      <a
-        class="font-logo flex-1 cursor-pointer text-3xl font-bold text-black"
-        href={getRelativeLocaleUrl(currentLocale, "/")}>>Qasten</a
-      >
+      <div class="flex-1">
+        <a
+          class="font-logo cursor-pointer text-3xl font-bold text-black"
+          href={getRelativeLocaleUrl(currentLocale, "/")}>>Qasten</a
+        >
+      </div>
 
       <nav
-        class="flex items-center space-x-2 font-medium sm:space-x-6 md:space-x-12"
+        class="hidden items-center space-x-4 font-medium text-gray-600 sm:flex md:space-x-12"
       >
         <a
-          href={getRelativeLocaleUrl(currentLocale, "blog")}
-          class="rounded-lg px-4 py-2 text-gray-600 hover:bg-slate-200 hover:text-black"
+          href={blogURL}
+          class="rounded-lg px-4 py-2 hover:bg-gray-200 hover:text-black"
         >
           Blog
         </a>
         <a
-          href={getRelativeLocaleUrl(currentLocale, "about-us")}
-          class="rounded-lg px-4 py-2 text-gray-600 hover:bg-slate-200 hover:text-black"
+          href={aboutUsURL}
+          class="rounded-lg px-4 py-2 hover:bg-gray-200 hover:text-black"
         >
           {t.aboutUs}
         </a>
       </nav>
 
-      <div class="flex flex-1 justify-end">
+      <div class="hidden flex-1 justify-end sm:flex">
         <a
           class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
-          href={contactUsUrl}
+          href={contactUsURL}
         >
           {t.contactUs}
         </a>
+      </div>
+
+      <button
+        id="hamburger"
+        class="flex cursor-pointer flex-col space-y-1 hover:space-y-1.5 sm:hidden"
+      >
+        <span class="h-0.5 w-6 bg-black"></span>
+        <span class="h-0.5 w-6 bg-black"></span>
+        <span class="h-0.5 w-6 bg-black"></span>
+      </button>
+
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 z-10 hidden h-screen w-screen bg-black text-white"
+      >
+        <button
+          id="close-mobile-menu-button"
+          class="absolute top-2 right-4 cursor-pointer text-6xl"
+        >
+          &times;
+        </button>
+        <nav
+          class="flex h-screen flex-col items-center justify-center space-y-36 text-4xl font-semibold"
+        >
+          <a href={blogURL}> Blog </a>
+          <a href={aboutUsURL}> {t.aboutUs} </a>
+          <a href={contactUsURL}> {t.contactUs} </a>
+        </nav>
       </div>
     </header>
 
@@ -82,25 +115,17 @@ const contactUsUrl = getRelativeLocaleUrl(
       <div class="mx-auto flex max-w-6xl justify-between gap-24 px-4">
         <div>
           <a href={getRelativeLocaleUrl(currentLocale, "/")}
-            ><h3 class="font-logo mb-4 text-lg font-bold text-white">
-              >Qasten
-            </h3></a
+            ><h3 class="font-logo text-xl font-bold text-white">>Qasten</h3></a
           >
-          <ul class="space-y-4 text-sm text-neutral-400">
+          <ul class="mt-4 space-y-4 text-sm text-neutral-400">
             <li>
-              <a href={contactUsUrl} class="hover:text-white">{t.contactUs}</a>
+              <a href={contactUsURL} class="hover:text-white">{t.contactUs}</a>
             </li>
             <li>
-              <a
-                href={getRelativeLocaleUrl(currentLocale, "about-us")}
-                class="hover:text-white">{t.aboutUs}</a
-              >
+              <a href={aboutUsURL} class="hover:text-white">{t.aboutUs}</a>
             </li>
             <li>
-              <a
-                href={getRelativeLocaleUrl(currentLocale, "blog")}
-                class="hover:text-white">Blog</a
-              >
+              <a href={blogURL} class="hover:text-white">Blog</a>
             </li>
             <li>
               <a
@@ -150,14 +175,39 @@ const contactUsUrl = getRelativeLocaleUrl(
         </div>
       </div>
     </footer>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+
+    <script>
+      function main() {
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMobileMenuBtn = document.getElementById(
+          "close-mobile-menu-button",
+        );
+
+        if (!hamburger || !mobileMenu || !closeMobileMenuBtn) {
+          console.warn("Could not find selector for mobile menu");
+          return;
+        }
+
+        const toggleOpen = () => {
+          mobileMenu.classList.toggle("hidden");
+          document.body.classList.toggle("overflow-hidden"); // Disable scrolling through menu
+        };
+
+        hamburger.addEventListener("click", toggleOpen);
+        closeMobileMenuBtn.addEventListener("click", toggleOpen);
+      }
+
+      main();
+    </script>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
