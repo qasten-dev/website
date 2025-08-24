@@ -172,8 +172,8 @@ const contactSuccessUrl = getRedirectUrl({
       <div class="mt-12 divide-y divide-slate-200">
         {
           t.faq.content.map(({ question, answer }) => (
-            <details class="group py-6">
-              <summary class="flex cursor-pointer items-center justify-between text-lg font-medium text-black">
+            <details class="group">
+              <summary class="flex cursor-pointer items-center justify-between py-6 text-lg font-medium text-black">
                 {question}
                 <Icon
                   name="mdi:keyboard-arrow-down"
@@ -181,7 +181,7 @@ const contactSuccessUrl = getRedirectUrl({
                   class="ml-2 transition-transform duration-300 group-open:rotate-180"
                 />
               </summary>
-              <p class="mt-4 text-gray-600">{answer}</p>
+              <p class="pb-6 text-gray-600">{answer}</p>
             </details>
           ))
         }
