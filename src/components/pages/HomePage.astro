@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import librechat from "@/assets/librechat.webp";
-import models from "@/assets/models.webp";
+import gateway from "@/assets/gateway.png";
 import dashboard from "@/assets/dashboard.png";
 import redaction from "@/assets/redaction.png";
 import guardrail from "@/assets/guardrail.png";
@@ -70,12 +70,7 @@ const contactSuccessUrl = getRedirectUrl({
     </div>
 
     <div class="px-4">
-      <Image
-        src={librechat}
-        alt=""
-        priority
-        class="fade-in-up rounded-lg shadow-xl/25"
-      />
+      <Image src={gateway} alt="" priority class="fade-in-up mx-auto" />
     </div>
 
     <section class="mt-36 px-4 sm:px-8">
@@ -140,7 +135,7 @@ const contactSuccessUrl = getRedirectUrl({
         <FeatureBlock
           title={t.features.apps.title}
           body={t.features.apps.body}
-          image={models}
+          image={librechat}
           imageLeft
         />
       </div>
