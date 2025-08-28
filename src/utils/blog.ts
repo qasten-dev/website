@@ -1,21 +1,5 @@
-import type { AstroInstance, ImageMetadata } from "astro";
-import path from "node:path";
-
-export interface Metadata {
-  title: string;
-  summary: string;
-  date: Date;
-  author: string;
-  lengthMinutes: number;
-  image?: {
-    src: ImageMetadata;
-    alt: string;
-  };
-}
-
-export interface Blog extends AstroInstance {
-  metadata: Metadata;
-}
+import { getCollection } from "astro:content";
+import { getCollectionName } from "@/content.config";
 
 export function formatDate(date: Date) {
   return date.toLocaleDateString(undefined, {
@@ -24,22 +8,19 @@ export function formatDate(date: Date) {
   });
 }
 
-export function getPosts(currentLocale: string | undefined) {
-  const dir = currentLocale === "fr" ? "/src/pages/fr/blog" : "/src/pages/blog";
+export async function getPosts(locale: string | undefined) {
+  const posts = await getCollection(getCollectionName(locale));
 
-  const allPosts = Object.entries(
-    import.meta.glob<Blog>("@/pages/**/blog/*.astro", { eager: true }),
-  );
+  return posts.sort((a, b) => {
+    return a.data.date.getTime() - b.data.date.getTime();
+  });
+}
 
-  const localePosts = allPosts.filter(
-    ([filePath]) => path.parse(filePath).dir === dir,
-  );
+export async function getStaticPathsImpl(locale: string | undefined) {
+  const posts = await getCollection(getCollectionName(locale));
 
-  return localePosts
-    .map(([filePath, blog]) => {
-      return [path.parse(filePath).name, blog] as const;
-    })
-    .sort((a, b) => {
-      return a[1].metadata.date.getTime() - b[1].metadata.date.getTime();
-    });
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
 }

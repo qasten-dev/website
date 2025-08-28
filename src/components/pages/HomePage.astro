@@ -19,14 +19,9 @@ const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 
 const t = getTranslations(currentLocale);
 
-const highlightedPostsSlugs = [
-  "first-post",
-  "second-post",
-  "third-post",
-  "fourth-post",
-];
-const posts = getPosts(currentLocale).filter(([slug, _]) =>
-  highlightedPostsSlugs.includes(slug),
+const highlightedPostsSlugs = ["stop-treating-ai-like-a-commodity"];
+const posts = (await getPosts(currentLocale)).filter(({ id }) =>
+  highlightedPostsSlugs.includes(id),
 );
 
 const contactSuccessUrl = getRedirectUrl({

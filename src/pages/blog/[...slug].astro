@@ -1,0 +1,12 @@
+---
+import BlogPostPage from "@/components/pages/BlogPostPage.astro";
+import { getStaticPathsImpl } from "@/utils/blog";
+
+export async function getStaticPaths() {
+  return getStaticPathsImpl("en");
+}
+
+const { post } = Astro.props;
+---
+
+<BlogPostPage post={post} />

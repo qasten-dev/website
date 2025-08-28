@@ -1,31 +1,32 @@
 ---
-import { formatDate, type Blog } from "@/utils/blog";
+import { formatDate } from "@/utils/blog";
 import { getSafeCurrentLocale } from "@/utils/i18n";
 import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import type { Blog } from "@/content.config";
 
 const { posts, numCols = 3 } = Astro.props as {
-  posts: [string, Blog][];
+  posts: Blog[];
   numCols?: 2 | 3;
 };
+
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 const lgClass = numCols === 3 ? "lg:grid-cols-3" : "";
 ---
 
 <div class=`grid gap-8 sm:grid-cols-2 ${lgClass}`>
   {
-    posts.map(([path, { metadata }]) => (
+    posts.map(({ id, data }) => (
       <a
-        href={getRelativeLocaleUrl(currentLocale, `/blog/${path}`)}
+        href={getRelativeLocaleUrl(currentLocale, `/blog/${id}`)}
         class="block overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:bg-gray-100 hover:shadow-md"
       >
-        {metadata.image ? (
+        {data.image ? (
           <Image
-            src={metadata.image.src}
-            alt={metadata.image.alt}
+            src={data.image.src}
+            alt={data.image.alt}
             class="h-48 object-cover"
             loading="eager"
-            quality="low"
           />
         ) : (
           <div class="font-logo flex h-48 items-center justify-center bg-black text-2xl font-bold text-white">
@@ -34,11 +35,9 @@ const lgClass = numCols === 3 ? "lg:grid-cols-3" : "";
         )}
 
         <div class="p-4">
-          <h2 class="text-lg font-semibold">{metadata.title}</h2>
-          <p class="mt-2 text-xs text-gray-400">{formatDate(metadata.date)}</p>
-          <p class="mt-3 line-clamp-2 text-sm text-gray-600">
-            {metadata.summary}
-          </p>
+          <h2 class="text-lg font-semibold">{data.title}</h2>
+          <p class="mt-2 text-xs text-gray-400">{formatDate(data.date)}</p>
+          <p class="mt-3 line-clamp-2 text-sm text-gray-600">{data.summary}</p>
         </div>
       </a>
     ))

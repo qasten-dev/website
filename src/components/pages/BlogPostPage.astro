@@ -1,0 +1,36 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { formatDate } from "@/utils/blog";
+import { Image } from "astro:assets";
+import { type Blog } from "@/content.config";
+import { render } from "astro:content";
+
+const { post } = Astro.props as { post: Blog };
+
+const { Content } = await render(post);
+
+const { data } = post;
+---
+
+<Layout noBackground>
+  <main class="mt-24">
+    <div class="mx-auto w-full max-w-6xl px-8 text-center">
+      <h1 class="text-4xl font-semibold sm:text-6xl md:text-5xl">
+        {data.title}
+      </h1>
+      <p class="mt-6 font-medium text-gray-500">
+        {formatDate(data.date)}
+      </p>
+      <p class="mt-4 text-sm text-gray-500">
+        By {data.author} &nbsp;|&nbsp; {data.lengthInMinutes} min read
+      </p>
+    </div>
+    <article
+      class="prose mx-auto mt-8 w-full max-w-4xl px-4 leading-relaxed text-gray-700"
+    >
+      <Image src={data.image.src} alt={data.image.alt} />
+
+      <Content />
+    </article>
+  </main>
+</Layout>

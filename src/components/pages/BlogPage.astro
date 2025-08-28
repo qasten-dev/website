@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { getPosts } from "@/utils/blog";
 import BlogGrid from "../BlogGrid.astro";
 
-const posts = getPosts(Astro.currentLocale);
+const posts = await getPosts(Astro.currentLocale);
 ---
 
 <Layout>

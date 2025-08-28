@@ -24,6 +24,8 @@ const contactUsURL = getRelativeLocaleUrl(
 
 const blogURL = getRelativeLocaleUrl(currentLocale, "blog");
 const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
+
+const { noBackground } = Astro.props;
 ---
 
 <!doctype html>
@@ -42,7 +44,7 @@ const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
   </head>
 
   <body class="font-inter flex min-h-screen flex-col overflow-x-hidden">
-    <BackgroundStripes />
+    {noBackground ? undefined : <BackgroundStripes />}
     <header
       class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 pt-6"
     >
@@ -123,7 +125,7 @@ const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
             ><h3 class="font-logo text-xl font-bold text-white">>Qasten</h3></a
           >
           <p class="mt-2 text-xs text-white sm:text-sm">{t.footer.eu} 🇪🇺</p>
-          <ul class="mt-4 space-y-4 text-sm text-neutral-400">
+          <ul class="mt-8 space-y-4 text-sm text-neutral-400">
             <li>
               <a href={contactUsURL} class="hover:text-white">{t.contactUs}</a>
             </li>
