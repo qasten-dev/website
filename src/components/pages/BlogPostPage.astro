@@ -4,6 +4,7 @@ import { formatDate } from "@/utils/blog";
 import { Image } from "astro:assets";
 import { type Blog } from "@/content.config";
 import { render } from "astro:content";
+import { Icon } from "astro-icon/components";
 
 const { post } = Astro.props as { post: Blog };
 
@@ -24,6 +25,15 @@ const { data } = post;
       <p class="mt-4 text-sm text-gray-500">
         By {data.author} &nbsp;|&nbsp; {data.lengthInMinutes} min read
       </p>
+      <a
+        target="_blank"
+        rel="noopener"
+        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.href)}`}
+        ><Icon
+          name="mdi:linkedin"
+          class="mx-auto mt-4 cursor-pointer text-3xl text-sky-700"
+        />
+      </a>
     </div>
     <article
       class="prose prose-img:rounded-2xl mx-auto mt-8 w-full max-w-4xl px-4 leading-relaxed text-gray-700"
