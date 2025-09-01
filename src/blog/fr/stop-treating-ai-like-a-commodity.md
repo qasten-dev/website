@@ -1,6 +1,6 @@
 ---
-title: "Cessez de traiter l’IA comme une commodité"
-summary: "Si le verrouillage dans le cloud vous semblait déjà problématique, celui de l’IA sera catastrophique. Signer un contrat pluriannuel avec un fournisseur est la manière la plus rapide de perdre le contrôle de votre stratégie IA."
+title: "Cessez de traiter l'IA comme une commodité"
+summary: "Si le verrouillage dans le cloud vous semblait déjà problématique, celui de l'IA sera catastrophique. Signer un contrat pluriannuel avec un fournisseur est la manière la plus rapide de perdre le contrôle de votre stratégie IA."
 author: "Farouk Faiz"
 lengthInMinutes: 8
 image:
@@ -119,6 +119,6 @@ Posez-vous ces questions :
 
 **Chez Qasten, nous développons une plateforme pensée pour les entreprises européennes, afin de les aider à rester flexibles, conformes et souveraines.**
 
-➡️ Planifiez un [échange stratégique de 15 minutes](https://calendly.com/farouk-qasten/ai-strategy-session-15-min) pour découvrir comment nous pouvons vous aider renforcer la résilience, la souveraineté et l'agilité de votre organisation.
+➡️ Planifiez un [échange stratégique de 15 minutes](https://calendly.com/qasten/ai-strategy-session-15-min) pour découvrir comment nous pouvons vous aider renforcer la résilience, la souveraineté et l'agilité de votre organisation.
 
 Pas prêt à réserver ? Contactez-nous [ici](/fr/#contact-us) pour entamer la conversation.

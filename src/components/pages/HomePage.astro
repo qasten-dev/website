@@ -19,7 +19,10 @@ const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 
 const t = getTranslations(currentLocale);
 
-const highlightedPostsSlugs = ["stop-treating-ai-like-a-commodity"];
+const highlightedPostsSlugs = [
+  "stop-treating-ai-like-a-commodity",
+  "your-employees-are-smarter-than-your-ai-policy",
+];
 const posts = (await getPosts(currentLocale)).filter(({ id }) =>
   highlightedPostsSlugs.includes(id),
 );
