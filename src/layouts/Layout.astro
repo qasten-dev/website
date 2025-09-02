@@ -124,8 +124,10 @@ const { noBackground } = Astro.props;
           <a href={getRelativeLocaleUrl(currentLocale, "/")}
             ><h3 class="font-logo text-xl font-bold text-white">>Qasten</h3></a
           >
-          <p class="mt-2 text-xs text-white sm:text-sm">{t.footer.eu} 🇪🇺</p>
-          <ul class="mt-8 space-y-4 text-sm text-neutral-400">
+          <p class="mt-2 text-xs text-neutral-400 sm:text-sm">
+            {t.footer.eu} 🇪🇺
+          </p>
+          <ul class="mt-8 space-y-4 text-sm font-medium text-neutral-300">
             <li>
               <a href={contactUsURL} class="hover:text-white">{t.contactUs}</a>
             </li>
