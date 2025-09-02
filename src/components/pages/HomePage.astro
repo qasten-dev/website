@@ -76,21 +76,23 @@ const contactSuccessUrl = getRedirectUrl({
         class="mx-auto grid grid-cols-1 justify-items-center gap-y-12 text-center md:grid-cols-3"
       >
         <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
-          <p class="text-5xl font-bold text-black">34.8%</p>
-          <p class="text-lg text-gray-600" set:html={t.stats.sensitiveData} />
-          <p class="text-sm text-gray-400">HRD Magazine, 2025</p>
-        </div>
-
-        <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
+          <!-- https://www.securitymagazine.com/articles/101773-68-of-organizations-experienced-data-leakage-from-employee-ai-usage -->
           <p class="text-5xl font-bold text-black">68%</p>
           <p class="text-lg text-gray-600" set:html={t.stats.dataLeakage} />
           <p class="text-sm text-gray-400">Security Magazine, 2025</p>
         </div>
 
         <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
-          <p class="text-5xl font-bold text-black">1,200+</p>
+          <!-- https://www.businessinsider.com/kpmg-trust-in-ai-study-2025-how-employees-use-ai-2025-4 -->
+          <p class="text-5xl font-bold text-black">57%</p>
           <p class="text-lg text-gray-600" set:html={t.stats.hiddenUsage} />
           <p class="text-sm text-gray-400">Business Insider, 2025</p>
+        </div>
+        <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
+          <!-- https://www.hcamag.com/us/specialization/hr-technology/sensitive-corporate-data-increasingly-flowing-into-ai-tools/533213 -->
+          <p class="text-5xl font-bold text-black">35%</p>
+          <p class="text-lg text-gray-600" set:html={t.stats.sensitiveData} />
+          <p class="text-sm text-gray-400">HRD Magazine, 2025</p>
         </div>
       </div>
     </section>

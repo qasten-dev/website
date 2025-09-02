@@ -53,9 +53,9 @@ const translations = {
       sensitiveData:
         "of corporate data pasted into AI tools is considered <b>sensitive</b>",
       dataLeakage:
-        "of organizations have experienced data leakage due to employees using AI tools",
+        "of organizations have experienced <b>data leakage</b> due to employees using AI tools",
       hiddenUsage:
-        "of employees admitted to hiding their AI usage from their employer",
+        "of employees admitted to <b>hiding</b> their AI usage from their employer",
     },
     faq: {
       title: "Frequently Asked Questions",
@@ -179,9 +179,9 @@ const translations = {
       sensitiveData:
         "des données d'entreprise collées dans des outils d'IA sont considérées comme <b>sensible</b>",
       dataLeakage:
-        "des organisations ont connu des fuites de données dues à l'utilisation d'outils d'IA par leurs employés",
+        "des organisations ont connu des <b>fuites de données</b> dues à l'utilisation d'outils d'IA par leurs employés",
       hiddenUsage:
-        "des employés ont admis cacher leur utilisation de l'IA à leur employeur",
+        "des employés ont admis <b>cacher</b> leur utilisation de l'IA à leur employeur",
     },
     faq: {
       title: "Foire aux Questions",
