@@ -15,6 +15,7 @@ import BlogGrid from "../BlogGrid.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getSafeCurrentLocale } from "@/utils/i18n";
 import FAQ from "../FAQ.astro";
+import Underline from "../Underline.astro";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 
@@ -49,10 +50,14 @@ const contactSuccessUrl = getRedirectUrl({
       </div>
 
       <div class="fade-in-up flex flex-col items-center">
-        <h1
-          class="text-6xl leading-tight font-bold text-black lg:text-8xl"
-          set:html={t.hero.title}
-        />
+        <h1 class="text-6xl leading-tight font-bold text-black lg:text-8xl">
+          <span set:html={t.hero.title.preUnderline} />
+          <span class="relative inline-block">
+            {t.hero.title.underline}
+            <Underline />
+          </span>
+          <span set:html={t.hero.title.postUnderline} />
+        </h1>
 
         <p
           class="my-8 max-w-4xl text-xl leading-relaxed text-gray-600"

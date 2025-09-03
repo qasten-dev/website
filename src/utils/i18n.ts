@@ -13,7 +13,11 @@ const translations = {
     contactUs: "Contact us",
     security: "Security",
     hero: {
-      title: "The Team-First <br/> AI Workspace",
+      title: {
+        preUnderline: "The",
+        underline: "Team-First",
+        postUnderline: "<br/> AI Workspace",
+      },
       subtitle:
         "Qasten is a collaborative AI workspace that replaces scattered chat tools. <br/> <b>Start solo today, invite your team when you're ready.</b>",
     },
@@ -266,9 +270,13 @@ const translations = {
     contactUs: "Nous contacter",
     security: "Sécurité",
     hero: {
-      title: "IA d'entreprise <br /> sous votre contrôle",
+      title: {
+        preUnderline: "L'espace de travail IA <br/> pensé pour",
+        underline: "les équipes",
+        postUnderline: "",
+      },
       subtitle:
-        "Donnez à vos employés des applications IA prêtes à l'emploi,<br /> tout en gardant la <b>sécurité</b>, la <b>conformité</b> et les <b>coûts</b> sous contrôle.",
+        "Qasten est un espace collaboratif qui remplace les outils de chat dispersés. <br/> <b>Commencez seul dès aujourd'hui, invitez votre équipe quand vous le souhaitez.</b>",
     },
     bridge: {
       title: "Vos outils d'IA ont été pensés pour les individus",
