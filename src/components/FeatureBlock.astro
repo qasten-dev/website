@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-const { feature, image, imageLeft } = Astro.props;
+const { feature, image, imageLeft, rounded } = Astro.props;
 ---
 
 <div
@@ -16,7 +16,7 @@ const { feature, image, imageLeft } = Astro.props;
   <Image
     src={image}
     alt=""
-    class="min-h-80 w-full rounded-2xl object-cover shadow-lg"
+    class={`min-h-50 max-h-96 object-contain w-full ${rounded ? "rounded-2xl" : ""}`}
     loading="eager"
   />
 </div>
