@@ -38,8 +38,6 @@ Why? Because the pressure to deliver is immense, and the sanctioned tools are **
 
 Shadow AI isn't a hypothetical risk. It's happening now. And while it creates compliance and security concerns, it's also a **roadmap**.
 
----
-
 ## Shadow AI = Your Unpaid R&D Department
 
 Every time an employee turns to an external AI tool, they're telling you exactly where your workflows are broken.
@@ -47,8 +45,6 @@ Every time an employee turns to an external AI tool, they're telling you exactly
 This is **free experimentation at scale**. If hundreds of employees are hacking the same workflow, you haven't uncovered a security problem. You've uncovered a **huge opportunity**.
 
 Blocking it is like shutting down your most innovative lab.
-
----
 
 ## Why Blocking Is a Losing Game?
 

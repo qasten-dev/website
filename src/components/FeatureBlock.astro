@@ -1,14 +1,17 @@
 ---
 import { Image } from "astro:assets";
-const { title, image, imageLeft, body } = Astro.props;
+const { feature, image, imageLeft } = Astro.props;
 ---
 
 <div
   class="mx-4 grid grid-cols-1 items-center gap-x-16 gap-y-8 sm:mx-8 md:grid-cols-2"
 >
   <div class={imageLeft ? "md:order-2" : ""}>
-    <h3 class="text-3xl font-bold text-black">{title}</h3>
-    <p class="mt-6 leading-relaxed text-gray-600 sm:text-lg" set:html={body} />
+    <h3 class="text-3xl font-bold text-black">{feature.title}</h3>
+    <p
+      class="mt-6 leading-relaxed text-gray-600 sm:text-lg"
+      set:html={feature.body}
+    />
   </div>
   <Image
     src={image}

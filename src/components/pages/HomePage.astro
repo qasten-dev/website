@@ -36,7 +36,7 @@ const contactSuccessUrl = getRedirectUrl({
 ---
 
 <Layout>
-  <main class="mx-auto max-w-6xl">
+  <main class="mx-auto w-full max-w-6xl">
     <div class="relative px-4 pt-24 pb-16 text-center">
       <div class="hidden sm:block">
         <div class="absolute -z-20 h-full w-full bg-white"></div>
@@ -54,7 +54,7 @@ const contactSuccessUrl = getRedirectUrl({
         />
 
         <p
-          class="my-8 text-xl leading-relaxed text-gray-600"
+          class="my-8 max-w-4xl text-xl leading-relaxed text-gray-600"
           set:html={t.hero.subtitle}
         />
 
@@ -71,32 +71,6 @@ const contactSuccessUrl = getRedirectUrl({
       <Image src={gateway} alt="" priority class="fade-in-up mx-auto" />
     </div>
 
-    <section class="mt-36 px-4 sm:px-8">
-      <div
-        class="mx-auto grid grid-cols-1 justify-items-center gap-y-12 text-center md:grid-cols-3"
-      >
-        <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
-          <!-- https://www.securitymagazine.com/articles/101773-68-of-organizations-experienced-data-leakage-from-employee-ai-usage -->
-          <p class="text-5xl font-bold text-black">68%</p>
-          <p class="text-lg text-gray-600" set:html={t.stats.dataLeakage} />
-          <p class="text-sm text-gray-400">Security Magazine, 2025</p>
-        </div>
-
-        <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
-          <!-- https://www.businessinsider.com/kpmg-trust-in-ai-study-2025-how-employees-use-ai-2025-4 -->
-          <p class="text-5xl font-bold text-black">57%</p>
-          <p class="text-lg text-gray-600" set:html={t.stats.hiddenUsage} />
-          <p class="text-sm text-gray-400">Business Insider, 2025</p>
-        </div>
-        <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
-          <!-- https://www.hcamag.com/us/specialization/hr-technology/sensitive-corporate-data-increasingly-flowing-into-ai-tools/533213 -->
-          <p class="text-5xl font-bold text-black">35%</p>
-          <p class="text-lg text-gray-600" set:html={t.stats.sensitiveData} />
-          <p class="text-sm text-gray-400">HRD Magazine, 2025</p>
-        </div>
-      </div>
-    </section>
-
     <section
       class="relative left-1/2 mt-28 w-screen -translate-x-1/2 bg-black px-4 py-24 text-center"
     >
@@ -106,35 +80,37 @@ const contactSuccessUrl = getRedirectUrl({
       />
 
       <p
-        class="mx-auto mt-6 max-w-3xl text-lg text-gray-100 sm:text-xl"
-        set:html={t.bridge.subtitle}
+        class="mx-auto mt-12 max-w-3xl text-lg text-gray-200 italic sm:text-xl"
+        set:html={t.bridge.subtitle1}
+      />
+      <p
+        class="mx-auto mt-12 max-w-4xl text-lg font-bold text-gray-100 sm:text-xl"
+        set:html={t.bridge.subtitle2}
       />
     </section>
 
     <section>
       <div class="mt-36 space-y-36">
-        <FeatureBlock
-          title={t.features.visibility.title}
-          body={t.features.visibility.body}
-          image={dashboard}
-        />
+        <FeatureBlock feature={t.features.team} image={dashboard} />
+
+        <FeatureBlock feature={t.features.kb} image={redaction} imageLeft />
+
+        <FeatureBlock feature={t.features.brainstorm} image={guardrail} />
 
         <FeatureBlock
-          title={t.features.pii.title}
-          body={t.features.pii.body}
-          image={redaction}
+          feature={t.features.workflows}
+          image={librechat}
           imageLeft
         />
 
-        <FeatureBlock
-          title={t.features.guardrails.title}
-          body={t.features.guardrails.body}
-          image={guardrail}
-        />
+        <FeatureBlock feature={t.features.models} image={guardrail} />
+
+        <FeatureBlock feature={t.features.source} image={librechat} imageLeft />
+
+        <FeatureBlock feature={t.features.visibility} image={guardrail} />
 
         <FeatureBlock
-          title={t.features.apps.title}
-          body={t.features.apps.body}
+          feature={t.features.security}
           image={librechat}
           imageLeft
         />
@@ -176,7 +152,10 @@ const contactSuccessUrl = getRedirectUrl({
                   class="ml-2 transition-transform duration-300 group-open:rotate-180"
                 />
               </summary>
-              <p class="pb-6 text-gray-600">{answer}</p>
+              <p
+                class="prose max-w-none pb-6 text-gray-600"
+                set:html={answer}
+              />
             </details>
           ))
         }
