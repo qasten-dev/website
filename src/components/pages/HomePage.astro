@@ -14,6 +14,7 @@ import { getPosts } from "@/utils/blog";
 import BlogGrid from "../BlogGrid.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getSafeCurrentLocale } from "@/utils/i18n";
+import FAQ from "../FAQ.astro";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 
@@ -140,25 +141,8 @@ const contactSuccessUrl = getRedirectUrl({
         {t.faq.subtitle}
       </p>
 
-      <div class="mt-12 divide-y divide-slate-200">
-        {
-          t.faq.content.map(({ question, answer }) => (
-            <details class="group">
-              <summary class="flex cursor-pointer items-center justify-between py-6 text-lg font-medium text-black">
-                {question}
-                <Icon
-                  name="mdi:keyboard-arrow-down"
-                  size="32"
-                  class="ml-2 transition-transform duration-300 group-open:rotate-180"
-                />
-              </summary>
-              <p
-                class="prose max-w-none pb-6 text-gray-600"
-                set:html={answer}
-              />
-            </details>
-          ))
-        }
+      <div class="mt-12">
+        <FAQ faq={t.faq.content} />
       </div>
     </section>
 

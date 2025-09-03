@@ -11,6 +11,7 @@ const translations = {
   en: {
     aboutUs: "About us",
     contactUs: "Contact us",
+    security: "Security",
     hero: {
       title: "The Team-First <br/> AI Workspace",
       subtitle:
@@ -67,13 +68,112 @@ const translations = {
       subtitle: "We'll keep you updated with the latest from Qasten.",
     },
     back: "Go back",
-    stats: {
-      sensitiveData:
-        "of corporate data pasted into AI tools is considered <b>sensitive</b>",
-      dataLeakage:
-        "of organizations have experienced <b>data leakage</b> due to employees using AI tools",
-      hiddenUsage:
-        "of employees admitted to <b>hiding</b> their AI usage from their employer",
+
+    sec: {
+      title: "Security First, Always",
+      subtitle:
+        "<b>Shadow AI</b> is already creating risks inside your company. Security cannot be an afterthought.",
+      stats: {
+        sensitiveData:
+          "of corporate data pasted into AI tools is considered <b>sensitive</b>",
+        dataLeakage:
+          "of organizations have experienced <b>data leakage</b> due to employees using AI tools",
+        hiddenUsage:
+          "of employees admitted to <b>hiding</b> their AI usage from their employer",
+      },
+      principles: {
+        title: "Our Security Principles",
+        euFirst: {
+          title: "EU-first",
+          description:
+            "Built in Europe, with sovereignty and European regulatory needs in mind.",
+        },
+        transparency: {
+          title: "Transparency",
+          description:
+            "No hidden training, no black boxes. You know where your data goes.",
+        },
+        control: {
+          title: "Control",
+          description:
+            "You decide which models, regions, and providers are allowed.",
+        },
+        securityThroughUx: {
+          title: "Security through UX",
+          description:
+            "Employees adopt Qasten because it's easier than <b>Shadow AI</b>.",
+        },
+      },
+      measures: {
+        title: "Security Measures",
+        euHosting: {
+          title: "EU Hosting",
+          description:
+            "All data is processed in the EU by default, with the option to restrict providers outside.",
+        },
+        noThirdPartyStorage: {
+          title: "No Third-Party Storage",
+          description: "Content is never stored on model providers' servers.",
+        },
+        zeroTrainingRetention: {
+          title: "Zero Training Retention",
+          description: "Your data is never used to train external models.",
+        },
+        encryption: {
+          title: "Encryption",
+          description:
+            "All data encrypted in transit (TLS 1.2+) and at rest (AES-256).",
+        },
+        adminControls: {
+          title: "Admin Controls",
+          description:
+            "Model/region allowlists, audit logs, and retention settings give you full control.",
+        },
+        piiRedaction: {
+          title: "PII Redaction",
+          description:
+            "Sensitive personal data is automatically detected and removed before being sent to models.",
+        },
+        contentFiltering: {
+          title: "Content Filtering",
+          description:
+            "Admins can define rules to block or reroute prompts containing sensitive data, with clear feedback to users.",
+        },
+        auditAlerts: {
+          title: "Audit & Alerts",
+          description:
+            "Every action is logged. Get alerts for potential leaks or policy violations.",
+        },
+      },
+      faq: {
+        title: "Security FAQ",
+        content: [
+          {
+            question: "What data does Qasten store?",
+            answer:
+              "We store the data required to provide the service: user and account information, conversations, saved workflows, and knowledge base entries. All content is encrypted at rest (AES-256) and in transit (TLS 1.2+). Retention policies let you control how long data is kept.",
+          },
+          {
+            question: "Can I delete my data?",
+            answer:
+              "<b>Yes</b>. Every user can delete their own conversations and workflows. Admins can configure retention policies and delete data at the account level, but they cannot read private conversations.",
+          },
+          {
+            question: "Does Qasten use my data to train models?",
+            answer:
+              "<b>No. Never.</b> Your data is never used to train any models. We enforce a Zero Data Retention (ZDR) policy with our AI providers, contractually ensuring they do not store or train on your data.",
+          },
+          {
+            question: "Where is my data processed?",
+            answer:
+              "Qasten is hosted in the EU. As an administrator, you have full control. You can configure your workspace to only use AI providers that are also hosted within the EU, ensuring complete data sovereignty.",
+          },
+        ],
+      },
+      conclusion: {
+        title: "Security isn't an add-on. It's the foundation of Qasten.",
+        subtitle: "Want to learn more? Contact us for a security briefing.",
+      },
     },
     faq: {
       title: "Frequently Asked Questions",
@@ -92,7 +192,7 @@ const translations = {
         {
           question: "Which AI models are supported?",
           answer:
-            "You can access all leading commercial models like GPT-5, Claude 4, Gemini, open-source models, and more. We believe in model neutrality, so you always have the right model for the right task. Learn more in our <a href='/blog/stop-treating-ai-like-a-commodity'>blog post</a>.",
+            "You can access all leading commercial models like GPT-5, Claude 4, Gemini, Mistral, open-source models, and more. We believe in model neutrality, so you always have the right model for the right task. Learn more in our <a href='/blog/stop-treating-ai-like-a-commodity'>blog post</a>.",
         },
         {
           question: "How does Qasten guarantee data security and sovereignty?",
@@ -164,6 +264,7 @@ const translations = {
   fr: {
     aboutUs: "À propos",
     contactUs: "Nous contacter",
+    security: "Sécurité",
     hero: {
       title: "IA d'entreprise <br /> sous votre contrôle",
       subtitle:
@@ -172,7 +273,7 @@ const translations = {
     bridge: {
       title: "Vos outils d'IA ont été pensés pour les individus",
       subtitle1:
-        "Le <b>Shadow AI</b> est déjà partout dans vos équipes. <br/> Outils différents, comptes personnels, prompts isolés.",
+        "Le <b>Shadow IA</b> est déjà partout dans vos équipes. <br/> Outils différents, comptes personnels, prompts isolés.",
       subtitle2:
         "La connaissance ne s'accumule pas, la collaboration n'existe pas, et la valeur se perd.",
     },
@@ -222,14 +323,117 @@ const translations = {
     },
     back: "Retour",
 
-    stats: {
-      sensitiveData:
-        "des données d'entreprise collées dans des outils d'IA sont considérées comme <b>sensible</b>",
-      dataLeakage:
-        "des organisations ont connu des <b>fuites de données</b> dues à l'utilisation d'outils d'IA par leurs employés",
-      hiddenUsage:
-        "des employés ont admis <b>cacher</b> leur utilisation de l'IA à leur employeur",
+    sec: {
+      title: "La sécurité avant tout",
+      subtitle:
+        "Le <b>Shadow IA</b> crée déjà des risques dans votre entreprise. La sécurité ne peut pas être une option secondaire.",
+      stats: {
+        sensitiveData:
+          "des données d'entreprise collées dans des outils d'IA sont considérées comme <b>sensibles</b>",
+        dataLeakage:
+          "des organisations ont déjà subi une <b>fuite de données</b> à cause de l'usage d'IA par leurs employés",
+        hiddenUsage:
+          "des employés reconnaissent avoir <b>dissimulé</b> leur utilisation de l'IA à leur employeur",
+      },
+      principles: {
+        title: "Nos principes de sécurité",
+        euFirst: {
+          title: "Priorité à l'Europe",
+          description:
+            "Conçu en Europe, avec la souveraineté et les exigences réglementaires européennes au cœur.",
+        },
+        transparency: {
+          title: "Transparence",
+          description:
+            "Pas d'entraînement caché, pas de boîte noire. Vous savez toujours où vont vos données.",
+        },
+        control: {
+          title: "Contrôle",
+          description:
+            "Vous choisissez quels modèles, régions et fournisseurs sont autorisés.",
+        },
+        securityThroughUx: {
+          title: "La sécurité par l'adoption",
+          description:
+            "Les équipes adoptent Qasten parce qu'il est plus simple et plus sûr que le <b>Shadow IA</b>.",
+        },
+      },
+      measures: {
+        title: "Nos mesures de protection",
+        euHosting: {
+          title: "Hébergement en Europe",
+          description:
+            "Toutes les données sont traitées par défaut dans l'UE, avec la possibilité de bloquer les fournisseurs externes.",
+        },
+        noThirdPartyStorage: {
+          title: "Aucun stockage externe",
+          description:
+            "Les contenus ne sont jamais conservés sur les serveurs des fournisseurs de modèles.",
+        },
+        zeroTrainingRetention: {
+          title: "Aucune réutilisation pour l'entraînement",
+          description:
+            "Vos données ne servent jamais à entraîner des modèles externes.",
+        },
+        encryption: {
+          title: "Chiffrement",
+          description:
+            "Toutes les données sont chiffrées en transit (TLS 1.2+) et au repos (AES-256).",
+        },
+        adminControls: {
+          title: "Contrôles administrateur",
+          description:
+            "Listes d'autorisations par modèle/région, journaux d'audit et politiques de rétention pour un contrôle total.",
+        },
+        piiRedaction: {
+          title: "Suppression des données personnelles",
+          description:
+            "Les informations sensibles sont automatiquement détectées et masquées avant d'être envoyées aux modèles.",
+        },
+        contentFiltering: {
+          title: "Filtrage de contenu",
+          description:
+            "Les administrateurs définissent des règles pour bloquer ou rediriger les prompts contenant des données sensibles, avec un retour clair pour les utilisateurs.",
+        },
+        auditAlerts: {
+          title: "Audit & alertes",
+          description:
+            "Chaque action est journalisée. Recevez des alertes en cas de fuite potentielle ou de non-conformité.",
+        },
+      },
+      faq: {
+        title: "FAQ Sécurité",
+        content: [
+          {
+            question: "Quelles données sont conservées ?",
+            answer:
+              "Nous stockons uniquement les données nécessaires au service : informations utilisateur et compte, conversations, workflows enregistrés et entrées de base de connaissances. Tout est chiffré au repos (AES-256) et en transit (TLS 1.2+). Les politiques de rétention vous permettent de décider combien de temps ces données sont conservées.",
+          },
+          {
+            question: "Puis-je supprimer mes données ?",
+            answer:
+              "<b>Oui</b>. Chaque utilisateur peut supprimer ses conversations et workflows. Les administrateurs peuvent définir des politiques de rétention et supprimer des données au niveau du compte, mais ils n'ont pas accès aux conversations privées.",
+          },
+          {
+            question:
+              "Est-ce que Qasten utilise mes données pour entraîner des modèles ?",
+            answer:
+              "<b>Non. Jamais.</b> Vos données ne servent jamais à l'entraînement de modèles. Nous appliquons une politique stricte de Zero Data Retention (ZDR) avec nos fournisseurs d'IA, qui garantit contractuellement l'absence de stockage ou d'entraînement sur vos données.",
+          },
+          {
+            question: "Où mes données sont-elles traitées ?",
+            answer:
+              "Qasten est hébergé dans l'UE. En tant qu'administrateur, vous gardez le contrôle total : vous pouvez configurer votre espace pour n'utiliser que des fournisseurs d'IA également hébergés en Europe, assurant ainsi une souveraineté complète.",
+          },
+        ],
+      },
+      conclusion: {
+        title: "La sécurité n'est pas une option. C'est le socle de Qasten.",
+        subtitle:
+          "Envie d'en savoir plus ? Contactez-nous pour un briefing sécurité.",
+      },
     },
+
     faq: {
       title: "Foire aux Questions",
       subtitle: "Tout ce que vous devez savoir sur Qasten.",
@@ -247,7 +451,7 @@ const translations = {
         {
           question: "Quels modèles d'IA sont disponibles ?",
           answer:
-            "Vous accédez aux principaux modèles du marché comme GPT-5, Claude 4, Gemini, ainsi qu'aux modèles open-source. Nous croyons à la neutralité des modèles : vous avez toujours le bon modèle pour la bonne tâche. Plus d'infos dans notre <a href='/fr/blog/stop-treating-ai-like-a-commodity'>article de blog</a>.",
+            "Vous accédez aux principaux modèles du marché comme GPT-5, Claude 4, Gemini, Mistral, ainsi qu'aux modèles open-source. Nous croyons à la neutralité des modèles : vous avez toujours le bon modèle pour la bonne tâche. Plus d'infos dans notre <a href='/fr/blog/stop-treating-ai-like-a-commodity'>article de blog</a>.",
         },
         {
           question:

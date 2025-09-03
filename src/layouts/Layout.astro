@@ -24,7 +24,7 @@ const contactUsURL = getRelativeLocaleUrl(
 
 const blogURL = getRelativeLocaleUrl(currentLocale, "blog");
 const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
-
+const securityURL = getRelativeLocaleUrl(currentLocale, "security");
 const { noBackground } = Astro.props;
 ---
 
@@ -70,6 +70,12 @@ const { noBackground } = Astro.props;
         >
           {t.aboutUs}
         </a>
+        <a
+          href={securityURL}
+          class="rounded-lg px-4 py-2 hover:bg-gray-200 hover:text-black"
+        >
+          {t.security}
+        </a>
       </nav>
 
       <div class="hidden flex-1 justify-end sm:flex">
@@ -106,6 +112,7 @@ const { noBackground } = Astro.props;
           <a href={blogURL}> Blog </a>
           <a href={aboutUsURL}> {t.aboutUs} </a>
           <a href={contactUsURL}> {t.contactUs} </a>
+          <a href={securityURL}> {t.security} </a>
           <div class="space-x-2">
             <LanguageButton locale="en" size="lg" />
             <LanguageButton locale="fr" size="lg" />
@@ -133,6 +140,9 @@ const { noBackground } = Astro.props;
             </li>
             <li>
               <a href={aboutUsURL} class="hover:text-white">{t.aboutUs}</a>
+            </li>
+            <li>
+              <a href={securityURL} class="hover:text-white">{t.security}</a>
             </li>
             <li>
               <a href={blogURL} class="hover:text-white">Blog</a>

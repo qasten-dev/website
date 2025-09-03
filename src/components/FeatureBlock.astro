@@ -9,7 +9,7 @@ const { feature, image, imageLeft } = Astro.props;
   <div class={imageLeft ? "md:order-2" : ""}>
     <h3 class="text-3xl font-bold text-black">{feature.title}</h3>
     <p
-      class="mt-6 leading-relaxed text-gray-600 sm:text-lg"
+      class="prose mt-6 leading-relaxed text-gray-600 sm:text-lg"
       set:html={feature.body}
     />
   </div>
