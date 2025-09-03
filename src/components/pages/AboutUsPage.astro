@@ -5,9 +5,20 @@ import farouk from "@/assets/farouk.png";
 import youssef from "@/assets/youssef.png";
 import achraf from "@/assets/achraf.jpeg";
 import { Icon } from "astro-icon/components";
-import { getTranslations } from "@/utils/i18n";
+import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
-const t = getTranslations(Astro.currentLocale);
+const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
+
+const t = getTranslations(currentLocale);
+const modelNeutralityBlog = getRelativeLocaleUrl(
+  currentLocale,
+  `/blog/stop-treating-ai-like-a-commodity`,
+);
+const adoptionBlog = getRelativeLocaleUrl(
+  currentLocale,
+  `/blog/your-employees-are-smarter-than-your-ai-policy`,
+);
 ---
 
 <Layout>
@@ -30,31 +41,34 @@ const t = getTranslations(Astro.currentLocale);
     </section>
 
     <section class="mt-24">
-      <h2 class="text-center text-3xl font-semibold">{t.about.ourValues}</h2>
-      <div class="mt-8 grid gap-8 text-center md:grid-cols-3">
-        <div class="p-6">
-          <Icon name="mdi:shield-check" class="mx-auto text-4xl" />
-          <h3 class="mt-2 text-xl font-semibold">
-            {t.about.securityFirst.title}
+      <h2 class="text-center text-3xl font-semibold">{t.about.ourBeliefs}</h2>
+      <div class="mt-8 grid gap-4 lg:grid-cols-3">
+        <div class="p-4">
+          <h3 class="mt-2 items-center text-xl font-semibold">
+            🔀 {t.about.models.title}
           </h3>
-          <p class="mt-2 text-gray-600">
-            {t.about.securityFirst.body}
+          <p class="prose mt-2 text-gray-600">
+            {t.about.models.body}
+            <a href={modelNeutralityBlog}>{t.about.readPost}</a>
           </p>
         </div>
-        <div class="p-6">
-          <Icon name="mdi:lightning-bolt" class="mx-auto text-4xl" />
-          <h3 class="mt-2 text-xl font-semibold">
-            {t.about.empowerment.title}
+        <div class="p-4">
+          <h3 class="mt-2 items-center text-xl font-semibold">
+            📈
+            {t.about.adoption.title}
           </h3>
-          <p class="mt-2 text-gray-600">
-            {t.about.empowerment.body}
+          <p class="prose mt-2 text-gray-600">
+            {t.about.adoption.body}
+            <a href={adoptionBlog}>{t.about.readPost}</a>
           </p>
         </div>
-        <div class="p-6">
-          <Icon name="mdi:magnify" class="mx-auto text-4xl" />
-          <h3 class="mt-2 text-xl font-semibold">{t.about.clarity.title}</h3>
-          <p class="mt-2 text-gray-600">
-            {t.about.clarity.body}
+        <div class="p-4">
+          <h3 class="mt-2 items-center text-xl font-semibold">
+            🤝
+            {t.about.teams.title}
+          </h3>
+          <p class="prose mt-2 text-gray-600">
+            {t.about.teams.body}
           </p>
         </div>
       </div>

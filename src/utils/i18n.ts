@@ -231,26 +231,26 @@ const translations = {
     about: {
       title: "About Qasten",
       tagline:
-        "Empowering every company to adopt AI with confidence. We build private AI platforms that put security, governance, and control back in your hands.",
+        "On a mission to unlock collective intelligence. Qasten makes AI collaborative and easy to adopt, while giving companies the trust and control they need.",
       ourStory: "Our Story",
-      ourValues: "Our Values",
+      ourBeliefs: "Our Beliefs",
       meetTheFounders: "Meet the Founders",
+      readPost: "Read the blog post.",
       story: [
-        "We've seen first-hand how large enterprises struggled to integrate AI into their workflows. Each of us came from companies where teams rolled out internal tools: powerful, but often fragmented, complex, or limited to those with the biggest budgets.",
-
-        "We founded Qasten with a simple idea: <b>every company, from fast-growing startups to global enterprises, should have access to AI platforms with the same level of control and reliability once reserved for large tech organizations.</b>",
+        "When ChatGPT launched, it gave individuals superpowers, but left teams behind. The interface was built for solo use: one person, one chat, no memory across the organization. We noticed the real opportunity for AI isn't just faster individuals, it's smarter teams.",
+        "We founded Qasten to build the missing interface: the AI workspace designed for collaboration. A place where knowledge compounds, workflows are shared, and collective intelligence becomes a daily reality. That's how AI truly transforms work.",
       ],
-      securityFirst: {
-        title: "Security First",
-        body: "Your data never leaves your infrastructure.",
+      models: {
+        title: "Model Neutrality",
+        body: "AI models aren't commodities. Each excels at different tasks, and the frontier keeps shifting. Neutrality is the only way to stay effective and future-proof.",
       },
-      empowerment: {
-        title: "Empowerment",
-        body: "AI should accelerate employees, not restrict them.",
+      adoption: {
+        title: "Adoption over Restriction",
+        body: "Shadow AI cannot be solved by bans. The only sustainable path is to give them something safer and better than what they use in secret.",
       },
-      clarity: {
-        title: "Clarity",
-        body: "Transparent governance, observability, and cost visibility.",
+      teams: {
+        title: "Teams, Not Individuals",
+        body: "AI's true potential isn't in isolated chats. It's in amplifying collective intelligence where knowledge compounds, ideas build on each other, and teams work smarter together.",
       },
       farouk:
         "Former Software Engineer at <b>AWS</b> and <b>Uber</b>, expert in cloud platforms.",
@@ -491,26 +491,26 @@ const translations = {
     about: {
       title: "À propos de Qasten",
       tagline:
-        "Permettre à chaque entreprise d'adopter l'IA en toute confiance. Nous construisons des plateformes d'IA privées qui redonnent sécurité, gouvernance et contrôle à vos équipes.",
+        "En mission pour libérer l'intelligence collective. Qasten rend l'IA collaborative tout en offrant aux entreprises la confiance et le contrôle dont elles ont besoin.",
       ourStory: "Notre histoire",
-      ourValues: "Nos valeurs",
+      ourBeliefs: "Nos convictions",
       meetTheFounders: "Rencontrez les fondateurs",
+      readPost: "Lire l'article.",
       story: [
-        "Nous avons constaté de première main comment de grandes entreprises peinaient à intégrer l'IA dans leurs processus. Chacun de nous vient d'organisations où des outils internes étaient déployés : puissants, mais souvent fragmentés, complexes, ou réservés à ceux disposant des budgets les plus élevés.",
-
-        "Nous avons fondé Qasten avec une idée simple : <b>toute entreprise, des startups en forte croissance aux grands groupes internationaux, devrait pouvoir accéder à des plateformes d'IA offrant le même niveau de contrôle et de fiabilité autrefois réservé aux géants de la tech.</b>",
+        "Quand ChatGPT est apparu, il a donné des super-pouvoirs aux individus, mais a laissé les équipes de côté. L'interface était pensée pour un usage solitaire : une personne, une conversation, aucune mémoire partagée dans l'organisation. Nous avons remarqué que le vrai potentiel de l'IA n'est pas d'accélérer les individus, mais de rendre les équipes plus intelligentes.",
+        "Nous avons créé Qasten pour bâtir l'interface manquante : l'espace de travail IA conçu pour la collaboration. Un lieu où la connaissance s'accumule, où les workflows se partagent, et où l'intelligence collective devient une réalité quotidienne. C'est ainsi que l'IA transforme réellement le travail.",
       ],
-      securityFirst: {
-        title: "La sécurité avant tout",
-        body: "Vos données ne quittent jamais votre infrastructure.",
+      models: {
+        title: "Neutralité des modèles",
+        body: "Les modèles d'IA ne sont pas des commodités interchangeables. Chacun excelle dans des tâches différentes, et le paysage évolue sans cesse. La neutralité est la seule façon de rester efficace et durable.",
       },
-      empowerment: {
-        title: "Autonomisation",
-        body: "L'IA doit accélérer vos collaborateurs, pas les contraindre.",
+      adoption: {
+        title: "Adoption plutôt qu'interdiction",
+        body: "Le Shadow AI ne disparaît pas avec des blocages. La seule voie durable est d'offrir aux équipes une alternative plus sûre et plus performante que les outils qu'elles utilisent en secret.",
       },
-      clarity: {
-        title: "Clarté",
-        body: "Gouvernance transparente, observabilité et visibilité des coûts.",
+      teams: {
+        title: "Pensé pour les équipes",
+        body: "Le vrai potentiel de l'IA ne réside pas dans des conversations isolées. Il est dans l'intelligence collective : là où la connaissance s'accumule, où les idées se nourrissent entre elles, et où les équipes travaillent plus intelligemment ensemble.",
       },
       farouk:
         "Ancien ingénieur logiciel chez <b>AWS</b> et <b>Uber</b>, expert en plateformes cloud.",
