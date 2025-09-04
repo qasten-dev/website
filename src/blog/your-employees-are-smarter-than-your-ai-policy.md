@@ -48,7 +48,7 @@ Blocking it is like shutting down your most innovative lab.
 
 ## Why Blocking Is a Losing Game?
 
-![LLMs Whack-A-Mole](/src/assets/blog/whack-a-mole.png)
+![LLMs Whack-A-Mole](../assets/blog/whack-a-mole.png)
 
 The instinct of many IT departments is to ban or block. But this is **whack-a-mole security theatre**:
 

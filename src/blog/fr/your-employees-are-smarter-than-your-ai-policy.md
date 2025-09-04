@@ -48,7 +48,7 @@ Bloquer cela revient à fermer votre laboratoire le plus innovant.
 
 ## Pourquoi bloquer est une impasse ?
 
-![LLMs Whack-A-Mole](/src/assets/blog/whack-a-mole.png)
+![LLMs Whack-A-Mole](../../assets/blog/whack-a-mole.png)
 
 La réaction instinctive de beaucoup de DSI ou RSSI est d'interdire ou de bloquer. Mais c'est jouer au jeu de la taupe indéfiniment, une illusion de sécurité :
 

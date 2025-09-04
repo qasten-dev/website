@@ -49,7 +49,7 @@ In AI, there is no permanent winner:
 - By summer 2025, **Google**'s Gemini 2.5 Pro and **xAI**'s Grok 4 had caught up.
 - Meanwhile, **Mistral AI** and other European players released models that outperform US competitors in specific tasks, especially in French and European contexts.
 
-![LLM Frontier Labs Race](/src/assets/blog/race.png)
+![LLM Frontier Labs Race](../assets/blog/race.png)
 
 **The "best" model is a moving target.** Committing to a single vendor for a multi-year contract means betting your company's future on today's technology.
 

@@ -49,7 +49,7 @@ En IA, il n'existe pas de vainqueur durable :
 
 **Le « meilleur modèle » est une cible qui bouge.** S'engager sur plusieurs années avec un seul fournisseur, c'est parier l'avenir de votre entreprise sur la technologie du passé.
 
-![La course aux LLMs](/src/assets/blog/race.png)
+![La course aux LLMs](../../assets/blog/race.png)
 
 ## Le bon outil pour la bonne tâche
 
