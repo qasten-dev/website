@@ -26,6 +26,11 @@ const blogURL = getRelativeLocaleUrl(currentLocale, "blog");
 const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
 const securityURL = getRelativeLocaleUrl(currentLocale, "security");
 const { noBackground } = Astro.props;
+
+const {
+  title = "Qasten",
+  description = "Qasten is the AI workspace for teams.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -33,6 +38,7 @@ const { noBackground } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -40,7 +46,7 @@ const { noBackground } = Astro.props;
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <title>Qasten</title>
+    <title>{title}</title>
   </head>
 
   <body class="font-inter flex min-h-screen flex-col overflow-x-hidden">
@@ -89,6 +95,7 @@ const { noBackground } = Astro.props;
 
       <button
         id="hamburger"
+        aria-label="Open menu"
         class="flex cursor-pointer flex-col space-y-1 hover:space-y-1.5 sm:hidden"
       >
         <span class="h-0.5 w-6 bg-black"></span>
@@ -181,6 +188,7 @@ const { noBackground } = Astro.props;
               />
               <button
                 type="submit"
+                aria-label="Subscribe"
                 class="cursor-pointer rounded-lg border-2 border-white bg-black px-2 py-2 font-medium text-slate-100 transition hover:bg-white hover:text-black sm:px-4"
               >
                 <span class="hidden sm:block">{t.footer.subscribe}</span>

@@ -9,6 +9,14 @@ export function getSafeCurrentLocale(locale: string | undefined) {
 
 const translations = {
   en: {
+    metaDescription: {
+      home: "Qasten is the AI workspace for teams that replaces shadow AI. Collaborate with models, workflows, and data in one secure platform built for productivity.",
+      aboutUs:
+        "At Qasten, we believe the future of work is collective intelligence. Learn our mission, beliefs, and vision for secure, team-first AI.",
+      security:
+        "Qasten puts security first: EU hosting, zero retention, admin controls, and built-in safeguards to replace risky Shadow AI.",
+      blog: "Insights on AI adoption, team productivity, and security. Explore Qasten's blog for practical strategies and expert perspectives.",
+    },
     aboutUs: "About us",
     contactUs: "Contact us",
     security: "Security",
@@ -266,6 +274,14 @@ const translations = {
   },
 
   fr: {
+    metaDescription: {
+      home: "Qasten est la plateforme IA conçue pour les équipes qui remplace le Shadow AI : un espace unique pour collaborer, partager des connaissances et travailler en toute sécurité.",
+      aboutUs:
+        "At Qasten, we believe the future of work is collective intelligence. Learn our mission, beliefs, and vision for secure, team-first AI.",
+      security:
+        "Avec Qasten, la sécurité est garantie : hébergement européen, aucune rétention de données et un contrôle total pour remplacer le Shadow AI.",
+      blog: "Analyses et conseils sur l'adoption de l'IA, la productivité d'équipe et la sécurité. Le blog Qasten vous aide à transformer vos pratiques IA.",
+    },
     aboutUs: "À propos",
     contactUs: "Nous contacter",
     security: "Sécurité",
@@ -281,7 +297,7 @@ const translations = {
     bridge: {
       title: "Vos outils d'IA ont été pensés pour les individus",
       subtitle1:
-        "Le <b>Shadow IA</b> est déjà partout dans vos équipes. <br/> Outils différents, comptes personnels, prompts isolés.",
+        "Le <b>Shadow AI</b> est déjà partout dans vos équipes. <br/> Outils différents, comptes personnels, prompts isolés.",
       subtitle2:
         "La connaissance ne s'accumule pas, la collaboration n'existe pas, et la valeur se perd.",
     },
@@ -311,7 +327,7 @@ const translations = {
         body: "Branchez Slack, Notion, Jira, Google Drive et plus encore : Qasten travaille directement avec vos sources réelles. Plus besoin de copier-coller, l'intelligence arrive là où vos données vivent déjà.",
       },
       visibility: {
-        title: "Du Shadow IA à la clarté",
+        title: "Du Shadow AI à la clarté",
         body: "Les tableaux de bord montrent comment l'IA est utilisée : usages personnels, coûts, adoption par équipe. Repérez ce qui fonctionne, ce qui bloque et où optimiser.",
       },
       security: {
@@ -334,7 +350,7 @@ const translations = {
     sec: {
       title: "La sécurité avant tout",
       subtitle:
-        "Le <b>Shadow IA</b> crée déjà des risques dans votre entreprise. La sécurité ne peut pas être une option secondaire.",
+        "Le <b>Shadow AI</b> crée déjà des risques dans votre entreprise. La sécurité ne peut pas être une option secondaire.",
       stats: {
         sensitiveData:
           "des données d'entreprise collées dans des outils d'IA sont considérées comme <b>sensibles</b>",
@@ -363,7 +379,7 @@ const translations = {
         securityThroughUx: {
           title: "La sécurité par l'adoption",
           description:
-            "Les équipes adoptent Qasten parce qu'il est plus simple et plus sûr que le <b>Shadow IA</b>.",
+            "Les équipes adoptent Qasten parce qu'il est plus simple et plus sûr que le <b>Shadow AI</b>.",
         },
       },
       measures: {
@@ -468,9 +484,9 @@ const translations = {
             "La sécurité est intégrée dès le départ. Qasten propose un hébergement en Europe, sans stockage chez des tiers, et aucune rétention de données pour l'entraînement des modèles. Les administrateurs disposent d'un contrôle total : journaux d'audit, listes d'autorisations de modèles/régions, anonymisation des données sensibles, garde-fous, etc. Plus de détails sur notre <a href='/fr/security'>page Sécurité</a>.",
         },
         {
-          question: "Comment Qasten aide à sortir du Shadow IA ?",
+          question: "Comment Qasten aide à sortir du Shadow AI ?",
           answer:
-            "Le Shadow IA apparaît quand les outils internes sont absents ou trop restrictifs. Qasten résout ce problème en offrant une plateforme plus puissante que les outils utilisés en secret par les employés. L'adoption se fait naturellement grâce à une meilleure expérience. Découvrez notre approche dans <a href='/fr/blog/your-employees-are-smarter-than-your-ai-policy'>cet article</a>.",
+            "Le Shadow AI apparaît quand les outils internes sont absents ou trop restrictifs. Qasten résout ce problème en offrant une plateforme plus puissante que les outils utilisés en secret par les employés. L'adoption se fait naturellement grâce à une meilleure expérience. Découvrez notre approche dans <a href='/fr/blog/your-employees-are-smarter-than-your-ai-policy'>cet article</a>.",
         },
         {
           question: "Puis-je connecter Qasten aux données de mon entreprise ?",

@@ -4,11 +4,10 @@ import { getTranslations } from "@/utils/i18n";
 import SuccessCard from "../SuccessCard.astro";
 
 const t = getTranslations(Astro.currentLocale);
+const { title, subtitle } = t.contactSuccess;
+const description = title + " " + subtitle;
 ---
 
-<Layout>
-  <SuccessCard
-    title={t.contactSuccess.title}
-    subtitle={t.contactSuccess.subtitle}
-  />
+<Layout title="Contact" description={description}>
+  <SuccessCard title={title} subtitle={subtitle} />
 </Layout>
