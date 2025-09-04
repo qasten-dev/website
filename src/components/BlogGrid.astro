@@ -26,7 +26,6 @@ const lgClass = numCols === 3 ? "lg:grid-cols-3" : "";
             src={data.image.src}
             alt={data.image.alt}
             class="h-48 object-cover"
-            loading="eager"
           />
         ) : (
           <div class="font-logo flex h-48 items-center justify-center bg-black text-2xl font-bold text-white">
@@ -36,7 +35,7 @@ const lgClass = numCols === 3 ? "lg:grid-cols-3" : "";
 
         <div class="p-4">
           <h2 class="text-lg font-semibold">{data.title}</h2>
-          <p class="mt-2 text-xs text-gray-400">{formatDate(data.date)}</p>
+          <p class="mt-2 text-xs text-gray-500">{formatDate(data.date)}</p>
           <p class="mt-3 line-clamp-2 text-sm text-gray-600">{data.summary}</p>
         </div>
       </a>
