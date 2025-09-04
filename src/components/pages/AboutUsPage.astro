@@ -44,8 +44,9 @@ const adoptionBlog = getRelativeLocaleUrl(
       <h2 class="text-center text-3xl font-semibold">{t.about.ourBeliefs}</h2>
       <div class="mt-8 grid gap-4 lg:grid-cols-3">
         <div class="p-4">
-          <h3 class="mt-2 items-center text-xl font-semibold">
-            🔀 {t.about.models.title}
+          <h3 class="mt-2 inline-flex items-center text-xl font-semibold">
+            <Icon name="mdi:swap-horizontal" class="mr-2 text-2xl" />
+            {t.about.models.title}
           </h3>
           <p class="prose mt-2 text-gray-600">
             {t.about.models.body}
@@ -53,8 +54,9 @@ const adoptionBlog = getRelativeLocaleUrl(
           </p>
         </div>
         <div class="p-4">
-          <h3 class="mt-2 items-center text-xl font-semibold">
-            📈
+          <h3 class="mt-2 inline-flex items-center text-xl font-semibold">
+            <Icon name="mdi:chart-line" class="mr-2 text-2xl" />
+
             {t.about.adoption.title}
           </h3>
           <p class="prose mt-2 text-gray-600">
@@ -63,8 +65,9 @@ const adoptionBlog = getRelativeLocaleUrl(
           </p>
         </div>
         <div class="p-4">
-          <h3 class="mt-2 items-center text-xl font-semibold">
-            🤝
+          <h3 class="mt-2 inline-flex items-center text-xl font-semibold">
+            <Icon name="mdi:people" class="mr-2 text-2xl" />
+
             {t.about.teams.title}
           </h3>
           <p class="prose mt-2 text-gray-600">

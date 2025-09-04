@@ -71,7 +71,7 @@ const contactUsURL = getRelativeLocaleUrl(
           </p>
         </div>
         <div class="p-6">
-          <span class="mx-auto text-3xl">🔎</span>
+          <Icon name="mdi:magnify" class="mx-auto text-4xl" />
           <h3 class="mt-2 text-xl font-semibold">
             {t.sec.principles.transparency.title}
           </h3>
@@ -81,7 +81,7 @@ const contactUsURL = getRelativeLocaleUrl(
         </div>
 
         <div class="p-6">
-          <span class="mx-auto text-3xl">🎚️</span>
+          <Icon name="mdi:wrench" class="mx-auto text-4xl" />
           <h3 class="mt-2 text-xl font-semibold">
             {t.sec.principles.control.title}
           </h3>
@@ -91,7 +91,7 @@ const contactUsURL = getRelativeLocaleUrl(
         </div>
 
         <div class="p-6">
-          <span class="mx-auto text-3xl">👥</span>
+          <Icon name="mdi:people" class="mx-auto text-4xl" />
           <h3 class="mt-2 text-xl font-semibold">
             {t.sec.principles.securityThroughUx.title}
           </h3>
@@ -126,24 +126,27 @@ const contactUsURL = getRelativeLocaleUrl(
           </p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold">
-            ⛔ {t.sec.measures.zeroTrainingRetention.title}
+          <h3 class="inline-flex items-center text-lg font-semibold">
+            <Icon name="mdi:block" class="mr-2 text-xl" />
+            {t.sec.measures.zeroTrainingRetention.title}
           </h3>
           <p class="mt-2 text-gray-600">
             {t.sec.measures.zeroTrainingRetention.description}
           </p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold">
-            🔒 {t.sec.measures.encryption.title}
+          <h3 class="inline-flex items-center text-lg font-semibold">
+            <Icon name="mdi:lock" class="mr-2 text-xl" />
+            {t.sec.measures.encryption.title}
           </h3>
           <p class="mt-2 text-gray-600">
             {t.sec.measures.encryption.description}
           </p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold">
-            🛡️ {t.sec.measures.adminControls.title}
+          <h3 class="inline-flex items-center text-lg font-semibold">
+            <Icon name="mdi:shield-account" class="mr-2 text-xl" />
+            {t.sec.measures.adminControls.title}
           </h3>
           <p class="mt-2 text-gray-600">
             {t.sec.measures.adminControls.description}
@@ -160,16 +163,18 @@ const contactUsURL = getRelativeLocaleUrl(
           </p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold">
-            🧹 {t.sec.measures.contentFiltering.title}
+          <h3 class="inline-flex items-center text-lg font-semibold">
+            <Icon name="mdi:filter" class="mr-2 text-xl" />
+            {t.sec.measures.contentFiltering.title}
           </h3>
           <p class="mt-2 text-gray-600">
             {t.sec.measures.contentFiltering.description}
           </p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold">
-            🚨 {t.sec.measures.auditAlerts.title}
+          <h3 class="inline-flex items-center text-lg font-semibold">
+            <Icon name="mdi:alarm-light" class="mr-2 text-xl" />
+            {t.sec.measures.auditAlerts.title}
           </h3>
           <p class="mt-2 text-gray-600">
             {t.sec.measures.auditAlerts.description}
