@@ -94,9 +94,7 @@ Don't roll out company-wide on day one. Start with a targeted pilot in the teams
 
 This is exactly the balance we designed **Qasten** to strike: a secure, visible, and compliant platform for leadership, and a collaborative, multi-model experience employees actually want to use.
 
-➡️ **Book a [15-minute Pilot strategy session](https://calendly.com/qasten/ai-strategy-session-15-min)** to map your first steps from Shadow AI to immediate value and control.
-
-Not ready to book yet? Get in touch with us [here](/#contact-us) to start the conversation.
+➡️ Get in touch with us [here](/#contact-us) to map your first steps from Shadow AI to immediate value and control.
 
 ---
 

@@ -123,6 +123,4 @@ If you hesitate on any of these, it's a sign that your AI strategy may be built 
 
 **At Qasten, we're building a platform designed for European enterprises to help them stay flexible, compliant, and in control.**
 
-➡️ Schedule a [15-minute executive session](https://calendly.com/qasten/ai-strategy-session-15-min) to explore how we can help strengthen your organization's resilience, sovereignty, and agility.
-
-Not ready to book yet? Get in touch with us [here](/#contact-us) to start the conversation.
+➡️ Get in touch with us [here](/#contact-us) to explore how we can help strengthen your organization's resilience, sovereignty, and agility.

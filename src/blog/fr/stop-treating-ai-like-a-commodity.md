@@ -119,6 +119,4 @@ Posez-vous ces questions :
 
 **Chez Qasten, nous développons une plateforme pensée pour les entreprises européennes, afin de les aider à rester flexibles, conformes et souveraines.**
 
-➡️ Planifiez un [échange stratégique de 15 minutes](https://calendly.com/qasten/ai-strategy-session-15-min) pour découvrir comment nous pouvons vous aider renforcer la résilience, la souveraineté et l'agilité de votre organisation.
-
-Pas prêt à réserver ? Contactez-nous [ici](/fr/#contact-us) pour entamer la conversation.
+➡️ Contactez-nous [ici](/fr/#contact-us) pour découvrir comment nous pouvons vous aider renforcer la résilience, la souveraineté et l'agilité de votre organisation.

@@ -94,9 +94,7 @@ Pas besoin d'un déploiement massif dès le départ. Démarrez par un pilote dan
 
 C'est exactement l'équilibre que nous avons cherché à atteindre avec **Qasten** : une plateforme sécurisée et visible pour le management, et une expérience multi-modèles collaborative que les salariés ont envie d'utiliser.
 
-➡️ **Réservez une [session stratégie pilote de 15 minutes](https://calendly.com/qasten/ai-strategy-session-15-min)** pour tracer vos premiers pas vers un Shadow AI transformé en valeur et en contrôle.
-
-Pas encore prêt ? [Écrivez-nous](/fr/#contact-us) pour entamer la discussion.
+➡️ Contactez-nous [ici](/fr/#contact-us) pour tracer vos premiers pas vers un Shadow AI transformé en valeur et en contrôle.
 
 ---
 
