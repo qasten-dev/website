@@ -240,6 +240,7 @@ const translations = {
     privacyPolicy: "Privacy policy",
     deepDives: "Deep Dives",
     learnMore: "Learn more",
+    timeToRead: "min read",
     about: {
       title: "About Qasten",
       tagline:
@@ -346,7 +347,6 @@ const translations = {
         "Nous vous tiendrons informé des dernières nouvelles de Qasten.",
     },
     back: "Retour",
-
     sec: {
       title: "La sécurité avant tout",
       subtitle:
@@ -512,6 +512,7 @@ const translations = {
     privacyPolicy: "Politique de confidentialité",
     deepDives: "Pour approfondir",
     learnMore: "Voir plus",
+    timeToRead: "min de lecture",
     about: {
       title: "À propos de Qasten",
       tagline:

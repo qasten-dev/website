@@ -5,12 +5,24 @@ import { Image } from "astro:assets";
 import { type Blog } from "@/content.config";
 import { render } from "astro:content";
 import { Icon } from "astro-icon/components";
+import farouk from "@/assets/farouk.png";
+import youssef from "@/assets/youssef.png";
+import achraf from "@/assets/achraf.jpeg";
+import { getTranslations } from "@/utils/i18n";
 
 const { post } = Astro.props as { post: Blog };
 
 const { Content } = await render(post);
 
 const { data } = post;
+
+const authorImage = {
+  "Farouk Faiz": farouk,
+  "Youssef Doubli": youssef,
+  "Achraf El Masdouri": achraf,
+};
+
+const t = getTranslations(Astro.currentLocale);
 ---
 
 <Layout noBackground title={data.title} description={data.summary}>
@@ -19,12 +31,29 @@ const { data } = post;
       <h1 class="text-4xl font-semibold sm:text-6xl md:text-5xl">
         {data.title}
       </h1>
-      <p class="mt-6 font-medium text-gray-500">
-        {formatDate(data.date)}
-      </p>
-      <p class="mt-4 text-sm text-gray-500">
-        By {data.author} &nbsp;|&nbsp; {data.lengthInMinutes} min read
-      </p>
+      <div class="mt-6 text-gray-500">
+        <p class="font-medium">
+          {formatDate(data.date)}
+        </p>
+
+        <p class="mt-4 flex items-center justify-center gap-4 text-sm">
+          <span class="flex items-center gap-2">
+            <Icon name="mdi:timer-outline" class="text-lg" />{
+              data.lengthInMinutes
+            }
+            {t.timeToRead}
+          </span>
+          <span>|</span>
+          <span class="flex gap-2">
+            <Image
+              src={authorImage[data.author]}
+              alt={data.author}
+              class="h-4 w-4 origin-top scale-120 rounded-full object-cover"
+            />{data.author}
+          </span>
+        </p>
+      </div>
+
       <a
         target="_blank"
         rel="noopener"

@@ -11,7 +11,7 @@ const schema = ({ image }: { image: ImageFunction }) =>
     title: z.string(),
     summary: z.string(),
     date: z.date(),
-    author: z.string(),
+    author: z.enum(["Farouk Faiz", "Youssef Doubli", "Achraf El Masdouri"]),
     lengthInMinutes: z.number(),
     image: z.object({
       src: image(),
