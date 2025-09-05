@@ -179,7 +179,18 @@ const contactSuccessUrl = getRedirectUrl({
           {t.contactUs}
         </h3>
 
-        <label for="email" class="mt-12 block text-sm font-medium text-gray-600"
+        <label
+          for="fullName"
+          class="mt-12 block text-sm font-medium text-gray-600">Full name</label
+        >
+        <input
+          name="fullName"
+          id="fullName"
+          required
+          class="mt-2 w-full rounded-xl border border-gray-300 px-4 py-2 text-gray-600 transition focus:ring-2 focus:ring-black focus:outline-none"
+        />
+
+        <label for="email" class="mt-4 block text-sm font-medium text-gray-600"
           >Email</label
         >
         <input
@@ -192,7 +203,7 @@ const contactSuccessUrl = getRedirectUrl({
 
         <label
           for="message"
-          class="mt-8 block text-sm font-medium text-gray-600">Message</label
+          class="mt-4 block text-sm font-medium text-gray-600">Message</label
         >
         <textarea
           name="message"
