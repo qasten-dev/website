@@ -94,11 +94,11 @@ Don't roll out company-wide on day one. Start with a targeted pilot in the teams
 
 This is exactly the balance we designed **Qasten** to strike: a secure, visible, and compliant platform for leadership, and a collaborative, multi-model experience employees actually want to use.
 
-➡️ Get in touch with us [here](/#contact-us) to map your first steps from Shadow AI to immediate value and control.
+➡️ [Get in touch](/#contact-us) with us to map your first steps from Shadow AI to immediate value and control.
 
 ---
 
-#### Sources:
+### Sources:
 
 [1] _[New WalkMe Survey Shows Shadow AI Is Rampant; Training Gaps Undermine AI ROI - SAP News Center](https://news.sap.com/2025/08/new-walkme-survey-shadow-ai-rampant-training-gaps-undermine-roi/)_
 

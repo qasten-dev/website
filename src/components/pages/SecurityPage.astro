@@ -17,7 +17,7 @@ const contactUsURL = getRelativeLocaleUrl(
 
 <Layout title={t.security} description={t.metaDescription.security}>
   <main class="mx-auto w-full max-w-6xl">
-    <section class="mt-24 px-4 text-center sm:px-8">
+    <div class="mt-24 px-4 text-center sm:px-8">
       <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-7xl">
         {t.sec.title}
       </h1>
@@ -25,7 +25,7 @@ const contactUsURL = getRelativeLocaleUrl(
         class="mx-auto mt-6 max-w-2xl text-lg text-gray-600 lg:text-xl"
         set:html={t.sec.subtitle}
       />
-    </section>
+    </div>
 
     <section class="mt-32 px-4 sm:px-8">
       <div
@@ -35,14 +35,14 @@ const contactUsURL = getRelativeLocaleUrl(
           <!-- https://www.securitymagazine.com/articles/101773-68-of-organizations-experienced-data-leakage-from-employee-ai-usage -->
           <p class="text-5xl font-bold text-black">68%</p>
           <p class="text-lg text-gray-600" set:html={t.sec.stats.dataLeakage} />
-          <p class="text-sm text-gray-400">Security Magazine, 2025</p>
+          <p class="text-sm text-gray-500">Security Magazine, 2025</p>
         </div>
 
         <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
           <!-- https://www.businessinsider.com/kpmg-trust-in-ai-study-2025-how-employees-use-ai-2025-4 -->
           <p class="text-5xl font-bold text-black">57%</p>
           <p class="text-lg text-gray-600" set:html={t.sec.stats.hiddenUsage} />
-          <p class="text-sm text-gray-400">Business Insider, 2025</p>
+          <p class="text-sm text-gray-500">Business Insider, 2025</p>
         </div>
         <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
           <!-- https://www.hcamag.com/us/specialization/hr-technology/sensitive-corporate-data-increasingly-flowing-into-ai-tools/533213 -->
@@ -51,7 +51,7 @@ const contactUsURL = getRelativeLocaleUrl(
             class="text-lg text-gray-600"
             set:html={t.sec.stats.sensitiveData}
           />
-          <p class="text-sm text-gray-400">HRD Magazine, 2025</p>
+          <p class="text-sm text-gray-500">HRD Magazine, 2025</p>
         </div>
       </div>
     </section>

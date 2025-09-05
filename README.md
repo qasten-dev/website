@@ -12,7 +12,7 @@ _Note: The following commands use pnpm, but you can use other package managers._
 
 ### Before deploying a change
 
-- Make sure to preview the prod build locally with `pnpm build` and `pnpm preview`.
+- Make sure to preview the prod build locally with `pnpm build && pnpm preview`.
 - Make sure to test responsivity on mobile.
 
 ### How to add a blog post

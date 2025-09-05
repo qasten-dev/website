@@ -239,7 +239,7 @@ const translations = {
     },
     privacyPolicy: "Privacy policy",
     deepDives: "Deep Dives",
-    learnMore: "Learn more",
+    seeMore: "See more posts",
     timeToRead: "min read",
     about: {
       title: "About Qasten",
@@ -511,7 +511,7 @@ const translations = {
     },
     privacyPolicy: "Politique de confidentialité",
     deepDives: "Pour approfondir",
-    learnMore: "Voir plus",
+    seeMore: "Voir plus",
     timeToRead: "min de lecture",
     about: {
       title: "À propos de Qasten",
