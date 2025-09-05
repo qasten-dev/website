@@ -6,6 +6,7 @@ import { getRedirectUrl, SUBSCRIBE_FORM_URL } from "@/utils/forms";
 import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
 import { Icon } from "astro-icon/components";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import path from "path";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 const t = getTranslations(currentLocale);
@@ -31,6 +32,13 @@ const {
   title = "Qasten",
   description = "Qasten is the AI workspace for teams.",
 } = Astro.props;
+
+const fontFilesGlob = import.meta.glob("/public/fonts/*.woff2", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
 ---
 
 <!doctype html>
@@ -47,6 +55,18 @@ const {
     <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    {
+      fontFiles.map((file) => (
+        <link
+          rel="preload"
+          href={`/fonts/${file}`}
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+      ))
+    }
 
     <title>{title}</title>
 
