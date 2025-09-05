@@ -1,9 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@800&display=swap");
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
 @theme {
   --font-inter: "Inter", var(--font-sans);
   --font-logo: "JetBrains Mono", monospace;
+}
+
+/* https://gwfh.mranftl.com/fonts/inter?subsets=latin */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/inter-v19-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/inter-v19-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/inter-v19-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/inter-v19-latin-700.woff2") format("woff2");
+}
+
+/* https://gwfh.mranftl.com/fonts/jetbrains-mono?subsets=latin */
+@font-face {
+  font-display: swap;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/fonts/jetbrains-mono-v23-latin-800.woff2") format("woff2");
 }
