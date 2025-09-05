@@ -178,6 +178,13 @@ const {
           </p>
           <form class="mt-4 flex" action={SUBSCRIBE_FORM_URL} method="post">
             <input type="hidden" name="_redirect" value={subscribeSuccessUrl} />
+            <input
+              type="checkbox"
+              name="hnpot"
+              class="hidden"
+              tabindex="-1"
+              autocomplete="off"
+            />
 
             <div class="flex w-full rounded-lg bg-white">
               <input
