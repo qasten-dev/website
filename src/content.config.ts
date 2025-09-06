@@ -5,6 +5,7 @@ import {
   type CollectionEntry,
   type ImageFunction,
 } from "astro:content";
+import { teamKeys } from "@/utils/team";
 
 const schema = ({ image }: { image: ImageFunction }) =>
   z.object({
@@ -12,7 +13,7 @@ const schema = ({ image }: { image: ImageFunction }) =>
     summary: z.string(),
     publishedDate: z.date(),
     lastModified: z.date().optional(),
-    author: z.enum(["Farouk Faiz", "Youssef Doubli", "Achraf El Masdouri"]),
+    author: z.enum(teamKeys),
     lengthInMinutes: z.number(),
     image: z.object({
       src: image(),

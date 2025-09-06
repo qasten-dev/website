@@ -1,7 +1,7 @@
 ---
 title: "Stop Treating AI like a commodity"
 summary: "If you think cloud lock-in was bad, you're not ready for AI lock-in. Signing a multi-year deal with a provider is the fastest way to lose control of your AI strategy."
-author: "Farouk Faiz"
+author: farouk
 lengthInMinutes: 8
 image:
   src: /src/assets/blog/aivcloud.png

@@ -1,7 +1,7 @@
 ---
 title: "Your Employees Are Smarter Than Your AI Policy"
 summary: "Your employees are already breaking AI rules. Shadow AI is the clearest signal of where your workflows are broken and your biggest opportunities lie. You can fight it, or you can turn it into your unfair advantage."
-author: "Farouk Faiz"
+author: farouk
 lengthInMinutes: 8
 image:
   src: /src/assets/blog/iceberg.png

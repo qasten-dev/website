@@ -1,7 +1,7 @@
 ---
 title: "Cessez de traiter l'IA comme une commodité"
 summary: "Si le verrouillage dans le cloud vous semblait déjà problématique, celui de l'IA sera catastrophique. Signer un contrat pluriannuel avec un fournisseur est la manière la plus rapide de perdre le contrôle de votre stratégie IA."
-author: "Farouk Faiz"
+author: farouk
 lengthInMinutes: 8
 image:
   src: /src/assets/blog/aivcloud.png

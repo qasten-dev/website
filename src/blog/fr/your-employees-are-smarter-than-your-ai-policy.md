@@ -1,7 +1,7 @@
 ---
 title: "Vos équipes sont plus malines que vos règles d'IA"
 summary: "Vos collaborateurs utilisent déjà l'IA dans l'ombre. Le Shadow AI révèle, en temps réel, où vos process bloquent et où se trouvent vos plus gros leviers de valeur. À vous de choisir : le subir, ou en faire votre avantage décisif."
-author: "Farouk Faiz"
+author: farouk
 lengthInMinutes: 8
 image:
   src: /src/assets/blog/iceberg.png

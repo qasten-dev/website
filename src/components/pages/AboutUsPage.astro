@@ -1,12 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
-import farouk from "@/assets/farouk.png";
-import youssef from "@/assets/youssef.png";
-import achraf from "@/assets/achraf.jpeg";
 import { Icon } from "astro-icon/components";
 import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { team } from "@/utils/team";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 
@@ -85,35 +83,41 @@ const adoptionBlog = getRelativeLocaleUrl(
         <div class="p-6 text-center">
           <div class="mx-auto h-24 w-24 overflow-hidden rounded-full">
             <Image
-              src={farouk}
+              src={team.farouk.image}
               alt="Faiz Farouk"
               class="origin-top scale-120 rounded-full object-cover"
             />
           </div>
-          <h3 class="mt-2 text-xl font-semibold">Faiz Farouk</h3>
-          <p class="text-sm font-medium text-gray-500">CEO</p>
+          <h3 class="mt-2 text-xl font-semibold">{team.farouk.displayName}</h3>
+          <p class="text-sm font-medium text-gray-500">
+            {team.farouk.jobTitle}
+          </p>
           <p class="mt-4 text-sm text-gray-600" set:html={t.about.farouk} />
         </div>
         <div class="p-6 text-center">
           <Image
-            src={youssef}
+            src={team.youssef.image}
             alt="Youssef Doubli"
             class="mx-auto h-24 w-24 rounded-full object-cover"
           />
-          <h3 class="mt-2 text-xl font-semibold">Youssef Doubli</h3>
-          <p class="text-sm font-medium text-gray-500">CPTO</p>
+          <h3 class="mt-2 text-xl font-semibold">{team.youssef.displayName}</h3>
+          <p class="text-sm font-medium text-gray-500">
+            {team.youssef.jobTitle}
+          </p>
           <p class="mt-4 text-sm text-gray-600" set:html={t.about.youssef} />
         </div>
         <div class="p-6 text-center">
           <div class="mx-auto h-24 w-24 overflow-hidden rounded-full">
             <Image
-              src={achraf}
+              src={team.achraf.image}
               alt="Achraf El Masdouri"
               class="origin-top scale-150 rounded-full object-cover"
             />
           </div>
-          <h3 class="mt-2 text-xl font-semibold">Achraf El Masdouri</h3>
-          <p class="text-sm font-medium text-gray-500">COO</p>
+          <h3 class="mt-2 text-xl font-semibold">{team.achraf.displayName}</h3>
+          <p class="text-sm font-medium text-gray-500">
+            {team.achraf.jobTitle}
+          </p>
           <p class="mt-4 text-sm text-gray-600" set:html={t.about.achraf} />
         </div>
       </div>

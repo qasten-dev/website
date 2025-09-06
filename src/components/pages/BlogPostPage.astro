@@ -5,9 +5,8 @@ import { Image } from "astro:assets";
 import { type Blog } from "@/content.config";
 import { render } from "astro:content";
 import { Icon } from "astro-icon/components";
-import farouk from "@/assets/farouk.png";
-import youssef from "@/assets/youssef.png";
-import achraf from "@/assets/achraf.jpeg";
+import { team } from "@/utils/team";
+
 import { getTranslations } from "@/utils/i18n";
 
 const { post } = Astro.props as { post: Blog };
@@ -16,15 +15,10 @@ const { Content } = await render(post);
 
 const { data } = post;
 
-const authorImage = {
-  "Farouk Faiz": farouk,
-  "Youssef Doubli": youssef,
-  "Achraf El Masdouri": achraf,
-};
-
 const t = getTranslations(Astro.currentLocale);
 const publishedDate = formatDate(data.publishedDate, Astro.currentLocale);
-console.log("publishedDate :>> ", publishedDate);
+
+const author = team[data.author];
 ---
 
 <Layout noBackground title={data.title} description={data.summary}>
@@ -56,10 +50,10 @@ console.log("publishedDate :>> ", publishedDate);
           <span>•</span>
           <span class="flex gap-2">
             <Image
-              src={authorImage[data.author]}
-              alt={data.author}
+              src={author.image}
+              alt={author.displayName}
               class="h-4 w-4 origin-top scale-120 rounded-full object-cover"
-            />{data.author}
+            />{author.displayName}
           </span>
         </p>
       </div>
@@ -76,7 +70,7 @@ console.log("publishedDate :>> ", publishedDate);
       </a>
     </div>
     <article
-      class="prose prose-img:rounded-2xl mx-auto mt-8 w-full max-w-4xl px-4 leading-relaxed text-gray-700"
+      class="prose prose-img:rounded-2xl mx-auto w-full max-w-4xl px-4 leading-relaxed text-gray-700"
     >
       <Image src={data.image.src} alt={data.image.alt} class="rounded-2xl" />
 
