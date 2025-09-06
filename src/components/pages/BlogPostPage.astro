@@ -5,6 +5,8 @@ import { Image } from "astro:assets";
 import { render } from "astro:content";
 import { Icon } from "astro-icon/components";
 import { team } from "@/utils/team";
+import path from "path";
+import fs from "fs";
 
 import { getTranslations, getSafeCurrentLocale } from "@/utils/i18n";
 
@@ -21,6 +23,19 @@ const author = team[data.author];
 const site = Astro.site?.toString();
 const wordCount = (post.body ?? "").split(/\s+/).length;
 const minutes = Math.ceil(wordCount / 150);
+
+const requiredRatios = ["1x1", "4x3", "16x9"];
+const relativeImagePaths = requiredRatios.map(
+  (ratio) => `blog/${post.id}/${ratio}.png`,
+);
+const publicDir = path.resolve(process.cwd(), "public");
+
+for (const relativePath of relativeImagePaths) {
+  const imagePath = path.join(publicDir, relativePath);
+  if (!fs.existsSync(imagePath)) {
+    throw new Error(`Missing required blog image: ${imagePath}`);
+  }
+}
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -44,7 +59,9 @@ const structuredData = {
   },
   datePublished: data.publishedDate.toISOString(),
   dateModified: (data.lastModified ?? data.publishedDate).toISOString(),
-  image: ["1x1", "4x3", "16x9"].map((ratio) => new URL(`/blog/${post.id}/${ratio}.png`, Astro.site).toString()),
+  image: relativeImagePaths.map((relativePath) =>
+    new URL(relativePath, Astro.site).toString(),
+  ),
   url: Astro.url.href,
   timeRequired: `PT${minutes}M`,
   wordCount,
@@ -117,6 +134,8 @@ const structuredData = {
       <Content />
     </article>
   </main>
-  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}>
-  </script>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredData)}
+  />
 </Layout>
