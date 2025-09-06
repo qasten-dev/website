@@ -1,18 +1,24 @@
 import { getCollection } from "astro:content";
 import { getCollectionName } from "@/content.config";
 
-export function formatDate(date: Date) {
-  return date.toLocaleDateString(undefined, {
-    year: "numeric",
-    month: "long",
-  });
+function capitalizeFirst(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+export function formatDate(date: Date, locale: string | undefined) {
+  return capitalizeFirst(
+    date.toLocaleString(locale, {
+      year: "numeric",
+      month: "long",
+    }),
+  );
 }
 
 export async function getPosts(locale: string | undefined) {
   const posts = await getCollection(getCollectionName(locale));
 
   return posts.sort((a, b) => {
-    return a.data.date.getTime() - b.data.date.getTime();
+    return b.data.publishedDate.getTime() - a.data.publishedDate.getTime();
   });
 }
 

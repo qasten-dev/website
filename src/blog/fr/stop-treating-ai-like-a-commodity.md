@@ -6,7 +6,8 @@ lengthInMinutes: 8
 image:
   src: /src/assets/blog/aivcloud.png
   alt: "AI is not Cloud"
-date: 2025-08-01
+publishedDate: 2025-07-01
+lastModified: 2025-08-01
 ---
 
 ## Résumé

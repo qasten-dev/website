@@ -241,6 +241,7 @@ const translations = {
     deepDives: "Deep Dives",
     seeMore: "See more posts",
     timeToRead: "min read",
+    updated: "Updated",
     about: {
       title: "About Qasten",
       tagline:
@@ -513,6 +514,7 @@ const translations = {
     deepDives: "Pour approfondir",
     seeMore: "Voir plus",
     timeToRead: "min de lecture",
+    updated: "Mis à jour en",
     about: {
       title: "À propos de Qasten",
       tagline:

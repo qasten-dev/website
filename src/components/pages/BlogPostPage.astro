@@ -23,6 +23,8 @@ const authorImage = {
 };
 
 const t = getTranslations(Astro.currentLocale);
+const publishedDate = formatDate(data.publishedDate, Astro.currentLocale);
+console.log("publishedDate :>> ", publishedDate);
 ---
 
 <Layout noBackground title={data.title} description={data.summary}>
@@ -32,8 +34,16 @@ const t = getTranslations(Astro.currentLocale);
         {data.title}
       </h1>
       <div class="mt-6 text-gray-500">
-        <p class="font-medium">
-          {formatDate(data.date)}
+        <p>
+          <span class="font-medium">{publishedDate}</span>
+          {
+            data.lastModified && (
+              <span class="text-sm italic">
+                ({t.updated}
+                {formatDate(data.lastModified, Astro.currentLocale)})
+              </span>
+            )
+          }
         </p>
 
         <p class="mt-4 flex items-center justify-center gap-4 text-sm">
@@ -43,7 +53,7 @@ const t = getTranslations(Astro.currentLocale);
             }
             {t.timeToRead}
           </span>
-          <span>|</span>
+          <span>•</span>
           <span class="flex gap-2">
             <Image
               src={authorImage[data.author]}

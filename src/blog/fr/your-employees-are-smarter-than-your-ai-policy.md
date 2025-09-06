@@ -6,7 +6,7 @@ lengthInMinutes: 8
 image:
   src: /src/assets/blog/iceberg.png
   alt: "Shadow AI Iceberg"
-date: 2025-08-01
+publishedDate: 2025-08-01
 ---
 
 ## Résumé
