@@ -17,9 +17,20 @@ _Note: The following commands use pnpm, but you can use other package managers._
 
 ### How to add a blog post
 
-1. Add your blog Markdown to `src/blog`. It's recommended to follow the structure of existing blogs.
-2. Do not forget french version on `src/blog/fr` (make sure relative links use `/fr` prefix e.g., `/fr/#contact-us`).
-3. _(Optional)_ To have your post showcased on the landing page, add it to `highlightedPostsSlugs` on `HomePage.astro`.
+1. Add your blog Markdown to `src/blog`. It's recommended to follow the structure of existing posts.
+2. Do not forget french version on `src/blog/fr` (make sure its relative links use `/fr` prefix e.g., `/fr/#contact-us`).
+3. On top of the blog image in `src/assets/blog`, add the image to `public/blog/<post-id>/` with the following [aspect ratios](https://developers.google.com/search/docs/appearance/structured-data/article#article-types): 16x9, 4x3, and 1x1.
+4. Fill keywords.
+   - Keywords are free‑form phrases people might search for.
+   - Use [Google Trends](https://trends.google.com/trends/) to compare alternatives if unsure.
+   - Try to have as many (ideally more than 3) of these keywords appear literally in the post.
+   - Keep the list short (ideally under 8 items).
+5. Fill Topics.
+   - Topics are structured concepts linked to [Wikidata](https://www.wikidata.org/) entries. They help position the blog in search engines knowledge graph.
+   - If you need a new topic, add it to the topics in `blog.ts`.
+   - Keep the list short (ideally under 8 items).
+
+6. _(Optional)_ To have your post showcased on the landing page, add it to `highlightedPostsSlugs` on `HomePage.astro`.
 
 ## Favicon
 
