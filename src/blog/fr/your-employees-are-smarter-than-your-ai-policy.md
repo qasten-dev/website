@@ -2,11 +2,27 @@
 title: "Vos équipes sont plus malines que vos règles d'IA"
 summary: "Vos collaborateurs utilisent déjà l'IA dans l'ombre. Le Shadow AI révèle, en temps réel, où vos process bloquent et où se trouvent vos plus gros leviers de valeur. À vous de choisir : le subir, ou en faire votre avantage décisif."
 author: farouk
-lengthInMinutes: 8
 image:
   src: /src/assets/blog/iceberg.png
   alt: "Shadow AI Iceberg"
 publishedDate: 2025-08-01
+keywords:
+  - "Loi IA"
+  - "RGPD"
+  - "Shadow AI"
+  - "Securité IA"
+  - "IA interne"
+  - "Gouvernance IA"
+  - "Adoption IA"
+  - "Risque IA"
+topics:
+  - "artificial-intelligence"
+  - "generative-ai"
+  - "eu-ai-act"
+  - "large-language-model"
+  - "gdpr"
+  - "ai-governance"
+  - "shadow-ai"
 ---
 
 ## Résumé

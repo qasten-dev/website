@@ -1,9 +1,8 @@
 ---
-import { formatDate } from "@/utils/blog";
+import { formatDate, type Blog } from "@/utils/blog";
 import { getSafeCurrentLocale } from "@/utils/i18n";
 import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import type { Blog } from "@/content.config";
 
 const { posts, numCols = 3 } = Astro.props as {
   posts: Blog[];

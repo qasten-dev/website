@@ -1,24 +1,66 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { formatDate } from "@/utils/blog";
+import { formatDate, topics, type Blog } from "@/utils/blog";
 import { Image } from "astro:assets";
-import { type Blog } from "@/content.config";
 import { render } from "astro:content";
 import { Icon } from "astro-icon/components";
 import { team } from "@/utils/team";
 
-import { getTranslations } from "@/utils/i18n";
+import { getTranslations, getSafeCurrentLocale } from "@/utils/i18n";
 
 const { post } = Astro.props as { post: Blog };
-
+const { data } = post;
 const { Content } = await render(post);
 
-const { data } = post;
+const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 
-const t = getTranslations(Astro.currentLocale);
-const publishedDate = formatDate(data.publishedDate, Astro.currentLocale);
+const t = getTranslations(currentLocale);
 
+const publishedDate = formatDate(data.publishedDate, currentLocale);
 const author = team[data.author];
+const site = Astro.site?.toString();
+const wordCount = (post.body ?? "").split(/\s+/).length;
+const minutes = Math.ceil(wordCount / 150);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: data.title,
+  description: data.summary,
+  author: {
+    "@type": "Person",
+    name: author.displayName,
+    jobTitle: author.jobTitle,
+    url: author.url,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Qasten",
+    url: site,
+    logo: {
+      "@type": "ImageObject",
+      url: site + "logo.png",
+    },
+  },
+  datePublished: data.publishedDate.toISOString(),
+  dateModified: (data.lastModified ?? data.publishedDate).toISOString(),
+  image: ["1x1", "4x3", "16x9"].map((ratio) => new URL(`/blog/${post.id}/${ratio}.png`, Astro.site).toString()),
+  url: Astro.url.href,
+  timeRequired: `PT${minutes}M`,
+  wordCount,
+  inLanguage: currentLocale,
+  isAccessibleForFree: true,
+  keywords: data.keywords,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": Astro.url.href,
+  },
+  about: data.topics.map((topicKey) => ({
+    "@type": "Thing",
+    name: topics[topicKey][currentLocale],
+    sameAs: topics[topicKey].wikidata,
+  })),
+};
 ---
 
 <Layout noBackground title={data.title} description={data.summary}>
@@ -34,7 +76,7 @@ const author = team[data.author];
             data.lastModified && (
               <span class="text-sm italic">
                 ({t.updated}
-                {formatDate(data.lastModified, Astro.currentLocale)})
+                {formatDate(data.lastModified, currentLocale)})
               </span>
             )
           }
@@ -42,9 +84,7 @@ const author = team[data.author];
 
         <p class="mt-4 flex items-center justify-center gap-4 text-sm">
           <span class="flex items-center gap-2">
-            <Icon name="mdi:timer-outline" class="text-lg" />{
-              data.lengthInMinutes
-            }
+            <Icon name="mdi:timer-outline" class="text-lg" />{minutes}
             {t.timeToRead}
           </span>
           <span>•</span>
@@ -70,11 +110,13 @@ const author = team[data.author];
       </a>
     </div>
     <article
-      class="prose prose-img:rounded-2xl mx-auto w-full max-w-4xl px-4 leading-relaxed text-gray-700"
+      class="prose prose-img:rounded-2xl mx-auto mt-8 w-full max-w-4xl px-4 leading-relaxed text-gray-700"
     >
       <Image src={data.image.src} alt={data.image.alt} class="rounded-2xl" />
 
       <Content />
     </article>
   </main>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}>
+  </script>
 </Layout>
