@@ -32,6 +32,7 @@ const {
   title = "Qasten",
   description = "Qasten is the AI workspace for teams.",
   openGraphMetadata,
+  author,
 } = Astro.props;
 
 const openGraphImageURL = new URL(
@@ -64,6 +65,7 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
     <meta property="og:image:height" content="675" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Qastencom" />
+    {author && <meta name="author" content={author} />}
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
