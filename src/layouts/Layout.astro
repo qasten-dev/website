@@ -31,7 +31,13 @@ const { noBackground } = Astro.props;
 const {
   title = "Qasten",
   description = "Qasten is the AI workspace for teams.",
+  openGraphMetadata,
 } = Astro.props;
+
+const openGraphImageURL = new URL(
+  openGraphMetadata?.imageRelativePath ?? "/qasten-16x9.png",
+  Astro.site,
+).toString();
 
 const fontFilesGlob = import.meta.glob("/public/fonts/*.woff2", {
   eager: true,
@@ -47,6 +53,17 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:type" content={openGraphMetadata?.type ?? "website"} />
+    <meta property="og:site_name" content="Qasten" />
+    <meta property="og:image" content={openGraphImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Qastencom" />
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
