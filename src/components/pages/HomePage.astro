@@ -10,12 +10,13 @@ import integrations from "@/assets/integrations.svg";
 import dashboard from "@/assets/dashboard.svg";
 import chat from "@/assets/chat.svg";
 import security from "@/assets/security.png";
+import { team as founders } from "@/utils/team";
 
 import FeatureBlock from "@/components/FeatureBlock.astro";
 import { Icon } from "astro-icon/components";
 import { getTranslations } from "@/utils/i18n";
 import { CONTACT_FORM_URL, getRedirectUrl } from "@/utils/forms";
-import { getPosts } from "@/utils/blog";
+import { getPosts, topics } from "@/utils/blog";
 import BlogGrid from "../BlogGrid.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getSafeCurrentLocale } from "@/utils/i18n";
@@ -40,6 +41,55 @@ const contactSuccessUrl = getRedirectUrl({
   site: Astro.site,
   currentLocale,
 });
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Qasten",
+  legalName: "Qasten",
+  url: "https://qasten.com",
+  logo: "https://qasten.com/logo.png",
+  foundingDate: "2025",
+  founders: Object.values(founders).map((founder) => ({
+    "@type": "Person",
+    name: founder.displayName,
+    url: founder.url,
+  })),
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      email: "contact@qasten.com",
+    },
+  ],
+  sameAs: [
+    "https://www.linkedin.com/company/qasten",
+    "https://x.com/qastencom",
+    "https://github.com/qasten-dev",
+  ],
+  description: t.metaDescription.home,
+  keywords: [
+    "AI collaboration",
+    "AI workspace",
+    "AI platform",
+    "AI governance",
+    "AI compliance",
+    "AI security",
+    "AI adoption",
+    "AI productivity",
+    "AI risk",
+    "AI workflows",
+    "AI knowledge base",
+    "Enterprise AI",
+    "Shadow AI",
+    "Private AI",
+    "Internal AI",
+  ],
+  knowsAbout: Object.values(topics).map((topic) => ({
+    "@type": "Thing",
+    name: topic.en,
+    sameAs: topic.wikidata,
+  })),
+};
 ---
 
 <Layout description={t.metaDescription.home}>
@@ -250,4 +300,13 @@ const contactSuccessUrl = getRedirectUrl({
       animation: fadeInUp 1s ease-out;
     }
   </style>
+
+  {
+    currentLocale === "en" && (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(structuredData)}
+      />
+    )
+  }
 </Layout>
