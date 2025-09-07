@@ -14,15 +14,15 @@ const { title, subtitle } = Astro.props;
     class="mx-auto mt-24 flex max-w-2xl flex-col gap-y-4 rounded-lg px-2 py-8 text-center"
   >
     <h1 class="text-4xl font-semibold">{title}</h1>
-    <p class="text-lg font-medium text-gray-600">
-      {subtitle}
+    <p class="text-graymt-4 mt-4 text-lg font-medium">
+      {subtitle}<br />{t.checkBlog}
     </p>
     <a
-      href={getRelativeLocaleUrl(currentLocale, "/")}
+      href={getRelativeLocaleUrl(currentLocale, "/blog")}
       class="mt-8 flex w-fit cursor-pointer items-center space-x-2 self-center rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
-      >{t.back}
+      >Blog
 
-      <Icon name="mdi:arrow-back" class="ml-2" />
+      <Icon name="mdi:arrow-right" class="ml-2" />
     </a>
   </div>
 </div>

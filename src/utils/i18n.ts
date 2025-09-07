@@ -71,6 +71,7 @@ const translations = {
       },
     },
     send: "Send",
+    checkBlog: "In the meantime, check out our blog.",
     contactSuccess: {
       title: "Thank you for contacting us!",
       subtitle: "Our team will get back to you shortly.",
@@ -79,7 +80,6 @@ const translations = {
       title: "Thank you for your interest!",
       subtitle: "We'll keep you updated with the latest from Qasten.",
     },
-    back: "Go back",
 
     sec: {
       title: "Security First, Always",
@@ -338,6 +338,7 @@ const translations = {
       },
     },
     send: "Envoyer",
+    checkBlog: "En attendant, découvrez notre blog.",
     contactSuccess: {
       title: "Merci de nous avoir contactés !",
       subtitle: "Notre équipe vous répondra sous peu.",
@@ -347,7 +348,6 @@ const translations = {
       subtitle:
         "Nous vous tiendrons informé des dernières nouvelles de Qasten.",
     },
-    back: "Retour",
     sec: {
       title: "La sécurité avant tout",
       subtitle:
