@@ -20,11 +20,13 @@ const translations = {
     aboutUs: "About us",
     contactUs: "Contact us",
     security: "Security",
+    securityTitle: "Qasten - Secure AI Adoption to replace Shadow AI",
     hero: {
       title: {
         preUnderline: "The",
         underline: "Team-First",
         postUnderline: "<br/> AI Workspace",
+        full: "The Team-First AI Workspace",
       },
       subtitle:
         "Qasten is a collaborative AI workspace that replaces scattered chat tools. <br/> <b>Start solo today, invite your team when you're ready.</b>",
@@ -287,11 +289,13 @@ const translations = {
     aboutUs: "À propos",
     contactUs: "Nous contacter",
     security: "Sécurité",
+    securityTitle: "Qasten - La solution sécurisée pour remplacer le Shadow AI",
     hero: {
       title: {
         preUnderline: "L'espace de travail IA <br/> pensé pour",
         underline: "les équipes",
         postUnderline: "",
+        full: "L'espace de travail IA pensé pour les équipes",
       },
       subtitle:
         "Qasten est un espace collaboratif qui remplace les outils de chat dispersés. <br/> <b>Commencez seul dès aujourd'hui, invitez votre équipe quand vous le souhaitez.</b>",
