@@ -32,6 +32,13 @@ _Note: The following commands use pnpm, but you can use other package managers._
 
 6. _(Optional)_ To have your post showcased on the landing page, add it to `highlightedPostsSlugs` on `HomePage.astro`.
 
+## External services used
+
+_Note: these are under farouk@qasten.com at the moment._
+
+- [Umami](https://cloud.umami.is/login): Analytics
+- [Formspark](https://dashboard.formspark.io/): Forms (contact, news subscription)
+
 ## Favicon
 
 Favicon was generated on [favicon.io](https://favicon.io/) with the following config:

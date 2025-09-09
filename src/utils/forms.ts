@@ -1,8 +1,8 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getSafeCurrentLocale } from "./i18n";
 
-export const CONTACT_FORM_URL = "https://submit-form.com/BLVOfRwps";
-export const SUBSCRIBE_FORM_URL = "https://submit-form.com/lhAxTrYll";
+export const CONTACT_FORM_URL = "https://submit-form.com/17sVXQItV";
+export const SUBSCRIBE_FORM_URL = "https://submit-form.com/u0SibAeHZ";
 
 export function getRedirectUrl(opts: {
   path: string;
