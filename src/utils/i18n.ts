@@ -19,6 +19,7 @@ const translations = {
     },
     aboutUs: "About us",
     contactUs: "Contact us",
+    startUsingNow: "Start now for free",
     security: "Security",
     securityTitle: "Qasten - Secure AI Adoption to replace Shadow AI",
     hero: {
@@ -288,6 +289,7 @@ const translations = {
     },
     aboutUs: "À propos",
     contactUs: "Nous contacter",
+    startUsingNow: "Commencez maintenant",
     security: "Sécurité",
     securityTitle: "Qasten - La solution sécurisée pour remplacer le Shadow AI",
     hero: {

@@ -124,12 +124,22 @@ const structuredData = {
           set:html={t.hero.subtitle}
         />
 
-        <a
-          class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
-          href="#contact-us"
-        >
-          {t.contactUs}
-        </a>
+        <div class="flex items-center space-x-4">
+          <a
+            class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
+            href="https://app.qasten.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.startUsingNow}
+          </a>
+          <a
+            class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-gray-500 bg-white px-4 py-2 font-medium text-gray-500 transition hover:border-black hover:bg-gray-50 hover:text-black"
+            href="#contact-us"
+          >
+            {t.contactUs}
+          </a>
+        </div>
       </div>
     </div>
 
