@@ -120,22 +120,22 @@ const translations = {
           {
             question: "What data does Qasten store?",
             answer:
-              "We store the data required to provide the service: user and account information, conversations, saved workflows, and knowledge base entries. All content is encrypted at rest (AES-256) and in transit (TLS 1.2+). Retention policies let you control how long data is kept.",
+              "We store the data required to provide the service like account information and conversations.",
           },
           {
             question: "Can I delete my data?",
             answer:
-              "<b>Yes</b>. Every user can delete their own conversations and workflows. Admins can configure retention policies and delete data at the account level, but they cannot read private conversations.",
+              "<b>Yes</b>. You can request deletion of all your data at any time by contacting us. We'll permanently remove your information from our systems.",
           },
           {
             question: "Does Qasten use my data to train models?",
             answer:
-              "<b>No. Never.</b> Your data is never used to train any models. We enforce a Zero Data Retention (ZDR) policy with our AI providers, contractually ensuring they do not store or train on your data.",
+              "<b>No. Never.</b> Your data is never used to train any models.",
           },
           {
-            question: "Where is my data processed?",
+            question: "Where is my data stored?",
             answer:
-              "Qasten is hosted in the EU. As an administrator, you have full control. You can configure your workspace to only use AI providers that are also hosted within the EU, ensuring complete data sovereignty.",
+              "All Qasten data is securely hosted in the EU, is encrypted in transit (TLS 1.2+), and at rest (AES-256).",
           },
         ],
       },
@@ -344,23 +344,23 @@ const translations = {
           {
             question: "Quelles données sont conservées ?",
             answer:
-              "Nous stockons uniquement les données nécessaires au service : informations utilisateur et compte, conversations, workflows enregistrés et entrées de base de connaissances. Tout est chiffré au repos (AES-256) et en transit (TLS 1.2+). Les politiques de rétention vous permettent de décider combien de temps ces données sont conservées.",
+              "Nous stockons uniquement les données nécessaires au service comme les informations du compte et les conversations.",
           },
           {
             question: "Puis-je supprimer mes données ?",
             answer:
-              "<b>Oui</b>. Chaque utilisateur peut supprimer ses conversations et workflows. Les administrateurs peuvent définir des politiques de rétention et supprimer des données au niveau du compte, mais ils n'ont pas accès aux conversations privées.",
+              "<b>Oui</b>. Vous pouvez demander la suppression de toutes vos données à tout moment en nous contactant. Nous supprimerons définitivement vos informations de nos systèmes.",
           },
           {
             question:
               "Est-ce que Qasten utilise mes données pour entraîner des modèles ?",
             answer:
-              "<b>Non. Jamais.</b> Vos données ne servent jamais à l'entraînement de modèles. Nous appliquons une politique stricte de Zero Data Retention (ZDR) avec nos fournisseurs d'IA, qui garantit contractuellement l'absence de stockage ou d'entraînement sur vos données.",
+              "<b>Non. Jamais.</b> Vos données ne servent jamais à l'entraînement de modèles.",
           },
           {
-            question: "Où mes données sont-elles traitées ?",
+            question: "Où mes données sont-elles hébergées ?",
             answer:
-              "Qasten est hébergé dans l'UE. En tant qu'administrateur, vous gardez le contrôle total : vous pouvez configurer votre espace pour n'utiliser que des fournisseurs d'IA également hébergés en Europe, assurant ainsi une souveraineté complète.",
+              "Toutes les données de Qasten sont hébergées en UE, sont chiffrées en transit (TLS 1.2+), et au repos (AES-256).",
           },
         ],
       },
