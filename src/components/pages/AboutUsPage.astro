@@ -92,7 +92,10 @@ const adoptionBlog = getRelativeLocaleUrl(
           <p class="text-sm font-medium text-gray-500">
             {team.farouk.jobTitle}
           </p>
-          <p class="mt-4 text-sm text-gray-600" set:html={t.about.farouk} />
+          <p
+            class="mx-auto mt-4 max-w-58 text-sm text-gray-600"
+            set:html={t.about.farouk}
+          />
         </div>
         <div class="p-6 text-center">
           <Image
@@ -101,10 +104,13 @@ const adoptionBlog = getRelativeLocaleUrl(
             class="mx-auto h-24 w-24 rounded-full object-cover"
           />
           <h3 class="mt-2 text-xl font-semibold">{team.youssef.displayName}</h3>
-          <p class="text-sm font-medium text-gray-500">
+          <p class="na text-sm font-medium text-gray-500">
             {team.youssef.jobTitle}
           </p>
-          <p class="mt-4 text-sm text-gray-600" set:html={t.about.youssef} />
+          <p
+            class="mx-auto mt-4 max-w-58 text-sm text-gray-600"
+            set:html={t.about.youssef}
+          />
         </div>
         <div class="p-6 text-center">
           <div class="mx-auto h-24 w-24 overflow-hidden rounded-full">
@@ -118,7 +124,10 @@ const adoptionBlog = getRelativeLocaleUrl(
           <p class="text-sm font-medium text-gray-500">
             {team.achraf.jobTitle}
           </p>
-          <p class="mt-4 text-sm text-gray-600" set:html={t.about.achraf} />
+          <p
+            class="mx-auto mt-4 max-w-58 text-sm text-gray-600"
+            set:html={t.about.achraf}
+          />
         </div>
       </div>
     </section>

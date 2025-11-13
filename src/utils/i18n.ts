@@ -223,10 +223,8 @@ const translations = {
         title: "Teams, Not Individuals",
         body: "AI's true potential isn't in isolated chats. It's in amplifying collective intelligence where knowledge compounds, ideas build on each other, and teams work smarter together.",
       },
-      farouk:
-        "Former Software Engineer at <b>AWS</b> and <b>Uber</b>, expert in cloud platforms.",
-      youssef:
-        "Former Software Engineer at <b>Datadog</b>, expert in data engineering and large-scale systems.",
+      farouk: "Former Software Engineer at <b>AWS</b> and <b>Uber</b>",
+      youssef: "Former Software Engineer at <b>Datadog</b>",
       achraf:
         "Former Red Teamer at <b>OpenAI</b> and CyberSecurity expert at <b>Accor</b>",
     },
@@ -451,10 +449,8 @@ const translations = {
         title: "Pensé pour les équipes",
         body: "Le vrai potentiel de l'IA ne réside pas dans des conversations isolées. Il est dans l'intelligence collective : là où la connaissance s'accumule, où les idées se nourrissent entre elles, et où les équipes travaillent plus intelligemment ensemble.",
       },
-      farouk:
-        "Ancien ingénieur logiciel chez <b>AWS</b> et <b>Uber</b>, expert en plateformes cloud.",
-      youssef:
-        "Ancien ingénieur logiciel chez <b>Datadog</b>, expert en ingénierie des données et systèmes à grande échelle.",
+      farouk: "Ancien ingénieur logiciel chez <b>AWS</b> et <b>Uber</b>",
+      youssef: "Ancien ingénieur logiciel chez <b>Datadog</b>",
       achraf:
         "Ancien Red Teamer chez <b>OpenAI</b> et expert en cybersécurité chez <b>Accor</b>",
     },

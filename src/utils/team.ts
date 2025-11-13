@@ -12,13 +12,13 @@ export const team = {
   youssef: {
     displayName: "Youssef Doubli",
     image: youssef,
-    jobTitle: "CPTO",
+    jobTitle: "CTO",
     url: "https://www.linkedin.com/in/youssef-doubli/",
   },
   achraf: {
     displayName: "Achraf El Masdouri",
     image: achraf,
-    jobTitle: "COO",
+    jobTitle: "CPO",
     url: "https://www.linkedin.com/in/achraf-el-masdouri-68675a174/",
   },
 } as const;
