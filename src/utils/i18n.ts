@@ -151,33 +151,22 @@ const translations = {
         {
           question: "How is Qasten different from ChatGPT?",
           answer:
-            "ChatGPT is built for individuals. Qasten is <b>built for teams</b>. You get shared spaces with memory, reusable workflows, access to all top models, and enterprise-grade security, and much more, all in one place.",
-        },
-        {
-          question: "Can I use Qasten inside Slack or Microsoft Teams?",
-          answer:
-            "<b>Yes</b>. You use Qasten as an app, but you can also bring it into Slack and Microsoft Teams when you need AI in the middle of a conversation, so <b>no context switching required</b>.",
+            "Qasten is <b>built for teams</b> with shared projects, a graph view that makes branching and collaboration effortless, access to all top models, a consensus mode where models debate to refine answers, and much more.",
         },
         {
           question: "Which AI models are supported?",
           answer:
-            "You can access all leading commercial models like GPT-5, Claude 4, Gemini, Mistral, open-source models, and more. We believe in model neutrality, so you always have the right model for the right task. Learn more in our <a href='/blog/stop-treating-ai-like-a-commodity'>blog post</a>.",
+            "You can access all leading models like GPT-5, Claude 4.5, Gemini 2.5, Mistral, open-source models, and more. We believe in model neutrality, so you always have the right model for the right task. Learn more in our <a href='/blog/stop-treating-ai-like-a-commodity'>blog post</a>.",
         },
         {
           question: "How does Qasten guarantee data security and sovereignty?",
           answer:
-            "Security is built in from day one. Qasten offers EU hosting, no third-party data storage, and zero data retention for model training. Admins also get full control: audit logs, model/region allowlists, PII redaction, and guardrails. Learn more on our <a href='/security'>Security Page</a>.",
+            "Security is built in from day one. Qasten ensures full data sovereignty with EU hosting and guarantees your data is never used to train third-party models. Learn more on our <a href='/security'>Security Page</a>.",
         },
         {
           question: "How does Qasten help us move away from Shadow AI?",
           answer:
             "Shadow AI happens when internal tools are inexistent or restrictive. Qasten solves it by offering a platform that's more powerful than the tools employees use in secret. It wins them over by providing a superior experience. Read more about our approach in our <a href='/blog/your-employees-are-smarter-than-your-ai-policy'>blog post</a>.",
-        },
-
-        {
-          question: "Can Qasten connect to my company data sources?",
-          answer:
-            "<b>Yes</b>. Qasten integrates with tools like Slack, Notion, Jira, Google Drive, and more. This makes answers context-aware and grounded in your company's knowledge.",
         },
         {
           question: "Do I need my whole team to use Qasten?",
@@ -376,33 +365,23 @@ const translations = {
         {
           question: "Quelle est la différence entre Qasten et ChatGPT ?",
           answer:
-            "ChatGPT a été conçu pour un usage individuel. Qasten est <b>pensé pour les équipes</b>. Vous disposez d'espaces avec mémoire partagée, de workflows réutilisables, d'un accès à tous les grands modèles, d'une sécurité de niveau entreprise, et bien plus encore, réunis au même endroit.",
-        },
-        {
-          question: "Puis-je utiliser Qasten dans Slack ou Microsoft Teams ?",
-          answer:
-            "<b>Oui</b>. Qasten s'utilise comme une application dédiée, mais vous pouvez aussi l'invoquer directement dans Slack ou Teams quand vous avez besoin d'IA au cœur d'une conversation sans changer d'outil.",
+            "Qasten est <b>conçu pour les équipes</b>, avec des projets partagés, une vue en graphe qui rend les branches et la collaboration fluides, l'accès à tous les meilleurs modèles, un mode de consensus où les modèles débattent pour affiner leurs réponses, et bien plus encore.",
         },
         {
           question: "Quels modèles d'IA sont disponibles ?",
           answer:
-            "Vous accédez aux principaux modèles du marché comme GPT-5, Claude 4, Gemini, Mistral, ainsi qu'aux modèles open-source. Nous croyons à la neutralité des modèles : vous avez toujours le bon modèle pour la bonne tâche. Plus d'infos dans notre <a href='/fr/blog/stop-treating-ai-like-a-commodity'>article de blog</a>.",
+            "Vous accédez aux principaux modèles du marché comme GPT-5, Claude 4.5, Gemini 2.5, Mistral, ainsi qu'aux modèles open-source. Nous croyons à la neutralité des modèles : vous avez toujours le bon modèle pour la bonne tâche. Plus d'infos dans notre <a href='/fr/blog/stop-treating-ai-like-a-commodity'>article de blog</a>.",
         },
         {
           question:
             "Comment Qasten garantit la sécurité et la souveraineté des données ?",
           answer:
-            "La sécurité est intégrée dès le départ. Qasten propose un hébergement en Europe, sans stockage chez des tiers, et aucune rétention de données pour l'entraînement des modèles. Les administrateurs disposent d'un contrôle total : journaux d'audit, listes d'autorisations de modèles/régions, anonymisation des données sensibles, garde-fous, etc. Plus de détails sur notre <a href='/fr/security'>page Sécurité</a>.",
+            "La sécurité est intégrée dès le premier jour. Qasten garantit une souveraineté totale des données grâce à un hébergement dans l'UE et assure que vos données ne sont jamais utilisées pour entraîner des modèles tiers. Plus de détails sur notre <a href='/fr/security'>page Sécurité</a>.",
         },
         {
           question: "Comment Qasten aide à sortir du Shadow AI ?",
           answer:
             "Le Shadow AI apparaît quand les outils internes sont absents ou trop restrictifs. Qasten résout ce problème en offrant une plateforme plus puissante que les outils utilisés en secret par les employés. L'adoption se fait naturellement grâce à une meilleure expérience. Découvrez notre approche dans <a href='/fr/blog/your-employees-are-smarter-than-your-ai-policy'>cet article</a>.",
-        },
-        {
-          question: "Puis-je connecter Qasten aux données de mon entreprise ?",
-          answer:
-            "<b>Oui</b>. Qasten s'intègre avec Slack, Notion, Jira, Google Drive et bien d'autres. Les réponses de l'IA sont ainsi contextualisées et ancrées dans la connaissance de votre organisation.",
         },
         {
           question: "Ai-je besoin de toute mon équipe pour utiliser Qasten ?",
