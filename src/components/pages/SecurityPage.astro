@@ -60,7 +60,7 @@ const contactUsURL = getRelativeLocaleUrl(
       <h2 class="text-center text-4xl font-bold text-gray-900 md:text-5xl">
         {t.sec.principles.title}
       </h2>
-      <div class="mt-8 grid gap-4 text-center md:grid-cols-4">
+      <div class="mt-8 grid gap-12 text-center md:grid-cols-3">
         <div class="p-6">
           <span class="mx-auto text-3xl">🇪🇺</span>
           <h3 class="mt-2 text-xl font-semibold">
@@ -81,16 +81,6 @@ const contactUsURL = getRelativeLocaleUrl(
         </div>
 
         <div class="p-6">
-          <Icon name="mdi:wrench" class="mx-auto text-4xl" />
-          <h3 class="mt-2 text-xl font-semibold">
-            {t.sec.principles.control.title}
-          </h3>
-          <p class="mt-2 text-gray-600">
-            {t.sec.principles.control.description}
-          </p>
-        </div>
-
-        <div class="p-6">
           <Icon name="mdi:people" class="mx-auto text-4xl" />
           <h3 class="mt-2 text-xl font-semibold">
             {t.sec.principles.securityThroughUx.title}
@@ -99,86 +89,6 @@ const contactUsURL = getRelativeLocaleUrl(
             class="mt-2 text-gray-600"
             set:html={t.sec.principles.securityThroughUx.description}
           />
-        </div>
-      </div>
-    </section>
-
-    <section class="mt-32 px-4 sm:px-8">
-      <h2 class="text-center text-4xl font-bold text-gray-900 md:text-5xl">
-        {t.sec.measures.title}
-      </h2>
-      <div class="mt-12 grid gap-12 md:grid-cols-2">
-        <div>
-          <h3 class="text-lg font-semibold">
-            🇪🇺 {t.sec.measures.euHosting.title}
-          </h3>
-          <p class="mt-2 text-gray-600">
-            {t.sec.measures.euHosting.description}
-          </p>
-        </div>
-        <div>
-          <h3 class="inline-flex items-center text-lg font-semibold">
-            <Icon name="mdi:cloud-off" class="mr-2 text-xl" />
-            {t.sec.measures.noThirdPartyStorage.title}
-          </h3>
-          <p class="mt-2 text-gray-600">
-            {t.sec.measures.noThirdPartyStorage.description}
-          </p>
-        </div>
-        <div>
-          <h3 class="inline-flex items-center text-lg font-semibold">
-            <Icon name="mdi:block" class="mr-2 text-xl" />
-            {t.sec.measures.zeroTrainingRetention.title}
-          </h3>
-          <p class="mt-2 text-gray-600">
-            {t.sec.measures.zeroTrainingRetention.description}
-          </p>
-        </div>
-        <div>
-          <h3 class="inline-flex items-center text-lg font-semibold">
-            <Icon name="mdi:lock" class="mr-2 text-xl" />
-            {t.sec.measures.encryption.title}
-          </h3>
-          <p class="mt-2 text-gray-600">
-            {t.sec.measures.encryption.description}
-          </p>
-        </div>
-        <div>
-          <h3 class="inline-flex items-center text-lg font-semibold">
-            <Icon name="mdi:shield-account" class="mr-2 text-xl" />
-            {t.sec.measures.adminControls.title}
-          </h3>
-          <p class="mt-2 text-gray-600">
-            {t.sec.measures.adminControls.description}
-          </p>
-        </div>
-        <div>
-          <h3 class="inline-flex text-lg font-semibold">
-            <Icon name="mdi:format-color-redact" class="mr-2 text-3xl" />{
-              t.sec.measures.piiRedaction.title
-            }
-          </h3>
-          <p class="mt-2 text-gray-600">
-            {t.sec.measures.piiRedaction.description}
-          </p>
-        </div>
-        <div>
-          <h3 class="inline-flex items-center text-lg font-semibold">
-            <Icon name="mdi:filter" class="mr-2 text-xl" />
-            {t.sec.measures.contentFiltering.title}
-          </h3>
-          <p class="mt-2 text-gray-600">
-            {t.sec.measures.contentFiltering.description}
-          </p>
-        </div>
-        <div>
-          <h3 class="inline-flex items-center text-lg font-semibold">
-            <Icon name="mdi:alarm-light" class="mr-2 text-xl" />
-            {t.sec.measures.auditAlerts.title}
-          </h3>
-          <p class="mt-2 text-gray-600">
-            {t.sec.measures.auditAlerts.description}
-          </p>
         </div>
       </div>
     </section>

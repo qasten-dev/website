@@ -108,56 +108,10 @@ const translations = {
           description:
             "No hidden training, no black boxes. You know where your data goes.",
         },
-        control: {
-          title: "Control",
-          description:
-            "You decide which models, regions, and providers are allowed.",
-        },
         securityThroughUx: {
           title: "Security through UX",
           description:
             "Employees adopt Qasten because it's easier than <b>Shadow AI</b>.",
-        },
-      },
-      measures: {
-        title: "Security Measures",
-        euHosting: {
-          title: "EU Hosting",
-          description:
-            "All data is processed in the EU by default, with the option to restrict providers outside.",
-        },
-        noThirdPartyStorage: {
-          title: "No Third-Party Storage",
-          description: "Content is never stored on model providers' servers.",
-        },
-        zeroTrainingRetention: {
-          title: "Zero Training Retention",
-          description: "Your data is never used to train external models.",
-        },
-        encryption: {
-          title: "Encryption",
-          description:
-            "All data encrypted in transit (TLS 1.2+) and at rest (AES-256).",
-        },
-        adminControls: {
-          title: "Admin Controls",
-          description:
-            "Model/region allowlists, audit logs, and retention settings give you full control.",
-        },
-        piiRedaction: {
-          title: "PII Redaction",
-          description:
-            "Sensitive personal data is automatically detected and removed before being sent to models.",
-        },
-        contentFiltering: {
-          title: "Content Filtering",
-          description:
-            "Admins can define rules to block or reroute prompts containing sensitive data, with clear feedback to users.",
-        },
-        auditAlerts: {
-          title: "Audit & Alerts",
-          description:
-            "Every action is logged. Get alerts for potential leaks or policy violations.",
         },
       },
       faq: {
@@ -378,58 +332,10 @@ const translations = {
           description:
             "Pas d'entraînement caché, pas de boîte noire. Vous savez toujours où vont vos données.",
         },
-        control: {
-          title: "Contrôle",
-          description:
-            "Vous choisissez quels modèles, régions et fournisseurs sont autorisés.",
-        },
         securityThroughUx: {
           title: "La sécurité par l'adoption",
           description:
             "Les équipes adoptent Qasten parce qu'il est plus simple et plus sûr que le <b>Shadow AI</b>.",
-        },
-      },
-      measures: {
-        title: "Nos mesures de protection",
-        euHosting: {
-          title: "Hébergement en Europe",
-          description:
-            "Toutes les données sont traitées par défaut dans l'UE, avec la possibilité de bloquer les fournisseurs externes.",
-        },
-        noThirdPartyStorage: {
-          title: "Aucun stockage externe",
-          description:
-            "Les contenus ne sont jamais conservés sur les serveurs des fournisseurs de modèles.",
-        },
-        zeroTrainingRetention: {
-          title: "Aucune réutilisation pour l'entraînement",
-          description:
-            "Vos données ne servent jamais à entraîner des modèles externes.",
-        },
-        encryption: {
-          title: "Chiffrement",
-          description:
-            "Toutes les données sont chiffrées en transit (TLS 1.2+) et au repos (AES-256).",
-        },
-        adminControls: {
-          title: "Contrôles administrateur",
-          description:
-            "Listes d'autorisations par modèle/région, journaux d'audit et politiques de rétention pour un contrôle total.",
-        },
-        piiRedaction: {
-          title: "Suppression des données personnelles",
-          description:
-            "Les informations sensibles sont automatiquement détectées et masquées avant d'être envoyées aux modèles.",
-        },
-        contentFiltering: {
-          title: "Filtrage de contenu",
-          description:
-            "Les administrateurs définissent des règles pour bloquer ou rediriger les prompts contenant des données sensibles, avec un retour clair pour les utilisateurs.",
-        },
-        auditAlerts: {
-          title: "Audit & alertes",
-          description:
-            "Chaque action est journalisée. Recevez des alertes en cas de fuite potentielle ou de non-conformité.",
         },
       },
       faq: {
