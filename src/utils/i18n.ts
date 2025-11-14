@@ -40,37 +40,21 @@ const translations = {
         "Knowledge never compounds, collaboration never happens, and value gets lost.",
     },
     features: {
-      team: {
-        title: "Your Collaborative Workspace",
-        body: "Work privately or in shared spaces with persistent context scoped by project or team. Role-based access keeps sensitive work secure, new teammates onboard instantly with full context, and Qasten can join you directly in Slack or Microsoft Teams.",
+      unification: {
+        title: "One Platform, All Models",
+        body: "Qasten replaces the scattered AI tools everyone currently uses on their own. Your whole team works in the same platform, while still using the models they prefer for each task. One shared workspace, all models, no more switching between apps.",
       },
-      kb: {
-        title: "A Living Knowledge Base",
-        body: "With your approval, Qasten turns everyday insights into a <b>collective memory</b>. Instead of knowledge disappearing in private chats, your team builds a knowledge base that gets smarter with every use.",
+      consensus: {
+        title: "Multi-model Consensus for Smarter Answers",
+        body: "Qasten can run multiple models at once, have them challenge each other's outputs, and merge their arguments into a stronger answer. By comparing perspectives, consensus helps reduce hallucinations and delivers more reliable results when accuracy matters.",
       },
-      brainstorm: {
-        title: "Brainstorm with Competing Models",
-        body: "Our <b>Consensus Canvas</b> lets top AI models challenge each other's ideas while your team debates, annotates, and refines in one shared space. Collective intelligence, in action.",
-      },
-      workflows: {
-        title: "Scale Your Expertise with Workflows",
-        body: "Turn your best prompts into reusable templates, deployable as lightweight internal apps. Version control and usage stats are built in, so one person's work benefits the whole team.",
-      },
-      models: {
-        title: "Always Get the Best Answer",
-        body: "Access OpenAI, Anthropic, Google, open-source models, and more in one place. Automatically route to the right model for the task, from creative writing to complex analysis.",
-      },
-      source: {
-        title: "Grounded in Your Company Data",
-        body: "Connect Slack, Notion, Jira, Google Drive, and more so Qasten works with your team's actual knowledge. No more copy-pasting, Qasten brings intelligence to where your data already lives.",
-      },
-      visibility: {
-        title: "From Shadow AI to Insights",
-        body: "Dashboards reveal how AI is used across your scope, from personal usage and spend to team-wide adoption. Spot what's working, what's not, and where to optimize.",
+      graph: {
+        title: "Follow Every Idea with the Graph View",
+        body: "Qasten can display your chats as a graph canvas so you can trace every version, branch, and idea. It's easier to navigate and ideal when several people explore different directions at once. No more losing context in endless chat threads.",
       },
       security: {
         title: "Security First, Always",
-        body: "Your data sovereignty is non-negotiable. Qasten offers EU hosting, no third-party storage, and zero data retention for model training. The admin panel gives full control: model and region allowlists, audit logs, PII redaction, guardrails, and more. Learn more on our <a href='/security'>Security Page</a>.",
+        body: "Qasten is built with strict security from day one: EU-based hosting, and zero use of your data to train models. Learn more on our <a href='/security'>Security Page</a>.",
       },
     },
     send: "Send",
@@ -83,7 +67,6 @@ const translations = {
       title: "Thank you for your interest!",
       subtitle: "We'll keep you updated with the latest from Qasten.",
     },
-
     sec: {
       title: "Security First, Always",
       subtitle:
@@ -161,7 +144,7 @@ const translations = {
         {
           question: "How does Qasten guarantee data security and sovereignty?",
           answer:
-            "Security is built in from day one. Qasten ensures full data sovereignty with EU hosting and guarantees your data is never used to train third-party models. Learn more on our <a href='/security'>Security Page</a>.",
+            "Security is built in from day one. Qasten is hosted in the EU and guarantees your data is never used to train third-party models. Learn more on our <a href='/security'>Security Page</a>.",
         },
         {
           question: "How does Qasten help us move away from Shadow AI?",
@@ -251,37 +234,21 @@ const translations = {
         "La connaissance ne s'accumule pas, la collaboration n'existe pas, et la valeur se perd.",
     },
     features: {
-      team: {
-        title: "Votre espace collaboratif",
-        body: "Travaillez en privé ou dans des espaces partagés où le contexte est conservé et lié à chaque projet ou équipe. Les accès par rôle protègent vos données sensibles, les nouveaux arrivants retrouvent tout l'historique en un clin d'œil, et vous pouvez utiliser Qasten directement dans Slack ou Microsoft Teams.",
+      unification: {
+        title: "Une seule plateforme, tous les modèles",
+        body: "Qasten remplace la multitude d'outils d'IA que chacun utilise dans son coin. Toute l'équipe travaille enfin au même endroit, tout en choisissant librement le modèle le plus adapté à chaque tâche. Un espace partagé, tous les modèles, plus besoin de jongler entre les appslications.",
       },
-      kb: {
-        title: "Une base de connaissances vivante",
-        body: "Avec votre accord, Qasten transforme vos échanges du quotidien en <b>mémoire collective</b>. Fini les infos qui se perdent dans des chats privés : votre équipe construit une base qui s'enrichit à chaque utilisation.",
+      consensus: {
+        title: "Consensus multi-modèles pour des réponses plus fiables",
+        body: "Qasten peut faire tourner plusieurs modèles en même temps, les confronter entre eux, puis synthétiser leurs conclusions en une réponse plus solide. En croisant plusieurs points de vue, le consensus réduit le risque d'hallucinations et améliore la fiabilité, surtout quand la précision compte.",
       },
-      brainstorm: {
-        title: "Brainstorming avec plusieurs IA",
-        body: "Notre <b>Canvas de Consensus</b> fait débattre les meilleurs modèles entre eux pendant que votre équipe commente, annote et affine les idées dans un espace partagé. C'est l'intelligence collective en action.",
-      },
-      workflows: {
-        title: "Transformez vos prompts en applications internes",
-        body: "Convertissez vos meilleurs prompts réutilisables en applis internes. Versioning et statistiques intégrés : <b>le travail d'un seul profite à toute l'équipe.</b>",
-      },
-      models: {
-        title: "Toujours la meilleure réponse",
-        body: "Accédez à OpenAI, Anthropic, Google, aux modèles open source, et plus encore depuis un seul endroit. Qasten peut automatiquement choisir le modèle le plus adapté, de la rédaction créative à l'analyse complexe.",
-      },
-      source: {
-        title: "Connecté à vos données d'entreprise",
-        body: "Branchez Slack, Notion, Jira, Google Drive et plus encore : Qasten travaille directement avec vos sources réelles. Plus besoin de copier-coller, l'intelligence arrive là où vos données vivent déjà.",
-      },
-      visibility: {
-        title: "Du Shadow AI à la clarté",
-        body: "Les tableaux de bord montrent comment l'IA est utilisée : usages personnels, coûts, adoption par équipe. Repérez ce qui fonctionne, ce qui bloque et où optimiser.",
+      graph: {
+        title: "Visualisez vos idées avec la vue Graphe",
+        body: "Qasten transforme vos échanges en un graphe clair qui montre chaque version, chaque branche et chaque piste explorée. Idéal quand plusieurs personnes avancent en parallèle. Vous gardez toujours le fil, sans vous perdre dans des fils de discussion sans fin.",
       },
       security: {
         title: "La sécurité avant tout",
-        body: "Votre souveraineté des données est non négociable. Hébergement dans l'UE, pas de stockage tiers, aucune réutilisation pour l'entraînement des modèles. Le panneau d'administration donne un contrôle total : listes d'autorisation de modèles et régions, journaux d'audit, masquage de données sensibles, garde-fous, et plus encore. Plus de détails sur notre <a href='/fr/security'>page Sécurité</a>.",
+        body: "Qasten est pensé avec une exigence de sécurité dès le départ : hébergement dans l'UE et aucune utilisation de vos données pour entraîner des modèles. Plus de détails sur notre <a href='/fr/security'>page Sécurité</a>.",
       },
     },
     send: "Envoyer",

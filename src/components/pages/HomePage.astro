@@ -2,14 +2,10 @@
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import hero from "@/assets/hero.svg";
-import team from "@/assets/team.svg";
-import kb from "@/assets/kb.svg";
-import canvas from "@/assets/canvas.svg";
-import apps from "@/assets/apps.svg";
-import integrations from "@/assets/integrations.svg";
-import dashboard from "@/assets/dashboard.svg";
-import chat from "@/assets/chat.svg";
-import security from "@/assets/security.png";
+import unified from "@/assets/unified.svg";
+import consensus from "@/assets/consensus.svg";
+import tree from "@/assets/tree.svg";
+import security from "@/assets/security.svg";
 import { team as founders } from "@/utils/team";
 
 import FeatureBlock from "@/components/FeatureBlock.astro";
@@ -167,28 +163,13 @@ const structuredData = {
 
     <section>
       <div class="mt-36 space-y-36">
-        <FeatureBlock feature={t.features.team} image={team} />
-
-        <FeatureBlock feature={t.features.kb} image={kb} imageLeft />
-
-        <FeatureBlock feature={t.features.brainstorm} image={canvas} />
-
-        <FeatureBlock feature={t.features.workflows} image={apps} imageLeft />
-
-        <FeatureBlock feature={t.features.models} image={chat} />
-
+        <FeatureBlock feature={t.features.unification} image={unified} />
         <FeatureBlock
-          feature={t.features.source}
-          image={integrations}
+          feature={t.features.consensus}
+          image={consensus}
           imageLeft
         />
-
-        <FeatureBlock
-          feature={t.features.visibility}
-          image={dashboard}
-          rounded
-        />
-
+        <FeatureBlock feature={t.features.graph} image={tree} />
         <FeatureBlock
           feature={t.features.security}
           image={security}
