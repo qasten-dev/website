@@ -3,7 +3,6 @@
 
 @theme {
   --font-inter: "Inter", var(--font-sans);
-  --font-logo: "JetBrains Mono", monospace;
 }
 
 /* https://gwfh.mranftl.com/fonts/inter?subsets=latin */
