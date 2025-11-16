@@ -24,21 +24,16 @@ const site = Astro.site?.toString();
 const wordCount = (post.body ?? "").split(/\s+/).length;
 const minutes = Math.ceil(wordCount / 150);
 
-const requiredRatios = ["1x1", "4x3", "16x9"];
-const relativeImagePaths = requiredRatios.map(
-  (ratio) => `blog/${post.id}/${ratio}.png`,
-);
+const relativeImagePath = `blog/${post.id}.png`;
 const openGraphMetadata = {
-  imageRelativePath: relativeImagePaths[2], // 16x9
+  imageRelativePath: relativeImagePath,
   type: "article",
 };
 
 const publicDir = path.resolve(process.cwd(), "public");
-for (const relativePath of relativeImagePaths) {
-  const imagePath = path.join(publicDir, relativePath);
-  if (!fs.existsSync(imagePath)) {
-    throw new Error(`Missing required blog image: ${imagePath}`);
-  }
+const imagePath = path.join(publicDir, relativeImagePath);
+if (!fs.existsSync(imagePath)) {
+  throw new Error(`Missing required blog image: ${imagePath}`);
 }
 
 const structuredData = {
@@ -63,9 +58,7 @@ const structuredData = {
   },
   datePublished: data.publishedDate.toISOString(),
   dateModified: (data.lastModified ?? data.publishedDate).toISOString(),
-  image: relativeImagePaths.map((relativePath) =>
-    new URL(relativePath, Astro.site).toString(),
-  ),
+  image: new URL(relativeImagePath, Astro.site).toString(),
   url: Astro.url.href,
   timeRequired: `PT${minutes}M`,
   wordCount,

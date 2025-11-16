@@ -19,7 +19,7 @@ _Note: The following commands use bun, but you can use other package managers._
 
 1. Add your blog Markdown to `src/blog`. It's recommended to follow the structure of existing posts.
 2. Do not forget french version on `src/blog/fr` (make sure its relative links use `/fr` prefix e.g., `/fr/#contact-us`).
-3. On top of the blog image in `src/assets/blog`, add the image to `public/blog/<post-id>/` with the following [aspect ratios](https://developers.google.com/search/docs/appearance/structured-data/article#article-types): 16x9, 4x3, and 1x1.
+3. On top of the blog image in `src/assets/blog`, add an image to `public/blog/<post-id>.png` for link preview, preferably with a background and a 16x9 ratio.
 4. Fill keywords.
    - Keywords are free‑form phrases people might search for.
    - Use [Google Trends](https://trends.google.com/trends/) to compare alternatives if unsure.
