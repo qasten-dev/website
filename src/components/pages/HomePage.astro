@@ -212,7 +212,7 @@ const structuredData = {
       <form
         action={CONTACT_FORM_URL}
         method="post"
-        class="border-border/50 bg-background mx-auto max-w-2xl rounded-lg border p-4 shadow-sm hover:shadow-md sm:p-8"
+        class="border-border/50 bg-background mx-auto max-w-2xl rounded-md border p-4 shadow-sm hover:shadow-md sm:p-8"
       >
         <input type="hidden" name="_redirect" value={contactSuccessUrl} />
         <input
@@ -234,7 +234,7 @@ const structuredData = {
           name="fullName"
           id="fullName"
           required
-          class="border-border focus:ring-primary mt-2 w-full rounded-xl border px-4 py-2 transition focus:ring-2 focus:outline-none"
+          class="border-border focus:ring-primary mt-2 w-full rounded-md border px-4 py-2 transition focus:ring-2 focus:outline-none"
         />
 
         <label for="email" class="mt-4 block text-sm font-medium">Email</label>
@@ -243,7 +243,7 @@ const structuredData = {
           id="email"
           type="email"
           required
-          class="border-border focus:ring-primary mt-2 w-full rounded-xl border px-4 py-2 transition focus:ring-2 focus:outline-none"
+          class="border-border focus:ring-primary mt-2 w-full rounded-md border px-4 py-2 transition focus:ring-2 focus:outline-none"
         />
 
         <label for="message" class="mt-4 block text-sm font-medium"
@@ -254,7 +254,7 @@ const structuredData = {
           id="message"
           rows="5"
           required
-          class="border-border focus:ring-primary mt-2 w-full rounded-xl border px-4 py-3 transition focus:ring-2 focus:outline-none"
+          class="border-border focus:ring-primary mt-2 w-full rounded-md border px-4 py-3 transition focus:ring-2 focus:outline-none"
         ></textarea>
 
         <button
@@ -271,8 +271,8 @@ const structuredData = {
   <style>
     .dotted-background {
       background-image:
-        radial-gradient(var(--color-gray-200) 1px, transparent 1px),
-        radial-gradient(var(--color-gray-200) 1px, transparent 1px);
+        radial-gradient(var(--secondary) 1px, transparent 1px),
+        radial-gradient(var(--secondary) 1px, transparent 1px);
       background-position:
         0 0,
         12px 12px;

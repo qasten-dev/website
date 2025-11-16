@@ -89,7 +89,7 @@ const structuredData = {
       <h1 class="text-4xl font-semibold sm:text-6xl md:text-5xl">
         {data.title}
       </h1>
-      <div class="mt-6 text-gray-500">
+      <div class="text-muted-foreground mt-6">
         <p>
           <span class="font-medium">{publishedDate}</span>
           {
@@ -130,9 +130,9 @@ const structuredData = {
       </a>
     </div>
     <article
-      class="prose prose-img:rounded-2xl text-accent-foreground mx-auto mt-8 w-full max-w-4xl px-4 leading-relaxed"
+      class="prose text-accent-foreground mx-auto mt-8 w-full max-w-4xl px-4 leading-relaxed"
     >
-      <Image src={data.image.src} alt={data.image.alt} class="rounded-2xl" />
+      <Image src={data.image.src} alt={data.image.alt} />
 
       <Content />
     </article>

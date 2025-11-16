@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-const { feature, image, imageLeft, rounded } = Astro.props;
+const { feature, image, imageLeft } = Astro.props;
 ---
 
 <div
@@ -9,13 +9,9 @@ const { feature, image, imageLeft, rounded } = Astro.props;
   <div class={imageLeft ? "md:order-2" : ""}>
     <h3 class="text-3xl font-bold">{feature.title}</h3>
     <p
-      class="prose mt-6 leading-relaxed text-gray-600 sm:text-lg"
+      class="prose text-muted-foreground mt-6 leading-relaxed sm:text-lg"
       set:html={feature.body}
     />
   </div>
-  <Image
-    src={image}
-    alt=""
-    class={`min-h-50 max-h-96 object-contain w-full ${rounded ? "rounded-2xl" : ""}`}
-  />
+  <Image src={image} alt="" class="max-h-96 min-h-50 w-full object-contain" />
 </div>
