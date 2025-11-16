@@ -1,6 +1,7 @@
 ---
 import BackgroundStripes from "@/components/BackgroundStripes.astro";
 import LanguageButton from "@/components/LanguageButton.astro";
+import Logo from "@/components/Logo.astro";
 import "@/styles/global.css";
 import { getRedirectUrl, SUBSCRIBE_FORM_URL } from "@/utils/forms";
 import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
@@ -100,44 +101,40 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
     }
   </head>
 
-  <body class="font-inter flex min-h-screen flex-col overflow-x-hidden">
-    {noBackground ? undefined : <BackgroundStripes />}
+  <body
+    class="text-foreground bg-background font-inter flex min-h-screen flex-col overflow-x-hidden"
+  >
+    {!noBackground && <BackgroundStripes />}
     <header
       class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 pt-6"
     >
       <div class="flex-1">
         <a
-          class="font-logo cursor-pointer text-3xl font-bold text-black"
-          href={getRelativeLocaleUrl(currentLocale, "/")}>>Qasten</a
+          class="flex cursor-pointer items-center space-x-2"
+          href={getRelativeLocaleUrl(currentLocale, "/")}
+          ><Logo width={40} height={40} /><span class="text-2xl font-semibold"
+            >Qasten</span
+          ></a
         >
       </div>
 
       <nav
-        class="hidden items-center space-x-4 font-medium text-gray-600 sm:flex md:space-x-12"
+        class="hidden items-center space-x-4 font-medium sm:flex md:space-x-12"
       >
-        <a
-          href={blogURL}
-          class="rounded-lg px-4 py-2 hover:bg-gray-200 hover:text-black"
-        >
+        <a href={blogURL} class="hover:bg-secondary rounded-md px-4 py-2">
           Blog
         </a>
-        <a
-          href={aboutUsURL}
-          class="rounded-lg px-4 py-2 hover:bg-gray-200 hover:text-black"
-        >
+        <a href={aboutUsURL} class="hover:bg-secondary rounded-md px-4 py-2">
           {t.aboutUs}
         </a>
-        <a
-          href={securityURL}
-          class="rounded-lg px-4 py-2 hover:bg-gray-200 hover:text-black"
-        >
+        <a href={securityURL} class="hover:bg-secondary rounded-md px-4 py-2">
           {t.security}
         </a>
       </nav>
 
       <div class="hidden flex-1 justify-end sm:flex">
         <a
-          class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
+          class="bg-primary/85 hover:bg-primary text-primary-foreground flex w-fit cursor-pointer items-center rounded-md px-4 py-2 font-medium transition"
           href="https://app.qasten.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -151,14 +148,14 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
         aria-label="Open menu"
         class="flex cursor-pointer flex-col space-y-1 hover:space-y-1.5 sm:hidden"
       >
-        <span class="h-0.5 w-6 bg-black"></span>
-        <span class="h-0.5 w-6 bg-black"></span>
-        <span class="h-0.5 w-6 bg-black"></span>
+        <span class="bg-foreground h-0.5 w-6"></span>
+        <span class="bg-foreground h-0.5 w-6"></span>
+        <span class="bg-foreground h-0.5 w-6"></span>
       </button>
 
       <div
         id="mobile-menu"
-        class="fixed inset-0 z-10 hidden h-screen w-screen bg-black text-white"
+        class="dark text-foreground bg-background fixed inset-0 z-10 hidden h-screen w-screen"
       >
         <button
           id="close-mobile-menu-button"
@@ -185,48 +182,56 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
 
     <!-- Force sticky footer -->
     <main class="flex-1"></main>
-    <footer class="mx-auto mt-48 w-full bg-black p-4 pt-8">
-      <div class="mx-auto flex max-w-6xl justify-between gap-24">
+    <footer class="dark text-foreground bg-background mx-auto mt-48 w-full p-4">
+      <div class="mx-auto flex max-w-6xl justify-between gap-12 md:gap-24">
         <div>
-          <a href={getRelativeLocaleUrl(currentLocale, "/")}
-            ><h3 class="font-logo text-xl font-bold text-white">>Qasten</h3></a
+          <a
+            href={getRelativeLocaleUrl(currentLocale, "/")}
+            class="flex items-center space-x-2"
+            ><Logo width={40} height={40} /><span class="text-2xl font-semibold"
+              >Qasten</span
+            ></a
           >
-          <p class="mt-2 text-xs text-neutral-400 sm:text-sm">
+          <p class="text-muted-foreground mt-2 text-xs sm:text-sm">
             {t.footer.eu} 🇪🇺
           </p>
-          <ul class="mt-8 space-y-4 text-sm font-medium text-neutral-300">
+          <ul class="text-foreground/75 mt-8 space-y-4 text-sm font-medium">
             <li>
-              <a href={contactUsURL} class="hover:text-white">{t.contactUs}</a>
+              <a href={contactUsURL} class="hover:text-foreground"
+                >{t.contactUs}</a
+              >
             </li>
             <li>
-              <a href={aboutUsURL} class="hover:text-white">{t.aboutUs}</a>
+              <a href={aboutUsURL} class="hover:text-foreground">{t.aboutUs}</a>
             </li>
             <li>
-              <a href={securityURL} class="hover:text-white">{t.security}</a>
+              <a href={securityURL} class="hover:text-foreground"
+                >{t.security}</a
+              >
             </li>
             <li>
-              <a href={blogURL} class="hover:text-white">Blog</a>
+              <a href={blogURL} class="hover:text-foreground">Blog</a>
             </li>
             <li>
               <a
                 href="https://www.linkedin.com/company/qasten"
                 target="_blank"
                 rel="noopener"
-                class="hover:text-white">LinkedIn</a
+                class="hover:text-foreground">LinkedIn</a
               >
             </li>
             <li>
               <a
                 href={getRelativeLocaleUrl(currentLocale, "privacy-policy")}
-                class="hover:text-white">{t.privacyPolicy}</a
+                class="hover:text-foreground">{t.privacyPolicy}</a
               >
             </li>
           </ul>
         </div>
 
-        <div class="max-w-1/2">
-          <h3 class="font-semibold text-white">{t.footer.stayUpdated}</h3>
-          <p class="mt-2 text-xs text-neutral-400 sm:text-sm">
+        <div class="mt-4 max-w-1/2">
+          <h3 class="font-semibold">{t.footer.stayUpdated}</h3>
+          <p class="text-muted-foreground mt-2 text-xs sm:text-sm">
             {t.footer.subscribeCta}
           </p>
           <form class="mt-4 flex" action={SUBSCRIBE_FORM_URL} method="post">
@@ -239,17 +244,17 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
               autocomplete="off"
             />
 
-            <div class="flex w-full rounded-lg bg-white">
+            <div class="flex w-full rounded-md">
               <input
                 type="email"
                 name="email"
                 placeholder={t.footer.emailPlaceholder}
-                class="w-full rounded-l-md bg-white px-3 py-1.5 text-xs text-gray-600 focus:outline-0 sm:text-sm/6"
+                class="border-border bg-input w-full rounded-l-md border-2 border-r-0 px-3 py-1.5 text-xs focus:outline-0 sm:text-sm/6"
               />
               <button
                 type="submit"
                 aria-label="Subscribe"
-                class="cursor-pointer rounded-lg border-2 border-white bg-black px-2 py-2 font-medium text-slate-100 transition hover:bg-white hover:text-black sm:px-4"
+                class="bg-primary/95 border-primary/95 hover:bg-primary hover:border-primary text-primary-foreground flex cursor-pointer items-center rounded-r-md border-2 bg-clip-padding px-4 py-2 font-medium transition"
               >
                 <span class="hidden sm:block">{t.footer.subscribe}</span>
                 <span class="sm:hidden"
@@ -262,7 +267,7 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
       </div>
 
       <div class="mx-auto mt-8 flex max-w-6xl items-center justify-between">
-        <div class="text-xs text-neutral-400 sm:text-sm">
+        <div class="text-muted-foreground text-xs sm:text-sm">
           {t.footer.copyright}
         </div>
         <div class="sm:space-x-2">

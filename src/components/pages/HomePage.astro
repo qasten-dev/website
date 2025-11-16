@@ -97,16 +97,17 @@ const structuredData = {
   <main class="mx-auto w-full max-w-6xl">
     <div class="relative px-4 pt-24 pb-16 text-center">
       <div class="hidden sm:block">
-        <div class="absolute -z-20 h-full w-full bg-white"></div>
+        <div class="absolute -z-20 h-full w-full"></div>
         <div
           class="dotted-background pointer-events-none absolute inset-0 -z-10"
         >
-          <div class="absolute h-full w-full bg-radial from-40% to-white"></div>
+          <div class="to-background absolute h-full w-full bg-radial from-40%">
+          </div>
         </div>
       </div>
 
       <div class="fade-in-up flex flex-col items-center">
-        <h1 class="text-6xl leading-tight font-bold text-black lg:text-8xl">
+        <h1 class="text-6xl leading-tight font-bold lg:text-8xl">
           <span set:html={t.hero.title.preUnderline} />
           <span class="relative inline-block">
             {t.hero.title.underline}
@@ -115,14 +116,15 @@ const structuredData = {
           <span set:html={t.hero.title.postUnderline} />
         </h1>
 
-        <p
-          class="my-8 max-w-4xl text-xl leading-relaxed text-gray-600"
-          set:html={t.hero.subtitle}
-        />
+        <p class="text-muted-foreground my-8 max-w-4xl text-xl leading-relaxed">
+          {t.hero.subtitle.firstLine}
+          <br />
+          <b class="font-semibold">{t.hero.subtitle.secondLine}</b>
+        </p>
 
         <div class="flex items-center space-x-4">
           <a
-            class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-4 py-2 font-medium text-white transition hover:bg-white hover:text-black"
+            class="bg-primary/85 border-primary/85 hover:bg-primary hover:border-primary text-primary-foreground flex cursor-pointer items-center rounded-md border-2 bg-clip-padding px-4 py-2 font-medium transition"
             href="https://app.qasten.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -130,7 +132,7 @@ const structuredData = {
             {t.startUsingNow}
           </a>
           <a
-            class="flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-gray-500 bg-white px-4 py-2 font-medium text-gray-500 transition hover:border-black hover:bg-gray-50 hover:text-black"
+            class="bg-secondary/60 hover:bg-secondary border-border text-secondary-foreground flex w-fit cursor-pointer items-center rounded-md border-2 px-4 py-2 font-medium transition"
             href="#contact-us"
           >
             {t.contactUs}
@@ -144,19 +146,19 @@ const structuredData = {
     </div>
 
     <section
-      class="relative left-1/2 mt-28 w-screen -translate-x-1/2 bg-black px-4 py-24 text-center"
+      class="dark bg-background text-foreground relative left-1/2 mt-28 w-screen -translate-x-1/2 px-4 py-24 text-center"
     >
       <h2
-        class="text-4xl font-semibold text-white sm:text-5xl"
+        class="text-4xl font-semibold sm:text-5xl"
         set:html={t.bridge.title}
       />
 
       <p
-        class="mx-auto mt-12 max-w-3xl text-lg text-gray-200 italic sm:text-xl"
+        class="text-muted-foreground mx-auto mt-12 max-w-3xl text-lg italic sm:text-xl"
         set:html={t.bridge.subtitle1}
       />
       <p
-        class="mx-auto mt-12 max-w-4xl text-lg font-bold text-gray-100 sm:text-xl"
+        class="mx-auto mt-12 max-w-4xl text-lg font-semibold sm:text-xl"
         set:html={t.bridge.subtitle2}
       />
     </section>
@@ -179,14 +181,14 @@ const structuredData = {
     </section>
 
     <section class="mx-auto mt-48 px-4 py-24 sm:px-8">
-      <h2 class="mb-12 text-center text-5xl font-semibold text-black">
+      <h2 class="mb-12 text-center text-5xl font-semibold">
         {t.deepDives}
       </h2>
 
       <BlogGrid posts={posts} numCols={2} />
 
       <a
-        class="mx-auto mt-12 flex w-fit cursor-pointer items-center space-x-2 rounded-lg border-2 border-black bg-black px-6 py-3 font-medium text-white transition hover:bg-white hover:text-black"
+        class="bg-primary/85 hover:bg-primary text-primary-foreground mx-auto mt-12 flex w-fit cursor-pointer items-center space-x-2 rounded-md px-6 py-3 font-medium transition"
         href={getRelativeLocaleUrl(currentLocale, "blog")}
       >
         {t.seeMore}
@@ -194,10 +196,10 @@ const structuredData = {
     </section>
 
     <section class="mx-auto mt-48 max-w-4xl px-4 sm:px-8">
-      <h2 class="text-center text-4xl font-semibold text-black">
+      <h2 class="text-center text-4xl font-semibold">
         {t.faq.title}
       </h2>
-      <p class="mt-2 text-center text-lg text-gray-500">
+      <p class="text-muted-foreground mt-2 text-center text-lg">
         {t.faq.subtitle}
       </p>
 
@@ -210,7 +212,7 @@ const structuredData = {
       <form
         action={CONTACT_FORM_URL}
         method="post"
-        class="mx-auto max-w-2xl rounded-2xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md sm:p-8"
+        class="border-border/50 bg-background mx-auto max-w-2xl rounded-lg border p-4 shadow-sm hover:shadow-md sm:p-8"
       >
         <input type="hidden" name="_redirect" value={contactSuccessUrl} />
         <input
@@ -225,43 +227,39 @@ const structuredData = {
           {t.contactUs}
         </h3>
 
-        <label
-          for="fullName"
-          class="mt-12 block text-sm font-medium text-gray-600">Full name</label
+        <label for="fullName" class="mt-12 block text-sm font-medium"
+          >Full name</label
         >
         <input
           name="fullName"
           id="fullName"
           required
-          class="mt-2 w-full rounded-xl border border-gray-300 px-4 py-2 text-gray-600 transition focus:ring-2 focus:ring-black focus:outline-none"
+          class="border-border focus:ring-primary mt-2 w-full rounded-xl border px-4 py-2 transition focus:ring-2 focus:outline-none"
         />
 
-        <label for="email" class="mt-4 block text-sm font-medium text-gray-600"
-          >Email</label
-        >
+        <label for="email" class="mt-4 block text-sm font-medium">Email</label>
         <input
           name="email"
           id="email"
           type="email"
           required
-          class="mt-2 w-full rounded-xl border border-gray-300 px-4 py-2 text-gray-600 transition focus:ring-2 focus:ring-black focus:outline-none"
+          class="border-border focus:ring-primary mt-2 w-full rounded-xl border px-4 py-2 transition focus:ring-2 focus:outline-none"
         />
 
-        <label
-          for="message"
-          class="mt-4 block text-sm font-medium text-gray-600">Message</label
+        <label for="message" class="mt-4 block text-sm font-medium"
+          >Message</label
         >
         <textarea
           name="message"
           id="message"
           rows="5"
           required
-          class="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-600 transition focus:ring-2 focus:ring-black focus:outline-none"
+          class="border-border focus:ring-primary mt-2 w-full rounded-xl border px-4 py-3 transition focus:ring-2 focus:outline-none"
         ></textarea>
 
         <button
           type="submit"
-          class="mx-auto mt-6 flex cursor-pointer items-center gap-2 rounded-xl border-2 border-black bg-black px-4 py-2 font-medium text-white shadow-sm transition hover:bg-white hover:text-black"
+          class="bg-primary/85 text-primary-foreground hover:bg-primary mx-auto mt-6 flex cursor-pointer items-center gap-2 rounded-md px-4 py-2 font-medium shadow-sm transition"
         >
           {t.send}
           <Icon name="mdi:send" />

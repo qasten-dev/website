@@ -18,11 +18,11 @@ const contactUsURL = getRelativeLocaleUrl(
 <Layout title={t.securityTitle} description={t.metaDescription.security}>
   <main class="mx-auto w-full max-w-6xl">
     <div class="mt-24 px-4 text-center sm:px-8">
-      <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-7xl">
+      <h1 class="text-4xl font-bold sm:text-5xl lg:text-7xl">
         {t.sec.title}
       </h1>
       <p
-        class="mx-auto mt-6 max-w-2xl text-lg text-gray-600 lg:text-xl"
+        class="text-muted-foreground mx-auto mt-6 max-w-2xl text-lg lg:text-xl"
         set:html={t.sec.subtitle}
       />
     </div>
@@ -33,31 +33,37 @@ const contactUsURL = getRelativeLocaleUrl(
       >
         <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
           <!-- https://www.securitymagazine.com/articles/101773-68-of-organizations-experienced-data-leakage-from-employee-ai-usage -->
-          <p class="text-5xl font-bold text-black">68%</p>
-          <p class="text-lg text-gray-600" set:html={t.sec.stats.dataLeakage} />
-          <p class="text-sm text-gray-500">Security Magazine, 2025</p>
+          <p class="text-5xl font-bold">68%</p>
+          <p
+            class="text-muted-foreground text-lg"
+            set:html={t.sec.stats.dataLeakage}
+          />
+          <p class="text-muted-foreground text-sm">Security Magazine, 2025</p>
         </div>
 
         <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
           <!-- https://www.businessinsider.com/kpmg-trust-in-ai-study-2025-how-employees-use-ai-2025-4 -->
-          <p class="text-5xl font-bold text-black">57%</p>
-          <p class="text-lg text-gray-600" set:html={t.sec.stats.hiddenUsage} />
-          <p class="text-sm text-gray-500">Business Insider, 2025</p>
+          <p class="text-5xl font-bold">57%</p>
+          <p
+            class="text-muted-foreground text-lg"
+            set:html={t.sec.stats.hiddenUsage}
+          />
+          <p class="text-muted-foreground text-sm">Business Insider, 2025</p>
         </div>
         <div class="flex max-w-lg flex-col justify-between gap-2 px-6">
           <!-- https://www.hcamag.com/us/specialization/hr-technology/sensitive-corporate-data-increasingly-flowing-into-ai-tools/533213 -->
-          <p class="text-5xl font-bold text-black">35%</p>
+          <p class="text-5xl font-bold">35%</p>
           <p
-            class="text-lg text-gray-600"
+            class="text-muted-foreground text-lg"
             set:html={t.sec.stats.sensitiveData}
           />
-          <p class="text-sm text-gray-500">HRD Magazine, 2025</p>
+          <p class="text-muted-foreground text-sm">HRD Magazine, 2025</p>
         </div>
       </div>
     </section>
 
     <section class="mt-32 px-4 sm:px-8">
-      <h2 class="text-center text-4xl font-bold text-gray-900 md:text-5xl">
+      <h2 class="text-center text-4xl font-bold md:text-5xl">
         {t.sec.principles.title}
       </h2>
       <div class="mt-8 grid gap-12 text-center md:grid-cols-3">
@@ -66,7 +72,7 @@ const contactUsURL = getRelativeLocaleUrl(
           <h3 class="mt-2 text-xl font-semibold">
             {t.sec.principles.euFirst.title}
           </h3>
-          <p class="mt-2 text-base text-gray-600">
+          <p class="text-muted-foreground mt-2 text-base">
             {t.sec.principles.euFirst.description}
           </p>
         </div>
@@ -75,7 +81,7 @@ const contactUsURL = getRelativeLocaleUrl(
           <h3 class="mt-2 text-xl font-semibold">
             {t.sec.principles.transparency.title}
           </h3>
-          <p class="mt-2 text-gray-600">
+          <p class="text-muted-foreground mt-2">
             {t.sec.principles.transparency.description}
           </p>
         </div>
@@ -86,7 +92,7 @@ const contactUsURL = getRelativeLocaleUrl(
             {t.sec.principles.securityThroughUx.title}
           </h3>
           <p
-            class="mt-2 text-gray-600"
+            class="text-muted-foreground mt-2"
             set:html={t.sec.principles.securityThroughUx.description}
           />
         </div>
@@ -94,7 +100,7 @@ const contactUsURL = getRelativeLocaleUrl(
     </section>
 
     <section class="mt-32 px-4 sm:px-8">
-      <h2 class="text-center text-4xl font-bold text-gray-900 md:text-5xl">
+      <h2 class="text-center text-4xl font-bold md:text-5xl">
         {t.sec.faq.title}
       </h2>
 
@@ -104,15 +110,15 @@ const contactUsURL = getRelativeLocaleUrl(
     </section>
 
     <section class="mt-32 mb-24 px-4 text-center sm:px-8">
-      <h2 class="text-3xl font-bold text-gray-900">
+      <h2 class="text-3xl font-bold">
         {t.sec.conclusion.title}
       </h2>
-      <p class="mt-4 text-lg text-gray-600">
+      <p class="text-muted-foreground mt-4 text-lg">
         {t.sec.conclusion.subtitle}
       </p>
       <a
         href={contactUsURL}
-        class="mt-8 inline-block rounded-md bg-black px-6 py-3 font-medium text-white hover:bg-gray-800"
+        class="bg-primary/85 border-primary/85 hover:bg-primary hover:border-primary text-primary-foreground mt-8 inline-block rounded-md border-2 bg-clip-padding px-4 py-2 font-medium"
       >
         {t.contactUs}
       </a>

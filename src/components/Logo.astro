@@ -1,0 +1,80 @@
+---
+const { width = 400, height = 400 } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="120 -40 400 400"
+  width={width}
+  height={height}
+>
+  {/* <!-- connecting bar (behind circles, 20px tall, fits within edges) --> */}
+  <rect class="animate-bar fill-primary" x={180} y={150} width={280} height={20}
+  ></rect>
+  <circle class="animate-circle-1 fill-primary" cx={180} cy={160} r={60}
+  ></circle>
+  <circle class="animate-circle-2 fill-primary" cx={320} cy={160} r={60}
+  ></circle>
+  <circle class="animate-circle-3 fill-foreground" cx={460} cy={160} r={60}
+  ></circle>
+</svg>
+
+<style>
+  /* Circle animation: scales from 0 to full size */
+  @keyframes scaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Bar animation: grows from left to right */
+  @keyframes grow {
+    0% {
+      transform: scaleX(0);
+      transform-origin: left center;
+    }
+    /* Stay at 0% until circles are visible */
+    50% {
+      transform: scaleX(0);
+      transform-origin: left center;
+    }
+    /* Grow to full width from left */
+    100% {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+  }
+
+  /* Connecting bar behind circles */
+  .animate-bar {
+    animation: grow 1s ease-in-out;
+  }
+
+  /* First circle - no delay */
+  .animate-circle-1 {
+    animation: scaleIn 0.5s ease-in-out;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  /* Second circle - slight delay for staggered effect */
+  .animate-circle-2 {
+    opacity: 0;
+    animation: scaleIn 0.5s ease-in-out 0.15s forwards;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  /* Third circle - more delay for sequential appearance */
+  .animate-circle-3 {
+    opacity: 0;
+    animation: scaleIn 0.5s ease-in-out 0.3s forwards;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+</style>

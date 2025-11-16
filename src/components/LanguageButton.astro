@@ -13,14 +13,14 @@ const localeFreePathname = pathname.startsWith(`/${currentLocale}/`)
   : pathname;
 
 const selectedClasses = selected
-  ? "bg-white text-black"
-  : "text-white inset-ring-2 inset-ring-white hover:bg-white hover:text-black cursor-pointer";
+  ? "bg-secondary text-secondary-foreground"
+  : "text-secondary-foreground inset-ring-2 inset-ring-secondary hover:bg-secondary hover:text-secondary-foreground cursor-pointer";
 
 const sizeClasses = size === "lg" ? "px-6 py-3 text-lg" : "px-4 py-2 text-sm";
 ---
 
 <button
-  class={`${sizeClasses} rounded-xl font-medium transition ${selectedClasses}`}
+  class={`${sizeClasses} rounded-md font-medium transition ${selectedClasses}`}
   disabled={selected}
   onclick={selected
     ? undefined

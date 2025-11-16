@@ -1,6 +1,6 @@
 import farouk from "@/assets/farouk.png";
 import youssef from "@/assets/youssef.png";
-import achraf from "@/assets/achraf.jpeg";
+import achraf from "@/assets/achraf.png";
 
 export const team = {
   farouk: {

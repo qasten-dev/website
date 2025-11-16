@@ -9,11 +9,11 @@ type FAQ = {
 const { faq } = Astro.props as { faq: FAQ };
 ---
 
-<div class="divide-y divide-slate-200">
+<div class="divide-border/50 divide-y">
   {
     faq.map(({ question, answer }) => (
       <details class="group">
-        <summary class="flex cursor-pointer items-center justify-between py-6 text-lg font-medium text-black">
+        <summary class="flex cursor-pointer items-center justify-between py-6 text-lg font-medium">
           {question}
           <Icon
             name="mdi:keyboard-arrow-down"
@@ -21,7 +21,10 @@ const { faq } = Astro.props as { faq: FAQ };
             class="ml-2 transition-transform duration-300 group-open:rotate-180"
           />
         </summary>
-        <p class="prose max-w-none pb-6 text-gray-600" set:html={answer} />
+        <p
+          class="prose text-muted-foreground max-w-none pb-6"
+          set:html={answer}
+        />
       </details>
     ))
   }

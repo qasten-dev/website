@@ -23,14 +23,14 @@ const adoptionBlog = getRelativeLocaleUrl(
   <main class="mx-auto mt-12 w-full max-w-6xl px-4">
     <div class="mt-8 text-center">
       <h1 class="text-6xl font-semibold">{t.about.title}</h1>
-      <p class="mx-auto mt-8 max-w-2xl text-lg text-gray-600">
+      <p class="text-muted-foreground mx-auto mt-8 max-w-2xl text-lg">
         {t.about.tagline}
       </p>
     </div>
 
     <section class="mt-24">
       <h2 class="text-center text-3xl font-semibold">{t.about.ourStory}</h2>
-      <div class="text-base leading-relaxed text-gray-700">
+      <div class="text-secondary-foreground text-base leading-relaxed">
         <p class="mt-12">
           {t.about.story[0]}
         </p>
@@ -46,7 +46,7 @@ const adoptionBlog = getRelativeLocaleUrl(
             <Icon name="mdi:swap-horizontal" class="mr-2 text-2xl" />
             {t.about.models.title}
           </h3>
-          <p class="prose mt-2 text-gray-600">
+          <p class="prose text-muted-foreground mt-2">
             {t.about.models.body}
             <a href={modelNeutralityBlog}>{t.about.readPost}</a>
           </p>
@@ -57,7 +57,7 @@ const adoptionBlog = getRelativeLocaleUrl(
 
             {t.about.adoption.title}
           </h3>
-          <p class="prose mt-2 text-gray-600">
+          <p class="prose text-muted-foreground mt-2">
             {t.about.adoption.body}
             <a href={adoptionBlog}>{t.about.readPost}</a>
           </p>
@@ -68,7 +68,7 @@ const adoptionBlog = getRelativeLocaleUrl(
 
             {t.about.teams.title}
           </h3>
-          <p class="prose mt-2 text-gray-600">
+          <p class="prose text-muted-foreground mt-2">
             {t.about.teams.body}
           </p>
         </div>
@@ -89,11 +89,11 @@ const adoptionBlog = getRelativeLocaleUrl(
             />
           </div>
           <h3 class="mt-2 text-xl font-semibold">{team.farouk.displayName}</h3>
-          <p class="text-sm font-medium text-gray-500">
+          <p class="text-muted-foreground text-sm font-medium">
             {team.farouk.jobTitle}
           </p>
           <p
-            class="mx-auto mt-4 max-w-58 text-sm text-gray-600"
+            class="text-muted-foreground mx-auto mt-4 max-w-58 text-sm"
             set:html={t.about.farouk}
           />
         </div>
@@ -104,11 +104,11 @@ const adoptionBlog = getRelativeLocaleUrl(
             class="mx-auto h-24 w-24 rounded-full object-cover"
           />
           <h3 class="mt-2 text-xl font-semibold">{team.youssef.displayName}</h3>
-          <p class="na text-sm font-medium text-gray-500">
+          <p class="na text-muted-foreground text-sm font-medium">
             {team.youssef.jobTitle}
           </p>
           <p
-            class="mx-auto mt-4 max-w-58 text-sm text-gray-600"
+            class="text-muted-foreground mx-auto mt-4 max-w-58 text-sm"
             set:html={t.about.youssef}
           />
         </div>
@@ -121,11 +121,11 @@ const adoptionBlog = getRelativeLocaleUrl(
             />
           </div>
           <h3 class="mt-2 text-xl font-semibold">{team.achraf.displayName}</h3>
-          <p class="text-sm font-medium text-gray-500">
+          <p class="text-muted-foreground text-sm font-medium">
             {team.achraf.jobTitle}
           </p>
           <p
-            class="mx-auto mt-4 max-w-58 text-sm text-gray-600"
+            class="text-muted-foreground mx-auto mt-4 max-w-58 text-sm"
             set:html={t.about.achraf}
           />
         </div>
