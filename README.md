@@ -38,11 +38,3 @@ _Note: these are under farouk@qasten.com at the moment._
 
 - [Umami](https://cloud.umami.is/login): Analytics
 - [Formspark](https://dashboard.formspark.io/): Forms (contact, news subscription)
-
-## Favicon
-
-Favicon was generated on [favicon.io](https://favicon.io/) with the following config:
-
-- Font Title: JetBrains Mono
-- Font Size: 125
-- Font Weight: Bold 700

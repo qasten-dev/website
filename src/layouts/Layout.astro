@@ -1,5 +1,6 @@
 ---
 import BackgroundStripes from "@/components/BackgroundStripes.astro";
+import FaviconLinks from "@/components/FaviconLinks.astro";
 import LanguageButton from "@/components/LanguageButton.astro";
 import Logo from "@/components/Logo.astro";
 import "@/styles/global.css";
@@ -68,11 +69,7 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
     <meta name="twitter:site" content="@Qastencom" />
     {author && <meta name="author" content={author} />}
 
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <FaviconLinks />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
 
