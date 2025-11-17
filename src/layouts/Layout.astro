@@ -99,7 +99,7 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
   </head>
 
   <body
-    class="text-foreground bg-background font-inter flex min-h-screen flex-col overflow-x-hidden"
+    class="text-foreground selection:bg-primary selection:text-primary-foreground bg-background font-inter flex min-h-screen flex-col overflow-x-hidden"
   >
     {!noBackground && <BackgroundStripes />}
     <header
