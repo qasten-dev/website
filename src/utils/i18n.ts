@@ -12,7 +12,7 @@ const translations = {
     metaDescription: {
       home: "Qasten is the AI workspace for teams that replaces shadow AI. Collaborate with models, workflows, and data in one secure platform built for productivity.",
       aboutUs:
-        "At Qasten, we believe the future of work is collective intelligence. Learn our mission, beliefs, and vision for secure, team-first AI.",
+        "At Qasten, we believe the future of work is collective intelligence. Learn our mission, beliefs, and vision for secure, collaborative AI.",
       security:
         "Qasten puts security first: EU hosting, zero retention, admin controls, and built-in safeguards to replace risky Shadow AI.",
       blog: "Insights on AI adoption, team productivity, and security. Explore Qasten's blog for practical strategies and expert perspectives.",
@@ -24,14 +24,14 @@ const translations = {
     securityTitle: "Qasten - Secure AI Adoption to replace Shadow AI",
     hero: {
       title: {
-        preUnderline: "The",
-        underline: "Team-First",
+        preUnderline: "Your",
+        underline: "Collaborative",
         postUnderline: "<br/> AI Workspace",
-        full: "The Team-First AI Workspace",
+        full: "Your Collaborative AI Workspace",
       },
       subtitle: {
         firstLine:
-          "Qasten is a collaborative AI workspace that replaces scattered chat tools.",
+          "Replace your team's scattered chat tools and deliver more, together.",
         secondLine: "Start solo today, invite your team when you're ready.",
       },
     },
@@ -209,7 +209,7 @@ const translations = {
     metaDescription: {
       home: "Qasten est la plateforme IA conçue pour les équipes qui remplace le Shadow AI : un espace unique pour collaborer, partager des connaissances et travailler en toute sécurité.",
       aboutUs:
-        "At Qasten, we believe the future of work is collective intelligence. Learn our mission, beliefs, and vision for secure, team-first AI.",
+        "Chez Qasten, nous croyons que l'avenir du travail réside dans l'intelligence collective. Découvrez notre mission, nos convictions et notre vision d'une IA collaborative et sécurisée.",
       security:
         "Avec Qasten, la sécurité est garantie : hébergement européen, aucune rétention de données et un contrôle total pour remplacer le Shadow AI.",
       blog: "Analyses et conseils sur l'adoption de l'IA, la productivité d'équipe et la sécurité. Le blog Qasten vous aide à transformer vos pratiques IA.",
@@ -221,16 +221,16 @@ const translations = {
     securityTitle: "Qasten - La solution sécurisée pour remplacer le Shadow AI",
     hero: {
       title: {
-        preUnderline: "L'espace de travail IA <br/> pensé pour",
-        underline: "les équipes",
+        preUnderline: "L'espace de travail <br/> IA ",
+        underline: "collaboratif",
         postUnderline: "",
-        full: "L'espace de travail IA pensé pour les équipes",
+        full: "L'espace de travail IA collaboratif",
       },
       subtitle: {
         firstLine:
-          "Qasten est un espace collaboratif qui remplace les outils de chat dispersés.",
+          "Remplacez les outils de chat dispersés de votre équipe et livrez plus, ensemble.",
         secondLine:
-          "Commencez seul dès aujourd'hui, invitez votre équipe quand vous le souhaitez.",
+          "Commencez seul aujourd'hui, invitez votre équipe quand vous êtes prêt.",
       },
     },
     bridge: {

@@ -95,7 +95,7 @@ const structuredData = {
   description={t.metaDescription.home}
 >
   <main class="mx-auto w-full max-w-6xl">
-    <div class="relative px-4 pt-24 pb-16 text-center">
+    <div class="relative px-4 pt-24 text-center">
       <div class="hidden sm:block">
         <div class="absolute -z-20 h-full w-full"></div>
         <div
@@ -111,18 +111,26 @@ const structuredData = {
           <span set:html={t.hero.title.preUnderline} />
           <span class="relative inline-block">
             {t.hero.title.underline}
-            <Underline />
+            <span aria-hidden="true" class="block h-6 overflow-visible">
+              <Underline />
+            </span>
           </span>
           <span set:html={t.hero.title.postUnderline} />
         </h1>
 
-        <p class="text-muted-foreground my-8 max-w-4xl text-xl leading-relaxed">
+        <p
+          class="text-muted-foreground mt-12 max-w-4xl text-xl leading-relaxed"
+        >
           {t.hero.subtitle.firstLine}
-          <br />
-          <b class="font-semibold">{t.hero.subtitle.secondLine}</b>
         </p>
 
-        <div class="flex items-center space-x-4">
+        <p
+          class="text-muted-foreground mt-2 max-w-4xl text-xl leading-relaxed font-semibold"
+        >
+          {t.hero.subtitle.secondLine}
+        </p>
+
+        <div class="mt-6 flex items-center space-x-4">
           <a
             class="bg-primary/85 border-primary/85 hover:bg-primary hover:border-primary text-primary-foreground flex cursor-pointer items-center rounded-md border-2 bg-clip-padding px-4 py-2 font-medium transition"
             href="https://app.qasten.com"
@@ -141,7 +149,7 @@ const structuredData = {
       </div>
     </div>
 
-    <div class="px-4">
+    <div class="mt-8 px-4">
       <Image src={hero} alt="" priority class="fade-in-up mx-auto" />
     </div>
 
