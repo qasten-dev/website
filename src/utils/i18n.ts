@@ -38,7 +38,7 @@ const translations = {
     bridge: {
       title: "Your AI Tools Were Built for Individuals",
       subtitle1:
-        "<b>Shadow AI</b> is everywhere in your teams today. <br/> Different tools, personal accounts, private prompts.",
+        "Shadow AI is everywhere in your teams today. <br/> Different tools, personal accounts, private prompts.",
       subtitle2:
         "Knowledge never compounds, collaboration never happens, and value gets lost.",
     },
@@ -236,7 +236,7 @@ const translations = {
     bridge: {
       title: "Vos outils d'IA ont été pensés pour les individus",
       subtitle1:
-        "Le <b>Shadow AI</b> est déjà partout dans vos équipes. <br/> Outils différents, comptes personnels, prompts isolés.",
+        "Le Shadow AI est déjà partout dans vos équipes. <br/> Outils différents, comptes personnels, prompts isolés.",
       subtitle2:
         "La connaissance ne s'accumule pas, la collaboration n'existe pas, et la valeur se perd.",
     },
