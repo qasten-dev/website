@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 @plugin '@tailwindcss/typography';
 
 @theme {
@@ -149,4 +150,13 @@ These serve as the fallback; there is no separate default.css file. */
   --sidebar-accent-foreground: #e6d7c7;
   --sidebar-border: #5a4f47;
   --sidebar-ring: #f59e0b;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
