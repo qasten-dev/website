@@ -38,15 +38,6 @@
   src: url("/fonts/inter-v19-latin-700.woff2") format("woff2");
 }
 
-/* https://gwfh.mranftl.com/fonts/jetbrains-mono?subsets=latin */
-@font-face {
-  font-display: swap;
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-weight: 800;
-  src: url("/fonts/jetbrains-mono-v23-latin-800.woff2") format("woff2");
-}
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
