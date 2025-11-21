@@ -7,6 +7,8 @@ import icon from "astro-icon";
 
 import sitemap from "@astrojs/sitemap";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.qasten.com",
@@ -17,16 +19,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [
-    icon(),
-    sitemap({
-      i18n: {
-        defaultLocale: "en",
-        locales: {
-          en: "en",
-          fr: "fr",
-        },
+  integrations: [icon(), sitemap({
+    i18n: {
+      defaultLocale: "en",
+      locales: {
+        en: "en",
+        fr: "fr",
       },
-    }),
-  ],
+    },
+  }), react()],
 });
