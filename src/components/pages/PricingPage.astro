@@ -1,0 +1,193 @@
+---
+import { Check, SparkleIcon, Building2, ArrowLeft } from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+import Layout from "@/layouts/Layout.astro";
+
+const features = {
+  free: ["Basic model access", "Limited message quotas", "Community support"],
+  pro: [
+    "Everything in Free",
+    "Access to all premium models",
+    "Extended message quotas",
+    "Early access to new features",
+    "Priority support",
+  ],
+  enterprise: [
+    "Everything in Pro",
+    "Self-hosting options",
+    "SSO integration",
+    "Advanced security controls",
+    "Custom integrations",
+    "24/7 phone support",
+  ],
+};
+
+const isPro = false; // TODO: Remove
+---
+
+<Layout title="Pricing" description="Pricing for Qasten">
+  <div
+    class="mx-auto mt-24 flex max-w-6xl flex-col items-center justify-center space-y-12"
+  >
+    <h1 class="text-center text-4xl font-semibold tracking-tight">
+      Choose Your Qasten Plan
+    </h1>
+
+    <div
+      class="grid w-full max-w-sm grid-cols-1 gap-8 px-8 md:max-w-none md:grid-cols-3"
+    >
+      <Card>
+        <CardHeader className="mt-2 text-center">
+          <CardTitle className="text-2xl font-bold">Free</CardTitle>
+          <CardDescription className="text-base"
+            >For getting started with Qasten</CardDescription
+          >
+          <div class="mt-4">
+            <span class="text-4xl font-bold">$0</span>
+            <span class="text-muted-foreground">/month</span>
+          </div>
+        </CardHeader>
+        <CardContent
+          className="mt-4 flex h-full flex-col justify-between space-y-6"
+        >
+          <ul class="space-y-4">
+            {
+              features.free.map((feature) => (
+                <li class="flex gap-3">
+                  <Check className="mt-0.5 size-5 text-green-600" />
+                  <span class="text-sm">{feature}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <Button className="w-full cursor-pointer" disabled={!isPro}>
+            {
+              isPro ? (
+                <a href="/settings?tab=subscription">Downgrade</a>
+              ) : (
+                "Current Plan"
+              )
+            }
+          </Button>
+        </CardContent>
+      </Card>
+
+      <Card className="border-primary relative shadow-lg">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 transform">
+          <Badge
+            className="bg-primary text-primary-foreground rounded-md px-4 py-1"
+            >Recommended</Badge
+          >
+        </div>
+        <CardHeader className="mt-2 text-center">
+          <CardTitle
+            className="flex items-center justify-center gap-2 text-2xl font-bold"
+          >
+            <SparkleIcon className="text-primary size-6" />
+            Pro
+          </CardTitle>
+          <CardDescription className="text-base"
+            >For getting the most out of Qasten</CardDescription
+          >
+          <div class="mt-4">
+            <span class="text-4xl font-bold">$19</span>
+            <span class="text-muted-foreground">/month</span>
+          </div>
+        </CardHeader>
+        <CardContent
+          className="mt-4 flex h-full flex-col justify-between space-y-6"
+        >
+          <ul class="space-y-4">
+            {
+              features.pro.map((feature) => (
+                <li class="flex gap-3">
+                  <Check className="mt-0.5 size-5 text-green-600" />
+                  <span class="text-sm">{feature}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <form action="/api/stripe/create-checkout-session" method="POST">
+            <Button
+              type="submit"
+              className="w-full cursor-pointer"
+              aria-label="Upgrade to Pro"
+              disabled={isPro}
+            >
+              {
+                isPro ? (
+                  "Current Plan"
+                ) : (
+                  <>
+                    <SparkleIcon className="mr-2 size-4" /> Upgrade to Pro
+                  </>
+                )
+              }
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader className="mt-2 text-center">
+          <CardTitle
+            className="flex items-center justify-center gap-2 text-2xl font-bold"
+          >
+            <Building2 className="text-primary size-6" />
+            Enterprise
+          </CardTitle>
+          <CardDescription className="text-base"
+            >For organizations with custom needs</CardDescription
+          >
+          <div class="mt-4">
+            <span class="text-4xl font-medium">Custom</span>
+          </div>
+        </CardHeader>
+        <CardContent
+          className="mt-4 flex h-full flex-col justify-between space-y-6"
+        >
+          <ul class="space-y-4">
+            {
+              features.enterprise.map((feature) => (
+                <li class="flex gap-3">
+                  <Check className="mt-0.5 size-5 text-green-600" />
+                  <span class="text-sm">{feature}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <Button
+            className="bg-primary w-full cursor-pointer"
+            aria-label="Contact us for Enterprise plan"
+          >
+            <a
+              href="mailto:contact+enterprise@qasten.com?subject=Enterprise Plan Inquiry"
+              >Contact Us</a
+            >
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+
+    <p class="text-muted-foreground mb-4 px-2 text-center text-sm">
+      All plans include secure data handling and controls.{" "}
+      <a
+        target="_blank"
+        href="https://www.qasten.com/security"
+        class="text-primary hover:underline"
+      >
+        Learn more about our security practices.
+      </a>
+    </p>
+  </div>
+</Layout>
