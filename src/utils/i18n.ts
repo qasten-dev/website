@@ -20,6 +20,60 @@ const translations = {
     aboutUs: "About us",
     contactUs: "Contact us",
     pricing: "Pricing",
+    price: {
+      metaTitle: "Pricing",
+      metaDescription: "Pricing for Qasten",
+      heading: "Choose Your Qasten Plan",
+      badgeRecommended: "Recommended",
+      plans: {
+        free: {
+          name: "Free",
+          description: "For getting started with Qasten",
+          priceSuffix: "/month",
+          features: [
+            "Basic model access",
+            "Limited message quotas",
+            "Community support",
+          ],
+        },
+        pro: {
+          name: "Pro",
+          description: "For getting the most out of Qasten",
+          priceSuffix: "/month",
+          features: [
+            "Everything in Free",
+            "Access to all premium models",
+            "Extended message quotas",
+            "Early access to new features",
+            "Priority support",
+          ],
+          ctaLabel: "Upgrade to Pro",
+        },
+        enterprise: {
+          name: "Enterprise",
+          description: "For organizations with custom needs",
+          price: "Custom",
+          features: [
+            "Everything in Pro",
+            "Self-hosting options",
+            "SSO integration",
+            "Advanced security controls",
+            "Custom integrations",
+            "24/7 phone support",
+          ],
+          ctaLabel: "Contact Us",
+          emailSubject: "Enterprise Plan Inquiry",
+        },
+      },
+      ctas: {
+        currentPlan: "Current Plan",
+        downgrade: "Downgrade",
+      },
+      securityNotice: {
+        text: "All plans include secure data handling and controls.",
+        linkText: "Learn more about our security practices.",
+      },
+    },
     startUsingNow: "Start now for free",
     security: "Security",
     securityTitle: "Qasten - Secure AI Adoption to replace Shadow AI",
@@ -380,6 +434,60 @@ const translations = {
     seeMore: "Voir plus",
     timeToRead: "min de lecture",
     updated: "Mis à jour en",
+    price: {
+      metaTitle: "Tarifs",
+      metaDescription: "Tarifs de Qasten",
+      heading: "Choisissez votre plan Qasten",
+      badgeRecommended: "Recommandé",
+      plans: {
+        free: {
+          name: "Gratuit",
+          description: "Pour démarrer avec Qasten",
+          priceSuffix: "/mois",
+          features: [
+            "Accès de base aux modèles",
+            "Quotas de messages limités",
+            "Support communautaire",
+          ],
+        },
+        pro: {
+          name: "Pro",
+          description: "Pour tirer le meilleur parti de Qasten",
+          priceSuffix: "/mois",
+          features: [
+            "Tout ce qui est dans le plan Gratuit",
+            "Accès à tous les modèles premium",
+            "Quotas de messages étendus",
+            "Accès anticipé aux nouvelles fonctionnalités",
+            "Support prioritaire",
+          ],
+          ctaLabel: "Passer à Pro",
+        },
+        enterprise: {
+          name: "Entreprise",
+          description: "Pour les organisations avec des besoins sur mesure",
+          price: "Sur-mesure",
+          features: [
+            "Tout ce qui est dans Pro",
+            "Options d'auto-hébergement",
+            "Intégration SSO",
+            "Contrôles de sécurité avancés",
+            "Intégrations personnalisées",
+            "Assistance téléphonique 24/7",
+          ],
+          ctaLabel: "Nous contacter",
+          emailSubject: "Demande d'offre Entreprise",
+        },
+      },
+      ctas: {
+        currentPlan: "Plan actuel",
+        downgrade: "Rétrograder",
+      },
+      securityNotice: {
+        text: "Tous les forfaits incluent une gestion sécurisée des données et des contrôles.",
+        linkText: "En savoir plus sur nos pratiques de sécurité.",
+      },
+    },
     about: {
       title: "À propos de Qasten",
       tagline:
