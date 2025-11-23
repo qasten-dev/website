@@ -47,7 +47,7 @@ const translations = {
             "Early access to new features",
             "Priority support",
           ],
-          ctaLabel: "Upgrade to Pro",
+          ctaLabel: "Get Pro",
         },
         enterprise: {
           name: "Enterprise",
@@ -67,7 +67,6 @@ const translations = {
       },
       ctas: {
         currentPlan: "Current Plan",
-        downgrade: "Downgrade",
       },
       securityNotice: {
         text: "All plans include secure data handling and controls.",
@@ -481,7 +480,6 @@ const translations = {
       },
       ctas: {
         currentPlan: "Plan actuel",
-        downgrade: "Rétrograder",
       },
       securityNotice: {
         text: "Tous les forfaits incluent une gestion sécurisée des données et des contrôles.",

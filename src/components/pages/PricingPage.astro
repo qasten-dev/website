@@ -22,13 +22,11 @@ const securityURL = getRelativeLocaleUrl(currentLocale, "/security");
 const enterpriseMailto = `mailto:contact+enterprise@qasten.com?subject=${encodeURIComponent(
   t.price.plans.enterprise.emailSubject,
 )}`;
-
-const isPro = false; // TODO: Remove
 ---
 
 <Layout title={t.price.metaTitle} description={t.price.metaDescription}>
   <div
-    class="mx-auto mt-24 flex max-w-6xl flex-col items-center justify-center space-y-12"
+    class="mx-auto mt-24 flex flex-col items-center justify-center space-y-12 xl:w-6xl"
   >
     <h1 class="text-center text-4xl font-semibold tracking-tight">
       {t.price.heading}
@@ -37,7 +35,7 @@ const isPro = false; // TODO: Remove
     <div
       class="grid w-full max-w-sm grid-cols-1 gap-8 px-8 md:max-w-none md:grid-cols-3"
     >
-      <Card>
+      <Card className="rounded-md">
         <CardHeader className="mt-2 text-center">
           <CardTitle className="text-2xl font-bold"
             >{t.price.plans.free.name}</CardTitle
@@ -69,21 +67,22 @@ const isPro = false; // TODO: Remove
               ))
             }
           </ul>
-          <Button className="w-full cursor-pointer" disabled={!isPro}>
-            {
-              isPro ? (
-                <a href="/settings?tab=subscription">
-                  {t.price.ctas.downgrade}
-                </a>
-              ) : (
-                t.price.ctas.currentPlan
-              )
-            }
-          </Button>
+          <a
+            href="https://app.qasten.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              className="w-full cursor-pointer"
+              aria-label={t.startUsingNow}
+            >
+              {t.startUsingNow}
+            </Button>
+          </a>
         </CardContent>
       </Card>
 
-      <Card className="border-primary relative shadow-lg">
+      <Card className="border-primary relative rounded-md shadow-lg">
         <div class="absolute -top-3 left-1/2 -translate-x-1/2 transform">
           <Badge
             className="bg-primary text-primary-foreground rounded-md px-4 py-1"
@@ -124,29 +123,24 @@ const isPro = false; // TODO: Remove
               ))
             }
           </ul>
-          <form action="/api/stripe/create-checkout-session" method="POST">
+          <a
+            href="https://app.qasten.com/subscription/plans"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               type="submit"
               className="w-full cursor-pointer"
               aria-label={t.price.plans.pro.ctaLabel}
-              disabled={isPro}
             >
-              {
-                isPro ? (
-                  t.price.ctas.currentPlan
-                ) : (
-                  <>
-                    <SparkleIcon className="mr-2 size-4" />{" "}
-                    {t.price.plans.pro.ctaLabel}
-                  </>
-                )
-              }
+              <SparkleIcon className="mr-2 size-4" />
+              {t.price.plans.pro.ctaLabel}
             </Button>
-          </form>
+          </a>
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="rounded-md">
         <CardHeader className="mt-2 text-center">
           <CardTitle
             className="flex items-center justify-center gap-2 text-2xl font-bold"
@@ -158,7 +152,7 @@ const isPro = false; // TODO: Remove
             >{t.price.plans.enterprise.description}</CardDescription
           >
           <div class="mt-4">
-            <span class="text-4xl font-medium"
+            <span class="text-4xl font-medium tracking-tight"
               >{t.price.plans.enterprise.price}</span
             >
           </div>
@@ -178,7 +172,7 @@ const isPro = false; // TODO: Remove
           </ul>
           <a href={enterpriseMailto}>
             <Button
-              className="bg-primary w-full cursor-pointer"
+              className="bg-secondary border-border text-secondary-foreground w-full cursor-pointer rounded-md border-2 hover:bg-transparent"
               aria-label={t.price.plans.enterprise.ctaLabel}
             >
               {t.price.plans.enterprise.ctaLabel}

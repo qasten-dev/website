@@ -117,7 +117,7 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
       </div>
 
       <nav
-        class="hidden items-center space-x-4 font-medium sm:flex md:space-x-12"
+        class="hidden items-center space-x-6 font-medium md:flex lg:space-x-12"
       >
         <a href={blogURL} class="hover:bg-secondary rounded-md px-4 py-2">
           Blog
@@ -125,10 +125,16 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
         <a href={pricingURL} class="hover:bg-secondary rounded-md px-4 py-2">
           {t.pricing}
         </a>
-        <a href={aboutUsURL} class="hover:bg-secondary rounded-md px-4 py-2">
+        <a
+          href={aboutUsURL}
+          class="hover:bg-secondary hidden rounded-md px-4 py-2 lg:block"
+        >
           {t.aboutUs}
         </a>
-        <a href={securityURL} class="hover:bg-secondary rounded-md px-4 py-2">
+        <a
+          href={securityURL}
+          class="hover:bg-secondary hidden rounded-md px-4 py-2 lg:block"
+        >
           {t.security}
         </a>
       </nav>
