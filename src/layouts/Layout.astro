@@ -26,6 +26,7 @@ const contactUsURL = getRelativeLocaleUrl(
 ).replace(/\/$/, "");
 
 const blogURL = getRelativeLocaleUrl(currentLocale, "blog");
+const pricingURL = getRelativeLocaleUrl(currentLocale, "pricing");
 const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
 const securityURL = getRelativeLocaleUrl(currentLocale, "security");
 const { noBackground } = Astro.props;
@@ -121,6 +122,9 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
         <a href={blogURL} class="hover:bg-secondary rounded-md px-4 py-2">
           Blog
         </a>
+        <a href={pricingURL} class="hover:bg-secondary rounded-md px-4 py-2">
+          {t.pricing}
+        </a>
         <a href={aboutUsURL} class="hover:bg-secondary rounded-md px-4 py-2">
           {t.aboutUs}
         </a>
@@ -164,9 +168,10 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
           class="flex h-screen flex-col items-center justify-center space-y-36 text-4xl font-semibold"
         >
           <a href={blogURL}> Blog </a>
+          <a href={pricingURL}> {t.pricing} </a>
           <a href={aboutUsURL}> {t.aboutUs} </a>
-          <a href={contactUsURL}> {t.contactUs} </a>
           <a href={securityURL}> {t.security} </a>
+          <a href={contactUsURL}> {t.contactUs} </a>
           <div class="space-x-2">
             <LanguageButton locale="en" size="lg" />
             <LanguageButton locale="fr" size="lg" />
@@ -199,15 +204,18 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
               >
             </li>
             <li>
+              <a href={blogURL} class="hover:text-foreground">Blog</a>
+            </li>
+            <li>
+              <a href={pricingURL} class="hover:text-foreground">{t.pricing}</a>
+            </li>
+            <li>
               <a href={aboutUsURL} class="hover:text-foreground">{t.aboutUs}</a>
             </li>
             <li>
               <a href={securityURL} class="hover:text-foreground"
                 >{t.security}</a
               >
-            </li>
-            <li>
-              <a href={blogURL} class="hover:text-foreground">Blog</a>
             </li>
             <li>
               <a
