@@ -33,19 +33,28 @@ Want to learn more about what we do with any information we collect? Review the 
 
 ## TABLE OF CONTENTS
 
-1. [WHAT INFORMATION DO WE COLLECT?](#1-what-information-do-we-collect)
-2. [HOW DO WE PROCESS YOUR INFORMATION?](#2-how-do-we-process-your-information)
-3. [WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?](#3-when-and-with-whom-do-we-share-your-personal-information)
-4. [DO WE OFFER ARTIFICIAL INTELLIGENCE-BASED PRODUCTS?](#4-do-we-offer-artificial-intelligence-based-products)
-5. [HOW DO WE HANDLE YOUR SOCIAL LOGINS?](#5-how-do-we-handle-your-social-logins)
-6. [HOW LONG DO WE KEEP YOUR INFORMATION?](#6-how-long-do-we-keep-your-information)
-7. [HOW DO WE KEEP YOUR INFORMATION SAFE?](#7-how-do-we-keep-your-information-safe)
-8. [DO WE COLLECT INFORMATION FROM MINORS?](#8-do-we-collect-information-from-minors)
-9. [WHAT ARE YOUR PRIVACY RIGHTS?](#9-what-are-your-privacy-rights)
-10. [CONTROLS FOR DO-NOT-TRACK FEATURES](#10-controls-for-do-not-track-features)
-11. [DO WE MAKE UPDATES TO THIS NOTICE?](#11-do-we-make-updates-to-this-notice)
-12. [HOW CAN YOU CONTACT US ABOUT THIS NOTICE?](#12-how-can-you-contact-us-about-this-notice)
-13. [HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?](#13-how-can-you-review-update-or-delete-the-data-we-collect-from-you)
+- [PRIVACY POLICY](#privacy-policy)
+  - [SUMMARY OF KEY POINTS](#summary-of-key-points)
+  - [TABLE OF CONTENTS](#table-of-contents)
+  - [1. WHAT INFORMATION DO WE COLLECT?](#1-what-information-do-we-collect)
+    - [Personal information you disclose to us](#personal-information-you-disclose-to-us)
+    - [Information automatically collected](#information-automatically-collected)
+  - [2. HOW DO WE PROCESS YOUR INFORMATION?](#2-how-do-we-process-your-information)
+  - [3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?](#3-when-and-with-whom-do-we-share-your-personal-information)
+  - [4. DO WE OFFER ARTIFICIAL INTELLIGENCE-BASED PRODUCTS?](#4-do-we-offer-artificial-intelligence-based-products)
+    - [Use of AI Technologies](#use-of-ai-technologies)
+    - [Our AI Products](#our-ai-products)
+    - [How We Process Your Data Using AI](#how-we-process-your-data-using-ai)
+  - [5. HOW DO WE HANDLE YOUR GOOGLE LOGIN?](#5-how-do-we-handle-your-google-login)
+  - [6. HOW LONG DO WE KEEP YOUR INFORMATION?](#6-how-long-do-we-keep-your-information)
+  - [7. HOW DO WE KEEP YOUR INFORMATION SAFE?](#7-how-do-we-keep-your-information-safe)
+  - [8. DO WE COLLECT INFORMATION FROM MINORS?](#8-do-we-collect-information-from-minors)
+  - [9. WHAT ARE YOUR PRIVACY RIGHTS?](#9-what-are-your-privacy-rights)
+    - [Account Information](#account-information)
+  - [10. CONTROLS FOR DO-NOT-TRACK FEATURES](#10-controls-for-do-not-track-features)
+  - [11. DO WE MAKE UPDATES TO THIS NOTICE?](#11-do-we-make-updates-to-this-notice)
+  - [12. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?](#12-how-can-you-contact-us-about-this-notice)
+  - [13. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?](#13-how-can-you-review-update-or-delete-the-data-we-collect-from-you)
 
 ## 1. WHAT INFORMATION DO WE COLLECT?
 
@@ -59,13 +68,10 @@ We collect personal information that you voluntarily provide to us when you regi
 
 - names
 - email addresses
-- google account profile image
 
 **Sensitive Information.** We do not process sensitive information.
 
 **Payment Data.** We may collect data necessary to process your payment if you choose to make purchases, such as your payment instrument number, and the security code associated with your payment instrument. All payment data is handled and stored by Stripe. You may find their privacy notice link(s) here: https://stripe.com/en-fr/privacy.
-
-**Social Media Login Data.** We may provide you with the option to register with us using your existing social media account details, like your Facebook, X, or other social media account. If you choose to register in this way, we will collect certain profile information about you from the social media provider, as described in the section called "HOW DO WE HANDLE YOUR SOCIAL LOGINS?" below.
 
 All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.
 
@@ -83,9 +89,15 @@ The information we collect includes:
 
 **Location Data.** We collect location data such as information about your device's location, which can be either precise or imprecise. How much information we collect depends on the type and settings of the device you use to access the Services. For example, we may use GPS and other technologies to collect geolocation data that tells us your current location (based on your IP address). You can opt out of allowing us to collect this information either by refusing access to the information or by disabling your Location setting on your device. However, if you choose to opt out, you may not be able to use certain aspects of the Services.
 
-**Google API**
+**Google User Data (Sign-In Only)**
 
-Our use of information received from Google APIs will adhere to Google API Services User Data Policy, including the Limited Use requirements.
+We use Google OAuth solely for authentication purposes ("Sign-in with Google"). If you choose to use this feature, we access only basic profile information authorized by you:
+
+- **Data Collected**: Your name, email address, and profile picture.
+- **Purpose of Use**: this information is used only to create and authenticate your account and display your profile in the app.
+- **Storage**: we store your name and email securely for account identification. We do not store your Google profile picture; it is referenced directly from Google.
+- **Sharing**: we do not sell, share, or disclose Google‑provided data to third parties except as required to provide our authentication and hosting services.
+- **Limited Use**: Our use of information received from Google APIs will adhere to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the [Limited Use requirements](https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes).
 
 ## 2. HOW DO WE PROCESS YOUR INFORMATION?
 
@@ -123,13 +135,15 @@ Our AI Products are designed for the following functions:
 
 All personal information processed using our AI Products is handled in line with our Privacy Notice and our agreement with third parties. This ensures high security and safeguards your personal information throughout the process, giving you peace of mind about your data's safety.
 
-## 5. HOW DO WE HANDLE YOUR SOCIAL LOGINS?
+**No AI Training on User Data**: We do not train models using your data, and we do not allow our third‑party AI providers to use your data for model training.
 
-**In Short:** If you choose to register or log in to our Services using a social media account, we may have access to certain information about you.
+## 5. HOW DO WE HANDLE YOUR GOOGLE LOGIN?
 
-Our Services offer you the ability to register and log in using your third-party social media account details (like your Facebook or X logins). Where you choose to do this, we will receive certain profile information about you from your social media provider. The profile information we receive may vary depending on the social media provider concerned, but will often include your name, email address, friends list, and profile picture, as well as other information you choose to make public on such a social media platform.
+**In Short:** If you choose to register or log in to our Services using your Google account, we access basic profile information.
 
-We will use the information we receive only for the purposes that are described in this Privacy Notice or that are otherwise made clear to you on the relevant Services. Please note that we do not control, and are not responsible for, other uses of your personal information by your third-party social media provider. We recommend that you review their privacy notice to understand how they collect, use, and share your personal information, and how you can set your privacy preferences on their sites and apps.
+Our Services offer you the ability to register and log in using your Google account details. Where you choose to do this, we will receive certain profile information about you from Google. This profile information includes your name, email address, and profile picture.
+
+We will use the information we receive only for the purposes that are described in this Privacy Notice or that are otherwise made clear to you on the relevant Services. Please note that we do not control, and are not responsible for, other uses of your personal information by Google. We recommend that you review their privacy notice to understand how they collect, use, and share your personal information.
 
 ## 6. HOW LONG DO WE KEEP YOUR INFORMATION?
 
