@@ -59,11 +59,20 @@ const enterpriseMailto = `mailto:contact+enterprise@qasten.com?subject=${encodeU
         >
           <ul class="space-y-4">
             {
-              t.price.plans.free.features.map((feature) => (
-                <li class="flex gap-3">
-                  <Check className="mt-0.5 size-5 text-green-600" />
-                  <span class="text-sm">{feature}</span>
-                </li>
+              t.price.plans.free.features.map(({ feature, description }) => (
+                <>
+                  <li>
+                    <div class="flex gap-3">
+                      <Check className="mt-0.5 size-5 text-green-600" />
+                      <span class="text-sm">{feature}</span>
+                    </div>
+                    {description && (
+                      <p class="text-muted-foreground ml-8 text-sm italic">
+                        {description}
+                      </p>
+                    )}
+                  </li>
+                </>
               ))
             }
           </ul>
@@ -74,9 +83,9 @@ const enterpriseMailto = `mailto:contact+enterprise@qasten.com?subject=${encodeU
           >
             <Button
               className="w-full cursor-pointer"
-              aria-label={t.startUsingNow}
+              aria-label={t.price.choosePlan}
             >
-              {t.startUsingNow}
+              {t.price.choosePlan}
             </Button>
           </a>
         </CardContent>
@@ -115,10 +124,17 @@ const enterpriseMailto = `mailto:contact+enterprise@qasten.com?subject=${encodeU
         >
           <ul class="space-y-4">
             {
-              t.price.plans.pro.features.map((feature) => (
-                <li class="flex gap-3">
-                  <Check className="mt-0.5 size-5 text-green-600" />
-                  <span class="text-sm">{feature}</span>
+              t.price.plans.pro.features.map(({ feature, description }) => (
+                <li>
+                  <div class="flex gap-3">
+                    <Check className="mt-0.5 size-5 text-green-600" />
+                    <span class="text-sm">{feature}</span>
+                  </div>
+                  {description && (
+                    <p class="text-muted-foreground ml-8 text-sm italic">
+                      {description}
+                    </p>
+                  )}
                 </li>
               ))
             }
@@ -131,10 +147,9 @@ const enterpriseMailto = `mailto:contact+enterprise@qasten.com?subject=${encodeU
             <Button
               type="submit"
               className="w-full cursor-pointer"
-              aria-label={t.price.plans.pro.ctaLabel}
+              aria-label={t.price.choosePlan}
             >
-              <SparkleIcon className="mr-2 size-4" />
-              {t.price.plans.pro.ctaLabel}
+              {t.price.choosePlan}
             </Button>
           </a>
         </CardContent>

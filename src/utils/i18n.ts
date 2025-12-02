@@ -25,15 +25,23 @@ const translations = {
       metaDescription: "Pricing for Qasten",
       heading: "Choose Your Qasten Plan",
       badgeRecommended: "Recommended",
+      choosePlan: "Choose Plan",
       plans: {
         free: {
           name: "Free",
           description: "For getting started with Qasten",
           priceSuffix: "/month",
           features: [
-            "Basic model access",
-            "Limited message quotas",
-            "Community support",
+            {
+              feature: "All Workspace Features",
+              description: "Chat, Graph view, Consensus, etc.",
+            },
+            {
+              feature: "Access to All Top Models",
+              description: "GPT-5.1, Claude 4.5, Gemini 3, etc.",
+            },
+            { feature: "Starter Usage Allowance" },
+            { feature: "Community Support" },
           ],
         },
         pro: {
@@ -41,13 +49,20 @@ const translations = {
           description: "For getting the most out of Qasten",
           priceSuffix: "/month",
           features: [
-            "Everything in Free",
-            "Access to all premium models",
-            "Extended message quotas",
-            "Early access to new features",
-            "Priority support",
+            {
+              feature: "Everything in Free",
+            },
+            {
+              feature: "High Usage Allowance",
+              description: "~3,000 messages per month*",
+            },
+            {
+              feature: "Early Access to New Features",
+            },
+            {
+              feature: "Priority Support",
+            },
           ],
-          ctaLabel: "Get Pro",
         },
         enterprise: {
           name: "Enterprise",
@@ -55,11 +70,10 @@ const translations = {
           price: "Custom",
           features: [
             "Everything in Pro",
-            "Self-hosting options",
             "SSO integration",
             "Advanced security controls",
             "Custom integrations",
-            "24/7 phone support",
+            "Dedicated support",
           ],
           ctaLabel: "Contact Us",
           emailSubject: "Enterprise Plan Inquiry",
@@ -438,15 +452,23 @@ const translations = {
       metaDescription: "Tarifs de Qasten",
       heading: "Choisissez votre plan Qasten",
       badgeRecommended: "Recommandé",
+      choosePlan: "Choisir le plan",
       plans: {
         free: {
           name: "Gratuit",
-          description: "Pour démarrer avec Qasten",
+          description: "Pour découvrir Qasten",
           priceSuffix: "/mois",
           features: [
-            "Accès de base aux modèles",
-            "Quotas de messages limités",
-            "Support communautaire",
+            {
+              feature: "Accès complet à l'espace de travail",
+              description: "Chat, Vue Graphe, Consensus, etc.",
+            },
+            {
+              feature: "Accès aux meilleurs modèles",
+              description: "GPT-5.1, Claude 4.5, Gemini 3, etc.",
+            },
+            { feature: "Volume de messages découverte" },
+            { feature: "Support Communautaire" },
           ],
         },
         pro: {
@@ -454,25 +476,31 @@ const translations = {
           description: "Pour tirer le meilleur parti de Qasten",
           priceSuffix: "/mois",
           features: [
-            "Tout ce qui est dans le plan Gratuit",
-            "Accès à tous les modèles premium",
-            "Quotas de messages étendus",
-            "Accès anticipé aux nouvelles fonctionnalités",
-            "Support prioritaire",
+            {
+              feature: "Tout ce qu'il y a dans le plan Gratuit",
+            },
+            {
+              feature: "Volume de messages étendu",
+              description: "~3,000 messages par mois*",
+            },
+            {
+              feature: "Accès anticipé aux nouvelles fonctionnalités",
+            },
+            {
+              feature: "Support prioritaire",
+            },
           ],
-          ctaLabel: "Passer à Pro",
         },
         enterprise: {
           name: "Entreprise",
-          description: "Pour les organisations avec des besoins sur mesure",
+          description: "Pour les besoins sur mesure",
           price: "Sur-mesure",
           features: [
-            "Tout ce qui est dans Pro",
-            "Options d'auto-hébergement",
+            "Tout ce qu'il y a dans le plan Pro",
             "Intégration SSO",
             "Contrôles de sécurité avancés",
             "Intégrations personnalisées",
-            "Assistance téléphonique 24/7",
+            "Support dédié",
           ],
           ctaLabel: "Nous contacter",
           emailSubject: "Demande d'offre Entreprise",
