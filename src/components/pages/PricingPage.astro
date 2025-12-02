@@ -14,6 +14,7 @@ import {
 import Layout from "@/layouts/Layout.astro";
 import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import FAQ from "../FAQ.astro";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 const t = getTranslations(currentLocale);
@@ -26,7 +27,7 @@ const enterpriseMailto = `mailto:contact+enterprise@qasten.com?subject=${encodeU
 
 <Layout title={t.price.metaTitle} description={t.price.metaDescription}>
   <div
-    class="mx-auto mt-24 flex flex-col items-center justify-center space-y-12 xl:w-6xl"
+    class="mx-auto mt-16 flex flex-col items-center justify-center space-y-12 xl:w-6xl"
   >
     <h1 class="text-center text-4xl font-semibold tracking-tight">
       {t.price.heading}
@@ -196,6 +197,16 @@ const enterpriseMailto = `mailto:contact+enterprise@qasten.com?subject=${encodeU
         </CardContent>
       </Card>
     </div>
+
+    <section class="mx-auto mt-12 w-full px-4 sm:px-8">
+      <h2 class="text-center text-4xl font-semibold">
+        {t.price.faq.title}
+      </h2>
+
+      <div class="mt-8">
+        <FAQ faq={t.price.faq.content} />
+      </div>
+    </section>
 
     <p class="text-muted-foreground mb-4 px-2 text-center text-sm">
       {t.price.securityNotice.text}{" "}

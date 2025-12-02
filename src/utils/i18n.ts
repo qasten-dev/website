@@ -86,6 +86,36 @@ const translations = {
         text: "All plans include secure data handling and controls.",
         linkText: "Learn more about our security practices.",
       },
+      faq: {
+        title: "Pricing FAQ",
+        content: [
+          {
+            question: "How is usage calculated?",
+            answer:
+              "Usage is based on total compute cost. Factors like the model choice, context length, and advanced tools (like Search or Consensus) all contribute. You can track your consumption in real-time via the Usage Bar in your profile page.",
+          },
+          {
+            question: 'Is the Pro plan "Unlimited"?*',
+            answer:
+              "For 99% of human users, yes. The limit exists primarily to prevent abuse from bots. Normal chats consume very little usage, while heavy tasks (like large file analysis) consume more. If you use the workspace personally or with your team, you will likely never hit the ceiling.",
+          },
+          {
+            question: "What happens if I hit my limit?",
+            answer:
+              "It's very rare for a user to hit the Pro limit. However, if you have an exceptionally heavy month, just reach out to our support team. We can arrange a paid top-up or discuss a custom plan. In all cases, you'll never lose access to your data, and your quota will reset at the next billing cycle.",
+          },
+          {
+            question: "How much usage do I get on the Free plan?",
+            answer:
+              "The Free plan is designed for exploring Qasten. It gives you enough usage to try the workspace. You can track your remaining free quota in real-time inside the app.",
+          },
+          {
+            question: "Can I cancel my subscription at any time?",
+            answer:
+              "Absolutely. You can cancel anytime from your profile page and retain your Pro plan benefits until the end of your billing cycle.",
+          },
+        ],
+      },
     },
     startUsingNow: "Start now for free",
     security: "Security",
@@ -512,6 +542,38 @@ const translations = {
       securityNotice: {
         text: "Tous les forfaits incluent une gestion sécurisée des données et des contrôles.",
         linkText: "En savoir plus sur nos pratiques de sécurité.",
+      },
+
+      faq: {
+        title: "FAQ Tarifs",
+        content: [
+          {
+            question: "Comment l'utilisation est-elle calculée ?",
+            answer:
+              "L'utilisation est basée sur le coût total d'inférence. Des facteurs comme le choix du modèle, la taille du contexte et les outils avancés (comme Search ou Consensus) peuvent augmenter la consommation. Vous pouvez suivre votre utilisation en temps réel via la barre d'usage dans votre page de profil.",
+          },
+          {
+            question: 'Le plan Pro est-il "illimité" ?*',
+            answer:
+              "Pour 99 % des utilisateurs humains, oui. La limite existe principalement pour prévenir les abus des bots. Les conversations normales consomment très peu, tandis que les tâches plus lourdes (comme l'analyse de gros fichiers) consomment davantage. Si vous utilisez l'espace de travail pour vous ou votre équipe, vous ne devriez jamais atteindre cette limite.",
+          },
+          {
+            question: "Que se passe-t-il si j'atteins la limite ?",
+            answer:
+              "Il est très rare qu'un utilisateur atteigne la limite du plan Pro. Si cela vous arrive lors d'un mois exceptionnellement chargé, contactez simplement notre équipe support. Nous pouvons proposer une recharge payante ou discuter d'un plan personnalisé. Dans tous les cas, vous ne perdrez jamais l'accès à vos données, et votre quota sera réinitialisée au prochain cycle de facturation.",
+          },
+          {
+            question:
+              "Quel volume d'utilisation est inclus dans le plan Gratuit ?",
+            answer:
+              "Le plan Gratuit est conçu pour découvrir Qasten. Il vous donne suffisamment d'utilisation pour tester l'espace de travail. Vous pouvez suivre votre quota restant en temps réel directement dans l'application.",
+          },
+          {
+            question: "Puis-je annuler mon abonnement à tout moment ?",
+            answer:
+              "Absolument. Vous pouvez annuler à tout moment depuis votre page de profil et conserver les avantages du plan Pro jusqu'à la fin de votre cycle de facturation.",
+          },
+        ],
       },
     },
     about: {
