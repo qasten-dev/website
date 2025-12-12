@@ -144,9 +144,12 @@ const structuredData = {
     </div>
 
     <div
-      class="relative left-1/2 mt-8 hidden max-w-none -translate-x-1/2 px-4 md:block 2xl:w-[75vw]"
+      class="fade-in-up relative left-1/2 mt-8 hidden max-w-none -translate-x-1/2 px-4 md:block 2xl:w-[75vw]"
     >
-      <Image src={hero} alt="" priority class="fade-in-up mx-auto" />
+      <Image src={hero} alt="" priority class="mx-auto" />
+      <p class="text-muted-foreground mx-auto mt-6 text-center italic">
+        {t.hero.caption}
+      </p>
     </div>
 
     <section

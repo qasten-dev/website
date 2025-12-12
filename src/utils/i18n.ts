@@ -129,6 +129,8 @@ const translations = {
         firstLine: "An AI workspace for solving complex problems",
         secondLine: "Start solo today, invite your team when you're ready.",
       },
+      caption:
+        "Explore multiple approaches in parallel with branching conversations",
     },
     bridge: {
       title: "Your AI Tools Were Built for Individuals",
@@ -326,6 +328,8 @@ const translations = {
         secondLine:
           "Commencez seul aujourd'hui, invitez votre équipe quand vous êtes prêt.",
       },
+      caption:
+        "Explorez plusieurs pistes en parallèle avec des conversations arborescentes",
     },
     bridge: {
       title: "Vos outils d'IA ont été pensés pour les individus",
