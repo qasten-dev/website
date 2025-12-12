@@ -17,7 +17,6 @@ import BlogGrid from "../BlogGrid.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getSafeCurrentLocale } from "@/utils/i18n";
 import FAQ from "../FAQ.astro";
-import Underline from "../Underline.astro";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 
@@ -161,11 +160,11 @@ const structuredData = {
       />
 
       <p
-        class="text-muted-foreground mx-auto mt-12 max-w-3xl text-lg sm:text-xl"
+        class="mx-auto mt-12 max-w-3xl text-xl font-semibold sm:text-2xl"
         set:html={t.bridge.subtitle1}
       />
       <p
-        class="mx-auto mt-12 max-w-4xl text-lg font-semibold sm:text-xl"
+        class="text-muted-foreground mx-auto mt-12 max-w-4xl text-lg sm:text-xl"
         set:html={t.bridge.subtitle2}
       />
     </section>

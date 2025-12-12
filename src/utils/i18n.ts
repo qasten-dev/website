@@ -133,11 +133,10 @@ const translations = {
         "Explore multiple approaches in parallel with branching conversations",
     },
     bridge: {
-      title: "Your AI Tools Were Built for Individuals",
-      subtitle1:
-        "Shadow AI is everywhere in your teams today. <br/> Different tools, personal accounts, private prompts.",
+      title: "Current chat interfaces are linear",
+      subtitle1: "But problem-solving rarely follows a single straight line",
       subtitle2:
-        "Knowledge never compounds, collaboration never happens, and value gets lost.",
+        "You explore an approach, backtrack, try alternatives,<br/>then continue from what works.",
     },
     features: {
       unification: {
@@ -332,11 +331,11 @@ const translations = {
         "Explorez plusieurs pistes en parallèle avec des conversations arborescentes",
     },
     bridge: {
-      title: "Vos outils d'IA ont été pensés pour les individus",
+      title: "Les interfaces de chat actuelles sont linéaires",
       subtitle1:
-        "Le Shadow AI est déjà partout dans vos équipes. <br/> Outils différents, comptes personnels, prompts isolés.",
+        "Mais la résolution de problèmes suit rarement une ligne droite",
       subtitle2:
-        "La connaissance ne s'accumule pas, la collaboration n'existe pas, et la valeur se perd.",
+        "On explore une approche, on revient en arrière, on essaie des alternatives, puis on continue à partir de ce qui fonctionne.",
     },
     features: {
       unification: {
