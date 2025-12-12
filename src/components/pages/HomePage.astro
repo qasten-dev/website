@@ -91,7 +91,7 @@ const structuredData = {
 ---
 
 <Layout
-  title={"Qasten - " + t.hero.title.full}
+  title={"Qasten - " + t.hero.title.text}
   description={t.metaDescription.home}
 >
   <main class="mx-auto w-full max-w-6xl">
@@ -107,16 +107,10 @@ const structuredData = {
       </div>
 
       <div class="fade-in-up flex flex-col items-center">
-        <h1 class="text-6xl leading-tight font-bold lg:text-8xl">
-          <span set:html={t.hero.title.preUnderline} />
-          <span class="relative inline-block">
-            {t.hero.title.underline}
-            <span aria-hidden="true" class="block h-6 overflow-visible">
-              <Underline />
-            </span>
-          </span>
-          <span set:html={t.hero.title.postUnderline} />
-        </h1>
+        <h1
+          class="text-6xl leading-tight font-bold lg:text-8xl"
+          set:html={t.hero.title.html}
+        />
 
         <p
           class="text-muted-foreground mt-12 max-w-4xl text-xl leading-relaxed"
