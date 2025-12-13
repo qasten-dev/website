@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import hero from "@/assets/hero.png";
+import heroMobile from "@/assets/hero-mobile.png";
 import unified from "@/assets/unified.svg";
 import consensus from "@/assets/consensus.svg";
 import tree from "@/assets/tree.svg";
@@ -107,18 +108,18 @@ const structuredData = {
 
       <div class="fade-in-up flex flex-col items-center">
         <h1
-          class="text-6xl leading-tight font-bold lg:text-8xl"
+          class="text-5xl leading-tight font-bold sm:text-6xl lg:text-8xl"
           set:html={t.hero.title.html}
         />
 
         <p
-          class="text-muted-foreground mt-12 max-w-4xl text-xl leading-relaxed"
+          class="text-muted-foreground mt-12 max-w-4xl text-lg leading-relaxed sm:text-xl"
         >
           {t.hero.subtitle.firstLine}
         </p>
 
         <p
-          class="text-muted-foreground mt-2 max-w-4xl text-xl leading-relaxed font-semibold"
+          class="text-muted-foreground mt-2 max-w-4xl text-lg leading-relaxed font-semibold sm:text-xl"
         >
           {t.hero.subtitle.secondLine}
         </p>
@@ -145,8 +146,16 @@ const structuredData = {
     <div
       class="fade-in-up relative left-1/2 mt-8 hidden max-w-none -translate-x-1/2 px-4 md:block 2xl:w-[75vw]"
     >
-      <Image src={hero} alt="" priority class="mx-auto" />
+      <Image src={hero} alt={t.hero.caption} priority class="mx-auto" />
       <p class="text-muted-foreground mx-auto mt-6 text-center italic">
+        {t.hero.caption}
+      </p>
+    </div>
+    <div
+      class="fade-in-up relative left-1/2 mt-8 block max-w-none -translate-x-1/2 px-4 md:hidden 2xl:w-[75vw]"
+    >
+      <Image src={heroMobile} alt={t.hero.caption} priority class="mx-auto" />
+      <p class="text-muted-foreground mx-auto mt-6 text-center text-sm italic">
         {t.hero.caption}
       </p>
     </div>

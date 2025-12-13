@@ -13,7 +13,7 @@ const { faq } = Astro.props as { faq: FAQ };
   {
     faq.map(({ question, answer }) => (
       <details class="group">
-        <summary class="flex cursor-pointer items-center justify-between py-6 text-lg font-medium">
+        <summary class="flex cursor-pointer items-center justify-between py-6 text-base font-medium sm:text-lg">
           {question}
           <Icon
             name="mdi:keyboard-arrow-down"
