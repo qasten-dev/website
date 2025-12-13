@@ -38,7 +38,7 @@ const translations = {
             },
             {
               feature: "Access to All Top Models",
-              description: "GPT-5.1, Claude 4.5, Gemini 3, etc.",
+              description: "GPT-5.2, Claude 4.5, Gemini 3, etc.",
             },
             { feature: "Starter Usage Allowance" },
             { feature: "Community Support" },
@@ -238,7 +238,7 @@ const translations = {
         {
           question: "Which AI models are supported?",
           answer:
-            "You can access all leading models like GPT-5, Claude 4.5, Gemini 2.5, Mistral, open-source models, and more. We believe in model neutrality, so you always have the right model for the right task. Learn more in our <a href='/blog/stop-treating-ai-like-a-commodity'>blog post</a>.",
+            "You can access all leading models like GPT-5.2, Claude 4.5, Gemini 3, Mistral, open-source models, and more. We believe in model neutrality, so you always have the right model for the right task. Learn more in our <a href='/blog/stop-treating-ai-like-a-commodity'>blog post</a>.",
         },
         {
           question: "How does Qasten guarantee data security and sovereignty?",
@@ -441,7 +441,7 @@ const translations = {
         {
           question: "Quels modèles d'IA sont disponibles ?",
           answer:
-            "Vous accédez aux principaux modèles du marché comme GPT-5, Claude 4.5, Gemini 2.5, Mistral, ainsi qu'aux modèles open-source. Nous croyons à la neutralité des modèles : vous avez toujours le bon modèle pour la bonne tâche. Plus d'infos dans notre <a href='/fr/blog/stop-treating-ai-like-a-commodity'>article de blog</a>.",
+            "Vous accédez aux principaux modèles du marché comme GPT-5.2, Claude 4.5, Gemini 3, Mistral, ainsi qu'aux modèles open-source. Nous croyons à la neutralité des modèles : vous avez toujours le bon modèle pour la bonne tâche. Plus d'infos dans notre <a href='/fr/blog/stop-treating-ai-like-a-commodity'>article de blog</a>.",
         },
         {
           question:
@@ -493,7 +493,7 @@ const translations = {
             },
             {
               feature: "Accès aux meilleurs modèles",
-              description: "GPT-5.1, Claude 4.5, Gemini 3, etc.",
+              description: "GPT-5.2, Claude 4.5, Gemini 3, etc.",
             },
             { feature: "Volume de messages découverte" },
             { feature: "Support Communautaire" },
