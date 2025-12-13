@@ -1,3 +1,5 @@
+<!-- Generated on Termly.io -->
+
 # PRIVACY POLICY
 
 Last updated November 28, 2025
