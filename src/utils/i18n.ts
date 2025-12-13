@@ -233,7 +233,7 @@ const translations = {
         {
           question: "How is Qasten different from ChatGPT?",
           answer:
-            "Qasten is <b>built for teams</b> with shared projects, a graph view that makes branching and collaboration effortless, access to all top models, a consensus mode where models debate to refine answers, and much more.",
+            "ChatGPT is centered around a <b>linear</b> conversation history. Qasten makes it easier to work with <b>multiple lines of thought</b> over time by keeping different directions visible and easy to continue. This becomes especially useful when work involves several attempts or <b>multiple people</b>.",
         },
         {
           question: "Which AI models are supported?",
@@ -436,7 +436,7 @@ const translations = {
         {
           question: "Quelle est la différence entre Qasten et ChatGPT ?",
           answer:
-            "Qasten est <b>conçu pour les équipes</b>, avec des projets partagés, une vue en graphe qui rend les branches et la collaboration fluides, l'accès à tous les meilleurs modèles, un mode de consensus où les modèles débattent pour affiner leurs réponses, et bien plus encore.",
+            "ChatGPT repose sur un fil de conversation <b>linéaire</b>. Qasten permet de travailler plus facilement avec <b>plusieurs pistes de réflexion</b> dans le temps, en rendant les différentes directions visibles et simples à reprendre. C'est particulièrement utile lorsque le travail nécessite plusieurs essais ou implique <b>plusieurs personnes</b>.",
         },
         {
           question: "Quels modèles d'IA sont disponibles ?",
