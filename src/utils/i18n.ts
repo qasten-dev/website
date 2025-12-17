@@ -96,7 +96,7 @@ const translations = {
               "Usage is based on total compute cost. Factors like the model choice, context length, and advanced tools (like Search or Consensus) all contribute. You can track your consumption in real-time via the Usage Bar in your profile page.",
           },
           {
-            question: 'Is the Pro plan "Unlimited"?*',
+            question: 'Is the Pro plan "Unlimited"?',
             answer:
               "For 99% of human users, yes. The limit exists primarily to prevent abuse from bots. Normal chats consume very little usage, while heavy tasks (like large file analysis) consume more. If you use the workspace personally or with your team, you will likely never hit the ceiling.",
           },
@@ -553,7 +553,7 @@ const translations = {
               "L'utilisation est basée sur le coût total d'inférence. Des facteurs comme le choix du modèle, la taille du contexte et les outils avancés (comme Search ou Consensus) peuvent augmenter la consommation. Vous pouvez suivre votre utilisation en temps réel via la barre d'usage dans votre page de profil.",
           },
           {
-            question: 'Le plan Pro est-il "illimité" ?*',
+            question: 'Le plan Pro est-il "illimité" ?',
             answer:
               "Pour 99 % des utilisateurs humains, oui. La limite existe principalement pour prévenir les abus des bots. Les conversations normales consomment très peu, tandis que les tâches plus lourdes (comme l'analyse de gros fichiers) consomment davantage. Si vous utilisez l'espace de travail pour vous ou votre équipe, vous ne devriez jamais atteindre cette limite.",
           },
