@@ -54,7 +54,8 @@ const translations = {
             },
             {
               feature: "High Usage Allowance",
-              description: "~3,000 messages per month*",
+              description: "~3,000 messages per month",
+              faqAsterisk: true,
             },
             {
               feature: "Early Access to New Features",
@@ -509,7 +510,8 @@ const translations = {
             },
             {
               feature: "Volume de messages étendu",
-              description: "~3,000 messages par mois*",
+              description: "~3,000 messages par mois",
+              faqAsterisk: true,
             },
             {
               feature: "Accès anticipé aux nouvelles fonctionnalités",

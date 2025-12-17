@@ -125,19 +125,26 @@ const enterpriseMailto = `mailto:contact+enterprise@qasten.com?subject=${encodeU
         >
           <ul class="space-y-4">
             {
-              t.price.plans.pro.features.map(({ feature, description }) => (
-                <li>
-                  <div class="flex gap-3">
-                    <Check className="mt-0.5 size-5 text-green-600" />
-                    <span class="text-sm">{feature}</span>
-                  </div>
-                  {description && (
-                    <p class="text-muted-foreground ml-8 text-sm italic">
-                      {description}
-                    </p>
-                  )}
-                </li>
-              ))
+              t.price.plans.pro.features.map(
+                ({ feature, description, faqAsterisk }) => (
+                  <li>
+                    <div class="flex gap-3">
+                      <Check className="mt-0.5 size-5 text-green-600" />
+                      <span class="text-sm">{feature}</span>
+                    </div>
+                    {description && (
+                      <p class="text-muted-foreground ml-8 text-sm italic">
+                        {description}
+                        {faqAsterisk && (
+                          <a href="#faq" class="-ml-1 hover:underline">
+                            *
+                          </a>
+                        )}
+                      </p>
+                    )}
+                  </li>
+                ),
+              )
             }
           </ul>
           <a
@@ -198,7 +205,7 @@ const enterpriseMailto = `mailto:contact+enterprise@qasten.com?subject=${encodeU
       </Card>
     </div>
 
-    <section class="mx-auto mt-12 w-full px-4 sm:px-8">
+    <section class="mx-auto mt-12 w-full px-4 sm:px-8" id="faq">
       <h2 class="text-center text-4xl font-semibold">
         {t.price.faq.title}
       </h2>
