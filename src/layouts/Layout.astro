@@ -22,13 +22,9 @@ const subscribeSuccessUrl = getRedirectUrl({
 
 const contactUsURL = getRelativeLocaleUrl(
   currentLocale,
-  "/#contact-us",
+  "/#book-call",
 ).replace(/\/$/, "");
 
-const blogURL = getRelativeLocaleUrl(currentLocale, "blog");
-const pricingURL = getRelativeLocaleUrl(currentLocale, "pricing");
-const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
-const securityURL = getRelativeLocaleUrl(currentLocale, "security");
 const { noBackground } = Astro.props;
 
 const {
@@ -116,37 +112,14 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
         >
       </div>
 
-      <nav
-        class="hidden items-center space-x-6 font-medium md:flex lg:space-x-12"
-      >
-        <a href={blogURL} class="hover:bg-secondary rounded-md px-4 py-2">
-          Blog
-        </a>
-        <a href={pricingURL} class="hover:bg-secondary rounded-md px-4 py-2">
-          {t.pricing}
-        </a>
-        <a
-          href={aboutUsURL}
-          class="hover:bg-secondary hidden rounded-md px-4 py-2 lg:block"
-        >
-          {t.aboutUs}
-        </a>
-        <a
-          href={securityURL}
-          class="hover:bg-secondary hidden rounded-md px-4 py-2 lg:block"
-        >
-          {t.security}
-        </a>
-      </nav>
+      <nav class="hidden md:flex"></nav>
 
       <div class="hidden flex-1 justify-end sm:flex">
         <a
           class="bg-primary hover:bg-primary/90 text-primary-foreground flex w-fit cursor-pointer items-center rounded-md px-4 py-2 font-medium transition"
-          href="https://app.qasten.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          href={contactUsURL}
         >
-          {t.startUsingNow}
+          {t.contactUs}
         </a>
       </div>
 
@@ -171,12 +144,8 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
           &times;
         </button>
         <nav
-          class="flex h-screen flex-col items-center justify-center space-y-36 text-4xl font-semibold"
+          class="flex h-screen flex-col items-center justify-center space-y-12 text-4xl font-semibold"
         >
-          <a href={blogURL}> Blog </a>
-          <a href={pricingURL}> {t.pricing} </a>
-          <a href={aboutUsURL}> {t.aboutUs} </a>
-          <a href={securityURL}> {t.security} </a>
           <a href={contactUsURL}> {t.contactUs} </a>
           <div class="space-x-2">
             <LanguageButton locale="en" size="lg" />
@@ -207,20 +176,6 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
             <li>
               <a href={contactUsURL} class="hover:text-foreground"
                 >{t.contactUs}</a
-              >
-            </li>
-            <li>
-              <a href={blogURL} class="hover:text-foreground">Blog</a>
-            </li>
-            <li>
-              <a href={pricingURL} class="hover:text-foreground">{t.pricing}</a>
-            </li>
-            <li>
-              <a href={aboutUsURL} class="hover:text-foreground">{t.aboutUs}</a>
-            </li>
-            <li>
-              <a href={securityURL} class="hover:text-foreground"
-                >{t.security}</a
               >
             </li>
             <li>
