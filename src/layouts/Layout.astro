@@ -22,13 +22,9 @@ const subscribeSuccessUrl = getRedirectUrl({
 
 const contactUsURL = getRelativeLocaleUrl(
   currentLocale,
-  "/#contact-us",
+  "/#book-call",
 ).replace(/\/$/, "");
 
-const blogURL = getRelativeLocaleUrl(currentLocale, "blog");
-const pricingURL = getRelativeLocaleUrl(currentLocale, "pricing");
-const aboutUsURL = getRelativeLocaleUrl(currentLocale, "about-us");
-const securityURL = getRelativeLocaleUrl(currentLocale, "security");
 const { noBackground } = Astro.props;
 
 const {
@@ -116,37 +112,14 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
         >
       </div>
 
-      <nav
-        class="hidden items-center space-x-6 font-medium md:flex lg:space-x-12"
-      >
-        <a href={blogURL} class="hover:bg-secondary rounded-md px-4 py-2">
-          Blog
-        </a>
-        <a href={pricingURL} class="hover:bg-secondary rounded-md px-4 py-2">
-          {t.pricing}
-        </a>
-        <a
-          href={aboutUsURL}
-          class="hover:bg-secondary hidden rounded-md px-4 py-2 lg:block"
-        >
-          {t.aboutUs}
-        </a>
-        <a
-          href={securityURL}
-          class="hover:bg-secondary hidden rounded-md px-4 py-2 lg:block"
-        >
-          {t.security}
-        </a>
-      </nav>
+      <nav class="hidden md:flex"></nav>
 
       <div class="hidden flex-1 justify-end sm:flex">
         <a
           class="bg-primary hover:bg-primary/90 text-primary-foreground flex w-fit cursor-pointer items-center rounded-md px-4 py-2 font-medium transition"
-          href="https://app.qasten.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          href={contactUsURL}
         >
-          {t.startUsingNow}
+          {t.contactUs}
         </a>
       </div>
 
@@ -171,12 +144,8 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
           &times;
         </button>
         <nav
-          class="flex h-screen flex-col items-center justify-center space-y-36 text-4xl font-semibold"
+          class="flex h-screen flex-col items-center justify-center space-y-12 text-4xl font-semibold"
         >
-          <a href={blogURL}> Blog </a>
-          <a href={pricingURL}> {t.pricing} </a>
-          <a href={aboutUsURL}> {t.aboutUs} </a>
-          <a href={securityURL}> {t.security} </a>
           <a href={contactUsURL}> {t.contactUs} </a>
           <div class="space-x-2">
             <LanguageButton locale="en" size="lg" />
@@ -210,20 +179,6 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
               >
             </li>
             <li>
-              <a href={blogURL} class="hover:text-foreground">Blog</a>
-            </li>
-            <li>
-              <a href={pricingURL} class="hover:text-foreground">{t.pricing}</a>
-            </li>
-            <li>
-              <a href={aboutUsURL} class="hover:text-foreground">{t.aboutUs}</a>
-            </li>
-            <li>
-              <a href={securityURL} class="hover:text-foreground"
-                >{t.security}</a
-              >
-            </li>
-            <li>
               <a
                 href="https://www.linkedin.com/company/qasten"
                 target="_blank"
@@ -231,50 +186,9 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
                 class="hover:text-foreground">LinkedIn</a
               >
             </li>
-            <li>
-              <a
-                href={getRelativeLocaleUrl(currentLocale, "privacy")}
-                class="hover:text-foreground">{t.privacyPolicy}</a
-              >
-            </li>
           </ul>
         </div>
 
-        <div class="mt-4 max-w-1/2">
-          <h3 class="font-semibold">{t.footer.stayUpdated}</h3>
-          <p class="text-muted-foreground mt-2 text-xs sm:text-sm">
-            {t.footer.subscribeCta}
-          </p>
-          <form class="mt-4 flex" action={SUBSCRIBE_FORM_URL} method="post">
-            <input type="hidden" name="_redirect" value={subscribeSuccessUrl} />
-            <input
-              type="checkbox"
-              name="hnpot"
-              class="hidden"
-              tabindex="-1"
-              autocomplete="off"
-            />
-
-            <div class="flex w-full rounded-md">
-              <input
-                type="email"
-                name="email"
-                placeholder={t.footer.emailPlaceholder}
-                class="border-border bg-input w-full rounded-l-md border-2 border-r-0 px-3 py-1.5 text-xs focus:outline-0 sm:text-sm/6"
-              />
-              <button
-                type="submit"
-                aria-label="Subscribe"
-                class="bg-primary/95 border-primary/95 hover:bg-primary hover:border-primary text-primary-foreground flex cursor-pointer items-center rounded-r-md border-2 bg-clip-padding px-4 py-2 font-medium transition"
-              >
-                <span class="hidden sm:block">{t.footer.subscribe}</span>
-                <span class="sm:hidden"
-                  ><Icon name="mdi:send" size="16" class="" /></span
-                >
-              </button>
-            </div>
-          </form>
-        </div>
       </div>
 
       <div class="mx-auto mt-8 flex max-w-6xl items-center justify-between">
