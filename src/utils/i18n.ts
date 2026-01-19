@@ -391,7 +391,7 @@ const translations = {
       blog: "Analyses et conseils sur l'adoption de l'IA, la productivité d'équipe et la sécurité. Le blog Qasten vous aide à transformer vos pratiques IA.",
     },
     aboutUs: "À propos",
-    contactUs: "Réserver un appel",
+    contactUs: "Réserver un appel gratuit",
     pricing: "Tarifs",
     startUsingNow: "Commencez maintenant",
     security: "Sécurité",
