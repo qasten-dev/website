@@ -18,7 +18,7 @@ const faqData = p.faq.questions;
   noBackground={true}
 >
   <main class="w-full">
-    <!-- Hero Section -->
+<!-- Hero Section -->
     <section class="relative mx-auto w-full max-w-7xl px-4 pt-16 pb-24 text-center sm:px-6 lg:pt-20 lg:pb-32">
       <div class="relative">
         <h1 class="mx-auto mb-6 max-w-4xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl lg:leading-[1.15]">
@@ -32,7 +32,7 @@ const faqData = p.faq.questions;
         <div class="flex flex-col items-center justify-center gap-3">
           <a
             href="#book-call"
-            class="bg-primary hover:bg-primary/90 text-primary-foreground group flex w-fit cursor-pointer items-center gap-2 rounded-lg px-8 py-4 text-base font-semibold shadow-lg transition-all hover:scale-105 hover:shadow-xl"
+            class="cta-glow bg-primary hover:bg-primary/90 text-primary-foreground group flex w-fit cursor-pointer items-center gap-2 rounded-lg px-8 py-4 text-base font-semibold shadow-lg transition-all hover:scale-105 hover:shadow-xl"
           >
             {p.hero.cta}
             <Icon name="mdi:arrow-right" class="transition-transform group-hover:translate-x-1" />
@@ -45,22 +45,22 @@ const faqData = p.faq.questions;
       </div>
       
       <div class="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-3 items-stretch">
-        <div class="bg-card hover:shadow-lg group rounded-xl border p-8 transition-all hover:-translate-y-1 flex flex-col items-center text-center h-full">
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-2xl transition-transform group-hover:scale-110">
+        <div class="animate-on-scroll stagger-1 bg-card hover:shadow-lg group rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20 flex flex-col items-center text-center h-full">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
             <Icon name="mdi:tools" />
           </div>
           <h3 class="mb-2 text-lg font-semibold">{p.cards.custom.title}</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">{p.cards.custom.description}</p>
         </div>
-        <div class="bg-card hover:shadow-lg group rounded-xl border p-8 transition-all hover:-translate-y-1 flex flex-col items-center text-center h-full">
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-2xl transition-transform group-hover:scale-110">
+        <div class="animate-on-scroll stagger-2 bg-card hover:shadow-lg group rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20 flex flex-col items-center text-center h-full">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
             <Icon name="mdi:rocket-launch" />
           </div>
           <h3 class="mb-2 text-lg font-semibold">{p.cards.deployed.title}</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">{p.cards.deployed.description}</p>
         </div>
-        <div class="bg-card hover:shadow-lg group rounded-xl border p-8 transition-all hover:-translate-y-1 flex flex-col items-center text-center h-full">
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-2xl transition-transform group-hover:scale-110">
+        <div class="animate-on-scroll stagger-3 bg-card hover:shadow-lg group rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20 flex flex-col items-center text-center h-full">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
             <Icon name="mdi:shield-check" />
           </div>
           <h3 class="mb-2 text-lg font-semibold">{p.cards.trusted.title}</h3>
@@ -71,7 +71,7 @@ const faqData = p.faq.questions;
 
     <!-- Solutions Section -->
     <section class="mx-auto w-full max-w-7xl px-4 py-32 sm:px-6">
-      <div class="mb-16 text-center">
+      <div class="animate-on-scroll mb-16 text-center">
         <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.solutions.title}</h2>
         <p class="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
           {p.solutions.subtitle}
@@ -79,9 +79,9 @@ const faqData = p.faq.questions;
       </div>
       
       <div class="mt-16 grid gap-8 md:grid-cols-3">
-        <div class="bg-card hover:shadow-xl group relative overflow-hidden rounded-2xl border p-10 transition-all hover:-translate-y-2">
-          <div class="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-primary/5"></div>
-          <div class="relative mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary text-3xl transition-transform group-hover:scale-110">
+        <div class="animate-on-scroll stagger-1 bg-card hover:shadow-xl group relative overflow-hidden rounded-2xl border p-10 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
+          <div class="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-primary/5 transition-all duration-500 group-hover:h-40 group-hover:w-40"></div>
+          <div class="relative mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary text-3xl transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
             <Icon name="mdi:phone" />
           </div>
           <h3 class="mb-4 text-2xl font-semibold">{p.solutions.voice.title}</h3>
@@ -90,9 +90,9 @@ const faqData = p.faq.questions;
           </p>
         </div>
         
-        <div class="bg-card hover:shadow-xl group relative overflow-hidden rounded-2xl border p-10 transition-all hover:-translate-y-2">
-          <div class="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-primary/5"></div>
-          <div class="relative mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary text-3xl transition-transform group-hover:scale-110">
+        <div class="animate-on-scroll stagger-2 bg-card hover:shadow-xl group relative overflow-hidden rounded-2xl border p-10 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
+          <div class="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-primary/5 transition-all duration-500 group-hover:h-40 group-hover:w-40"></div>
+          <div class="relative mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary text-3xl transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
             <Icon name="mdi:chart-line" />
           </div>
           <h3 class="mb-4 text-2xl font-semibold">{p.solutions.sales.title}</h3>
@@ -101,9 +101,9 @@ const faqData = p.faq.questions;
           </p>
         </div>
         
-        <div class="bg-card hover:shadow-xl group relative overflow-hidden rounded-2xl border p-10 transition-all hover:-translate-y-2">
-          <div class="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-primary/5"></div>
-          <div class="relative mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary text-3xl transition-transform group-hover:scale-110">
+        <div class="animate-on-scroll stagger-3 bg-card hover:shadow-xl group relative overflow-hidden rounded-2xl border p-10 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
+          <div class="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-primary/5 transition-all duration-500 group-hover:h-40 group-hover:w-40"></div>
+          <div class="relative mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary text-3xl transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
             <Icon name="mdi:message-text" />
           </div>
           <h3 class="mb-4 text-2xl font-semibold">{p.solutions.chat.title}</h3>
@@ -113,25 +113,21 @@ const faqData = p.faq.questions;
         </div>
       </div>
       
-      <div class="mt-16 text-center">
+      <div class="animate-on-scroll mt-16 text-center">
         <a
           href="#book-call"
-          class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex cursor-pointer items-center gap-2 rounded-lg px-8 py-4 text-base font-semibold shadow-lg transition-all hover:scale-105 hover:shadow-xl"
+          class="cta-glow bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex cursor-pointer items-center gap-2 rounded-lg px-8 py-4 text-base font-semibold shadow-lg transition-all hover:scale-105 hover:shadow-xl"
         >
           {p.hero.cta}
           <Icon name="mdi:arrow-right" class="transition-transform group-hover:translate-x-1" />
         </a>
     </div>
-
-      <p class="text-muted-foreground mt-8 text-center text-base">
-        {p.solutions.footer}
-      </p>
     </section>
 
     <!-- Benefits Section -->
     <section class="bg-gradient-to-b from-secondary/20 to-secondary/40 relative left-1/2 w-screen -translate-x-1/2 py-32">
       <div class="mx-auto w-full max-w-7xl px-4 sm:px-6">
-        <div class="mb-16 text-center">
+        <div class="animate-on-scroll mb-16 text-center">
           <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.benefits.title}</h2>
           <p class="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
             {p.benefits.subtitle}
@@ -139,8 +135,8 @@ const faqData = p.faq.questions;
         </div>
         
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div class="bg-card hover:shadow-lg group rounded-xl border p-8 transition-all hover:-translate-y-1">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-transform group-hover:scale-110">
+          <div class="animate-on-scroll stagger-1 bg-card hover:shadow-lg group rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
               <Icon name="mdi:hammer-wrench" />
             </div>
             <h3 class="mb-3 text-xl font-semibold">{p.benefits.custom.title}</h3>
@@ -149,8 +145,8 @@ const faqData = p.faq.questions;
             </p>
           </div>
           
-          <div class="bg-card hover:shadow-lg group rounded-xl border p-8 transition-all hover:-translate-y-1">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-transform group-hover:scale-110">
+          <div class="animate-on-scroll stagger-2 bg-card hover:shadow-lg group rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
               <Icon name="mdi:lock" />
     </div>
             <h3 class="mb-3 text-xl font-semibold">{p.benefits.ownership.title}</h3>
@@ -159,8 +155,8 @@ const faqData = p.faq.questions;
       </p>
     </div>
 
-          <div class="bg-card hover:shadow-lg group rounded-xl border p-8 transition-all hover:-translate-y-1">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-transform group-hover:scale-110">
+          <div class="animate-on-scroll stagger-3 bg-card hover:shadow-lg group rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
               <Icon name="mdi:link-variant" />
             </div>
             <h3 class="mb-3 text-xl font-semibold">{p.benefits.integrated.title}</h3>
@@ -169,8 +165,8 @@ const faqData = p.faq.questions;
             </p>
           </div>
           
-          <div class="bg-card hover:shadow-lg group rounded-xl border p-8 transition-all hover:-translate-y-1">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-transform group-hover:scale-110">
+          <div class="animate-on-scroll stagger-4 bg-card hover:shadow-lg group rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
               <Icon name="mdi:chart-timeline-variant" />
             </div>
             <h3 class="mb-3 text-xl font-semibold">{p.benefits.results.title}</h3>
@@ -184,7 +180,7 @@ const faqData = p.faq.questions;
 
     <!-- Integrations Section -->
     <section class="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6">
-      <div class="mb-10 text-center">
+      <div class="animate-on-scroll mb-10 text-center">
         <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.integrations.title}</h2>
         <p class="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
           {p.integrations.subtitle}
@@ -263,57 +259,57 @@ const faqData = p.faq.questions;
         -->
         
         <!-- Top (0°) - HubSpot -->
-        <div class="absolute z-20" style="left: 50%; top: 15%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all hover:scale-110 sm:h-14 sm:w-14 p-2" title="HubSpot">
+        <div class="absolute z-20 float-icon float-delay-1" style="left: 50%; top: 15%; transform: translate(-50%, -50%);">
+          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="HubSpot">
             <img src="https://framerusercontent.com/images/NnDNSIod6BWGkVQ38VHOp6RUj0k.png?scale-down-to=512" alt="HubSpot" class="w-full h-full object-contain" />
           </div>
         </div>
         
         <!-- Top Right (45°) - Zapier/Chain -->
-        <div class="absolute z-20" style="left: 74.7%; top: 25.3%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all hover:scale-110 sm:h-14 sm:w-14 p-2" title="Zapier">
+        <div class="absolute z-20 float-icon float-delay-2" style="left: 74.7%; top: 25.3%; transform: translate(-50%, -50%);">
+          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Zapier">
             <img src="https://framerusercontent.com/images/Xsta0mwZKeKTikCD2mVKwrskkM.png?scale-down-to=512" alt="Zapier" class="w-full h-full object-contain" />
           </div>
         </div>
         
         <!-- Right (90°) - Salesforce -->
-        <div class="absolute z-20" style="left: 85%; top: 50%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all hover:scale-110 sm:h-14 sm:w-14 p-2" title="Salesforce">
+        <div class="absolute z-20 float-icon float-delay-3" style="left: 85%; top: 50%; transform: translate(-50%, -50%);">
+          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Salesforce">
             <img src="https://framerusercontent.com/images/l2YE294N9X2zGAqj0zyCzQB7mSU.png?width=256&height=256" alt="Salesforce" class="w-full h-full object-contain" />
           </div>
         </div>
         
         <!-- Bottom Right (135°) - Zendesk -->
-        <div class="absolute z-20" style="left: 74.7%; top: 74.7%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all hover:scale-110 sm:h-14 sm:w-14 p-2" title="Zendesk">
+        <div class="absolute z-20 float-icon float-delay-4" style="left: 74.7%; top: 74.7%; transform: translate(-50%, -50%);">
+          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Zendesk">
             <img src="https://framerusercontent.com/images/RwYsS46pMcFi4x7pHVuWRrlhEZk.png?width=240&height=240" alt="Zendesk" class="w-full h-full object-contain" />
           </div>
         </div>
         
         <!-- Bottom (180°) - Figjam/Star -->
-        <div class="absolute z-20" style="left: 50%; top: 85%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all hover:scale-110 sm:h-14 sm:w-14 p-2" title="Figjam">
+        <div class="absolute z-20 float-icon float-delay-5" style="left: 50%; top: 85%; transform: translate(-50%, -50%);">
+          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Figjam">
             <img src="https://framerusercontent.com/images/Iad8JtV4KapAZpGElrFJuQtySis.png?scale-down-to=512" alt="Figjam" class="w-full h-full object-contain" />
           </div>
         </div>
         
         <!-- Bottom Left (225°) - Asana -->
-        <div class="absolute z-20" style="left: 25.3%; top: 74.7%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all hover:scale-110 sm:h-14 sm:w-14 p-2" title="Asana">
+        <div class="absolute z-20 float-icon float-delay-6" style="left: 25.3%; top: 74.7%; transform: translate(-50%, -50%);">
+          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Asana">
             <img src="https://framerusercontent.com/images/nxpAODZEqjUs4FzwjpRNJp65aIE.png?scale-down-to=512" alt="Asana" class="w-full h-full object-contain" />
           </div>
         </div>
         
         <!-- Left (270°) - Dovetail -->
-        <div class="absolute z-20" style="left: 15%; top: 50%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all hover:scale-110 sm:h-14 sm:w-14 p-2" title="Dovetail">
+        <div class="absolute z-20 float-icon float-delay-7" style="left: 15%; top: 50%; transform: translate(-50%, -50%);">
+          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Dovetail">
             <img src="https://framerusercontent.com/images/Hx6csFB7V6BZkxRa8eqkqtu7yU.webp?width=250&height=343" alt="Dovetail" class="w-full h-full object-contain" />
           </div>
         </div>
         
         <!-- Top Left (315°) - Linear -->
-        <div class="absolute z-20" style="left: 25.3%; top: 25.3%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all hover:scale-110 sm:h-14 sm:w-14 p-2" title="Linear">
+        <div class="absolute z-20 float-icon float-delay-8" style="left: 25.3%; top: 25.3%; transform: translate(-50%, -50%);">
+          <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Linear">
             <img src="https://framerusercontent.com/images/Iyc9sejEbbhkc83GOBir6QGZnHs.png?width=400&height=400" alt="Linear" class="w-full h-full object-contain" />
           </div>
         </div>
@@ -323,7 +319,7 @@ const faqData = p.faq.questions;
     <!-- How It Works Section -->
     <section class="bg-gradient-to-b from-secondary/20 to-secondary/40 relative left-1/2 w-screen -translate-x-1/2 py-32">
       <div class="mx-auto w-full max-w-7xl px-4 sm:px-6">
-        <div class="mb-16 text-center">
+        <div class="animate-on-scroll mb-16 text-center">
           <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.howItWorks.title}</h2>
           <p class="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
             {p.howItWorks.subtitle}
@@ -331,8 +327,8 @@ const faqData = p.faq.questions;
         </div>
         
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div class="bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all hover:-translate-y-1">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-transform group-hover:scale-110">
+          <div class="animate-on-scroll stagger-1 bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
+            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
               01
             </div>
             <h3 class="mb-3 text-xl font-semibold">{p.howItWorks.discovery.title}</h3>
@@ -341,8 +337,8 @@ const faqData = p.faq.questions;
             </p>
           </div>
           
-          <div class="bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all hover:-translate-y-1">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-transform group-hover:scale-110">
+          <div class="animate-on-scroll stagger-2 bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
+            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
               02
             </div>
             <h3 class="mb-3 text-xl font-semibold">{p.howItWorks.design.title}</h3>
@@ -351,8 +347,8 @@ const faqData = p.faq.questions;
             </p>
           </div>
           
-          <div class="bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all hover:-translate-y-1">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-transform group-hover:scale-110">
+          <div class="animate-on-scroll stagger-3 bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
+            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
               03
             </div>
             <h3 class="mb-3 text-xl font-semibold">{p.howItWorks.build.title}</h3>
@@ -361,8 +357,8 @@ const faqData = p.faq.questions;
             </p>
           </div>
           
-          <div class="bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all hover:-translate-y-1">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-transform group-hover:scale-110">
+          <div class="animate-on-scroll stagger-4 bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
+            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
               04
             </div>
             <h3 class="mb-3 text-xl font-semibold">{p.howItWorks.launch.title}</h3>
@@ -372,10 +368,10 @@ const faqData = p.faq.questions;
           </div>
         </div>
         
-        <div class="mt-16 text-center">
+        <div class="animate-on-scroll mt-16 text-center">
           <a
             href="#book-call"
-            class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex cursor-pointer items-center gap-2 rounded-lg px-8 py-4 text-base font-semibold shadow-lg transition-all hover:scale-105 hover:shadow-xl"
+            class="cta-glow bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex cursor-pointer items-center gap-2 rounded-lg px-8 py-4 text-base font-semibold shadow-lg transition-all hover:scale-105 hover:shadow-xl"
           >
             {p.hero.cta}
             <Icon name="mdi:arrow-right" class="transition-transform group-hover:translate-x-1" />
@@ -386,14 +382,14 @@ const faqData = p.faq.questions;
 
     <!-- Why Choose Qasten Section -->
     <section class="mx-auto w-full max-w-5xl px-4 py-32 sm:px-6">
-      <div class="mb-16 text-center">
+      <div class="animate-on-scroll mb-16 text-center">
         <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.whyChoose.title}</h2>
         <p class="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
           {p.whyChoose.subtitle}
         </p>
       </div>
       
-      <div class="bg-card rounded-2xl border shadow-xl p-8 sm:p-10">
+      <div class="animate-on-scroll bg-card rounded-2xl border shadow-xl p-8 sm:p-10 transition-all duration-500 hover:shadow-2xl">
         <div class="grid gap-8 md:grid-cols-2 items-start">
           <div>
             <div class="mb-5 flex items-center gap-3 h-10">
@@ -429,14 +425,14 @@ const faqData = p.faq.questions;
 
     <!-- Booking Section -->
     <section id="book-call" class="mx-auto w-full max-w-5xl px-4 py-32 sm:px-6">
-      <div class="mb-12 text-center">
+      <div class="animate-on-scroll mb-12 text-center">
         <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.booking.title}</h2>
         <p class="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
           {p.booking.subtitle}
         </p>
       </div>
       
-      <div class="rounded-2xl overflow-hidden">
+      <div class="animate-on-scroll rounded-2xl overflow-hidden">
         <div style="width:100%;height:700px;overflow:hidden" id="my-cal-inline-ai-agents-consultation"></div>
       </div>
     </section>
@@ -454,16 +450,105 @@ const faqData = p.faq.questions;
       Cal.ns["ai-agents-consultation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#b45309"},"dark":{"cal-brand":"#f59e0b"}},"hideEventTypeDetails":false,"layout":"month_view"});
     </script>
 
-    <!-- FAQ Section -->
+<!-- FAQ Section -->
     <section class="bg-gradient-to-b from-secondary/20 to-secondary/40 relative left-1/2 w-screen -translate-x-1/2 py-32">
       <div class="mx-auto w-full max-w-4xl px-4 sm:px-6">
-        <div class="mb-16 text-center">
+        <div class="animate-on-scroll mb-16 text-center">
           <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.faq.title}</h2>
         </div>
-        <div class="bg-card rounded-2xl border shadow-xl p-8 sm:p-12">
+        <div class="animate-on-scroll bg-card rounded-2xl border shadow-xl p-8 sm:p-12">
           <FAQ faq={faqData} />
         </div>
-      </div>
+    </div>
     </section>
   </main>
 </Layout>
+
+  <style>
+  /* Scroll animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+  
+  /* Staggered delays for cards */
+  .stagger-1 { transition-delay: 0s; }
+  .stagger-2 { transition-delay: 0.1s; }
+  .stagger-3 { transition-delay: 0.2s; }
+  .stagger-4 { transition-delay: 0.3s; }
+  
+  /* Floating animation for integration icons */
+  .float-icon {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translate(-50%, -50%) translateY(0px);
+    }
+    50% {
+      transform: translate(-50%, -50%) translateY(-8px);
+    }
+  }
+  
+  /* Floating delays */
+  .float-delay-1 { animation-delay: 0s; }
+  .float-delay-2 { animation-delay: 0.5s; }
+  .float-delay-3 { animation-delay: 1s; }
+  .float-delay-4 { animation-delay: 1.5s; }
+  .float-delay-5 { animation-delay: 2s; }
+  .float-delay-6 { animation-delay: 2.5s; }
+  .float-delay-7 { animation-delay: 3s; }
+  .float-delay-8 { animation-delay: 3.5s; }
+  
+  /* CTA glow effect */
+  .cta-glow {
+    position: relative;
+  }
+  
+  .cta-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, rgba(180, 83, 9, 0.5), rgba(245, 158, 11, 0.5), rgba(180, 83, 9, 0.5));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(12px);
+    transition: opacity 0.3s ease;
+  }
+  
+  .cta-glow:hover::before {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Optional: unobserve after animation to improve performance
+        // observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  // Observe all elements with animate-on-scroll class
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+</script>
