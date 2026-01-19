@@ -79,77 +79,77 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Default theme styles (used when no data-theme-preset is set or when 'default' is selected).
-These serve as the fallback; there is no separate default.css file. */
+/* Default theme styles - Soft blue palette from Coolors
+   https://coolors.co/palette/edf2fb-e2eafc-d7e3fc-ccdbfd-c1d3fe-b6ccfe-abc4ff */
 :root {
-  --radius: 0.3rem;
-  /* Light theme with warmer, softer colors - less bright */
-  --card: #f5ede4; /* Muted warm cream */
-  --card-foreground: #2d241f; /* Darker warm brown */
-  --popover: #f5ede4;
-  --popover-foreground: #2d241f;
-  --primary: #b45309; /* Deeper amber orange */
+  --radius: 0.5rem;
+  /* Light theme with soft blue palette */
+  --card: #e2eafc; /* Very light blue */
+  --card-foreground: #1e3a5f; /* Dark navy for contrast */
+  --popover: #e2eafc;
+  --popover-foreground: #1e3a5f;
+  --primary: #4a7dbd; /* Rich blue for primary actions */
   --primary-foreground: #ffffff;
-  --secondary: #e6d7c7; /* Muted warm beige */
-  --secondary-foreground: #3d342e;
-  --muted: #ede4d6; /* Muted warm cream */
-  --muted-foreground: #5a4f47; /* Darker warm brown */
-  --accent: #d4c4b0; /* Muted warm accent */
-  --accent-foreground: #3d342e;
-  --destructive: #b91c1c; /* Deeper red */
-  --border: #c4b5a0; /* Muted warm border */
-  --input: #e6d7c7; /* Muted warm input background */
-  --ring: #b45309; /* Match primary for focus ring */
-  --chart-1: #b45309; /* Amber */
-  --chart-2: #047857; /* Emerald */
-  --chart-3: #b91c1c; /* Red */
-  --chart-4: #6d28d9; /* Violet */
+  --secondary: #d7e3fc; /* Light blue */
+  --secondary-foreground: #2c4a6e;
+  --muted: #ccdbfd; /* Soft blue */
+  --muted-foreground: #4a6a8a; /* Medium blue-gray for muted text */
+  --accent: #b6ccfe; /* Medium blue */
+  --accent-foreground: #1e3a5f;
+  --destructive: #dc2626; /* Red for destructive actions */
+  --border: #abc4ff; /* Blue border */
+  --input: #d7e3fc; /* Light blue input background */
+  --ring: #4a7dbd; /* Match primary for focus ring */
+  --chart-1: #4a7dbd; /* Blue */
+  --chart-2: #059669; /* Emerald */
+  --chart-3: #dc2626; /* Red */
+  --chart-4: #7c3aed; /* Violet */
   --chart-5: #0891b2; /* Cyan */
-  --sidebar: #f0e6d7; /* Muted warm sidebar */
-  --sidebar-foreground: #2d241f;
-  --sidebar-primary: #b45309;
-  --sidebar-primary-foreground: #f5ede4;
-  --sidebar-accent: #d4c4b0;
-  --sidebar-accent-foreground: #3d342e;
-  --sidebar-border: #c4b5a0;
-  --sidebar-ring: #b45309;
-  --background: #faf5f0; /* Muted warm background */
-  --foreground: #2d241f; /* Darker warm text */
+  --sidebar: #d7e3fc; /* Light blue sidebar */
+  --sidebar-foreground: #1e3a5f;
+  --sidebar-primary: #4a7dbd;
+  --sidebar-primary-foreground: #edf2fb;
+  --sidebar-accent: #b6ccfe;
+  --sidebar-accent-foreground: #1e3a5f;
+  --sidebar-border: #abc4ff;
+  --sidebar-ring: #4a7dbd;
+  --background: #edf2fb; /* Lightest blue background */
+  --foreground: #1e3a5f; /* Dark navy text */
 }
 
 .dark {
-  /* Dark theme with warmer, softer colors */
-  --background: #1c1611; /* Warm dark brown background */
-  --foreground: #f4e6d7; /* Warm cream text */
-  --card: #2d241f; /* Warm dark card */
-  --card-foreground: #f4e6d7;
-  --popover: #2d241f;
-  --popover-foreground: #f4e6d7;
-  --primary: #f59e0b; /* Warm amber for dark mode */
-  --primary-foreground: #1c1611;
-  --secondary: #3d342e; /* Warm dark secondary */
-  --secondary-foreground: #e6d7c7;
-  --muted: #352c26; /* Warm dark muted */
-  --muted-foreground: #b8a898; /* Warm medium light for muted text */
-  --accent: #4a3f38; /* Warm dark accent */
-  --accent-foreground: #e6d7c7;
-  --destructive: #ef4444; /* Warmer red for dark mode */
-  --border: #5a4f47; /* Warm dark border */
-  --input: #2d241f; /* Warm dark input background */
-  --ring: #f59e0b; /* Match primary for focus ring */
-  --chart-1: #f59e0b; /* Amber */
-  --chart-2: #10b981; /* Emerald */
-  --chart-3: #ef4444; /* Red */
-  --chart-4: #8b5cf6; /* Violet */
-  --chart-5: #06b6d4; /* Cyan */
-  --sidebar: #241e1a; /* Warm dark sidebar */
-  --sidebar-foreground: #e6d7c7;
-  --sidebar-primary: #f59e0b;
-  --sidebar-primary-foreground: #1c1611;
-  --sidebar-accent: #3d342e;
-  --sidebar-accent-foreground: #e6d7c7;
-  --sidebar-border: #5a4f47;
-  --sidebar-ring: #f59e0b;
+  /* Dark theme with deep blue palette */
+  --background: #0f172a; /* Very dark blue background */
+  --foreground: #edf2fb; /* Lightest blue for text */
+  --card: #1e293b; /* Dark blue-gray card */
+  --card-foreground: #e2eafc;
+  --popover: #1e293b;
+  --popover-foreground: #e2eafc;
+  --primary: #6b9fff; /* Bright blue for dark mode */
+  --primary-foreground: #0f172a;
+  --secondary: #334155; /* Dark slate secondary */
+  --secondary-foreground: #d7e3fc;
+  --muted: #283548; /* Dark muted blue */
+  --muted-foreground: #94a3b8; /* Slate for muted text */
+  --accent: #3b5998; /* Medium dark blue accent */
+  --accent-foreground: #e2eafc;
+  --destructive: #ef4444; /* Red for dark mode */
+  --border: #475569; /* Slate border */
+  --input: #1e293b; /* Dark input background */
+  --ring: #6b9fff; /* Match primary for focus ring */
+  --chart-1: #6b9fff; /* Blue */
+  --chart-2: #34d399; /* Emerald */
+  --chart-3: #f87171; /* Red */
+  --chart-4: #a78bfa; /* Violet */
+  --chart-5: #22d3ee; /* Cyan */
+  --sidebar: #1a2744; /* Dark blue sidebar */
+  --sidebar-foreground: #d7e3fc;
+  --sidebar-primary: #6b9fff;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #d7e3fc;
+  --sidebar-border: #475569;
+  --sidebar-ring: #6b9fff;
 }
 
 @layer base {

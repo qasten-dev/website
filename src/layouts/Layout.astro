@@ -186,50 +186,9 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
                 class="hover:text-foreground">LinkedIn</a
               >
             </li>
-            <li>
-              <a
-                href={getRelativeLocaleUrl(currentLocale, "privacy")}
-                class="hover:text-foreground">{t.privacyPolicy}</a
-              >
-            </li>
           </ul>
         </div>
 
-        <div class="mt-4 max-w-1/2">
-          <h3 class="font-semibold">{t.footer.stayUpdated}</h3>
-          <p class="text-muted-foreground mt-2 text-xs sm:text-sm">
-            {t.footer.subscribeCta}
-          </p>
-          <form class="mt-4 flex" action={SUBSCRIBE_FORM_URL} method="post">
-            <input type="hidden" name="_redirect" value={subscribeSuccessUrl} />
-            <input
-              type="checkbox"
-              name="hnpot"
-              class="hidden"
-              tabindex="-1"
-              autocomplete="off"
-            />
-
-            <div class="flex w-full rounded-md">
-              <input
-                type="email"
-                name="email"
-                placeholder={t.footer.emailPlaceholder}
-                class="border-border bg-input w-full rounded-l-md border-2 border-r-0 px-3 py-1.5 text-xs focus:outline-0 sm:text-sm/6"
-              />
-              <button
-                type="submit"
-                aria-label="Subscribe"
-                class="bg-primary/95 border-primary/95 hover:bg-primary hover:border-primary text-primary-foreground flex cursor-pointer items-center rounded-r-md border-2 bg-clip-padding px-4 py-2 font-medium transition"
-              >
-                <span class="hidden sm:block">{t.footer.subscribe}</span>
-                <span class="sm:hidden"
-                  ><Icon name="mdi:send" size="16" class="" /></span
-                >
-              </button>
-            </div>
-          </form>
-        </div>
       </div>
 
       <div class="mx-auto mt-8 flex max-w-6xl items-center justify-between">
