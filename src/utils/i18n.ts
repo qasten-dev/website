@@ -353,7 +353,6 @@ const translations = {
               "Turn inbound demand into booked meetings automatically",
             ],
             actions: [
-              "Prevents double-touch and awkward overlaps",
               "Qualifies leads automatically before a rep ever responds",
               "Books the right meeting with the right owner",
               "Keeps your CRM perfectly in sync, automatically",
@@ -365,17 +364,17 @@ const translations = {
           },
           {
             key: "outbound_copilot",
-            title: "Outbound Signal Agent",
-            tagline: "Launches outbound only when real buying signals appear.",
+            title: "Outbound Prospecting Agent",
+            tagline: "Runs highly personalized, qualitative outbound without templates, spam, or guesswork.",
             idealFor: [
-              "Create pipeline without burning deliverability",
-              "Reach out only when real buying signals appear",
+              "Scale personalized outbound without sacrificing relevance",
+              "Protect deliverability while increasing reply quality",
             ],
             actions: [
-              "Targets only prospects with real buying signals",
-              "Personalizes outreach with verified evidence",
-              "Protects deliverability with strict sending guardrails",
-              "Routes replies and next steps into your CRM",
+              "Builds research-based prospect briefs from CRM and enrichment data",
+              "Drafts personalized outreach grounded in real company context",
+              "Enforces strict sending and deliverability guardrails",
+              "Routes replies and next steps directly into your CRM",
             ],
             ctas: {
               primary: "Talk to us about these agents",
@@ -417,7 +416,7 @@ const translations = {
           ],
         },
         outbound: {
-          title: "Full Spec: Outbound Signal Agent",
+          title: "Full Spec: Outbound Prospecting Agent",
           sections: [
             {
               heading: "Evidence Pack Format",
@@ -457,9 +456,9 @@ const translations = {
         subtitle: "Custom-built. Stack-native. Production-grade.",
         reasons: [
           "100% custom development tailored to your workflows and goals",
-          "Full ownership with no vendor lock-in or recurring platform fees",
+          "Full ownership with no vendor lock-in",
           "Built by engineers who shipped systems at OpenAI, AWS, Uber, and Accor",
-          "Production-ready with governance, audit logs, and enterprise integrations",
+          "Production-ready with audit logs and enterprise integrations",
         ],
         builtByLabel: "Built by engineers from",
         companies: [
@@ -497,7 +496,6 @@ const translations = {
             title: "Define & Align",
             bullets: [
               "Map your funnel + routing rules",
-              "Choose the first agent (inbound or outbound)",
               "Lock success metrics and acceptance criteria",
             ],
           },
@@ -548,9 +546,9 @@ const translations = {
               "Typically within about 30 days (discovery, design, build/test, launch/optimize).",
           },
           {
-            question: "How do you prevent double-contact with reps?",
+            question: "What is draft-first mode?",
             answer:
-              "Collision prevention checks CRM activity and ownership rules. The agent stands down when a human takes over.",
+              "Draft-first means the agent prepares high-quality, research-backed outreach drafts, but a human approves every send.",
           },
           {
             question: "Can outbound run draft-first?",
@@ -560,17 +558,17 @@ const translations = {
           {
             question: "What happens when the agent is not confident?",
             answer:
-              "It escalates, asks a clarifying question, or routes to a human, never guessing.",
+              "It escalates, asks a clarifying question, or routes to a human.",
+          },
+          {
+            question: "How do you prevent double-contact with reps?",
+            answer:
+              "Collision prevention checks CRM activity and ownership rules. The agent stands down when a human takes over.",
           },
           {
             question: "Do you keep audit logs and allow rollback?",
             answer:
               "Yes. Governance, logs, and versioning are built into both offers.",
-          },
-          {
-            question: "What production guarantees do you provide?",
-            answer:
-              "We ship with guardrails: no double-touch (collision + stand-down rules), clean CRM (field mapping + audit trail), full control (approval modes + rate limits + quiet hours), and rollback ready (versioning + revert in minutes). By Day 7 you also get a one-page rollout blueprint (triggers, routing, scoring, guardrails, KPIs).",
           },
           {
             question: "Is my data safe?",
@@ -901,9 +899,9 @@ const translations = {
       },
       hero: {
         title:
-          "Déployez des agents de revenu qui transforment vos leads en rendez-vous - en 30 jours",
+          "Déployez des agents de revenu qui transforment les leads en rendez-vous - prêts en 30 jours",
         subhead:
-          "Nous déployons des agents de revenus sur mesure qui transforment vos leads en rendez-vous, directement dans votre CRM. Votre équipe se concentre sur la vente. En ligne en 30 jours.",
+          "Nous construisons des agents IA sur-mesure qui qualifient les leads et réservent des rendez-vous dans votre CRM, pour que votre équipe se concentre sur la vente. Live en 30 jours.",
         trustChips: [
           "Appel gratuit de 30 minutes",
           "Conçu pour votre entreprise",
@@ -943,7 +941,6 @@ const translations = {
               "Transformer la demande inbound en rendez-vous automatiquement",
             ],
             actions: [
-              "Évite les doubles contacts et les chevauchements gênants",
               "Qualifie automatiquement les leads avant qu'un commercial ne réponde",
               "Réserve le bon rendez-vous avec le bon owner",
               "Garde votre CRM parfaitement à jour, automatiquement",
@@ -955,18 +952,18 @@ const translations = {
           },
           {
             key: "outbound_copilot",
-            title: "Agent de Signal Outbound",
+            title: "Agent de Prospection Outbound",
             tagline:
-              "Lance l'outbound uniquement quand de vrais signaux d'achat apparaissent.",
+              "Prospecte en outbound de façon qualitative et personnalisée, sans templates, spam ni approximations.",
             idealFor: [
-              "Générer du pipeline sans brûler la délivrabilité",
-              "Contacter uniquement quand de vrais signaux d'achat apparaissent",
+              "Industrialiser un outbound personnalisé sans perdre la pertinence",
+              "Protéger la délivrabilité tout en améliorant la qualité des réponses",
             ],
             actions: [
-              "Cible uniquement les prospects avec de vrais signaux d'achat",
-              "Personnalise l'outreach grâce à des preuves vérifiées",
-              "Protège la délivrabilité avec des garde-fous stricts",
-              "Route les réponses et les prochaines étapes dans le CRM",
+              "Construit des briefs prospects basés sur des recherches (CRM + enrichissement)",
+              "Rédige des messages personnalisés ancrés dans le contexte réel de l'entreprise",
+              "Impose des garde-fous stricts d'envoi et de délivrabilité",
+              "Route les réponses et les prochaines étapes directement dans le CRM",
             ],
             ctas: {
               primary: "Explorer ces agents avec nous",
@@ -1008,7 +1005,7 @@ const translations = {
           ],
         },
         outbound: {
-          title: "Spécifications complètes : Agent de Signal Outbound",
+          title: "Spécifications complètes : Agent de Prospection Outbound",
           sections: [
             {
               heading: "Format du dossier de preuves",
@@ -1048,9 +1045,9 @@ const translations = {
         subtitle: "Sur-mesure. Natif à votre stack. Prêt pour la production.",
         reasons: [
           "Développement 100% sur-mesure adapté à vos workflows et objectifs",
-          "Propriété totale sans dépendance fournisseur ni frais de plateforme récurrents",
+          "Propriété totale sans dépendance fournisseur",
           "Construit par des ingénieurs ayant livré des systèmes chez OpenAI, AWS, Uber et Accor",
-          "Prêt pour la production avec gouvernance, audits et intégrations enterprise",
+          "Prêt pour la production avec audits et intégrations enterprise",
         ],
         builtByLabel: "Construit par des ingénieurs de",
         companies: [
@@ -1088,7 +1085,6 @@ const translations = {
             title: "Définir & aligner",
             bullets: [
               "Cartographier votre funnel + règles de routage",
-              "Choisir le premier agent (inbound ou outbound)",
               "Verrouiller les métriques de succès et critères d'acceptation",
             ],
           },
@@ -1139,14 +1135,9 @@ const translations = {
               "En général sous 30 jours (découverte, design, build/test, lancement/optimisation).",
           },
           {
-            question: "Comment évitez-vous les doubles contacts avec les commerciaux ?",
+            question: "Qu'est-ce que le mode draft-first ?",
             answer:
-              "Prévention des collisions : vérification des activités CRM et des règles d'ownership. L'agent s'arrête dès qu'un humain prend la main.",
-          },
-          {
-            question: "Quelles garanties de production fournissez-vous ?",
-            answer:
-              "Nous livrons avec des garde-fous : pas de double-contact (collision + stand-down), CRM propre (mapping des champs + piste d'audit), contrôle total (modes d'approbation + limites + plages silencieuses) et rollback prêt (versioning + retour arrière en minutes). D'ici J+7, vous recevez aussi une page de blueprint (triggers, routage, scoring, garde-fous, KPIs).",
+              "Le draft-first signifie que l'agent prépare des brouillons d'outreach de haute qualité, basés sur des recherches, mais un humain valide chaque envoi.",
           },
           {
             question: "L'outbound peut-il fonctionner en mode draft-first ?",
@@ -1156,7 +1147,12 @@ const translations = {
           {
             question: "Que se passe-t-il si l'agent manque de confiance ?",
             answer:
-              "Il escalade, pose une question de clarification ou route vers un humain, sans jamais deviner.",
+              "Il escalade, pose une question de clarification ou route vers un humain.",
+          },
+          {
+            question: "Comment évitez-vous les doubles contacts avec les commerciaux ?",
+            answer:
+              "Prévention des collisions : vérification des activités CRM et des règles d'ownership. L'agent s'arrête dès qu'un humain prend la main.",
           },
           {
             question: "Avez-vous des logs d'audit et un rollback ?",
