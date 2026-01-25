@@ -20,6 +20,13 @@ const translations = {
     aboutUs: "About us",
     contactUs: "Book a Free Call",
     pricing: "Pricing",
+    nav: {
+      offers: "Offers",
+      howItWorks: "How it Works",
+      integrations: "Integrations",
+      whyQasten: "Why Qasten",
+      faq: "FAQ",
+    },
     price: {
       metaTitle: "Pricing",
       metaDescription: "Pricing for Qasten",
@@ -302,80 +309,279 @@ const translations = {
     },
     homePage: {
       meta: {
-        title: "Qasten - AI Agents That Automate Operations & Drive Revenue",
-        description: "We build custom AI agents that handle lead qualification, outreach, and customer support. Live in 30 days. Full ownership, no lock-in.",
+        title: "Qasten - Revenue Agents That Turn Leads Into Meetings",
+        description: "We build two production-grade revenue agents inside your CRM and inbox. Live in 30 days. Full ownership with no vendor lock-in.",
       },
       hero: {
-        titleStart: "Deploy ",
-        highlight: "AI Agents",
-        titleEnd: " That Automate Your Operations and Generate Revenue While You Sleep",
-        subtitle: "We build custom AI systems that handle lead qualification, outreach, and customer support, so your team can focus on closing deals. Live in 30 days.",
-        cta: "Book Your Free Strategy Call",
-        ctaSubtext: "Free 30-minute call",
+        title: "Deploy Revenue Agents That Turn Leads Into Meetings - Live in 30 Days",
+        subhead:
+          "We build custom AI revenue agents that qualify leads and book meetings inside your CRM, so your team can focus on closing deals. Live in 30 days.",
+        trustChips: [
+          "Free 30-minute call",
+          "Built for Your Business",
+          "Live in 30 Days",
+          "Full ownership (no recurring platform fees)",
+        ],
+        ctas: {
+          primary: "Book Your Free Strategy Call",
+          secondary: "See the 2 Revenue Agents",
+        },
+        media: {
+          title: "Inbound + Outbound, one revenue system",
+          bullets: [
+            "Inbound: Form → reply → qualify → route → book → CRM updated",
+            "Outbound: Signal → research → drafts → safe send → replies triaged",
+          ],
+        },
       },
-      cards: {
-        custom: { title: "Built for Your Business", description: "Tailored to your CRM, workflows, and sales process" },
-        deployed: { title: "Live in 30 Days", description: "From kickoff to production deployment" },
-        trusted: { title: "Enterprise-Ready", description: "Used by growth-stage and enterprise teams" },
+      offers: {
+        title: "Start with a Revenue Agent",
+        subtitle: "Start with inbound or outbound. Both go live in your existing stack.",
+        recommended: "Most teams start here",
+        labels: {
+          bestFor: "Why teams deploy this",
+          whatItDoes: "What it does",
+        },
+        cards: [
+          {
+            key: "inbound_autopilot",
+            recommended: true,
+            title: "Inbound Qualification Agent",
+            tagline: "Qualifies inbound leads and books meetings automatically.",
+            idealFor: [
+              "Recover deals lost to slow lead response",
+              "Turn inbound demand into booked meetings automatically",
+            ],
+            actions: [
+              "Prevents double-touch and awkward overlaps",
+              "Qualifies leads automatically before a rep ever responds",
+              "Books the right meeting with the right owner",
+              "Keeps your CRM perfectly in sync, automatically",
+            ],
+            ctas: {
+              primary: "Explore this agent with us",
+              secondary: "View full technical spec",
+            },
+          },
+          {
+            key: "outbound_copilot",
+            title: "Outbound Signal Agent",
+            tagline: "Launches outbound only when real buying signals appear.",
+            idealFor: [
+              "Create pipeline without burning deliverability",
+              "Reach out only when real buying signals appear",
+            ],
+            actions: [
+              "Targets only prospects with real buying signals",
+              "Personalizes outreach with verified evidence",
+              "Protects deliverability with strict sending guardrails",
+              "Routes replies and next steps into your CRM",
+            ],
+            ctas: {
+              primary: "Explore this agent with us",
+              secondary: "View full technical spec",
+            },
+          },
+        ],
       },
-      stories: {
-        title: "Real Results from Real Deployments",
-        subtitle: "You can automate thousands of hours of manual work, cut costs, and unlock new revenue, all within the first 60 days.",
-        impactTitle: "Measurable Impact Across Every Deployment",
-        currency: "Significant annual cost savings",
-        stats: { costs: "Annual Costs Eliminated", hours: "Hours Saved Monthly", roi: "Average ROI in 60 Days", days: "Days to Go Live" },
+      offerDetails: {
+        inbound: {
+          title: "Full Spec: Inbound Qualification Agent",
+          sections: [
+            {
+              heading: "State Machine",
+              bullets: [
+                "New → Validated → Contacted → Engaged → Qualified → Booked → Assigned",
+                "Nurture, Disqualified, and Suppressed paths with reason codes",
+              ],
+            },
+            {
+              heading: "Implementation Requirements",
+              bullets: [
+                "HubSpot or Salesforce access (lead creation, fields, routing rules)",
+                "Gmail or Outlook sending mailbox",
+                "Calendar access for booking",
+                "Slack channel for alerts (optional)",
+              ],
+            },
+            {
+              heading: "Acceptance Tests",
+              bullets: [
+                "Dedupe prevents double emails on duplicate leads",
+                "DNC and unsubscribe always enforced",
+                "Owner routing matches territory and segment rules",
+                "Stop rules work on reply, booking, and unsubscribe",
+                "CRM fields populated correctly plus summary generated",
+              ],
+            },
+          ],
+        },
+        outbound: {
+          title: "Full Spec: Outbound Signal Agent",
+          sections: [
+            {
+              heading: "Evidence Pack Format",
+              bullets: [
+                "Two to three verified facts plus one pain hypothesis and CTA recommendation",
+                "Confidence score with do-not-send flags if evidence is weak",
+              ],
+            },
+            {
+              heading: "Draft-First Workflow",
+              bullets: [
+                "Drafts created → rep approves → send → CRM logs → replies triaged",
+              ],
+            },
+            {
+              heading: "Deliverability Guardrails",
+              bullets: [
+                "Throttling and quiet hours",
+                "Bounce and complaint monitoring",
+                "Suppression lists and stop rules",
+              ],
+            },
+            {
+              heading: "Acceptance Tests",
+              bullets: [
+                "Suppression prevents sending to open opps, DNC, recently contacted",
+                "Drafts match approved tone and claims",
+                "CRM logging creates consistent activity history",
+                "Reply classification routes to correct next actions",
+              ],
+            },
+          ],
+        },
       },
-      solutions: {
-        title: "AI Agents That Drive Revenue",
-        subtitle: "We build AI systems that automate outreach, operations, and communication, from lead generation to full workflow automation.",
-        voice: { title: "Voice Agents", description: "Answer inbound calls, qualify leads in real-time, and book meetings directly into your calendar. Available 24/7." },
-        sales: { title: "Sales Agents", description: "Research prospects, craft personalized messages, and send multi-channel outreach at scale without hiring more SDRs." },
-        chat: { title: "Chat Agents", description: "Convert website visitors into qualified leads with instant responses, smart routing, and CRM sync." },
-        footer: "Best-in-class platforms",
-      },
-      benefits: {
+      whyQasten: {
         title: "Why Choose Qasten",
-        subtitle: "Built by engineers with enterprise experience. 100% custom development. Full ownership.",
-        custom: { title: "100% Custom Development", description: "Every agent is engineered around your workflows, data, and goals." },
-        ownership: { title: "Full Ownership", description: "You own your agents and data. No vendor lock-in, no recurring platform fees." },
-        integrated: { title: "Enterprise Integrations", description: "Native connections to Salesforce, HubSpot, Gmail, Slack, and 50+ tools your team already uses." },
-        results: { title: "End-to-End Delivery", description: "From strategy to scale. Our engineers handle everything so you can focus on your business." },
+        subtitle: "Custom-built. Stack-native. Production-grade.",
+        reasons: [
+          "100% custom development tailored to your workflows and goals",
+          "Full ownership with no vendor lock-in or recurring platform fees",
+          "Built by engineers who shipped systems at OpenAI, AWS, Uber, and Accor",
+          "Production-ready with governance, audit logs, and enterprise integrations",
+        ],
+        builtByLabel: "Built by engineers from",
+        companies: [
+          { name: "OpenAI", logo: "/logos/openai.svg" },
+          { name: "AWS", logo: "/logos/aws.svg" },
+          { name: "Uber", logo: "/logos/uber.png" },
+          { name: "Accor", logo: "/logos/accor.png" },
+        ],
       },
       integrations: {
         title: "Connects to Your Existing Stack",
-        subtitle: "Native integrations with Salesforce, HubSpot, Gmail, Slack, and 50+ tools, so your AI agents work where your team works.",
+        subtitle:
+          "Native integrations with Salesforce, HubSpot, Gmail, Slack, and 50+ tools, so your AI agents work where your team works.",
+        logos: [
+          "Salesforce",
+          "HubSpot",
+          "Gmail",
+          "Outlook",
+          "Slack",
+          "Zapier",
+          "Zendesk",
+          "Asana",
+          "Linear",
+          "Dovetail",
+          "FigJam",
+        ],
       },
       howItWorks: {
-        title: "From Kickoff to Live in 30 Days",
-        subtitle: "A proven 4-step process designed to get your AI agents into production fast.",
-        discovery: { title: "Discovery Call", description: "We map your sales process, identify bottlenecks, and pinpoint where AI creates the biggest impact." },
-        design: { title: "Solution Design", description: "We architect your custom agent: data flows, integrations, and automation logic, tailored to your stack." },
-        build: { title: "Build & Test", description: "Our engineers build, integrate, and rigorously test your agent before it touches real data." },
-        launch: { title: "Launch & Optimize", description: "We deploy to production, monitor performance, and continuously optimize for better results." },
+        title: "Live in 30 Days — Without Disrupting Your CRM",
+        subtitle:
+          "A production-safe rollout: build in isolation, launch with guardrails, and improve weekly—so you get meetings, not mess.",
+        phases: [
+          {
+            week: "Week 1",
+            title: "Define & Align",
+            bullets: [
+              "Map your funnel + routing rules",
+              "Choose the first agent (inbound or outbound)",
+              "Lock success metrics and acceptance criteria",
+            ],
+          },
+          {
+            week: "Weeks 2–3",
+            title: "Build & Prove (Sandbox First)",
+            bullets: [
+              "Integrate CRM + inbox + enrichment",
+              "Validate suppression, dedupe, and stop rules",
+              "Run test leads end-to-end until it matches your standards",
+            ],
+          },
+          {
+            week: "Week 4",
+            title: "Launch & Tune",
+            bullets: [
+              "Deploy with monitoring + dashboards",
+              "Start in Draft → Assist → Autopilot (your choice)",
+              "Weekly tuning loop: copy, scoring, routing, deliverability",
+            ],
+          },
+        ],
+        guaranteesTitle: "Production Guarantees",
+        guarantees: [
+          "No double-touch (collision + stand-down rules)",
+          "CRM stays clean (field mapping + audit trail)",
+          "Full control (approval modes + rate limits + quiet hours)",
+          "Rollback ready (versioning + revert in minutes)",
+        ],
+        deliverable:
+          "Deliverable by Day 7: a one-page rollout blueprint (triggers, routing, scoring, guardrails, KPIs).",
+        cta: "Book a 30-min rollout call",
+        ctaSubtext:
+          "We’ll recommend the best first agent and give you a 30-day plan.",
+      },
+      midpageCta: {
+        title: "Want to see which agent fits your funnel?",
+        text:
+          "Book a free 30-minute call. We will map your inbound and outbound workflows and recommend the fastest path to booked meetings.",
+        cta: "Book Your Free Strategy Call",
       },
       booking: {
-        title: "See How AI Can Transform Your Operations",
-        subtitle: "Book a free 30-minute call. We'll analyze your workflows and show you exactly how AI can save up to 60 hours per month and drive new revenue.",
-        fullName: "Full Name",
-        email: "Email",
-        company: "Company",
-        message: "Message (Optional)",
-        submit: "Book Your Free Strategy Call",
-        fallback: "Can't see the booking form? ",
-        fallbackLink: "Click here",
+        title: "Book a Free Call",
+        subtitle:
+          "Choose a time that works for you. We will review your funnel and map the fastest path to booked meetings.",
       },
       faq: {
         title: "Your Questions, Answered",
-        questions: [
-          { question: "What exactly is a \"Custom AI Agent\"?", answer: "A Custom AI Agent is an intelligent system built specifically for your business that automates workflows, handles tasks, and integrates seamlessly with your existing tools. Unlike generic chatbots, these agents are custom-built to understand your processes and deliver measurable results." },
-          { question: "How fast can I have one running in my business?", answer: "On average, we deploy custom AI agents within 30 days. The process includes discovery, design, build & test, and launch phases, all designed to get you up and running quickly." },
-          { question: "Can an AI agent actually generate new revenue?", answer: "Yes. Our AI agents automate lead research, qualification, and outreach, helping sales teams focus on high-value activities. You can see significant pipeline growth and new revenue streams from automated processes." },
-          { question: "What industries does this work for?", answer: "Our custom AI infrastructure works across multiple industries including sales, operations, customer service, finance, and more. If you have repeatable workflows, we can automate them." },
-          { question: "Do I need to be \"tech-savvy\" to use this?", answer: "No. Our systems integrate seamlessly with your existing workflows. Once deployed, they run automatically in the background with no technical expertise required." },
-          { question: "How is this different from a chatbot?", answer: "Unlike generic chatbots, our AI agents are built specifically for your business processes. They integrate directly with your CRM and communication stack, automate complex multi-step workflows, and deliver measurable business results, not just conversations." },
-          { question: "What tools does it integrate with?", answer: "We integrate with Salesforce, HubSpot, Gmail, Outlook, Slack, and 50+ other tools. We work with your existing tech stack to ensure seamless integration." },
-          { question: "Is my data safe?", answer: "Yes. You own the agents and data. We follow strict security protocols, host in the EU, and ensure your data remains secure and private." },
-            { question: "How do I get started?", answer: "Book a free 30-minute strategy call. We'll analyze your workflows and show you exactly how AI can save up to 60 hours per month and drive new revenue with real examples from similar businesses." },
+        items: [
+          {
+            question: "What exactly is a Custom AI Agent?",
+            answer:
+              "A business-specific system that automates workflows and integrates with your existing tools.",
+          },
+          {
+            question: "How fast can I have one running?",
+            answer:
+              "Typically within about 30 days (discovery, design, build/test, launch/optimize).",
+          },
+          {
+            question: "How do you prevent double-contact with reps?",
+            answer:
+              "Collision prevention checks CRM activity and ownership rules. The agent stands down when a human takes over.",
+          },
+          {
+            question: "Can outbound run draft-first?",
+            answer:
+              "Yes. Draft-first is the default. You can increase autonomy after validation.",
+          },
+          {
+            question: "What happens when the agent is not confident?",
+            answer:
+              "It escalates, asks a clarifying question, or routes to a human, never guessing.",
+          },
+          {
+            question: "Do you keep audit logs and allow rollback?",
+            answer:
+              "Yes. Governance, logs, and versioning are built into both offers.",
+          },
+          {
+            question: "Is my data safe?",
+            answer:
+              "You own the agents and data. Hosted in the EU with strict security protocols.",
+          },
         ],
       },
     },
@@ -393,6 +599,13 @@ const translations = {
     aboutUs: "À propos",
     contactUs: "Réserver un appel gratuit",
     pricing: "Tarifs",
+    nav: {
+      offers: "Offres",
+      howItWorks: "Comment ça marche",
+      integrations: "Intégrations",
+      whyQasten: "Pourquoi Qasten",
+      faq: "FAQ",
+    },
     startUsingNow: "Commencez maintenant",
     security: "Sécurité",
     securityTitle: "Qasten - La solution sécurisée pour remplacer le Shadow AI",
@@ -686,80 +899,285 @@ const translations = {
     },
     homePage: {
       meta: {
-        title: "Qasten - Agents IA Qui Automatisent Vos Opérations et Génèrent du Revenu",
-        description: "Nous construisons des agents IA sur-mesure qui gèrent la qualification des leads, la prospection et le support client. Opérationnel en 30 jours. Propriété totale, sans dépendance.",
+        title:
+          "Qasten - Agents de revenu qui transforment vos leads en rendez-vous",
+        description:
+          "Nous construisons deux agents de revenu de niveau production dans votre CRM et votre inbox. Opérationnel en 30 jours. Propriété totale sans dépendance fournisseur.",
       },
       hero: {
-        titleStart: "Déployez des ",
-        highlight: "Agents IA",
-        titleEnd: " Qui Automatisent Vos Opérations et Génèrent du Revenu Pendant Que Vous Dormez",
-        subtitle: "Nous construisons des systèmes IA sur-mesure qui gèrent la qualification des leads, la prospection et le support client, pour que votre équipe se concentre sur la conclusion des ventes. Opérationnel en 30 jours.",
-        cta: "Réservez votre appel stratégique",
-        ctaSubtext: "Appel gratuit de 30 minutes",
+        title:
+          "Déployez des agents de revenu qui transforment vos leads en rendez-vous - en 30 jours",
+        subhead:
+          "Nous déployons des agents de revenus sur mesure qui transforment vos leads en rendez-vous, directement dans votre CRM. Votre équipe se concentre sur la vente. En ligne en 30 jours.",
+        trustChips: [
+          "Appel gratuit de 30 minutes",
+          "Conçu pour votre entreprise",
+          "Opérationnel en 30 jours",
+          "Propriété totale (pas de frais de plateforme récurrents)",
+        ],
+        ctas: {
+          primary: "Réservez votre appel stratégique",
+          secondary: "Voir les 2 agents de revenu",
+        },
+        media: {
+          title: "Inbound + Outbound, un seul système de revenu",
+          bullets: [
+            "Inbound : Formulaire → réponse → qualification → routage → rendez-vous → CRM mis à jour",
+            "Outbound : Signal → recherche → brouillons → envoi sécurisé → réponses triées",
+          ],
+        },
       },
-      cards: {
-        custom: { title: "Conçu pour votre entreprise", description: "Adapté à votre CRM, vos workflows et votre processus de vente" },
-        deployed: { title: "Opérationnel en 30 jours", description: "Du lancement au déploiement en production" },
-        trusted: { title: "Prêt pour l'entreprise", description: "Utilisé par des startups en croissance et grands groupes" },
+      offers: {
+        title: "Votre premier agent de revenu",
+        subtitle:
+          "Commencez par l'inbound ou l'outbound. Les deux se déploient dans votre stack existante.",
+        recommended: "La plupart des équipes commencent ici",
+        labels: {
+          bestFor: "Pourquoi on déploie cet agent",
+          whatItDoes: "Ce que ça fait",
+        },
+        cards: [
+          {
+            key: "inbound_autopilot",
+            recommended: true,
+            title: "Agent de Qualification Inbound",
+            tagline:
+              "Qualifie les leads entrants et réserve des rendez-vous automatiquement.",
+            idealFor: [
+              "Récupérer les deals perdus à cause de la lenteur de réponse",
+              "Transformer la demande inbound en rendez-vous automatiquement",
+            ],
+            actions: [
+              "Évite les doubles contacts et les chevauchements gênants",
+              "Qualifie automatiquement les leads avant qu'un commercial ne réponde",
+              "Réserve le bon rendez-vous avec le bon owner",
+              "Garde votre CRM parfaitement à jour, automatiquement",
+            ],
+            ctas: {
+              primary: "Explorer cet agent avec nous",
+              secondary: "Voir la fiche technique complète",
+            },
+          },
+          {
+            key: "outbound_copilot",
+            title: "Agent de Signal Outbound",
+            tagline:
+              "Lance l'outbound uniquement quand de vrais signaux d'achat apparaissent.",
+            idealFor: [
+              "Générer du pipeline sans brûler la délivrabilité",
+              "Contacter uniquement quand de vrais signaux d'achat apparaissent",
+            ],
+            actions: [
+              "Cible uniquement les prospects avec de vrais signaux d'achat",
+              "Personnalise l'outreach grâce à des preuves vérifiées",
+              "Protège la délivrabilité avec des garde-fous stricts",
+              "Route les réponses et les prochaines étapes dans le CRM",
+            ],
+            ctas: {
+              primary: "Explorer cet agent avec nous",
+              secondary: "Voir la fiche technique complète",
+            },
+          },
+        ],
       },
-      stories: {
-        title: "Des Résultats Concrets, des Déploiements Réels",
-        subtitle: "Vous pouvez automatiser des milliers d'heures de travail manuel, réduire vos coûts et débloquer de nouveaux revenus, le tout dans les 60 premiers jours.",
-        impactTitle: "Impact mesurable sur chaque déploiement",
-        currency: "Des économies annuelles significatives",
-        stats: { costs: "Économies annuelles", hours: "Heures économisées/mois", roi: "ROI moyen en 60 jours", days: "Jours avant mise en prod" },
+      offerDetails: {
+        inbound: {
+          title: "Spécifications complètes : Agent de Qualification Inbound",
+          sections: [
+            {
+              heading: "Machine d'états",
+              bullets: [
+                "Nouveau → Validé → Contacté → Engagé → Qualifié → Réservé → Assigné",
+                "Parcours Nurture, Disqualifié et Supprimé avec codes de raison",
+              ],
+            },
+            {
+              heading: "Pré-requis d'implémentation",
+              bullets: [
+                "Accès HubSpot ou Salesforce (création de leads, champs, règles de routage)",
+                "Boîte Gmail ou Outlook pour l'envoi",
+                "Accès calendrier pour la réservation",
+                "Canal Slack pour alertes (optionnel)",
+              ],
+            },
+            {
+              heading: "Tests d'acceptation",
+              bullets: [
+                "La déduplication empêche les doubles emails sur leads dupliqués",
+                "DNC et désinscription toujours respectés",
+                "Le routage suit les règles de territoire et de segment",
+                "Les règles d'arrêt fonctionnent sur réponse, réservation, désinscription",
+                "Les champs CRM sont remplis et un résumé est généré",
+              ],
+            },
+          ],
+        },
+        outbound: {
+          title: "Spécifications complètes : Agent de Signal Outbound",
+          sections: [
+            {
+              heading: "Format du dossier de preuves",
+              bullets: [
+                "Deux à trois faits vérifiés plus une hypothèse de douleur et une recommandation de CTA",
+                "Score de confiance et drapeaux do-not-send si les preuves sont faibles",
+              ],
+            },
+            {
+              heading: "Workflow Draft-First",
+              bullets: [
+                "Brouillons créés → validation commerciale → envoi → logs CRM → réponses triées",
+              ],
+            },
+            {
+              heading: "Garde-fous de délivrabilité",
+              bullets: [
+                "Throttling et plages silencieuses",
+                "Monitoring des rebonds et plaintes",
+                "Listes de suppression et règles d'arrêt",
+              ],
+            },
+            {
+              heading: "Tests d'acceptation",
+              bullets: [
+                "La suppression empêche l'envoi aux opps ouvertes, DNC, contacts récents",
+                "Les brouillons respectent le ton et les claims validés",
+                "Les logs CRM créent un historique d'activité cohérent",
+                "La classification des réponses route vers les bonnes actions",
+              ],
+            },
+          ],
+        },
       },
-      solutions: {
-        title: "Des Agents IA Qui Génèrent du Revenu",
-        subtitle: "Nous construisons des systèmes IA qui automatisent la prospection, les opérations et la communication, de la génération de leads à l'automatisation complète des workflows.",
-        voice: { title: "Agents Vocaux", description: "Répondez aux appels entrants, qualifiez les leads en temps réel et planifiez des rendez-vous directement dans votre agenda. Disponible 24h/24." },
-        sales: { title: "Agents Commerciaux", description: "Recherchez les prospects, rédigez des messages personnalisés et lancez des campagnes multicanales à grande échelle sans embaucher plus de commerciaux." },
-        chat: { title: "Agents de Chat", description: "Convertissez les visiteurs de votre site en leads qualifiés avec des réponses instantanées, un routage intelligent et une synchronisation CRM." },
-        footer: "Plateformes de premier ordre",
-      },
-      benefits: {
-        title: "Pourquoi Choisir Qasten",
-        subtitle: "Construit par des ingénieurs expérimentés. Développement 100% sur-mesure. Propriété totale.",
-        custom: { title: "Développement 100% Sur-Mesure", description: "Chaque agent est conçu autour de vos workflows, données et objectifs." },
-        ownership: { title: "Propriété Totale", description: "Vous êtes propriétaire de vos agents et données. Pas de dépendance fournisseur, pas de frais de plateforme." },
-        integrated: { title: "Intégrations Enterprise", description: "Connexions natives avec Salesforce, HubSpot, Gmail, Slack et plus de 50 outils que votre équipe utilise." },
-        results: { title: "Livraison Complète", description: "De la stratégie au passage à l'échelle. Nos ingénieurs gèrent tout pour que vous puissiez vous concentrer sur votre activité." },
+      whyQasten: {
+        title: "Pourquoi choisir Qasten",
+        subtitle: "Sur-mesure. Natif à votre stack. Prêt pour la production.",
+        reasons: [
+          "Développement 100% sur-mesure adapté à vos workflows et objectifs",
+          "Propriété totale sans dépendance fournisseur ni frais de plateforme récurrents",
+          "Construit par des ingénieurs ayant livré des systèmes chez OpenAI, AWS, Uber et Accor",
+          "Prêt pour la production avec gouvernance, audits et intégrations enterprise",
+        ],
+        builtByLabel: "Construit par des ingénieurs de",
+        companies: [
+          { name: "OpenAI", logo: "/logos/openai.svg" },
+          { name: "AWS", logo: "/logos/aws.svg" },
+          { name: "Uber", logo: "/logos/uber.png" },
+          { name: "Accor", logo: "/logos/accor.png" },
+        ],
       },
       integrations: {
-        title: "Se connecte à votre stack existant",
-        subtitle: "Intégrations natives avec Salesforce, HubSpot, Gmail, Slack et plus de 50 outils, pour que vos agents IA travaillent là où votre équipe travaille.",
+        title: "Se connecte à votre stack existante",
+        subtitle:
+          "Intégrations natives avec Salesforce, HubSpot, Gmail, Slack et plus de 50 outils, pour que vos agents IA travaillent là où votre équipe travaille.",
+        logos: [
+          "Salesforce",
+          "HubSpot",
+          "Gmail",
+          "Outlook",
+          "Slack",
+          "Zapier",
+          "Zendesk",
+          "Asana",
+          "Linear",
+          "Dovetail",
+          "FigJam",
+        ],
       },
       howItWorks: {
-        title: "Du Lancement à la Production en 30 Jours",
-        subtitle: "Un processus éprouvé en 4 étapes conçu pour mettre vos agents IA en production rapidement.",
-        discovery: { title: "Appel découverte", description: "Nous cartographions votre processus de vente, identifions les goulots d'étranglement et ciblons où l'IA crée le plus d'impact." },
-        design: { title: "Conception de la solution", description: "Nous concevons votre agent sur-mesure : flux de données, intégrations et logique d'automatisation, adapté à votre stack." },
-        build: { title: "Construction & Test", description: "Nos ingénieurs construisent, intègrent et testent rigoureusement votre agent avant qu'il ne touche aux données réelles." },
-        launch: { title: "Lancement & Optimisation", description: "Nous déployons en production, surveillons les performances et optimisons continuellement pour de meilleurs résultats." },
+        title: "Live en 30 jours — sans perturber votre CRM",
+        subtitle:
+          "Un déploiement sécurisé en production : construction en isolation, lancement avec garde-fous, amélioration hebdomadaire — pour des rendez-vous, pas du désordre.",
+        phases: [
+          {
+            week: "Semaine 1",
+            title: "Définir & aligner",
+            bullets: [
+              "Cartographier votre funnel + règles de routage",
+              "Choisir le premier agent (inbound ou outbound)",
+              "Verrouiller les métriques de succès et critères d'acceptation",
+            ],
+          },
+          {
+            week: "Semaines 2–3",
+            title: "Construire & prouver (sandbox d'abord)",
+            bullets: [
+              "Intégrer CRM + inbox + enrichissement",
+              "Valider suppression, déduplication et règles d'arrêt",
+              "Tester des leads de bout en bout jusqu'à vos standards",
+            ],
+          },
+          {
+            week: "Semaine 4",
+            title: "Lancer & ajuster",
+            bullets: [
+              "Déployer avec monitoring + dashboards",
+              "Démarrer en Brouillon → Assisté → Autopilote (au choix)",
+              "Boucle d'amélioration hebdo : copy, scoring, routage, délivrabilité",
+            ],
+          },
+        ],
+        guaranteesTitle: "Garanties de production",
+        guarantees: [
+          "Pas de double-contact (collision + stand-down)",
+          "CRM propre (mapping des champs + piste d'audit)",
+          "Contrôle total (modes d'approbation + limites + plages silencieuses)",
+          "Rollback prêt (versioning + retour arrière en minutes)",
+        ],
+        deliverable:
+          "Livrable d'ici J+7 : une page de blueprint de déploiement (triggers, routage, scoring, garde-fous, KPIs).",
+        cta: "Réserver un appel de déploiement (30 min)",
+        ctaSubtext:
+          "On recommande le meilleur premier agent et on vous donne un plan 30 jours.",
+      },
+      midpageCta: {
+        title: "Vous voulez savoir quel agent correspond à votre funnel ?",
+        text:
+          "Réservez un appel gratuit de 30 minutes. Nous cartographions vos workflows inbound et outbound et recommandons la voie la plus rapide vers des rendez-vous.",
+        cta: "Réservez votre appel stratégique",
       },
       booking: {
-        title: "Découvrez Comment l'IA Peut Transformer Vos Opérations",
-        subtitle: "Réservez un appel gratuit de 30 minutes. Nous analyserons vos workflows et vous montrerons exactement comment l'IA peut économiser plus de 60h par mois et générer de nouveaux revenus.",
-        fullName: "Nom complet",
-        email: "Email",
-        company: "Entreprise",
-        message: "Message (Optionnel)",
-        submit: "Réservez votre appel stratégique",
-        fallback: "Vous ne voyez pas le formulaire ? ",
-        fallbackLink: "Cliquez ici",
+        title: "Réserver un appel gratuit",
+        subtitle:
+          "Choisissez un créneau. Nous analysons votre funnel et recommandons la voie la plus rapide vers des rendez-vous.",
       },
       faq: {
-        title: "Vos Questions, Nos Réponses",
-        questions: [
-          { question: "Qu'est-ce qu'un « Agent IA personnalisé » exactement ?", answer: "Un Agent IA personnalisé est un système intelligent construit spécifiquement pour votre entreprise qui automatise les workflows, gère les tâches et s'intègre parfaitement à vos outils existants. Contrairement aux chatbots génériques, ces agents sont conçus sur-mesure pour comprendre vos processus et livrer des résultats mesurables." },
-          { question: "En combien de temps puis-je avoir un agent opérationnel ?", answer: "En moyenne, nous déployons des agents IA personnalisés en 30 jours. Le processus comprend les phases de découverte, conception, construction & test, et lancement, toutes conçues pour vous rendre opérationnel rapidement." },
-          { question: "Un agent IA peut-il réellement générer de nouveaux revenus ?", answer: "Oui. Nos agents IA automatisent la recherche de leads, la qualification et la prospection, aidant les équipes commerciales à se concentrer sur les activités à forte valeur. Vous pouvez constater une croissance significative de votre pipeline et de nouvelles sources de revenus grâce aux processus automatisés." },
-          { question: "Pour quels secteurs cela fonctionne-t-il ?", answer: "Notre infrastructure IA sur-mesure fonctionne dans de nombreux secteurs : vente, opérations, service client, finance et plus encore. Si vous avez des workflows répétitifs, nous pouvons les automatiser." },
-          { question: "Dois-je être « technophile » pour utiliser cela ?", answer: "Non. Nos systèmes s'intègrent parfaitement à vos workflows existants. Une fois déployés, ils fonctionnent automatiquement en arrière-plan sans aucune expertise technique requise." },
-          { question: "En quoi est-ce différent d'un chatbot ?", answer: "Contrairement aux chatbots génériques, nos agents IA sont construits spécifiquement pour vos processus métier. Ils s'intègrent directement à votre CRM et stack de communication, automatisent des workflows complexes en plusieurs étapes et livrent des résultats métier mesurables, pas juste des conversations." },
-          { question: "Avec quels outils cela s'intègre-t-il ?", answer: "Nous nous intégrons avec Salesforce, HubSpot, Gmail, Outlook, Slack et plus de 50 autres outils. Nous travaillons avec votre stack technologique existant pour assurer une intégration transparente." },
-          { question: "Mes données sont-elles en sécurité ?", answer: "Oui. Vous êtes propriétaire des agents et données. Nous suivons des protocoles de sécurité stricts, hébergeons dans l'UE et garantissons que vos données restent sécurisées et privées." },
-          { question: "Comment puis-je commencer ?", answer: "Réservez un appel stratégique gratuit de 30 minutes. Nous analyserons vos workflows et vous montrerons exactement comment l'IA peut économiser plus de 60h par mois et générer de nouveaux revenus avec des exemples concrets d'entreprises similaires." },
+        title: "Vos questions, nos réponses",
+        items: [
+          {
+            question: "Qu'est-ce qu'un agent IA sur-mesure ?",
+            answer:
+              "Un système métier qui automatise vos workflows et s'intègre à vos outils existants.",
+          },
+          {
+            question: "En combien de temps peut-il être opérationnel ?",
+            answer:
+              "En général sous 30 jours (découverte, design, build/test, lancement/optimisation).",
+          },
+          {
+            question: "Comment évitez-vous les doubles contacts avec les commerciaux ?",
+            answer:
+              "Prévention des collisions : vérification des activités CRM et des règles d'ownership. L'agent s'arrête dès qu'un humain prend la main.",
+          },
+          {
+            question: "L'outbound peut-il fonctionner en mode draft-first ?",
+            answer:
+              "Oui. Le draft-first est le mode par défaut. Vous pouvez augmenter l'autonomie après validation.",
+          },
+          {
+            question: "Que se passe-t-il si l'agent manque de confiance ?",
+            answer:
+              "Il escalade, pose une question de clarification ou route vers un humain, sans jamais deviner.",
+          },
+          {
+            question: "Avez-vous des logs d'audit et un rollback ?",
+            answer:
+              "Oui. La gouvernance, les logs et le versioning sont intégrés aux deux offres.",
+          },
+          {
+            question: "Mes données sont-elles en sécurité ?",
+            answer:
+              "Vous possédez les agents et les données. Hébergement UE avec des protocoles de sécurité stricts.",
+          },
         ],
       },
     },
