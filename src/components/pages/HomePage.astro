@@ -69,24 +69,25 @@ const faqData = p.faq.items;
         </p>
       </div>
 
-      <div class="mx-auto max-w-4xl space-y-8">
+      <div class="mx-auto max-w-5xl grid gap-6 md:grid-cols-2 lg:gap-8">
         {p.offers.cards.map((card) => (
           <div
             class:list={[
               "animate-on-scroll",
               "rounded-2xl",
-              "border",
+              "border border-border/50",
               "bg-card",
-              "p-8",
+              "p-7 sm:p-8",
               "shadow-sm",
-              "ring-1",
-              "ring-border/10",
+              "transition-shadow",
+              "hover:shadow-md",
+              "h-full",
             ]}
           >
-            <div>
-              <div class="mb-8">
+            <div class="flex h-full flex-col gap-6">
+              <div>
                 <div class="flex flex-wrap items-center justify-between gap-3">
-                  <h3 class="text-2xl font-semibold">{card.title}</h3>
+                  <h3 class="text-2xl font-semibold leading-tight">{card.title}</h3>
                   {card.recommended && (
                     <span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide">
                       {p.offers.recommended}
@@ -134,19 +135,12 @@ const faqData = p.faq.items;
                 </div>
               </div>
 
-              <div class="mt-8 flex flex-wrap items-center gap-4">
+              <div class="mt-auto flex flex-wrap items-center gap-4 pt-2">
                 <a
                   href="#book-call"
                   class="bg-primary hover:bg-primary/90 text-primary-foreground inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors"
                 >
                   {card.ctas.primary}
-                  <Icon name="mdi:arrow-right" class="text-base" />
-                </a>
-                <a
-                  href={card.key === "inbound_autopilot" ? inboundSpecUrl : outboundSpecUrl}
-                  class="text-muted-foreground hover:text-foreground inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-                >
-                  {card.ctas.secondary}
                   <Icon name="mdi:arrow-right" class="text-base" />
                 </a>
               </div>
@@ -358,28 +352,6 @@ const faqData = p.faq.items;
                 </div>
               ))}
             </div>
-          </div>
-
-          <div class="how-it-works-guarantees mt-8 rounded-xl border border-border/50 bg-background px-6 py-6 sm:px-8 sm:py-7">
-            <p class="text-foreground mb-4 text-xs font-semibold uppercase tracking-[0.2em]">
-              {p.howItWorks.guaranteesTitle}
-            </p>
-            <div class="grid gap-3 sm:grid-cols-2">
-              {p.howItWorks.guarantees.map((item) => (
-                <div class="flex items-start gap-2.5 text-sm leading-relaxed text-foreground">
-                  <Icon
-                    name="mdi:check-circle"
-                    class="text-primary mt-0.5 text-base flex-shrink-0"
-                  />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-            {p.howItWorks.deliverable && (
-              <p class="text-muted-foreground mt-5 text-sm leading-relaxed">
-                {p.howItWorks.deliverable}
-              </p>
-            )}
           </div>
 
           <div class="mt-10 text-center">

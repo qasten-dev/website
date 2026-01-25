@@ -360,7 +360,7 @@ const translations = {
             ],
             ctas: {
               primary: "Explore this agent with us",
-              secondary: "View full technical spec",
+              secondary: "",
             },
           },
           {
@@ -379,7 +379,7 @@ const translations = {
             ],
             ctas: {
               primary: "Explore this agent with us",
-              secondary: "View full technical spec",
+              secondary: "",
             },
           },
         ],
@@ -488,9 +488,9 @@ const translations = {
         ],
       },
       howItWorks: {
-        title: "Live in 30 Days — Without Disrupting Your CRM",
+        title: "Live in 30 Days - Without Disrupting Your CRM",
         subtitle:
-          "A production-safe rollout: build in isolation, launch with guardrails, and improve weekly—so you get meetings, not mess.",
+          "A production-safe rollout: build in isolation, launch with guardrails, and improve weekly-so you get meetings, not mess.",
         phases: [
           {
             week: "Week 1",
@@ -520,18 +520,8 @@ const translations = {
             ],
           },
         ],
-        guaranteesTitle: "Production Guarantees",
-        guarantees: [
-          "No double-touch (collision + stand-down rules)",
-          "CRM stays clean (field mapping + audit trail)",
-          "Full control (approval modes + rate limits + quiet hours)",
-          "Rollback ready (versioning + revert in minutes)",
-        ],
-        deliverable:
-          "Deliverable by Day 7: a one-page rollout blueprint (triggers, routing, scoring, guardrails, KPIs).",
         cta: "Book a 30-min rollout call",
-        ctaSubtext:
-          "We’ll recommend the best first agent and give you a 30-day plan.",
+        ctaSubtext: "",
       },
       midpageCta: {
         title: "Want to see which agent fits your funnel?",
@@ -576,6 +566,11 @@ const translations = {
             question: "Do you keep audit logs and allow rollback?",
             answer:
               "Yes. Governance, logs, and versioning are built into both offers.",
+          },
+          {
+            question: "What production guarantees do you provide?",
+            answer:
+              "We ship with guardrails: no double-touch (collision + stand-down rules), clean CRM (field mapping + audit trail), full control (approval modes + rate limits + quiet hours), and rollback ready (versioning + revert in minutes). By Day 7 you also get a one-page rollout blueprint (triggers, routing, scoring, guardrails, KPIs).",
           },
           {
             question: "Is my data safe?",
@@ -1084,9 +1079,9 @@ const translations = {
         ],
       },
       howItWorks: {
-        title: "Live en 30 jours — sans perturber votre CRM",
+        title: "Live en 30 jours - sans perturber votre CRM",
         subtitle:
-          "Un déploiement sécurisé en production : construction en isolation, lancement avec garde-fous, amélioration hebdomadaire — pour des rendez-vous, pas du désordre.",
+          "Un déploiement sécurisé en production : construction en isolation, lancement avec garde-fous, amélioration hebdomadaire - pour des rendez-vous, pas du désordre.",
         phases: [
           {
             week: "Semaine 1",
@@ -1116,18 +1111,8 @@ const translations = {
             ],
           },
         ],
-        guaranteesTitle: "Garanties de production",
-        guarantees: [
-          "Pas de double-contact (collision + stand-down)",
-          "CRM propre (mapping des champs + piste d'audit)",
-          "Contrôle total (modes d'approbation + limites + plages silencieuses)",
-          "Rollback prêt (versioning + retour arrière en minutes)",
-        ],
-        deliverable:
-          "Livrable d'ici J+7 : une page de blueprint de déploiement (triggers, routage, scoring, garde-fous, KPIs).",
         cta: "Réserver un appel de déploiement (30 min)",
-        ctaSubtext:
-          "On recommande le meilleur premier agent et on vous donne un plan 30 jours.",
+        ctaSubtext: "",
       },
       midpageCta: {
         title: "Vous voulez savoir quel agent correspond à votre funnel ?",
@@ -1157,6 +1142,11 @@ const translations = {
             question: "Comment évitez-vous les doubles contacts avec les commerciaux ?",
             answer:
               "Prévention des collisions : vérification des activités CRM et des règles d'ownership. L'agent s'arrête dès qu'un humain prend la main.",
+          },
+          {
+            question: "Quelles garanties de production fournissez-vous ?",
+            answer:
+              "Nous livrons avec des garde-fous : pas de double-contact (collision + stand-down), CRM propre (mapping des champs + piste d'audit), contrôle total (modes d'approbation + limites + plages silencieuses) et rollback prêt (versioning + retour arrière en minutes). D'ici J+7, vous recevez aussi une page de blueprint (triggers, routage, scoring, garde-fous, KPIs).",
           },
           {
             question: "L'outbound peut-il fonctionner en mode draft-first ?",
