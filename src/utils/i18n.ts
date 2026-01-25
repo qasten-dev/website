@@ -359,7 +359,7 @@ const translations = {
               "Keeps your CRM perfectly in sync, automatically",
             ],
             ctas: {
-              primary: "Explore this agent with us",
+              primary: "Talk to us about these agents",
               secondary: "",
             },
           },
@@ -378,7 +378,7 @@ const translations = {
               "Routes replies and next steps into your CRM",
             ],
             ctas: {
-              primary: "Explore this agent with us",
+              primary: "Talk to us about these agents",
               secondary: "",
             },
           },
@@ -503,7 +503,7 @@ const translations = {
           },
           {
             week: "Weeks 2–3",
-            title: "Build & Prove (Sandbox First)",
+            title: "Build & Prove",
             bullets: [
               "Integrate CRM + inbox + enrichment",
               "Validate suppression, dedupe, and stop rules",
@@ -949,7 +949,7 @@ const translations = {
               "Garde votre CRM parfaitement à jour, automatiquement",
             ],
             ctas: {
-              primary: "Explorer cet agent avec nous",
+              primary: "Explorer ces agents avec nous",
               secondary: "Voir la fiche technique complète",
             },
           },
@@ -969,7 +969,7 @@ const translations = {
               "Route les réponses et les prochaines étapes dans le CRM",
             ],
             ctas: {
-              primary: "Explorer cet agent avec nous",
+              primary: "Explorer ces agents avec nous",
               secondary: "Voir la fiche technique complète",
             },
           },
@@ -1094,7 +1094,7 @@ const translations = {
           },
           {
             week: "Semaines 2–3",
-            title: "Construire & prouver (sandbox d'abord)",
+            title: "Construire & Prouver",
             bullets: [
               "Intégrer CRM + inbox + enrichissement",
               "Valider suppression, déduplication et règles d'arrêt",
