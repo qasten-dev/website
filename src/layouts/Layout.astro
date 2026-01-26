@@ -45,6 +45,13 @@ const fontFilesGlob = import.meta.glob("/public/fonts/*.woff2", {
   import: "default",
 });
 const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
+
+const navItems = [
+  { label: t.nav.offers, href: "#offers" },
+  { label: t.nav.howItWorks, href: "#how-it-works" },
+  { label: t.nav.whyQasten, href: "#why-qasten" },
+  { label: t.nav.faq, href: "#faq" },
+];
 ---
 
 <!doctype html>
@@ -116,7 +123,16 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
         >
       </div>
 
-      <nav class="hidden md:flex"></nav>
+      <nav class="hidden items-center space-x-6 font-medium md:flex lg:space-x-10">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="hover:bg-secondary rounded-md px-3 py-2 transition-colors"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
 
       <div class="hidden flex-1 justify-end sm:flex">
         <a
@@ -150,6 +166,9 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
         <nav
           class="flex h-screen flex-col items-center justify-center space-y-12 text-4xl font-semibold"
         >
+          {navItems.map((item) => (
+            <a href={item.href}> {item.label} </a>
+          ))}
           <a href={contactUsURL}> {t.contactUs} </a>
           <div class="space-x-2">
             <LanguageButton locale="en" size="lg" />

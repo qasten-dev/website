@@ -3,34 +3,22 @@ import Layout from "@/layouts/Layout.astro";
 import FAQ from "@/components/FAQ.astro";
 import Logo from "@/components/Logo.astro";
 import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
 import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
-
-import irisImg from "@/assets/Iris.png";
-import harryImg from "@/assets/harry.png";
-import cosmoImg from "@/assets/cosmo.png";
-import tronImg from "@/assets/tron.png";
-import picassoImg from "@/assets/picasso.png";
-import felixImg from "@/assets/felix.png";
-import belfortImg from "@/assets/belfort.png";
-import artemisImg from "@/assets/artemis.png";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 const t = getTranslations(currentLocale);
 const p = t.homePage;
+const inboundSpecUrl = getRelativeLocaleUrl(
+  currentLocale,
+  "/specs/inbound-qualification-agent",
+);
+const outboundSpecUrl = getRelativeLocaleUrl(
+  currentLocale,
+  "/specs/outbound-signal-agent",
+);
 
-const faqData = p.faq.questions;
-const agents = [
-  { name: "Iris", label: "Content Ideation", image: irisImg },
-  { name: "Harry", label: "Content Writing", image: harryImg },
-  { name: "Felix", label: "LinkedIn Lead Scraper", image: felixImg },
-  { name: "Cosmo", label: "Image Generation", image: cosmoImg },
-  { name: "Tron", label: "TikTok Analysis", image: tronImg },
-  { name: "Picasso", label: "Instagram Reel Analysis", image: picassoImg },
-  { name: "Belfort", label: "Google Maps BDR", image: belfortImg },
-  { name: "Artemis", label: "Lead Magnet Scraping", image: artemisImg },
-];
-const carouselAgents = [...agents, ...agents];
+const faqData = p.faq.items;
 ---
 
 <Layout
@@ -39,166 +27,162 @@ const carouselAgents = [...agents, ...agents];
   noBackground={true}
 >
   <main class="w-full">
-<!-- Hero Section -->
-    <section class="relative mx-auto w-full max-w-7xl px-4 pt-16 pb-24 text-center sm:px-6 lg:pt-20 lg:pb-32">
-      <div class="relative">
-        <h1 class="mx-auto mb-6 max-w-4xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl lg:leading-[1.15]">
-          {p.hero.titleStart}<span class="text-primary">{p.hero.highlight}</span>{p.hero.titleEnd}
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="relative mx-auto w-full max-w-5xl px-4 pt-20 pb-24 text-center sm:px-6 lg:pt-24 lg:pb-28"
+    >
+      <div class="animate-on-scroll mx-auto max-w-4xl">
+        <h1 class="mb-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl lg:leading-[1.1]">
+          {p.hero.title}
         </h1>
-        
-        <p class="text-muted-foreground mx-auto mb-10 max-w-3xl text-xl leading-relaxed sm:text-2xl">
-          {p.hero.subtitle}
+        <p class="text-muted-foreground mx-auto mb-10 max-w-3xl text-lg leading-relaxed sm:text-xl">
+          {p.hero.subhead}
         </p>
-        
-        <div class="flex flex-col items-center justify-center gap-8">
-          <a
-            href="#book-call"
-            class="bg-primary hover:bg-primary/90 text-primary-foreground flex w-fit cursor-pointer items-center gap-2 rounded-full px-8 py-4 text-base font-semibold shadow-md transition-colors"
-          >
-            {p.hero.cta}
-            <Icon name="mdi:calendar-blank" class="text-lg" />
-          </a>
-          
-          <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-muted-foreground text-sm">
-            <span class="flex items-center gap-2">
-              <Icon name="mdi:clock-outline" class="text-primary text-lg" />
-              {p.hero.ctaSubtext}
+        <div class="mb-10 flex flex-wrap items-center justify-center gap-2.5">
+          {p.hero.trustChips.slice(1).map((chip) => (
+            <span class="bg-secondary/50 text-foreground rounded-full px-4 py-1.5 text-xs font-medium">
+              {chip}
             </span>
-            <span class="flex items-center gap-2">
-              <Icon name="mdi:cog-outline" class="text-primary text-lg" />
-              {p.cards.custom.title}
-            </span>
-            <span class="flex items-center gap-2">
-              <Icon name="mdi:chevron-double-right" class="text-primary text-lg" />
-              {p.cards.deployed.title}
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Agents Carousel Section - Altari style -->
-    <section class="relative w-full py-8 overflow-hidden">
-      <div class="carousel-container mx-auto" style="max-width: 960px;">
-        <div class="agents-carousel flex gap-4">
-          {carouselAgents.map((agent) => (
-            <div class="agent-card flex-shrink-0 w-44 bg-primary rounded-2xl p-5 text-center transition-all duration-300 hover:bg-primary/90">
-              <div class="mb-3 mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary-foreground/10 overflow-hidden">
-                <Image src={agent.image} alt={agent.name} class="w-full h-full object-cover" />
-              </div>
-              <h4 class="text-primary-foreground text-sm font-medium mb-1">{agent.name}</h4>
-              <p class="text-primary-foreground/70 text-[10px] uppercase tracking-widest leading-tight">{agent.label}</p>
-            </div>
           ))}
         </div>
+        <div class="flex items-center justify-center">
+          <a
+            href="#book-call"
+            class="bg-primary hover:bg-primary/90 text-primary-foreground inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold shadow-sm transition-all hover:shadow-md"
+          >
+            {p.hero.ctas.primary}
+            <Icon name="mdi:calendar-blank" class="text-lg" />
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- Solutions Section -->
-    <section class="mx-auto w-full max-w-7xl px-4 py-32 sm:px-6">
-      <div class="animate-on-scroll mb-16 text-center">
-        <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.solutions.title}</h2>
-        <p class="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
-          {p.solutions.subtitle}
+    <!-- Offers Section -->
+    <section id="offers" class="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6">
+      <div class="animate-on-scroll mb-10 text-center">
+        <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          {p.offers.title}
+        </h2>
+        <p class="text-muted-foreground mx-auto max-w-3xl text-base leading-relaxed sm:text-lg">
+          {p.offers.subtitle}
         </p>
       </div>
-      
-      <div class="mt-16 grid gap-8 md:grid-cols-3">
-        <div class="animate-on-scroll stagger-1 bg-card hover:shadow-xl group relative overflow-hidden rounded-2xl border p-10 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
-          <div class="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-primary/5 transition-all duration-500 group-hover:h-40 group-hover:w-40"></div>
-          <div class="relative mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary text-3xl transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-            <Icon name="mdi:phone" />
+
+      <div class="mx-auto max-w-5xl grid gap-6 md:grid-cols-2 lg:gap-8">
+        {p.offers.cards.map((card) => (
+          <div
+            class:list={[
+              "animate-on-scroll",
+              "rounded-2xl",
+              "border border-border/50",
+              "bg-card",
+              "p-7 sm:p-8",
+              "shadow-sm",
+              "transition-shadow",
+              "hover:shadow-md",
+              "h-full",
+            ]}
+          >
+            <div class="flex h-full flex-col gap-6">
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                  <h3 class="text-2xl font-semibold leading-tight">{card.title}</h3>
+                  {card.recommended && (
+                    <span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+                      {p.offers.recommended}
+                    </span>
+                  )}
+                </div>
+                <p class="text-muted-foreground mt-3 text-base leading-relaxed">
+                  {card.tagline}
+                </p>
+              </div>
+
+              <div class="space-y-6">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                    {p.offers.labels.bestFor}
+                  </p>
+                  <ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
+                    {card.idealFor.map((item) => (
+                      <li class="flex items-start gap-2 leading-relaxed">
+                        <Icon
+                          name="mdi:check-circle"
+                          class="text-primary/70 mt-0.5 text-sm flex-shrink-0"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                    {p.offers.labels.whatItDoes}
+                  </p>
+                  <ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
+                    {card.actions.map((item) => (
+                      <li class="flex items-start gap-2 leading-relaxed">
+                        <Icon
+                          name="mdi:checkbox-blank-circle"
+                          class="text-primary/60 mt-1 text-xs flex-shrink-0"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+            </div>
           </div>
-          <h3 class="mb-4 text-2xl font-semibold">{p.solutions.voice.title}</h3>
-          <p class="text-muted-foreground leading-relaxed">
-            {p.solutions.voice.description}
-          </p>
-        </div>
-        
-        <div class="animate-on-scroll stagger-2 bg-card hover:shadow-xl group relative overflow-hidden rounded-2xl border p-10 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
-          <div class="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-primary/5 transition-all duration-500 group-hover:h-40 group-hover:w-40"></div>
-          <div class="relative mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary text-3xl transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-            <Icon name="mdi:chart-line" />
-          </div>
-          <h3 class="mb-4 text-2xl font-semibold">{p.solutions.sales.title}</h3>
-          <p class="text-muted-foreground leading-relaxed">
-            {p.solutions.sales.description}
-          </p>
-        </div>
-        
-        <div class="animate-on-scroll stagger-3 bg-card hover:shadow-xl group relative overflow-hidden rounded-2xl border p-10 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
-          <div class="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-primary/5 transition-all duration-500 group-hover:h-40 group-hover:w-40"></div>
-          <div class="relative mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary text-3xl transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-            <Icon name="mdi:message-text" />
-          </div>
-          <h3 class="mb-4 text-2xl font-semibold">{p.solutions.chat.title}</h3>
-          <p class="text-muted-foreground leading-relaxed">
-            {p.solutions.chat.description}
-          </p>
-        </div>
+        ))}
       </div>
-      
-      <div class="animate-on-scroll mt-16 text-center">
+
+      <div class="animate-on-scroll mt-10 flex justify-center">
         <a
           href="#book-call"
-          class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex cursor-pointer items-center gap-2 rounded-lg px-8 py-4 text-base font-semibold shadow-lg transition-all hover:scale-105 hover:shadow-xl"
+          class="bg-primary hover:bg-primary/90 text-primary-foreground inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold shadow-sm transition-all hover:shadow-md"
         >
-          {p.hero.cta}
-          <Icon name="mdi:arrow-right" class="transition-transform group-hover:translate-x-1" />
+          {p.offers.cards[0].ctas.primary}
+          <Icon name="mdi:arrow-right" class="text-base" />
         </a>
-    </div>
+      </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="bg-gradient-to-b from-secondary/20 to-secondary/40 relative left-1/2 w-screen -translate-x-1/2 py-32">
-      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6">
-        <div class="animate-on-scroll mb-16 text-center">
-          <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.benefits.title}</h2>
-          <p class="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
-            {p.benefits.subtitle}
+    <!-- Why Qasten Section -->
+    <section id="why-qasten" class="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6">
+        <div class="animate-on-scroll mb-12 text-center">
+          <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+            {p.whyQasten.title}
+          </h2>
+          <p class="text-muted-foreground mx-auto max-w-2xl text-base leading-relaxed sm:text-lg">
+            {p.whyQasten.subtitle}
           </p>
-    </div>
+        </div>
 
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div class="animate-on-scroll stagger-1 bg-card hover:shadow-lg group rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-              <Icon name="mdi:hammer-wrench" />
-            </div>
-            <h3 class="mb-3 text-xl font-semibold">{p.benefits.custom.title}</h3>
-            <p class="text-muted-foreground leading-relaxed">
-              {p.benefits.custom.description}
-            </p>
+        <div class="animate-on-scroll mx-auto mb-10 max-w-4xl">
+          <div class="grid gap-3 sm:grid-cols-2">
+            {p.whyQasten.reasons.map((reason) => (
+              <div class="flex items-start gap-2.5 text-base leading-relaxed">
+                <span class="why-qasten-dot mt-2"></span>
+                <span class="text-foreground">{reason}</span>
+              </div>
+            ))}
           </div>
-          
-          <div class="animate-on-scroll stagger-2 bg-card hover:shadow-lg group rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-              <Icon name="mdi:lock" />
-    </div>
-            <h3 class="mb-3 text-xl font-semibold">{p.benefits.ownership.title}</h3>
-            <p class="text-muted-foreground leading-relaxed">
-              {p.benefits.ownership.description}
-      </p>
-    </div>
+        </div>
 
-          <div class="animate-on-scroll stagger-3 bg-card hover:shadow-lg group rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-              <Icon name="mdi:link-variant" />
+      <div class="animate-on-scroll why-qasten-logos">
+        <p class="text-muted-foreground mb-6 text-center text-sm font-medium uppercase tracking-wider">
+          {p.whyQasten.builtByLabel}
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+          {p.whyQasten.companies.map((company) => (
+            <div class="why-qasten-logo" aria-label={company.name}>
+              <img src={company.logo} alt={company.name} loading="lazy" />
             </div>
-            <h3 class="mb-3 text-xl font-semibold">{p.benefits.integrated.title}</h3>
-            <p class="text-muted-foreground leading-relaxed">
-              {p.benefits.integrated.description}
-            </p>
-          </div>
-          
-          <div class="animate-on-scroll stagger-4 bg-card hover:shadow-lg group rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-              <Icon name="mdi:chart-timeline-variant" />
-            </div>
-            <h3 class="mb-3 text-xl font-semibold">{p.benefits.results.title}</h3>
-            <p class="text-muted-foreground leading-relaxed">
-              {p.benefits.results.description}
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -206,12 +190,14 @@ const carouselAgents = [...agents, ...agents];
     <!-- Integrations Section -->
     <section class="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6">
       <div class="animate-on-scroll mb-10 text-center">
-        <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.integrations.title}</h2>
-        <p class="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
+        <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          {p.integrations.title}
+        </h2>
+        <p class="text-muted-foreground mx-auto max-w-2xl text-base leading-relaxed sm:text-lg">
           {p.integrations.subtitle}
         </p>
       </div>
-      
+
       <div class="relative mx-auto aspect-square w-full max-w-xs sm:max-w-sm md:max-w-md">
         <!-- SVG for concentric waves and outer circle -->
         <svg class="absolute inset-0 h-full w-full" viewBox="0 0 400 400" style="pointer-events: none; z-index: 0;">
@@ -240,16 +226,16 @@ const carouselAgents = [...agents, ...agents];
               .wave-4 { animation-delay: 3s; }
             </style>
           </defs>
-          
+
           <!-- Animated concentric wave circles emanating from center -->
           <circle cx="200" cy="200" r="20" class="wave-circle wave-1" />
           <circle cx="200" cy="200" r="20" class="wave-circle wave-2" />
           <circle cx="200" cy="200" r="20" class="wave-circle wave-3" />
           <circle cx="200" cy="200" r="20" class="wave-circle wave-4" />
-          
+
           <!-- Main outer circle connecting all icons -->
           <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          
+
           <!-- Short connector stubs from outer circle to icon positions -->
           <!-- Top -->
           <line x1="200" y1="60" x2="200" y2="40" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
@@ -268,70 +254,64 @@ const carouselAgents = [...agents, ...agents];
           <!-- Top Left -->
           <line x1="101" y1="101" x2="87" y2="87" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
         </svg>
-        
+
         <!-- Central Qasten Logo -->
         <div class="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
           <div class="bg-card rounded-2xl border-2 border-primary/20 p-3 shadow-lg sm:p-4">
             <Logo width={50} height={50} />
           </div>
         </div>
-        
+
         <!-- Integration Icons arranged on the circle -->
-        <!-- Using transform to position on a circle: 
-             radius = 35% of container, center = 50%, 50%
-             x = 50% + 35% * sin(angle)
-             y = 50% - 35% * cos(angle)
-        -->
-        
         <!-- Top (0°) - HubSpot -->
         <div class="absolute z-20 float-icon float-delay-1" style="left: 50%; top: 15%; transform: translate(-50%, -50%);">
           <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="HubSpot">
             <img src="https://framerusercontent.com/images/NnDNSIod6BWGkVQ38VHOp6RUj0k.png?scale-down-to=512" alt="HubSpot" class="w-full h-full object-contain" />
           </div>
         </div>
-        
+
         <!-- Top Right (45°) - Zapier/Chain -->
         <div class="absolute z-20 float-icon float-delay-2" style="left: 74.7%; top: 25.3%; transform: translate(-50%, -50%);">
           <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Zapier">
             <img src="https://framerusercontent.com/images/Xsta0mwZKeKTikCD2mVKwrskkM.png?scale-down-to=512" alt="Zapier" class="w-full h-full object-contain" />
           </div>
         </div>
-        
+
         <!-- Right (90°) - Salesforce -->
         <div class="absolute z-20 float-icon float-delay-3" style="left: 85%; top: 50%; transform: translate(-50%, -50%);">
           <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Salesforce">
             <img src="https://framerusercontent.com/images/l2YE294N9X2zGAqj0zyCzQB7mSU.png?width=256&height=256" alt="Salesforce" class="w-full h-full object-contain" />
           </div>
         </div>
-        
+
         <!-- Bottom Right (135°) - Zendesk -->
         <div class="absolute z-20 float-icon float-delay-4" style="left: 74.7%; top: 74.7%; transform: translate(-50%, -50%);">
           <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Zendesk">
             <img src="https://framerusercontent.com/images/RwYsS46pMcFi4x7pHVuWRrlhEZk.png?width=240&height=240" alt="Zendesk" class="w-full h-full object-contain" />
           </div>
         </div>
-        
+
         <!-- Bottom (180°) - Figjam/Star -->
         <div class="absolute z-20 float-icon float-delay-5" style="left: 50%; top: 85%; transform: translate(-50%, -50%);">
           <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Figjam">
             <img src="https://framerusercontent.com/images/Iad8JtV4KapAZpGElrFJuQtySis.png?scale-down-to=512" alt="Figjam" class="w-full h-full object-contain" />
           </div>
         </div>
-        
+
         <!-- Bottom Left (225°) - Asana -->
         <div class="absolute z-20 float-icon float-delay-6" style="left: 25.3%; top: 74.7%; transform: translate(-50%, -50%);">
           <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Asana">
             <img src="https://framerusercontent.com/images/nxpAODZEqjUs4FzwjpRNJp65aIE.png?scale-down-to=512" alt="Asana" class="w-full h-full object-contain" />
           </div>
         </div>
-        
+
         <!-- Left (270°) - Dovetail -->
         <div class="absolute z-20 float-icon float-delay-7" style="left: 15%; top: 50%; transform: translate(-50%, -50%);">
           <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Dovetail">
             <img src="https://framerusercontent.com/images/Hx6csFB7V6BZkxRa8eqkqtu7yU.webp?width=250&height=343" alt="Dovetail" class="w-full h-full object-contain" />
           </div>
         </div>
-        
+
         <!-- Top Left (315°) - Linear -->
         <div class="absolute z-20 float-icon float-delay-8" style="left: 25.3%; top: 25.3%; transform: translate(-50%, -50%);">
           <div class="bg-white hover:shadow-lg group flex h-12 w-12 items-center justify-center rounded-xl border-2 shadow-md transition-all duration-300 hover:scale-110 hover:border-primary/30 sm:h-14 sm:w-14 p-2" title="Linear">
@@ -342,81 +322,72 @@ const carouselAgents = [...agents, ...agents];
     </section>
 
     <!-- How It Works Section -->
-    <section class="bg-gradient-to-b from-secondary/20 to-secondary/40 relative left-1/2 w-screen -translate-x-1/2 py-32">
-      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6">
-        <div class="animate-on-scroll mb-16 text-center">
-          <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.howItWorks.title}</h2>
-          <p class="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
+    <section
+      id="how-it-works"
+      class="bg-secondary/20 relative left-1/2 w-screen -translate-x-1/2 py-24"
+    >
+      <div class="mx-auto w-full max-w-6xl px-4 sm:px-6">
+        <div class="animate-on-scroll mb-12 text-center">
+          <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+            {p.howItWorks.title}
+          </h2>
+          <p class="text-muted-foreground mx-auto max-w-2xl text-base leading-relaxed sm:text-lg">
             {p.howItWorks.subtitle}
           </p>
         </div>
-        
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div class="animate-on-scroll stagger-1 bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-              01
+
+        <div class="animate-on-scroll how-it-works-panel mx-auto max-w-5xl rounded-2xl border border-border/40 bg-card p-8 shadow-sm sm:p-10">
+          <div class="how-it-works-track relative">
+            <div class="grid gap-10 md:grid-cols-3">
+              {p.howItWorks.phases.map((phase, index) => (
+                <div class="how-it-works-phase relative">
+                  <div class="how-it-works-week text-primary text-xs font-semibold uppercase tracking-[0.2em]">
+                    {phase.week}
+                  </div>
+                  <h3 class="text-lg font-semibold">{phase.title}</h3>
+                  <ul class="how-it-works-bullets space-y-2 text-sm leading-relaxed text-muted-foreground">
+                    {phase.bullets.map((bullet) => (
+                      <li>{bullet}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
-            <h3 class="mb-3 text-xl font-semibold">{p.howItWorks.discovery.title}</h3>
-            <p class="text-muted-foreground leading-relaxed">
-              {p.howItWorks.discovery.description}
+          </div>
+
+          <div class="mt-10 text-center">
+            <a
+              href="#book-call"
+              class="bg-primary hover:bg-primary/90 text-primary-foreground inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold shadow-sm transition-all hover:shadow-md"
+            >
+              {p.howItWorks.cta}
+              <Icon name="mdi:arrow-right" class="text-lg" />
+            </a>
+            <p class="text-muted-foreground mt-4 text-sm">
+              {p.howItWorks.ctaSubtext}
             </p>
           </div>
-          
-          <div class="animate-on-scroll stagger-2 bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-              02
-            </div>
-            <h3 class="mb-3 text-xl font-semibold">{p.howItWorks.design.title}</h3>
-            <p class="text-muted-foreground leading-relaxed">
-              {p.howItWorks.design.description}
-            </p>
-          </div>
-          
-          <div class="animate-on-scroll stagger-3 bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-              03
-            </div>
-            <h3 class="mb-3 text-xl font-semibold">{p.howItWorks.build.title}</h3>
-            <p class="text-muted-foreground leading-relaxed">
-              {p.howItWorks.build.description}
-            </p>
-          </div>
-          
-          <div class="animate-on-scroll stagger-4 bg-card hover:shadow-lg group relative rounded-xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary text-xl font-bold transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-              04
-            </div>
-            <h3 class="mb-3 text-xl font-semibold">{p.howItWorks.launch.title}</h3>
-            <p class="text-muted-foreground leading-relaxed">
-              {p.howItWorks.launch.description}
-            </p>
-          </div>
-        </div>
-        
-        <div class="animate-on-scroll mt-16 text-center">
-          <a
-            href="#book-call"
-            class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex cursor-pointer items-center gap-2 rounded-lg px-8 py-4 text-base font-semibold shadow-lg transition-all hover:scale-105 hover:shadow-xl"
-          >
-            {p.hero.cta}
-            <Icon name="mdi:arrow-right" class="transition-transform group-hover:translate-x-1" />
-          </a>
         </div>
       </div>
     </section>
 
-
     <!-- Booking Section -->
-    <section id="book-call" class="mx-auto w-full max-w-5xl px-4 py-32 sm:px-6">
-      <div class="animate-on-scroll mb-12 text-center">
-        <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.booking.title}</h2>
-        <p class="text-muted-foreground mx-auto max-w-2xl text-xl leading-relaxed">
-          {p.booking.subtitle}
+    <section id="book-call" class="mx-auto w-full max-w-5xl px-4 py-20 sm:px-6">
+      <div class="animate-on-scroll mb-10 text-center">
+        <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          {p.midpageCta.title}
+        </h2>
+        <p class="text-muted-foreground mx-auto max-w-2xl text-base leading-relaxed sm:text-lg">
+          {p.midpageCta.text}
         </p>
       </div>
-      
-      <div class="animate-on-scroll rounded-2xl overflow-hidden">
-        <div style="width:100%;height:700px;overflow:hidden" id="my-cal-inline-ai-agents-consultation"></div>
+
+      <div class="animate-on-scroll cal-embed-shell">
+        <div
+          class="w-full"
+          style="min-height:700px;height:700px;"
+          id="my-cal-inline-ai-agents-consultation"
+        ></div>
       </div>
     </section>
 
@@ -433,102 +404,143 @@ const carouselAgents = [...agents, ...agents];
       Cal.ns["ai-agents-consultation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#4a7dbd"},"dark":{"cal-brand":"#6b9fff"}},"hideEventTypeDetails":false,"layout":"month_view"});
     </script>
 
-<!-- FAQ Section -->
-    <section class="bg-gradient-to-b from-secondary/20 to-secondary/40 relative left-1/2 w-screen -translate-x-1/2 py-32">
+    <!-- FAQ Section -->
+    <section
+      id="faq"
+      class="bg-secondary/20 relative left-1/2 w-screen -translate-x-1/2 py-24"
+    >
       <div class="mx-auto w-full max-w-4xl px-4 sm:px-6">
-        <div class="animate-on-scroll mb-16 text-center">
-          <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{p.faq.title}</h2>
+        <div class="animate-on-scroll mb-10 text-center">
+          <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+            {p.faq.title}
+          </h2>
         </div>
-        <div class="animate-on-scroll bg-card rounded-2xl border shadow-xl p-8 sm:p-12">
+        <div class="animate-on-scroll rounded-2xl border bg-card p-8 shadow-sm sm:p-12">
           <FAQ faq={faqData} />
         </div>
-    </div>
+      </div>
     </section>
   </main>
 </Layout>
 
   <style>
-  /* Agents carousel infinite scroll */
-  .agents-carousel {
-    animation: scroll-left 50s linear infinite;
-    width: max-content;
-  }
-  
-  .agents-carousel:hover {
-    animation-play-state: paused;
-  }
-  
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-    100% {
-      transform: translateX(-50%);
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-  }
-  
-  /* Carousel container with edge fade mask - shows 4 cards fully */
-  .carousel-container {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 8%,
-      black 92%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 8%,
-      black 92%,
-      transparent 100%
-    );
-    padding: 1rem 2rem;
-    overflow: hidden;
-  }
-  
-  /* Scroll animations */
-  .animate-on-scroll {
-        opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+    #my-cal-inline-ai-agents-consultation {
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    #my-cal-inline-ai-agents-consultation iframe {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      border: 0;
+      background: transparent;
+    }
+
+    .why-qasten-logos {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+    }
+
+    .why-qasten-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      padding: 8px 16px;
+      transition: opacity 0.2s ease;
+    }
+
+    .why-qasten-logo img {
+      height: 32px;
+      max-width: 120px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.6);
+      transition: all 0.3s ease;
+    }
+
+    .why-qasten-logo:hover img {
+      opacity: 1;
+      filter: grayscale(0%) opacity(1);
+    }
+
+    .why-qasten-dot {
+      height: 8px;
+      width: 8px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--primary), transparent 20%);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .float-icon {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate(-50%, -50%) translateY(0px);
       }
-  
-  .animate-on-scroll.visible {
-        opacity: 1;
-        transform: translateY(0);
+      50% {
+        transform: translate(-50%, -50%) translateY(-8px);
       }
-  
-  /* Staggered delays for cards */
-  .stagger-1 { transition-delay: 0s; }
-  .stagger-2 { transition-delay: 0.1s; }
-  .stagger-3 { transition-delay: 0.2s; }
-  .stagger-4 { transition-delay: 0.3s; }
-  
-  /* Floating animation for integration icons */
-  .float-icon {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translate(-50%, -50%) translateY(0px);
     }
-    50% {
-      transform: translate(-50%, -50%) translateY(-8px);
+
+    .float-delay-1 { animation-delay: 0s; }
+    .float-delay-2 { animation-delay: 0.5s; }
+    .float-delay-3 { animation-delay: 1s; }
+    .float-delay-4 { animation-delay: 1.5s; }
+    .float-delay-5 { animation-delay: 2s; }
+    .float-delay-6 { animation-delay: 2.5s; }
+    .float-delay-7 { animation-delay: 3s; }
+    .float-delay-8 { animation-delay: 3.5s; }
+
+    .how-it-works-week {
+      color: color-mix(in srgb, var(--primary), var(--foreground) 30%);
+      letter-spacing: 0.24em;
+      margin-bottom: 6px;
     }
-  }
-  
-  /* Floating delays */
-  .float-delay-1 { animation-delay: 0s; }
-  .float-delay-2 { animation-delay: 0.5s; }
-  .float-delay-3 { animation-delay: 1s; }
-  .float-delay-4 { animation-delay: 1.5s; }
-  .float-delay-5 { animation-delay: 2s; }
-  .float-delay-6 { animation-delay: 2.5s; }
-  .float-delay-7 { animation-delay: 3s; }
-  .float-delay-8 { animation-delay: 3.5s; }
-  
+
+    .how-it-works-bullets li {
+      position: relative;
+      padding-left: 12px;
+    }
+
+    .how-it-works-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      height: 4px;
+      width: 4px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--muted-foreground), transparent 20%);
+    }
+
+    .how-it-works-phase {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    @media (max-width: 767px) {
+      .how-it-works-week,
+      .how-it-works-bullets {
+        margin-left: 0;
+      }
+    }
   </style>
 
 <script>

@@ -1,0 +1,64 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
+import { Icon } from "astro-icon/components";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const { agentKey } = Astro.props;
+
+const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
+const t = getTranslations(currentLocale);
+const p = t.homePage;
+
+const card = p.offers.cards.find((item) => item.key === agentKey);
+const details =
+  agentKey === "inbound_autopilot"
+    ? p.offerDetails.inbound
+    : p.offerDetails.outbound;
+
+const bookCallUrl = `${getRelativeLocaleUrl(currentLocale, "/")}#book-call`;
+const pageTitle = details?.title ?? "Agent Specification";
+---
+
+<Layout title={pageTitle} description={card?.tagline ?? p.meta.description}>
+  <main class="w-full">
+    <section class="mx-auto w-full max-w-5xl px-4 pb-16 pt-20 sm:px-6 lg:pt-24">
+      <div class="animate-on-scroll">
+        <h1 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          {details.title}
+        </h1>
+        <p class="text-muted-foreground mb-8 max-w-3xl text-base leading-relaxed sm:text-lg">
+          {card?.tagline}
+        </p>
+        <a
+          href={bookCallUrl}
+          class="bg-primary hover:bg-primary/90 text-primary-foreground inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors"
+        >
+          {p.hero.ctas.primary}
+          <Icon name="mdi:calendar-blank" class="text-base" />
+        </a>
+      </div>
+    </section>
+
+    <section class="mx-auto w-full max-w-6xl px-4 pb-20 sm:px-6">
+      <div class="grid gap-6 md:grid-cols-2">
+        {details.sections.map((section) => (
+          <div class="animate-on-scroll rounded-2xl bg-card/60 p-6 shadow-sm ring-1 ring-border/15">
+            <h2 class="text-lg font-semibold">{section.heading}</h2>
+            <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
+              {section.bullets.map((bullet) => (
+                <li class="flex items-start gap-2">
+                  <Icon
+                    name="mdi:checkbox-blank-circle-outline"
+                    class="text-primary mt-0.5 text-sm"
+                  />
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
