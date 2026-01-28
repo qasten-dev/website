@@ -47,9 +47,9 @@ const fontFilesGlob = import.meta.glob("/public/fonts/*.woff2", {
 const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
 
 const navItems = [
-  { label: t.nav.offers, href: "#offers" },
-  { label: t.nav.howItWorks, href: "#how-it-works" },
-  { label: t.nav.whyQasten, href: "#why-qasten" },
+  { label: t.nav.problem, href: "#offers" },
+  { label: t.nav.solution, href: "#why-agent-better" },
+  { label: t.nav.whyUs, href: "#why-qasten" },
   { label: t.nav.faq, href: "#faq" },
 ];
 ---
@@ -111,68 +111,70 @@ const navItems = [
   >
     {!noBackground && <BackgroundStripes />}
     <header
-      class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 pt-6"
+      class="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/40 shadow-sm"
     >
-      <div class="flex-1">
-        <a
-          class="flex cursor-pointer items-center space-x-2"
-          href={getRelativeLocaleUrl(currentLocale, "/")}
-          ><Logo width={40} height={40} /><span
-            class="text-2xl font-semibold tracking-tight">Qasten</span
-          ></a
-        >
-      </div>
-
-      <nav class="hidden items-center space-x-6 font-medium md:flex lg:space-x-10">
-        {navItems.map((item) => (
+      <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
+        <div class="flex-1">
           <a
-            href={item.href}
-            class="hover:bg-secondary rounded-md px-3 py-2 transition-colors"
+            class="group flex cursor-pointer items-center space-x-2.5 transition-opacity hover:opacity-80"
+            href={getRelativeLocaleUrl(currentLocale, "/")}
+            ><Logo width={42} height={42} /><span
+              class="text-2xl font-bold tracking-tight">Qasten</span
+            ></a
           >
-            {item.label}
+        </div>
+
+        <nav class="hidden items-center space-x-2 font-medium md:flex lg:space-x-4">
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class="hover:bg-secondary hover:text-foreground rounded-lg px-4 py-2.5 transition-all text-muted-foreground"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div class="hidden flex-1 justify-end sm:flex">
+          <a
+            class="bg-primary hover:bg-primary/90 text-primary-foreground flex w-fit cursor-pointer items-center rounded-lg px-5 py-2.5 font-semibold shadow-sm transition-all hover:shadow-md"
+            href={contactUsURL}
+          >
+            {t.contactUs}
           </a>
-        ))}
-      </nav>
+        </div>
 
-      <div class="hidden flex-1 justify-end sm:flex">
-        <a
-          class="bg-primary hover:bg-primary/90 text-primary-foreground flex w-fit cursor-pointer items-center rounded-md px-4 py-2 font-medium transition"
-          href={contactUsURL}
+        <button
+          id="hamburger"
+          aria-label="Open menu"
+          class="flex cursor-pointer flex-col space-y-1.5 hover:space-y-2 sm:hidden transition-all p-2 rounded-lg hover:bg-secondary"
         >
-          {t.contactUs}
-        </a>
+          <span class="bg-foreground h-0.5 w-6 rounded-full"></span>
+          <span class="bg-foreground h-0.5 w-6 rounded-full"></span>
+          <span class="bg-foreground h-0.5 w-6 rounded-full"></span>
+        </button>
       </div>
-
-      <button
-        id="hamburger"
-        aria-label="Open menu"
-        class="flex cursor-pointer flex-col space-y-1 hover:space-y-1.5 sm:hidden"
-      >
-        <span class="bg-foreground h-0.5 w-6"></span>
-        <span class="bg-foreground h-0.5 w-6"></span>
-        <span class="bg-foreground h-0.5 w-6"></span>
-      </button>
+    </header>
 
       <div
         id="mobile-menu"
-        class="dark text-foreground bg-background fixed inset-0 z-10 hidden h-screen w-screen"
+        class="dark text-foreground bg-background/95 backdrop-blur-lg fixed inset-0 z-50 hidden h-screen w-screen"
       >
         <button
           id="close-mobile-menu-button"
-          class="absolute top-2 right-4 cursor-pointer text-6xl"
+          class="absolute top-6 right-6 cursor-pointer text-5xl hover:text-primary transition-colors rounded-full w-14 h-14 flex items-center justify-center hover:bg-secondary"
         >
           &times;
         </button>
         <nav
-          class="flex h-screen flex-col items-center justify-center space-y-12 text-4xl font-semibold"
+          class="flex h-screen flex-col items-center justify-center space-y-10 text-3xl font-bold px-8"
         >
           {navItems.map((item) => (
-            <a href={item.href}> {item.label} </a>
+            <a href={item.href} class="hover:text-primary transition-colors hover:scale-105 transform"> {item.label} </a>
           ))}
-          <a href={contactUsURL}> {t.contactUs} </a>
-          <div class="space-x-2">
+          <a href={contactUsURL} class="bg-primary text-primary-foreground px-8 py-4 rounded-xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"> {t.contactUs} </a>
+          <div class="flex gap-3 pt-4">
             <LanguageButton locale="en" size="lg" />
-            <LanguageButton locale="fr" size="lg" />
           </div>
         </nav>
       </div>
@@ -182,45 +184,42 @@ const navItems = [
 
     <!-- Force sticky footer -->
     <main class="flex-1"></main>
-    <footer class="dark text-foreground bg-background mx-auto mt-48 w-full p-4">
-      <div class="mx-auto flex max-w-6xl justify-between gap-12 md:gap-24">
-        <div>
-          <a
-            href={getRelativeLocaleUrl(currentLocale, "/")}
-            class="flex items-center space-x-2"
-            ><Logo width={40} height={40} /><span
-              class="text-2xl font-semibold tracking-tight">Qasten</span
-            ></a
-          >
-          <p class="text-muted-foreground mt-2 text-xs sm:text-sm">
-            {t.footer.eu} 🇪🇺
-          </p>
-          <ul class="text-foreground/75 mt-8 space-y-4 text-sm font-medium">
-            <li>
-              <a href={contactUsURL} class="hover:text-foreground"
-                >{t.contactUs}</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/company/qasten"
-                target="_blank"
-                rel="noopener"
-                class="hover:text-foreground">LinkedIn</a
-              >
-            </li>
-          </ul>
+    <footer class="text-foreground bg-card mx-auto mt-32 w-full border-t border-border/40">
+      <div class="mx-auto max-w-7xl px-6 py-16">
+        <div class="flex flex-col gap-12 md:flex-row md:justify-between md:gap-24">
+          <div>
+            <a
+              href={getRelativeLocaleUrl(currentLocale, "/")}
+              class="group flex items-center space-x-2.5 transition-opacity hover:opacity-80"
+              ><Logo width={42} height={42} /><span
+                class="text-2xl font-bold tracking-tight">Qasten</span
+              ></a
+            >
+            <p class="text-muted-foreground mt-3 text-sm font-medium sm:text-base">
+              {t.footer.eu} 🇪🇺
+            </p>
+            <ul class="text-foreground/70 mt-10 space-y-4 text-sm font-medium">
+              <li>
+                <a href={contactUsURL} class="hover:text-primary transition-colors hover:underline underline-offset-4"
+                  >{t.contactUs}</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/qasten"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-primary transition-colors hover:underline underline-offset-4">LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
 
-      </div>
-
-      <div class="mx-auto mt-8 flex max-w-6xl items-center justify-between">
-        <div class="text-muted-foreground text-xs sm:text-sm">
-          {t.footer.copyright}
-        </div>
-        <div class="sm:space-x-2">
-          <LanguageButton locale="en" />
-          <LanguageButton locale="fr" />
+        <div class="mx-auto mt-12 flex items-center border-t border-border/40 pt-8">
+          <div class="text-muted-foreground text-xs font-medium sm:text-sm">
+            {t.footer.copyright}
+          </div>
         </div>
       </div>
     </footer>

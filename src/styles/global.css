@@ -82,39 +82,39 @@
 /* Default theme styles - Soft blue palette from Coolors
    https://coolors.co/palette/edf2fb-e2eafc-d7e3fc-ccdbfd-c1d3fe-b6ccfe-abc4ff */
 :root {
-  --radius: 0.5rem;
+  --radius: 0.75rem;
   /* Light theme with soft blue palette */
-  --card: #e2eafc; /* Very light blue */
-  --card-foreground: #1e3a5f; /* Dark navy for contrast */
-  --popover: #e2eafc;
-  --popover-foreground: #1e3a5f;
+  --card: #ffffff; /* Clean white cards */
+  --card-foreground: #1a2744; /* Dark navy for contrast */
+  --popover: #ffffff;
+  --popover-foreground: #1a2744;
   --primary: #4a7dbd; /* Rich blue for primary actions */
   --primary-foreground: #ffffff;
-  --secondary: #d7e3fc; /* Light blue */
+  --secondary: #f1f5fd; /* Very light blue */
   --secondary-foreground: #2c4a6e;
-  --muted: #ccdbfd; /* Soft blue */
-  --muted-foreground: #4a6a8a; /* Medium blue-gray for muted text */
-  --accent: #b6ccfe; /* Medium blue */
-  --accent-foreground: #1e3a5f;
+  --muted: #e8eef9; /* Soft blue */
+  --muted-foreground: #5a6a8a; /* Medium blue-gray for muted text */
+  --accent: #e2eafc; /* Light blue accent */
+  --accent-foreground: #1a2744;
   --destructive: #dc2626; /* Red for destructive actions */
-  --border: #abc4ff; /* Blue border */
-  --input: #d7e3fc; /* Light blue input background */
+  --border: #d7e3fc; /* Subtle blue border */
+  --input: #f8faff; /* Very light blue input background */
   --ring: #4a7dbd; /* Match primary for focus ring */
   --chart-1: #4a7dbd; /* Blue */
   --chart-2: #059669; /* Emerald */
   --chart-3: #dc2626; /* Red */
   --chart-4: #7c3aed; /* Violet */
   --chart-5: #0891b2; /* Cyan */
-  --sidebar: #d7e3fc; /* Light blue sidebar */
-  --sidebar-foreground: #1e3a5f;
+  --sidebar: #f8faff; /* Light blue sidebar */
+  --sidebar-foreground: #1a2744;
   --sidebar-primary: #4a7dbd;
-  --sidebar-primary-foreground: #edf2fb;
-  --sidebar-accent: #b6ccfe;
-  --sidebar-accent-foreground: #1e3a5f;
-  --sidebar-border: #abc4ff;
+  --sidebar-primary-foreground: #f8faff;
+  --sidebar-accent: #e2eafc;
+  --sidebar-accent-foreground: #1a2744;
+  --sidebar-border: #d7e3fc;
   --sidebar-ring: #4a7dbd;
-  --background: #edf2fb; /* Lightest blue background */
-  --foreground: #1e3a5f; /* Dark navy text */
+  --background: #f8faff; /* Lightest blue background */
+  --foreground: #1a2744; /* Dark navy text */
 }
 
 .dark {
@@ -157,6 +157,34 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+  
+  /* Improved scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better focus visible styles */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
   }
 }
