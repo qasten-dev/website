@@ -18,12 +18,12 @@ const translations = {
       blog: "Insights on AI adoption, team productivity, and security. Explore Qasten's blog for practical strategies and expert perspectives.",
     },
     aboutUs: "About us",
-    contactUs: "Get a Free Audit",
+    contactUs: "Apply for a free audit",
     pricing: "Pricing",
     nav: {
-      offers: "Offers",
-      integrations: "Integrations",
-      whyQasten: "Why Qasten",
+      problem: "The Problem",
+      solution: "Our Solution",
+      whyUs: "Why Us",
       faq: "FAQ",
     },
     price: {
@@ -31,7 +31,7 @@ const translations = {
       metaDescription: "Pricing for Qasten",
       heading: "Choose Your Qasten Plan",
       badgeRecommended: "Recommended",
-      choosePlan: "Get a Free Audit",
+      choosePlan: "Apply for a free audit",
       plans: {
         free: {
           name: "Free",
@@ -82,7 +82,7 @@ const translations = {
             "Custom integrations",
             "Dedicated support",
           ],
-          ctaLabel: "Get a Free Audit",
+          ctaLabel: "Apply for a free audit",
           emailSubject: "Enterprise Plan Inquiry",
         },
       },
@@ -270,7 +270,7 @@ const translations = {
       emailPlaceholder: "Enter your email",
       subscribe: "Subscribe",
       copyright: "© 2026 Qasten. All rights reserved.",
-      eu: "Made and hosted in the EU",
+      eu: "Privacy-first infrastructure",
     },
     privacyPolicy: "Privacy policy",
     deepDives: "Deep Dives",
@@ -314,15 +314,15 @@ const translations = {
       hero: {
         title: "Stop losing inbound leads to slow follow-up.",
         subhead:
-          "Qasten builds a custom Lead Response Agent inside your CRM and inbox. It qualifies and categorizes every form submission, then sends a tailored reply with the right rep’s calendar link. Live in 30 days.",
+          "Qasten builds a custom Lead Response Agent inside your CRM and inbox. It qualifies and categorizes every form submission, then books a meeting with the right rep’. Live in 30 days.",
         trustChips: [
           "Built in your stack (HubSpot, Salesforce, Gmail)",
           "Goes live in 30 days",
           "Full ownership, no vendor lock-in",
         ],
         ctas: {
-          primary: "Get a Free Audit",
-          secondary: "Get a Free Audit",
+          primary: "Apply for a free audit",
+          secondary: "Apply for a free audit",
         },
         media: {
           title: "Inbound + Outbound, one revenue system",
@@ -353,8 +353,8 @@ const translations = {
         },
       },
       offers: {
-        title: "Why you are losing money?",
-        subtitle: "Your inbound pipeline has a silent leak: response latency. Leads arrive when reps are unavailable and ownership is unclear, so first replies are delayed. You can buy more leads, but if your first response takes hours, you are paying for demand your competitors convert.",
+        title: "Your're losing money to missed conversations",
+        subtitle: "You are paying for leads you never get to speak to. When response time slips, routing breaks and follow up turns generic. Buyers move on to whoever replies first.",
         recommended: "",
         labels: {
           bestFor: "Why teams deploy this",
@@ -376,7 +376,7 @@ const translations = {
               "Routes replies and next steps directly into your CRM",
             ],
             ctas: {
-              primary: "Get a Free Audit",
+              primary: "Apply for a free audit",
               secondary: "",
             },
           },
@@ -451,7 +451,7 @@ const translations = {
         },
       },
       whyAgentBetter: {
-        title: "Why Our Agent is Better?",
+        title: "Why use AI Agents?",
         subtitle: "Speed matters. Our AI agents respond instantly, qualify leads accurately, and never miss an opportunity, 24/7.",
         highlight: {
           text: "78% of B2B buyers purchase from the first responder.",
@@ -524,14 +524,14 @@ const translations = {
             ],
           },
         ],
-        cta: "Get a Free Audit",
+        cta: "Apply for a free audit",
         ctaSubtext: "",
       },
       midpageCta: {
         title: "See Our Inbound Agent in Action",
         text:
           "Book a free 30-minute consultation. We'll show you how our AI agent can transform your response time, qualify leads instantly, and book more meetings while you focus on closing deals.",
-        cta: "Get a Free Audit",
+        cta: "Apply for a free audit",
       },
       booking: {
         title: "Book a Free Call",
@@ -580,12 +580,12 @@ const translations = {
             question: "How do you prevent conflicts with my sales team?",
             answer:
               "Smart collision detection checks CRM ownership and recent activity. The agent automatically defers to human reps when they're actively working a lead, ensuring seamless collaboration.",
-          },
-          {
-            question: "Is my data secure?",
-            answer:
-              "Absolutely. Your data is hosted in the EU with enterprise-grade security. You maintain full ownership and control. We maintain comprehensive audit logs and never use your data for training.",
-          },
+        },
+        {
+          question: "Is my data secure?",
+          answer:
+              "Absolutely. Your data is protected with enterprise-grade security. You maintain full ownership and control. We maintain comprehensive audit logs and never use your data for training.",
+        },
           {
             question: "What guarantees do you offer?",
             answer:

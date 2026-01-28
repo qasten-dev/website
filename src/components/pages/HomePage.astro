@@ -46,14 +46,19 @@ const faqData = p.faq.items;
             </span>
           ))}
         </div>
-        <div class="flex items-center justify-center">
+        <div class="flex flex-col items-center justify-center gap-4">
           <a
             href="#book-call"
-            class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex items-center gap-2.5 rounded-full px-10 py-5 text-lg font-semibold shadow-lg transition-all hover:shadow-xl hover:scale-105"
+            class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex items-center gap-2.5 rounded-lg px-10 py-5 text-lg font-semibold shadow-lg transition-all hover:shadow-xl hover:scale-105"
           >
             {p.hero.ctas.primary}
             <Icon name="mdi:calendar-blank" class="text-xl transition-transform group-hover:scale-110" />
           </a>
+          <div class="flex items-center gap-2 rounded-lg bg-secondary/50 px-6 py-3 border-2 border-primary/20">
+            <Icon name="mdi:shield-check" class="text-primary text-2xl" />
+            <span class="text-base font-bold text-foreground">7-Day Risk-Free Pilot</span>
+            <span class="text-sm text-muted-foreground">• No payment required</span>
+          </div>
         </div>
       </div>
     </section>
@@ -69,11 +74,11 @@ const faqData = p.faq.items;
         </p>
       </div>
 
-      <div class="animate-on-scroll mx-auto max-w-6xl rounded-3xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/5 p-8 shadow-xl backdrop-blur-sm sm:p-12">
+      <div class="animate-on-scroll mx-auto max-w-6xl rounded-lg border border-border/60 bg-gradient-to-br from-card via-card to-primary/5 p-8 shadow-md backdrop-blur-sm sm:p-12">
         <!-- Horizontal Stats Cards -->
         <div class="grid gap-6 md:grid-cols-3">
           {p.stats.items.map((item) => (
-            <div class="stat-card group rounded-2xl border-2 border-border/70 bg-card px-6 py-8 text-center shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-primary/30 hover:-translate-y-1">
+            <div class="stat-card group rounded-lg border border-border/60 bg-card px-6 py-8 text-center shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/40 hover:-translate-y-0.5">
               <div class="flex flex-col gap-3">
                 <div class="text-primary text-5xl font-extrabold sm:text-6xl transition-transform group-hover:scale-105">
                   {item.value}
@@ -86,14 +91,17 @@ const faqData = p.faq.items;
           ))}
         </div>
 
-        <div class="mt-12 flex justify-center">
+        <div class="mt-12 flex flex-col items-center justify-center gap-4">
           <a
             href="#book-call"
-            class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex items-center gap-2.5 rounded-full px-9 py-4 text-base font-semibold shadow-lg transition-all hover:shadow-xl hover:scale-105"
+            class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex items-center gap-2.5 rounded-lg px-9 py-4 text-base font-semibold shadow-sm transition-all hover:shadow-md"
           >
-            Get a Free Audit
+            Start Your Free Pilot
             <Icon name="mdi:arrow-right" class="text-lg transition-transform group-hover:translate-x-1" />
           </a>
+          <p class="text-sm text-muted-foreground font-medium">
+            <Icon name="mdi:shield-check" class="inline text-primary" /> 7-day risk-free trial • No payment required • Cancel anytime
+          </p>
         </div>
       </div>
     </section>
@@ -110,10 +118,10 @@ const faqData = p.faq.items;
       </div>
 
       <div class="animate-on-scroll mx-auto max-w-4xl">
-        <div class="rounded-3xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 via-card to-primary/10 p-10 shadow-2xl backdrop-blur-sm sm:p-14">
+        <div class="rounded-lg border border-primary/30 bg-gradient-to-br from-primary/5 via-card to-primary/10 p-10 shadow-md backdrop-blur-sm sm:p-14">
           <div class="text-center">
             <div class="mb-8">
-              <span class="inline-block rounded-full bg-primary/10 px-6 py-2 text-sm font-bold uppercase tracking-wider text-primary">
+              <span class="inline-block rounded-lg bg-primary/10 px-6 py-2 text-sm font-bold uppercase tracking-wider text-primary">
                 Industry Insight
               </span>
             </div>
@@ -139,7 +147,7 @@ const faqData = p.faq.items;
         <div class="animate-on-scroll mx-auto mb-16 max-w-5xl">
           <div class="grid gap-5 sm:grid-cols-2">
             {p.whyQasten.reasons.map((reason) => (
-              <div class="group flex items-start gap-3.5 rounded-xl bg-card border border-border/50 p-5 text-base leading-relaxed shadow-sm transition-all hover:shadow-md hover:border-primary/30 hover:-translate-y-0.5">
+              <div class="group flex items-start gap-3.5 rounded-lg bg-card border border-border/50 p-5 text-base leading-relaxed transition-all hover:border-primary/30">
                 <span class="why-qasten-dot mt-2 transition-transform group-hover:scale-125"></span>
                 <span class="text-foreground font-medium">{reason}</span>
               </div>
@@ -231,7 +239,7 @@ const faqData = p.faq.items;
 
         <!-- Central Qasten Logo -->
         <div class="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-          <div class="bg-card rounded-2xl border-2 border-primary/30 p-4 shadow-2xl sm:p-5 ring-4 ring-primary/10">
+          <div class="bg-card rounded-lg border-2 border-primary/30 p-4 shadow-lg sm:p-5">
             <Logo width={60} height={60} />
           </div>
         </div>
@@ -239,56 +247,56 @@ const faqData = p.faq.items;
         <!-- Integration Icons arranged on the circle -->
         <!-- Top (0°) - HubSpot -->
         <div class="absolute z-20 float-icon float-delay-1" style="left: 50%; top: 15%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-2xl group flex h-14 w-14 items-center justify-center rounded-xl border-2 border-border/60 shadow-lg transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5 ring-2 ring-transparent hover:ring-primary/20" title="HubSpot">
+          <div class="bg-white hover:shadow-md group flex h-14 w-14 items-center justify-center rounded-lg border border-border/60 shadow-sm transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5" title="HubSpot">
             <img src="https://framerusercontent.com/images/NnDNSIod6BWGkVQ38VHOp6RUj0k.png?scale-down-to=512" alt="HubSpot" class="w-full h-full object-contain" />
           </div>
         </div>
 
         <!-- Top Right (45°) - Zapier/Chain -->
         <div class="absolute z-20 float-icon float-delay-2" style="left: 74.7%; top: 25.3%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-2xl group flex h-14 w-14 items-center justify-center rounded-xl border-2 border-border/60 shadow-lg transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5 ring-2 ring-transparent hover:ring-primary/20" title="Zapier">
+          <div class="bg-white hover:shadow-md group flex h-14 w-14 items-center justify-center rounded-lg border border-border/60 shadow-sm transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5" title="Zapier">
             <img src="https://framerusercontent.com/images/Xsta0mwZKeKTikCD2mVKwrskkM.png?scale-down-to=512" alt="Zapier" class="w-full h-full object-contain" />
           </div>
         </div>
 
         <!-- Right (90°) - Salesforce -->
         <div class="absolute z-20 float-icon float-delay-3" style="left: 85%; top: 50%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-2xl group flex h-14 w-14 items-center justify-center rounded-xl border-2 border-border/60 shadow-lg transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5 ring-2 ring-transparent hover:ring-primary/20" title="Salesforce">
+          <div class="bg-white hover:shadow-md group flex h-14 w-14 items-center justify-center rounded-lg border border-border/60 shadow-sm transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5" title="Salesforce">
             <img src="https://framerusercontent.com/images/l2YE294N9X2zGAqj0zyCzQB7mSU.png?width=256&height=256" alt="Salesforce" class="w-full h-full object-contain" />
           </div>
         </div>
 
         <!-- Bottom Right (135°) - Zendesk -->
         <div class="absolute z-20 float-icon float-delay-4" style="left: 74.7%; top: 74.7%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-2xl group flex h-14 w-14 items-center justify-center rounded-xl border-2 border-border/60 shadow-lg transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5 ring-2 ring-transparent hover:ring-primary/20" title="Zendesk">
+          <div class="bg-white hover:shadow-md group flex h-14 w-14 items-center justify-center rounded-lg border border-border/60 shadow-sm transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5" title="Zendesk">
             <img src="https://framerusercontent.com/images/RwYsS46pMcFi4x7pHVuWRrlhEZk.png?width=240&height=240" alt="Zendesk" class="w-full h-full object-contain" />
           </div>
         </div>
 
         <!-- Bottom (180°) - Figjam/Star -->
         <div class="absolute z-20 float-icon float-delay-5" style="left: 50%; top: 85%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-2xl group flex h-14 w-14 items-center justify-center rounded-xl border-2 border-border/60 shadow-lg transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5 ring-2 ring-transparent hover:ring-primary/20" title="Figjam">
+          <div class="bg-white hover:shadow-md group flex h-14 w-14 items-center justify-center rounded-lg border border-border/60 shadow-sm transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5" title="Figjam">
             <img src="https://framerusercontent.com/images/Iad8JtV4KapAZpGElrFJuQtySis.png?scale-down-to=512" alt="Figjam" class="w-full h-full object-contain" />
           </div>
         </div>
 
         <!-- Bottom Left (225°) - Asana -->
         <div class="absolute z-20 float-icon float-delay-6" style="left: 25.3%; top: 74.7%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-2xl group flex h-14 w-14 items-center justify-center rounded-xl border-2 border-border/60 shadow-lg transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5 ring-2 ring-transparent hover:ring-primary/20" title="Asana">
+          <div class="bg-white hover:shadow-md group flex h-14 w-14 items-center justify-center rounded-lg border border-border/60 shadow-sm transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5" title="Asana">
             <img src="https://framerusercontent.com/images/nxpAODZEqjUs4FzwjpRNJp65aIE.png?scale-down-to=512" alt="Asana" class="w-full h-full object-contain" />
           </div>
         </div>
 
         <!-- Left (270°) - Dovetail -->
         <div class="absolute z-20 float-icon float-delay-7" style="left: 15%; top: 50%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-2xl group flex h-14 w-14 items-center justify-center rounded-xl border-2 border-border/60 shadow-lg transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5 ring-2 ring-transparent hover:ring-primary/20" title="Dovetail">
+          <div class="bg-white hover:shadow-md group flex h-14 w-14 items-center justify-center rounded-lg border border-border/60 shadow-sm transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5" title="Dovetail">
             <img src="https://framerusercontent.com/images/Hx6csFB7V6BZkxRa8eqkqtu7yU.webp?width=250&height=343" alt="Dovetail" class="w-full h-full object-contain" />
           </div>
         </div>
 
         <!-- Top Left (315°) - Linear -->
         <div class="absolute z-20 float-icon float-delay-8" style="left: 25.3%; top: 25.3%; transform: translate(-50%, -50%);">
-          <div class="bg-white hover:shadow-2xl group flex h-14 w-14 items-center justify-center rounded-xl border-2 border-border/60 shadow-lg transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5 ring-2 ring-transparent hover:ring-primary/20" title="Linear">
+          <div class="bg-white hover:shadow-md group flex h-14 w-14 items-center justify-center rounded-lg border border-border/60 shadow-sm transition-all duration-300 hover:scale-110 hover:border-primary/40 sm:h-16 sm:w-16 p-2.5" title="Linear">
             <img src="https://framerusercontent.com/images/Iyc9sejEbbhkc83GOBir6QGZnHs.png?width=400&height=400" alt="Linear" class="w-full h-full object-contain" />
           </div>
         </div>
@@ -339,7 +347,7 @@ const faqData = p.faq.items;
             {p.faq.title}
           </h2>
         </div>
-        <div class="animate-on-scroll rounded-3xl border-2 border-border/60 bg-card p-10 shadow-2xl backdrop-blur-sm sm:p-14">
+        <div class="animate-on-scroll rounded-lg border border-border/60 bg-card p-10 shadow-md backdrop-blur-sm sm:p-14">
           <FAQ faq={faqData} />
         </div>
       </div>
