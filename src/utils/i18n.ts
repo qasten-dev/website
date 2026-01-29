@@ -353,7 +353,7 @@ const translations = {
         },
       },
       offers: {
-        title: "Your're losing money to missed conversations",
+        title: "You're losing money to missed conversations",
         subtitle: "You are paying for leads you never get to speak to. When response time slips, routing breaks and follow up turns generic. Buyers move on to whoever replies first.",
         recommended: "",
         labels: {
