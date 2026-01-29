@@ -18,7 +18,7 @@ const translations = {
       blog: "Insights on AI adoption, team productivity, and security. Explore Qasten's blog for practical strategies and expert perspectives.",
     },
     aboutUs: "About us",
-    contactUs: "Apply for a free audit",
+    contactUs: "Start your Free 7-Day Pilot",
     pricing: "Pricing",
     nav: {
       problem: "The Problem",
@@ -31,7 +31,7 @@ const translations = {
       metaDescription: "Pricing for Qasten",
       heading: "Choose Your Qasten Plan",
       badgeRecommended: "Recommended",
-      choosePlan: "Apply for a free audit",
+      choosePlan: "Start your Free 7-Day Pilot",
       plans: {
         free: {
           name: "Free",
@@ -82,7 +82,7 @@ const translations = {
             "Custom integrations",
             "Dedicated support",
           ],
-          ctaLabel: "Apply for a free audit",
+          ctaLabel: "Start your Free 7-Day Pilot",
           emailSubject: "Enterprise Plan Inquiry",
         },
       },
@@ -321,8 +321,8 @@ const translations = {
           "Full ownership, no vendor lock-in",
         ],
         ctas: {
-          primary: "Apply for a free audit",
-          secondary: "Apply for a free audit",
+          primary: "Start your Free 7-Day Pilot",
+          secondary: "Start your Free 7-Day Pilot",
         },
         media: {
           title: "Inbound + Outbound, one revenue system",
@@ -376,7 +376,7 @@ const translations = {
               "Routes replies and next steps directly into your CRM",
             ],
             ctas: {
-              primary: "Apply for a free audit",
+              primary: "Start your Free 7-Day Pilot",
               secondary: "",
             },
           },
@@ -524,14 +524,14 @@ const translations = {
             ],
           },
         ],
-        cta: "Apply for a free audit",
+        cta: "Start your Free 7-Day Pilot",
         ctaSubtext: "",
       },
       midpageCta: {
         title: "See Our Inbound Agent in Action",
         text:
           "Book a free 30-minute consultation. We'll show you how our AI agent can transform your response time, qualify leads instantly, and book more meetings while you focus on closing deals.",
-        cta: "Apply for a free audit",
+        cta: "Start your Free 7-Day Pilot",
       },
       booking: {
         title: "Book a Free Call",
