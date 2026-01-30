@@ -116,16 +116,24 @@ const faqData = p.faq.items;
         </p>
       </div>
 
-      <div class="animate-on-scroll mx-auto max-w-4xl">
+      <div class="animate-on-scroll mx-auto max-w-4xl space-y-8">
+        <div class="agent-card rounded-lg bg-card/80 backdrop-blur-sm p-8 sm:p-10 shadow-lg">
+          <ul class="agent-bullets space-y-4 text-left text-base leading-relaxed text-foreground sm:text-lg">
+            {p.whyAgentBetter.bullets.map((bullet) => (
+              <li>{bullet}</li>
+            ))}
+          </ul>
+        </div>
+
         <div class="group relative rounded-lg bg-card border-2 border-primary/20 backdrop-blur-sm p-10 sm:p-14 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary/40">
           <!-- Accent line at top -->
           <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
-          
+
           <div class="text-center">
             <div class="mb-8">
               <span class="inline-block rounded-lg bg-primary/15 px-6 py-2.5 text-sm font-bold uppercase tracking-wider text-primary shadow-sm">
                 <Icon name="mdi:chart-line" class="inline mr-1.5 text-base" />
-                Industry Insight
+                {p.whyAgentBetter.insightLabel}
               </span>
             </div>
             <p class="text-4xl font-extrabold leading-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -134,7 +142,7 @@ const faqData = p.faq.items;
             <div class="mt-8 flex justify-center">
               <div class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-5 py-2 text-sm font-semibold text-primary">
                 <Icon name="mdi:check-circle" class="text-base" />
-                This is why speed matters
+                {p.whyAgentBetter.insightTagline}
               </div>
             </div>
           </div>
@@ -178,140 +186,6 @@ const faqData = p.faq.items;
       </div>
     </section>
 
-    <!-- Integrations Section -->
-    <section class="mx-auto w-full max-w-7xl px-4 py-28 sm:px-6">
-      <div class="animate-on-scroll mb-16 text-center">
-        <h2 class="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          {p.integrations.title}
-        </h2>
-        <p class="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed sm:text-xl">
-          {p.integrations.subtitle}
-        </p>
-      </div>
-
-      <div class="relative mx-auto aspect-square w-full max-w-xs sm:max-w-sm md:max-w-md">
-        <!-- SVG for concentric waves and outer circle -->
-        <svg class="absolute inset-0 h-full w-full" viewBox="0 0 400 400" style="pointer-events: none; z-index: 0;">
-          <defs>
-            <style>
-              @keyframes ripple {
-                0% {
-                  r: 20;
-                  opacity: 0.25;
-                }
-                100% {
-                  r: 130;
-                  opacity: 0;
-                }
-              }
-              .wave-circle {
-                fill: none;
-                stroke: rgba(74, 125, 189, 0.4);
-                stroke-width: 1.5;
-                transform-origin: center;
-                animation: ripple 4s ease-out infinite;
-              }
-              .wave-1 { animation-delay: 0s; }
-              .wave-2 { animation-delay: 1s; }
-              .wave-3 { animation-delay: 2s; }
-              .wave-4 { animation-delay: 3s; }
-            </style>
-          </defs>
-
-          <!-- Animated concentric wave circles emanating from center -->
-          <circle cx="200" cy="200" r="20" class="wave-circle wave-1" />
-          <circle cx="200" cy="200" r="20" class="wave-circle wave-2" />
-          <circle cx="200" cy="200" r="20" class="wave-circle wave-3" />
-          <circle cx="200" cy="200" r="20" class="wave-circle wave-4" />
-
-          <!-- Main outer circle connecting all icons -->
-          <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-
-          <!-- Short connector stubs from outer circle to icon positions -->
-          <!-- Top -->
-          <line x1="200" y1="60" x2="200" y2="40" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Top Right -->
-          <line x1="299" y1="101" x2="313" y2="87" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Right -->
-          <line x1="340" y1="200" x2="360" y2="200" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Bottom Right -->
-          <line x1="299" y1="299" x2="313" y2="313" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Bottom -->
-          <line x1="200" y1="340" x2="200" y2="360" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Bottom Left -->
-          <line x1="101" y1="299" x2="87" y2="313" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Left -->
-          <line x1="60" y1="200" x2="40" y2="200" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Top Left -->
-          <line x1="101" y1="101" x2="87" y2="87" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-        </svg>
-
-        <!-- Central Qasten Logo -->
-        <div class="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-          <div class="bg-card/90 rounded-lg backdrop-blur-sm p-4 sm:p-5">
-            <Logo width={60} height={60} />
-          </div>
-        </div>
-
-        <!-- Integration Icons arranged on the circle -->
-        <!-- Top (0°) - HubSpot -->
-        <div class="absolute z-20 float-icon float-delay-1" style="left: 50%; top: 15%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="HubSpot">
-            <img src="https://framerusercontent.com/images/NnDNSIod6BWGkVQ38VHOp6RUj0k.png?scale-down-to=512" alt="HubSpot" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Top Right (45°) - Zapier/Chain -->
-        <div class="absolute z-20 float-icon float-delay-2" style="left: 74.7%; top: 25.3%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Zapier">
-            <img src="https://framerusercontent.com/images/Xsta0mwZKeKTikCD2mVKwrskkM.png?scale-down-to=512" alt="Zapier" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Right (90°) - Salesforce -->
-        <div class="absolute z-20 float-icon float-delay-3" style="left: 85%; top: 50%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Salesforce">
-            <img src="https://framerusercontent.com/images/l2YE294N9X2zGAqj0zyCzQB7mSU.png?width=256&height=256" alt="Salesforce" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Bottom Right (135°) - Zendesk -->
-        <div class="absolute z-20 float-icon float-delay-4" style="left: 74.7%; top: 74.7%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Zendesk">
-            <img src="https://framerusercontent.com/images/RwYsS46pMcFi4x7pHVuWRrlhEZk.png?width=240&height=240" alt="Zendesk" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Bottom (180°) - Figjam/Star -->
-        <div class="absolute z-20 float-icon float-delay-5" style="left: 50%; top: 85%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Figjam">
-            <img src="https://framerusercontent.com/images/Iad8JtV4KapAZpGElrFJuQtySis.png?scale-down-to=512" alt="Figjam" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Bottom Left (225°) - Asana -->
-        <div class="absolute z-20 float-icon float-delay-6" style="left: 25.3%; top: 74.7%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Asana">
-            <img src="https://framerusercontent.com/images/nxpAODZEqjUs4FzwjpRNJp65aIE.png?scale-down-to=512" alt="Asana" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Left (270°) - Dovetail -->
-        <div class="absolute z-20 float-icon float-delay-7" style="left: 15%; top: 50%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Dovetail">
-            <img src="https://framerusercontent.com/images/Hx6csFB7V6BZkxRa8eqkqtu7yU.webp?width=250&height=343" alt="Dovetail" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Top Left (315°) - Linear -->
-        <div class="absolute z-20 float-icon float-delay-8" style="left: 25.3%; top: 25.3%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Linear">
-            <img src="https://framerusercontent.com/images/Iyc9sejEbbhkc83GOBir6QGZnHs.png?width=400&height=400" alt="Linear" class="w-full h-full object-contain" />
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Booking Section (now chat-first via Retell) -->
     <section id="book-call" class="mx-auto w-full max-w-6xl px-4 py-28 sm:px-6">
       <div class="animate-on-scroll mb-16 text-center">
@@ -334,10 +208,10 @@ const faqData = p.faq.items;
             <!-- Text -->
             <div class="space-y-4">
               <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">
-                Try Our AI Agent
+                {p.midpageCta.demoTitle}
               </h3>
               <p class="text-muted-foreground mx-auto max-w-lg text-base leading-relaxed">
-                Experience instant qualification, intelligent routing, and automated meeting booking
+                {p.midpageCta.demoText}
               </p>
             </div>
 
@@ -346,9 +220,9 @@ const faqData = p.faq.items;
               type="button"
               id="retell-chat-trigger"
               class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex items-center gap-2.5 rounded-lg px-10 py-5 text-lg font-semibold shadow-lg transition-all hover:shadow-xl hover:scale-105 cursor-pointer"
-              aria-label="Open chat with Qasten AI agent"
+              aria-label="Open voice agent demo"
             >
-              <span>Start Conversation</span>
+              <span>{p.midpageCta.demoCta}</span>
               <Icon name="mdi:arrow-right" class="text-xl transition-transform group-hover:translate-x-1" />
             </button>
             
