@@ -545,6 +545,11 @@ const translations = {
           "Experience fast call handling, intelligent routing, and instant appointment booking.",
         demoCta: "Try the Voice Agent",
       },
+      bookMeetingCta: {
+        title: "Start your Free 7-Day Pilot",
+        text:
+          "Book a free 30-minute consultation. We'll show you how our AI agent can transform your response time, qualify leads instantly, and book more meetings while you focus on important work.",
+      },
       booking: {
         title: "Book a Free Call",
         subtitle:
