@@ -10,12 +10,7 @@ export function getSafeCurrentLocale(locale: string | undefined) {
 const translations = {
   en: {
     metaDescription: {
-      home: "Stop losing HVAC jobs to missed calls. Qasten builds a custom AI voice agent that answers customer questions and books appointments directly on your team's calendar. Live in 30 days.",
-      aboutUs:
-        "At Qasten, we believe the future of work is collective intelligence. Learn our mission, beliefs, and vision for secure, collaborative AI.",
-      security:
-        "Qasten puts security first: EU hosting, zero retention, admin controls, and built-in safeguards to replace risky Shadow AI.",
-      blog: "Insights on AI adoption, team productivity, and security. Explore Qasten's blog for practical strategies and expert perspectives.",
+      home: "Stop losing HVAC jobs to missed calls. Qasten builds a custom AI receptionist that answers customer questions and books appointments directly on your team's calendar. Live in 30 days.",
     },
     aboutUs: "About us",
     contactUs: "Start your Free 7-Day Pilot",
@@ -308,18 +303,18 @@ const translations = {
     },
     homePage: {
       meta: {
-        title: "HVAC AI Voice Agent That Answers Calls & Books Jobs | Qasten",
+        title: "HVAC AI Receptionist | Qasten",
         description:
           "Stop losing HVAC jobs to missed calls. Qasten builds a custom AI voice agent that answers customer questions and books appointments directly on your team's calendar. Live in 30 days.",
       },
       hero: {
         title: "Stop losing HVAC jobs to missed calls.",
         subhead:
-          "Qasten builds a custom AI voice agent for HVAC companies that answers every call, reply to customer questions, and books an appointment on the right person's calendar while the customer is still on the line. Live in 30 days.",
+          "Qasten builds a custom AI receptionist for HVAC companies that answers every call, reply to customer questions, and books an appointment on the right person's calendar while the customer is still on the line. Live in 30 days.",
         trustChips: [
-          "Works with any calendar",
+          "Works with your existing software",
           "24/7 call answering",
-          "Full ownership, no vendor lock-in",
+          "Full ownership",
         ],
         ctas: {
           primary: "Start your Free 7-Day Pilot",
@@ -342,8 +337,8 @@ const translations = {
               "Answers calls after-hours, weekends, and during peak-season spikes.",
           },
           {
-            value: "< 2 min",
-            caption: "Pickup guarantee, 24/7 (typically seconds).",
+            value: "5 sec",
+            caption: "Pickup guarantee.",
           },
           {
             value: "1 call",
@@ -466,7 +461,7 @@ const translations = {
         ],
         insightLabel: "HVAC Insight",
         highlight: {
-          text: "The first company that answers usually gets the job. This is why speed matters.",
+          text: "The first company that answers usually gets the job.",
         },
         insightTagline: "This is why speed matters",
       },
@@ -566,12 +561,21 @@ const translations = {
           {
             question: "Do I need a CRM?",
             answer:
-              "No. We can run everything from your calendars. If you want more visibility, we'll set up a lightweight call/lead log so you have a simple system without adopting a full CRM.",
+              "Not necessarily. If you have one we integrate seamlessly with it. If you don't have one, we can run everything from your calendars. If you want more visibility, we'll set up a lightweight call/lead log so you have a simple system without adopting a full CRM.",
+          },
+          {
+            question: "What if I already have a receptionist?",
+            answer:
+              "You can use it as a supplement to your existing receptionist. When the receptionist is not available, the AI voice agent can answer common questions, book appointments, and log calls/leads. Enabling and disabling the AI voice agent is easy and can be done in seconds based on your business needs.",
           },
           {
             question: "Can it answer customer questions during the call?",
             answer:
               "Yes. We train it on your services, policies, coverage area, and FAQs so it can handle the full conversation - not just \"take a message.\"",
+          },{
+            question: "What if the agent isn't confident about something?",
+            answer:
+              "It's designed to know its limits. It escalates to your team with full context instead of guessing.",
           },
           {
             question: "Can it book directly with the right person?",
@@ -588,11 +592,7 @@ const translations = {
             answer:
               "The agent handles an agreed slice of your inbound calls (for example: after-hours or overflow). If you're not satisfied within 7 days, you can opt out without paying - no contracts, no commitments.",
           },
-          {
-            question: "What if the agent isn't confident about something?",
-            answer:
-              "It's designed to know its limits. It escalates to your team with full context instead of guessing.",
-          },
+          
           {
             question: "How do you prevent double-booking or scheduling conflicts?",
             answer:
