@@ -161,39 +161,33 @@ const faqData = p.faq.items;
         </p>
       </div>
 
-      <div class="animate-on-scroll flex justify-center">
-        <div class="w-full max-w-4xl rounded-2xl border border-border/50 bg-card/80 shadow-xl backdrop-blur-sm p-12 sm:p-14">
-          <div class="flex flex-col items-center gap-8 text-center">
-            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-              <Icon name="mdi:message-text" class="text-3xl text-primary" />
-            </div>
-
-            <div class="space-y-4">
-              <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">
-                {p.midpageCta.demoTitle}
-              </h3>
-              <p class="text-muted-foreground mx-auto max-w-lg text-base leading-relaxed">
-                {p.midpageCta.demoText}
-              </p>
-            </div>
-
-            <button
-              type="button"
-              id="retell-chat-trigger"
-              class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex items-center gap-2.5 rounded-lg px-10 py-5 text-lg font-semibold shadow-lg transition-all hover:shadow-xl hover:scale-105 cursor-pointer"
-              aria-label="Open voice agent demo"
-            >
-              <span>{p.midpageCta.demoCta}</span>
-              <Icon name="mdi:arrow-right" class="text-xl transition-transform group-hover:translate-x-1" />
-            </button>
-
-            <div class="flex items-center justify-center pt-2 text-xs text-muted-foreground">
-              <div class="flex items-center gap-1.5">
-                <Icon name="mdi:lock" class="text-primary text-sm" />
-                <span>Secure & private</span>
-              </div>
-            </div>
+      <div class="animate-on-scroll flex flex-col items-center gap-10">
+        <div class="demo-video-wrapper w-full max-w-4xl rounded-2xl border border-border/50 bg-card/80 shadow-xl overflow-hidden backdrop-blur-sm">
+          <div class="aspect-video w-full bg-muted/50">
+            <video
+              data-src="/demo.mp4"
+              preload="none"
+              controls
+              playsinline
+              class="demo-video w-full h-full object-contain"
+              width="896"
+              height="504"
+              aria-label="HVAC Voice Agent demo"
+            ></video>
           </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <p class="text-muted-foreground text-sm font-medium uppercase tracking-wider">
+            {p.midpageCta.phoneLabel}
+          </p>
+          <a
+            href={`tel:${p.midpageCta.phoneNumber.replace(/\D/g, "")}`}
+            class="demo-phone-number inline-flex items-center gap-3 rounded-xl border border-border/60 bg-card/80 px-6 py-4 text-xl font-semibold tracking-tight text-foreground shadow-sm transition-all hover:border-primary/40 hover:bg-card hover:shadow-md sm:text-2xl"
+          >
+            <Icon name="mdi:phone" class="text-primary text-2xl shrink-0" />
+            <span>{p.midpageCta.phoneNumber}</span>
+          </a>
         </div>
       </div>
     </section>
@@ -268,253 +262,22 @@ const faqData = p.faq.items;
     </script>
 
 <script>
-  // Load Retell widget and setup click handler
+  // Lazy-load demo video when it enters viewport (saves bandwidth, improves LCP)
   (function() {
-    const siteKey = "6LfwMFosAAAAAAHI8qTCUd-jVZsrLh4_rxZxnxjS";
-    const log = (...args) => console.info("[Retell]", ...args);
-    const warn = (...args) => console.warn("[Retell]", ...args);
-    const error = (...args) => console.error("[Retell]", ...args);
-    let retellScriptInjected = false;
-    let retellScriptLoaded = false;
-    let openRequested = false;
-
-    function collectOpenShadowRoots() {
-      const roots = [];
-      const queue = Array.from(document.querySelectorAll('*')).filter((el) => el.shadowRoot);
-      while (queue.length) {
-        const host = queue.shift();
-        if (!host || !host.shadowRoot) continue;
-        roots.push(host.shadowRoot);
-        queue.push(...Array.from(host.shadowRoot.querySelectorAll('*')).filter((el) => el.shadowRoot));
-      }
-      return roots;
-    }
-
-    function findRetellNodes() {
-      const selector =
-        '[id*="retell" i], [class*="retell" i], [data-retell], iframe[src*="retell" i], iframe[src*="retellai" i]';
-      const nodes = Array.from(document.querySelectorAll(selector));
-      for (const root of collectOpenShadowRoots()) {
-        nodes.push(...Array.from(root.querySelectorAll(selector)));
-      }
-      return nodes;
-    }
-
-    function describeNode(node) {
-      if (!node) return null;
-      const tag = node.tagName ? node.tagName.toLowerCase() : "unknown";
-      const id = node.id || "";
-      const className = typeof node.className === "string" ? node.className : "";
-      const style = node.style ? node.style.cssText : "";
-      return { tag, id, className, style };
-    }
-
-    function dumpRetellState(label) {
-      const api = window.retellWidget || window.RetellWidget || window.retell;
-      const nodes = findRetellNodes();
-      log(label, {
-        retellScriptInjected,
-        retellScriptLoaded,
-        hasApi: !!api,
-        apiHasOpen: !!(api && typeof api.open === "function"),
-        nodeCount: nodes.length,
-        nodes: nodes.slice(0, 12).map(describeNode)
+    const video = document.querySelector('.demo-video[data-src]');
+    if (!video) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const v = entry.target;
+        if (!v.dataset.src) return;
+        v.src = v.dataset.src;
+        v.preload = 'metadata';
+        delete v.dataset.src;
+        io.unobserve(v);
       });
-    }
-
-    window.__retellDebug = {
-      dump: (label = "manual") => dumpRetellState(label)
-    };
-
-    function loadRetell() {
-      if (retellScriptInjected) {
-        log("Retell script already injected");
-        return;
-      }
-      retellScriptInjected = true;
-      const s = document.createElement("script");
-      s.id = "retell-widget";
-      s.type = "module";
-      s.src = "https://dashboard.retellai.com/retell-widget.js";
-      s.async = true;
-      s.crossOrigin = "anonymous";
-      s.dataset.publicKey = "public_key_ce467b0967fefdd77411d";
-      s.dataset.agentId = "agent_d4d75b677f6e852c63e81dc797";
-      s.dataset.title = "Qasten";
-      s.dataset.logoUrl = "https://www.qasten.com/favicon/light/favicon-32x32.png";
-      s.dataset.color = "#4a7dbd";
-      s.dataset.botName = "Qasten";
-      s.dataset.popupMessage = "";
-      s.dataset.showAiPopup = "false";
-      s.dataset.autoOpen = "false";
-      s.dataset.recaptchaKey = siteKey;
-      s.onload = () => {
-        retellScriptLoaded = true;
-        log("Retell script loaded");
-        dumpRetellState("After Retell script load");
-      };
-      s.onerror = () => {
-        error("Retell script failed to load");
-      };
-      document.head.appendChild(s);
-      log("Retell script injected");
-    }
-
-    const recaptcha = document.createElement("script");
-    recaptcha.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
-    recaptcha.async = true;
-    recaptcha.defer = true;
-    recaptcha.onload = () => {
-      log("reCAPTCHA loaded");
-      dumpRetellState("After reCAPTCHA load");
-      loadRetell();
-    };
-    recaptcha.onerror = () => {
-      warn("reCAPTCHA failed to load; attempting Retell anyway");
-      loadRetell();
-    };
-    document.head.appendChild(recaptcha);
-    log("reCAPTCHA script injected");
-
-    function waitForRetellApi(timeoutMs = 15000) {
-      return new Promise((resolve) => {
-        const start = Date.now();
-        const tick = () => {
-          const api = window.retellWidget || window.RetellWidget || window.retell;
-          if (api && typeof api.open === "function") {
-            log("Retell API available");
-            resolve(api);
-            return;
-          }
-          if (Date.now() - start >= timeoutMs) {
-            warn("Timed out waiting for Retell API", {
-              retellScriptInjected,
-              retellScriptLoaded
-            });
-            resolve(null);
-            return;
-          }
-          setTimeout(tick, 200);
-        };
-        tick();
-      });
-    }
-
-    function openRetellChat(state = {}) {
-      const api = window.retellWidget || window.RetellWidget || window.retell;
-      if (api && typeof api.open === 'function') {
-        log("Opening chat via Retell API");
-        api.open();
-        return true;
-      }
-      log("Retell API not available yet");
-
-      if (!state.widgetClicked) {
-        const selectors = [
-          'div[style*="position: fixed"][style*="bottom: 24px"]',
-          'div[style*="position: fixed"][style*="right: 24px"]',
-          'div[style*="z-index: 999999"]'
-        ];
-        for (const selector of selectors) {
-          const widget = document.querySelector(selector);
-          if (widget) {
-            const btn = widget.querySelector('button') || widget.firstElementChild || widget;
-            if (btn) {
-              log("Opening chat via widget button");
-              btn.click();
-              state.widgetClicked = true;
-              return true;
-            }
-          }
-        }
-      }
-
-      if (!state.eventDispatched) {
-        log("Falling back to retell-open event");
-        window.dispatchEvent(new CustomEvent('retell-open'));
-        document.dispatchEvent(new CustomEvent('retell-open'));
-        state.eventDispatched = true;
-      }
-      return false;
-    }
-
-    function getRetellChatWindow() {
-      const direct = document.querySelector('#retell-chat.retell-chat-window');
-      if (direct) return direct;
-      const queue = Array.from(document.querySelectorAll('*')).filter((el) => el.shadowRoot);
-      while (queue.length) {
-        const host = queue.shift();
-        if (!host || !host.shadowRoot) continue;
-        const found = host.shadowRoot.querySelector('#retell-chat.retell-chat-window');
-        if (found) return found;
-        queue.push(...Array.from(host.shadowRoot.querySelectorAll('*')).filter((el) => el.shadowRoot));
-      }
-      return null;
-    }
-
-    function showRetellChatWindow() {
-      if (!openRequested) return false;
-      const chatWindow = getRetellChatWindow();
-      if (chatWindow) {
-        const display = window.getComputedStyle(chatWindow).display;
-        if (display === 'none') {
-          log("Ensuring chat window display");
-          chatWindow.style.setProperty('display', 'flex', 'important');
-        }
-        return true;
-      }
-      return false;
-    }
-
-    function observeRetellChatWindow() {
-      const watcher = new MutationObserver(() => {
-        if (showRetellChatWindow()) watcher.disconnect();
-      });
-      watcher.observe(document.body, { childList: true, subtree: true, attributes: true });
-      setTimeout(() => watcher.disconnect(), 20000);
-    }
-
-    function setupClickHandler() {
-      const trigger = document.getElementById('retell-chat-trigger');
-      if (!trigger) {
-        warn("Retell trigger button not found");
-        return;
-      }
-      log("Retell trigger ready");
-      trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        log("Retell trigger clicked");
-        openRequested = true;
-        const openState = { widgetClicked: false, eventDispatched: false };
-        observeRetellChatWindow();
-        openRetellChat(openState);
-        showRetellChatWindow();
-        waitForRetellApi().then((api) => {
-          if (api && typeof api.open === "function") {
-            log("Opening chat after API ready");
-            api.open();
-            showRetellChatWindow();
-            return;
-          }
-          let attempts = 0;
-          const interval = setInterval(() => {
-            attempts++;
-            const opened = openRetellChat(openState);
-            const shown = showRetellChatWindow();
-            if (opened || shown || attempts >= 80) {
-              if (!opened && !shown) warn("Failed to open chat after retries");
-              clearInterval(interval);
-            }
-          }, 250);
-        });
-      });
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setupClickHandler);
-    } else {
-      setupClickHandler();
-    }
+    }, { rootMargin: '100px' });
+    io.observe(video);
   })();
 </script>
 

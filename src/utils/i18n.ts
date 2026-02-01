@@ -544,6 +544,8 @@ const translations = {
         demoText:
           "Experience fast call handling, intelligent routing, and instant appointment booking.",
         demoCta: "Try the Voice Agent",
+        phoneNumber: "+1 (650) 585-3293",
+        phoneLabel: "Call to try the agent",
       },
       bookMeetingCta: {
         title: "Start your Free 7-Day Pilot",
