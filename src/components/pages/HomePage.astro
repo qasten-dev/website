@@ -116,16 +116,24 @@ const faqData = p.faq.items;
         </p>
       </div>
 
-      <div class="animate-on-scroll mx-auto max-w-4xl">
+      <div class="animate-on-scroll mx-auto max-w-4xl space-y-8">
+        <div class="agent-card rounded-lg bg-card/80 backdrop-blur-sm p-8 sm:p-10 shadow-lg">
+          <ul class="agent-bullets space-y-4 text-left text-base leading-relaxed text-foreground sm:text-lg">
+            {p.whyAgentBetter.bullets.map((bullet) => (
+              <li>{bullet}</li>
+            ))}
+          </ul>
+        </div>
+
         <div class="group relative rounded-lg bg-card border-2 border-primary/20 backdrop-blur-sm p-10 sm:p-14 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary/40">
           <!-- Accent line at top -->
           <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
-          
+
           <div class="text-center">
             <div class="mb-8">
               <span class="inline-block rounded-lg bg-primary/15 px-6 py-2.5 text-sm font-bold uppercase tracking-wider text-primary shadow-sm">
                 <Icon name="mdi:chart-line" class="inline mr-1.5 text-base" />
-                Industry Insight
+                {p.whyAgentBetter.insightLabel}
               </span>
             </div>
             <p class="text-4xl font-extrabold leading-tight text-foreground sm:text-5xl lg:text-6xl">
@@ -134,7 +142,55 @@ const faqData = p.faq.items;
             <div class="mt-8 flex justify-center">
               <div class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-5 py-2 text-sm font-semibold text-primary">
                 <Icon name="mdi:check-circle" class="text-base" />
-                This is why speed matters
+                {p.whyAgentBetter.insightTagline}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Retell Voice Agent Demo Section -->
+    <section id="try-demo" class="mx-auto w-full max-w-6xl px-4 py-28 sm:px-6">
+      <div class="animate-on-scroll mb-16 text-center">
+        <h2 class="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          {p.midpageCta.title}
+        </h2>
+        <p class="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed sm:text-xl">
+          {p.midpageCta.text}
+        </p>
+      </div>
+
+      <div class="animate-on-scroll flex justify-center">
+        <div class="w-full max-w-4xl rounded-2xl border border-border/50 bg-card/80 shadow-xl backdrop-blur-sm p-12 sm:p-14">
+          <div class="flex flex-col items-center gap-8 text-center">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+              <Icon name="mdi:message-text" class="text-3xl text-primary" />
+            </div>
+
+            <div class="space-y-4">
+              <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">
+                {p.midpageCta.demoTitle}
+              </h3>
+              <p class="text-muted-foreground mx-auto max-w-lg text-base leading-relaxed">
+                {p.midpageCta.demoText}
+              </p>
+            </div>
+
+            <button
+              type="button"
+              id="retell-chat-trigger"
+              class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex items-center gap-2.5 rounded-lg px-10 py-5 text-lg font-semibold shadow-lg transition-all hover:shadow-xl hover:scale-105 cursor-pointer"
+              aria-label="Open voice agent demo"
+            >
+              <span>{p.midpageCta.demoCta}</span>
+              <Icon name="mdi:arrow-right" class="text-xl transition-transform group-hover:translate-x-1" />
+            </button>
+
+            <div class="flex items-center justify-center pt-2 text-xs text-muted-foreground">
+              <div class="flex items-center gap-1.5">
+                <Icon name="mdi:lock" class="text-primary text-sm" />
+                <span>Secure & private</span>
               </div>
             </div>
           </div>
@@ -178,191 +234,289 @@ const faqData = p.faq.items;
       </div>
     </section>
 
-    <!-- Integrations Section -->
-    <section class="mx-auto w-full max-w-7xl px-4 py-28 sm:px-6">
-      <div class="animate-on-scroll mb-16 text-center">
+    <!-- Cal.com Booking Section: CTA to book meetings -->
+    <section id="book-call" class="mx-auto w-full max-w-5xl px-4 py-28 sm:px-6">
+      <div class="animate-on-scroll mb-12 text-center">
         <h2 class="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          {p.integrations.title}
+          {p.bookMeetingCta.title}
         </h2>
         <p class="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed sm:text-xl">
-          {p.integrations.subtitle}
+          {p.bookMeetingCta.text}
         </p>
       </div>
 
-      <div class="relative mx-auto aspect-square w-full max-w-xs sm:max-w-sm md:max-w-md">
-        <!-- SVG for concentric waves and outer circle -->
-        <svg class="absolute inset-0 h-full w-full" viewBox="0 0 400 400" style="pointer-events: none; z-index: 0;">
-          <defs>
-            <style>
-              @keyframes ripple {
-                0% {
-                  r: 20;
-                  opacity: 0.25;
-                }
-                100% {
-                  r: 130;
-                  opacity: 0;
-                }
-              }
-              .wave-circle {
-                fill: none;
-                stroke: rgba(74, 125, 189, 0.4);
-                stroke-width: 1.5;
-                transform-origin: center;
-                animation: ripple 4s ease-out infinite;
-              }
-              .wave-1 { animation-delay: 0s; }
-              .wave-2 { animation-delay: 1s; }
-              .wave-3 { animation-delay: 2s; }
-              .wave-4 { animation-delay: 3s; }
-            </style>
-          </defs>
-
-          <!-- Animated concentric wave circles emanating from center -->
-          <circle cx="200" cy="200" r="20" class="wave-circle wave-1" />
-          <circle cx="200" cy="200" r="20" class="wave-circle wave-2" />
-          <circle cx="200" cy="200" r="20" class="wave-circle wave-3" />
-          <circle cx="200" cy="200" r="20" class="wave-circle wave-4" />
-
-          <!-- Main outer circle connecting all icons -->
-          <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-
-          <!-- Short connector stubs from outer circle to icon positions -->
-          <!-- Top -->
-          <line x1="200" y1="60" x2="200" y2="40" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Top Right -->
-          <line x1="299" y1="101" x2="313" y2="87" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Right -->
-          <line x1="340" y1="200" x2="360" y2="200" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Bottom Right -->
-          <line x1="299" y1="299" x2="313" y2="313" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Bottom -->
-          <line x1="200" y1="340" x2="200" y2="360" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Bottom Left -->
-          <line x1="101" y1="299" x2="87" y2="313" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Left -->
-          <line x1="60" y1="200" x2="40" y2="200" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-          <!-- Top Left -->
-          <line x1="101" y1="101" x2="87" y2="87" stroke="rgba(74, 125, 189, 0.2)" stroke-width="1.5" />
-        </svg>
-
-        <!-- Central Qasten Logo -->
-        <div class="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-          <div class="bg-card/90 rounded-lg backdrop-blur-sm p-4 sm:p-5">
-            <Logo width={60} height={60} />
-          </div>
-        </div>
-
-        <!-- Integration Icons arranged on the circle -->
-        <!-- Top (0°) - HubSpot -->
-        <div class="absolute z-20 float-icon float-delay-1" style="left: 50%; top: 15%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="HubSpot">
-            <img src="https://framerusercontent.com/images/NnDNSIod6BWGkVQ38VHOp6RUj0k.png?scale-down-to=512" alt="HubSpot" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Top Right (45°) - Zapier/Chain -->
-        <div class="absolute z-20 float-icon float-delay-2" style="left: 74.7%; top: 25.3%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Zapier">
-            <img src="https://framerusercontent.com/images/Xsta0mwZKeKTikCD2mVKwrskkM.png?scale-down-to=512" alt="Zapier" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Right (90°) - Salesforce -->
-        <div class="absolute z-20 float-icon float-delay-3" style="left: 85%; top: 50%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Salesforce">
-            <img src="https://framerusercontent.com/images/l2YE294N9X2zGAqj0zyCzQB7mSU.png?width=256&height=256" alt="Salesforce" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Bottom Right (135°) - Zendesk -->
-        <div class="absolute z-20 float-icon float-delay-4" style="left: 74.7%; top: 74.7%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Zendesk">
-            <img src="https://framerusercontent.com/images/RwYsS46pMcFi4x7pHVuWRrlhEZk.png?width=240&height=240" alt="Zendesk" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Bottom (180°) - Figjam/Star -->
-        <div class="absolute z-20 float-icon float-delay-5" style="left: 50%; top: 85%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Figjam">
-            <img src="https://framerusercontent.com/images/Iad8JtV4KapAZpGElrFJuQtySis.png?scale-down-to=512" alt="Figjam" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Bottom Left (225°) - Asana -->
-        <div class="absolute z-20 float-icon float-delay-6" style="left: 25.3%; top: 74.7%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Asana">
-            <img src="https://framerusercontent.com/images/nxpAODZEqjUs4FzwjpRNJp65aIE.png?scale-down-to=512" alt="Asana" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Left (270°) - Dovetail -->
-        <div class="absolute z-20 float-icon float-delay-7" style="left: 15%; top: 50%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Dovetail">
-            <img src="https://framerusercontent.com/images/Hx6csFB7V6BZkxRa8eqkqtu7yU.webp?width=250&height=343" alt="Dovetail" class="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <!-- Top Left (315°) - Linear -->
-        <div class="absolute z-20 float-icon float-delay-8" style="left: 25.3%; top: 25.3%; transform: translate(-50%, -50%);">
-          <div class="bg-white/90 backdrop-blur-sm group flex h-14 w-14 items-center justify-center rounded-lg transition-all duration-300 hover:scale-110 hover:bg-white sm:h-16 sm:w-16 p-2.5" title="Linear">
-            <img src="https://framerusercontent.com/images/Iyc9sejEbbhkc83GOBir6QGZnHs.png?width=400&height=400" alt="Linear" class="w-full h-full object-contain" />
-          </div>
-        </div>
+      <div class="animate-on-scroll cal-embed-shell">
+        <div
+          class="w-full rounded-lg overflow-hidden"
+          style="min-height:700px;height:700px;"
+          id="my-cal-inline-ai-agents-consultation"
+        ></div>
       </div>
     </section>
 
-    <!-- Booking Section (now chat-first via Retell) -->
-    <section id="book-call" class="mx-auto w-full max-w-6xl px-4 py-28 sm:px-6">
-      <div class="animate-on-scroll mb-16 text-center">
-        <h2 class="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          {p.midpageCta.title}
-        </h2>
-        <p class="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed sm:text-xl">
-          {p.midpageCta.text}
-        </p>
-      </div>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "ai-agents-consultation", {origin:"https://app.cal.com"});
 
-      <div class="animate-on-scroll flex justify-center">
-        <div class="w-full max-w-4xl rounded-2xl border border-border/50 bg-card/80 shadow-xl backdrop-blur-sm p-12 sm:p-14">
-          <div class="flex flex-col items-center gap-8 text-center">
-            <!-- Icon -->
-            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-              <Icon name="mdi:message-text" class="text-3xl text-primary" />
-            </div>
+      Cal.ns["ai-agents-consultation"]("inline", {
+        elementOrSelector:"#my-cal-inline-ai-agents-consultation",
+        config: {"layout":"month_view"},
+        calLink: "qasten/ai-agents-consultation",
+      });
 
-            <!-- Text -->
-            <div class="space-y-4">
-              <h3 class="text-2xl font-bold tracking-tight sm:text-3xl">
-                Try Our AI Agent
-              </h3>
-              <p class="text-muted-foreground mx-auto max-w-lg text-base leading-relaxed">
-                Experience instant qualification, intelligent routing, and automated meeting booking
-              </p>
-            </div>
+      Cal.ns["ai-agents-consultation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#4a7dbd"},"dark":{"cal-brand":"#6b9fff"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
 
-            <!-- CTA Button -->
-            <button
-              type="button"
-              id="retell-chat-trigger"
-              class="bg-primary hover:bg-primary/90 text-primary-foreground group inline-flex items-center gap-2.5 rounded-lg px-10 py-5 text-lg font-semibold shadow-lg transition-all hover:shadow-xl hover:scale-105 cursor-pointer"
-              aria-label="Open chat with Qasten AI agent"
-            >
-              <span>Start Conversation</span>
-              <Icon name="mdi:arrow-right" class="text-xl transition-transform group-hover:translate-x-1" />
-            </button>
-            
-            <!-- Features -->
-            <div class="flex items-center justify-center pt-2 text-xs text-muted-foreground">
-              <div class="flex items-center gap-1.5">
-                <Icon name="mdi:lock" class="text-primary text-sm" />
-                <span>Secure & private</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<script>
+  // Load Retell widget and setup click handler
+  (function() {
+    const siteKey = "6LfwMFosAAAAAAHI8qTCUd-jVZsrLh4_rxZxnxjS";
+    const log = (...args) => console.info("[Retell]", ...args);
+    const warn = (...args) => console.warn("[Retell]", ...args);
+    const error = (...args) => console.error("[Retell]", ...args);
+    let retellScriptInjected = false;
+    let retellScriptLoaded = false;
+    let openRequested = false;
+
+    function collectOpenShadowRoots() {
+      const roots = [];
+      const queue = Array.from(document.querySelectorAll('*')).filter((el) => el.shadowRoot);
+      while (queue.length) {
+        const host = queue.shift();
+        if (!host || !host.shadowRoot) continue;
+        roots.push(host.shadowRoot);
+        queue.push(...Array.from(host.shadowRoot.querySelectorAll('*')).filter((el) => el.shadowRoot));
+      }
+      return roots;
+    }
+
+    function findRetellNodes() {
+      const selector =
+        '[id*="retell" i], [class*="retell" i], [data-retell], iframe[src*="retell" i], iframe[src*="retellai" i]';
+      const nodes = Array.from(document.querySelectorAll(selector));
+      for (const root of collectOpenShadowRoots()) {
+        nodes.push(...Array.from(root.querySelectorAll(selector)));
+      }
+      return nodes;
+    }
+
+    function describeNode(node) {
+      if (!node) return null;
+      const tag = node.tagName ? node.tagName.toLowerCase() : "unknown";
+      const id = node.id || "";
+      const className = typeof node.className === "string" ? node.className : "";
+      const style = node.style ? node.style.cssText : "";
+      return { tag, id, className, style };
+    }
+
+    function dumpRetellState(label) {
+      const api = window.retellWidget || window.RetellWidget || window.retell;
+      const nodes = findRetellNodes();
+      log(label, {
+        retellScriptInjected,
+        retellScriptLoaded,
+        hasApi: !!api,
+        apiHasOpen: !!(api && typeof api.open === "function"),
+        nodeCount: nodes.length,
+        nodes: nodes.slice(0, 12).map(describeNode)
+      });
+    }
+
+    window.__retellDebug = {
+      dump: (label = "manual") => dumpRetellState(label)
+    };
+
+    function loadRetell() {
+      if (retellScriptInjected) {
+        log("Retell script already injected");
+        return;
+      }
+      retellScriptInjected = true;
+      const s = document.createElement("script");
+      s.id = "retell-widget";
+      s.type = "module";
+      s.src = "https://dashboard.retellai.com/retell-widget.js";
+      s.async = true;
+      s.crossOrigin = "anonymous";
+      s.dataset.publicKey = "public_key_ce467b0967fefdd77411d";
+      s.dataset.agentId = "agent_d4d75b677f6e852c63e81dc797";
+      s.dataset.title = "Qasten";
+      s.dataset.logoUrl = "https://www.qasten.com/favicon/light/favicon-32x32.png";
+      s.dataset.color = "#4a7dbd";
+      s.dataset.botName = "Qasten";
+      s.dataset.popupMessage = "";
+      s.dataset.showAiPopup = "false";
+      s.dataset.autoOpen = "false";
+      s.dataset.recaptchaKey = siteKey;
+      s.onload = () => {
+        retellScriptLoaded = true;
+        log("Retell script loaded");
+        dumpRetellState("After Retell script load");
+      };
+      s.onerror = () => {
+        error("Retell script failed to load");
+      };
+      document.head.appendChild(s);
+      log("Retell script injected");
+    }
+
+    const recaptcha = document.createElement("script");
+    recaptcha.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+    recaptcha.async = true;
+    recaptcha.defer = true;
+    recaptcha.onload = () => {
+      log("reCAPTCHA loaded");
+      dumpRetellState("After reCAPTCHA load");
+      loadRetell();
+    };
+    recaptcha.onerror = () => {
+      warn("reCAPTCHA failed to load; attempting Retell anyway");
+      loadRetell();
+    };
+    document.head.appendChild(recaptcha);
+    log("reCAPTCHA script injected");
+
+    function waitForRetellApi(timeoutMs = 15000) {
+      return new Promise((resolve) => {
+        const start = Date.now();
+        const tick = () => {
+          const api = window.retellWidget || window.RetellWidget || window.retell;
+          if (api && typeof api.open === "function") {
+            log("Retell API available");
+            resolve(api);
+            return;
+          }
+          if (Date.now() - start >= timeoutMs) {
+            warn("Timed out waiting for Retell API", {
+              retellScriptInjected,
+              retellScriptLoaded
+            });
+            resolve(null);
+            return;
+          }
+          setTimeout(tick, 200);
+        };
+        tick();
+      });
+    }
+
+    function openRetellChat(state = {}) {
+      const api = window.retellWidget || window.RetellWidget || window.retell;
+      if (api && typeof api.open === 'function') {
+        log("Opening chat via Retell API");
+        api.open();
+        return true;
+      }
+      log("Retell API not available yet");
+
+      if (!state.widgetClicked) {
+        const selectors = [
+          'div[style*="position: fixed"][style*="bottom: 24px"]',
+          'div[style*="position: fixed"][style*="right: 24px"]',
+          'div[style*="z-index: 999999"]'
+        ];
+        for (const selector of selectors) {
+          const widget = document.querySelector(selector);
+          if (widget) {
+            const btn = widget.querySelector('button') || widget.firstElementChild || widget;
+            if (btn) {
+              log("Opening chat via widget button");
+              btn.click();
+              state.widgetClicked = true;
+              return true;
+            }
+          }
+        }
+      }
+
+      if (!state.eventDispatched) {
+        log("Falling back to retell-open event");
+        window.dispatchEvent(new CustomEvent('retell-open'));
+        document.dispatchEvent(new CustomEvent('retell-open'));
+        state.eventDispatched = true;
+      }
+      return false;
+    }
+
+    function getRetellChatWindow() {
+      const direct = document.querySelector('#retell-chat.retell-chat-window');
+      if (direct) return direct;
+      const queue = Array.from(document.querySelectorAll('*')).filter((el) => el.shadowRoot);
+      while (queue.length) {
+        const host = queue.shift();
+        if (!host || !host.shadowRoot) continue;
+        const found = host.shadowRoot.querySelector('#retell-chat.retell-chat-window');
+        if (found) return found;
+        queue.push(...Array.from(host.shadowRoot.querySelectorAll('*')).filter((el) => el.shadowRoot));
+      }
+      return null;
+    }
+
+    function showRetellChatWindow() {
+      if (!openRequested) return false;
+      const chatWindow = getRetellChatWindow();
+      if (chatWindow) {
+        const display = window.getComputedStyle(chatWindow).display;
+        if (display === 'none') {
+          log("Ensuring chat window display");
+          chatWindow.style.setProperty('display', 'flex', 'important');
+        }
+        return true;
+      }
+      return false;
+    }
+
+    function observeRetellChatWindow() {
+      const watcher = new MutationObserver(() => {
+        if (showRetellChatWindow()) watcher.disconnect();
+      });
+      watcher.observe(document.body, { childList: true, subtree: true, attributes: true });
+      setTimeout(() => watcher.disconnect(), 20000);
+    }
+
+    function setupClickHandler() {
+      const trigger = document.getElementById('retell-chat-trigger');
+      if (!trigger) {
+        warn("Retell trigger button not found");
+        return;
+      }
+      log("Retell trigger ready");
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        log("Retell trigger clicked");
+        openRequested = true;
+        const openState = { widgetClicked: false, eventDispatched: false };
+        observeRetellChatWindow();
+        openRetellChat(openState);
+        showRetellChatWindow();
+        waitForRetellApi().then((api) => {
+          if (api && typeof api.open === "function") {
+            log("Opening chat after API ready");
+            api.open();
+            showRetellChatWindow();
+            return;
+          }
+          let attempts = 0;
+          const interval = setInterval(() => {
+            attempts++;
+            const opened = openRetellChat(openState);
+            const shown = showRetellChatWindow();
+            if (opened || shown || attempts >= 80) {
+              if (!opened && !shown) warn("Failed to open chat after retries");
+              clearInterval(interval);
+            }
+          }, 250);
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupClickHandler);
+    } else {
+      setupClickHandler();
+    }
+  })();
+</script>
 
     <!-- FAQ Section -->
     <section
@@ -399,6 +553,14 @@ const faqData = p.faq.items;
     .stat-card {
       background: white;
       backdrop-filter: none;
+    }
+
+    #my-cal-inline-ai-agents-consultation iframe {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      border: 0;
+      background: transparent;
     }
 
     .why-qasten-logos {
@@ -567,289 +729,6 @@ const faqData = p.faq.items;
     }
 
   </style>
-
-<script>
-  // Load Retell widget and setup click handler
-  (function() {
-    const siteKey = "6LfwMFosAAAAAAHI8qTCUd-jVZsrLh4_rxZxnxjS";
-    const log = (...args) => console.info("[Retell]", ...args);
-    const warn = (...args) => console.warn("[Retell]", ...args);
-    const error = (...args) => console.error("[Retell]", ...args);
-    let retellScriptInjected = false;
-    let retellScriptLoaded = false;
-    let openRequested = false;
-
-    function collectOpenShadowRoots() {
-      const roots = [];
-      const queue = Array.from(document.querySelectorAll('*')).filter((el) => el.shadowRoot);
-      while (queue.length) {
-        const host = queue.shift();
-        if (!host || !host.shadowRoot) continue;
-        roots.push(host.shadowRoot);
-        queue.push(...Array.from(host.shadowRoot.querySelectorAll('*')).filter((el) => el.shadowRoot));
-      }
-      return roots;
-    }
-
-    function findRetellNodes() {
-      const selector =
-        '[id*="retell" i], [class*="retell" i], [data-retell], iframe[src*="retell" i], iframe[src*="retellai" i]';
-      const nodes = Array.from(document.querySelectorAll(selector));
-      for (const root of collectOpenShadowRoots()) {
-        nodes.push(...Array.from(root.querySelectorAll(selector)));
-      }
-      return nodes;
-    }
-
-    function describeNode(node) {
-      if (!node) return null;
-      const tag = node.tagName ? node.tagName.toLowerCase() : "unknown";
-      const id = node.id || "";
-      const className = typeof node.className === "string" ? node.className : "";
-      const style = node.style ? node.style.cssText : "";
-      return { tag, id, className, style };
-    }
-
-    function dumpRetellState(label) {
-      const api = window.retellWidget || window.RetellWidget || window.retell;
-      const nodes = findRetellNodes();
-      log(label, {
-        retellScriptInjected,
-        retellScriptLoaded,
-        hasApi: !!api,
-        apiHasOpen: !!(api && typeof api.open === "function"),
-        nodeCount: nodes.length,
-        nodes: nodes.slice(0, 12).map(describeNode)
-      });
-    }
-
-    window.__retellDebug = {
-      dump: (label = "manual") => dumpRetellState(label)
-    };
-
-    function loadRetell() {
-      if (retellScriptInjected) {
-        log("Retell script already injected");
-        return;
-      }
-      retellScriptInjected = true;
-      const s = document.createElement("script");
-      s.id = "retell-widget";
-      s.type = "module";
-      s.src = "https://dashboard.retellai.com/retell-widget.js";
-      s.async = true;
-      s.crossOrigin = "anonymous";
-      s.dataset.publicKey = "public_key_ce467b0967fefdd77411d";
-      s.dataset.agentId = "agent_d4d75b677f6e852c63e81dc797";
-      s.dataset.title = "Qasten";
-      s.dataset.logoUrl = "https://www.qasten.com/favicon/light/favicon-32x32.png";
-      s.dataset.color = "#4a7dbd";
-      s.dataset.botName = "Qasten";
-      s.dataset.popupMessage = "";
-      s.dataset.showAiPopup = "false";
-      s.dataset.autoOpen = "false";
-      s.dataset.recaptchaKey = siteKey;
-      s.onload = () => {
-        retellScriptLoaded = true;
-        log("Retell script loaded");
-        dumpRetellState("After Retell script load");
-      };
-      s.onerror = () => {
-        error("Retell script failed to load");
-      };
-      document.head.appendChild(s);
-      log("Retell script injected");
-    }
-
-    const recaptcha = document.createElement("script");
-    recaptcha.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
-    recaptcha.async = true;
-    recaptcha.defer = true;
-    recaptcha.onload = () => {
-      log("reCAPTCHA loaded");
-      dumpRetellState("After reCAPTCHA load");
-      loadRetell();
-    };
-    recaptcha.onerror = () => {
-      warn("reCAPTCHA failed to load; attempting Retell anyway");
-      loadRetell();
-    };
-    document.head.appendChild(recaptcha);
-    log("reCAPTCHA script injected");
-
-    function waitForRetellApi(timeoutMs = 15000) {
-      return new Promise((resolve) => {
-        const start = Date.now();
-        const tick = () => {
-          const api = window.retellWidget || window.RetellWidget || window.retell;
-          if (api && typeof api.open === "function") {
-            log("Retell API available");
-            resolve(api);
-            return;
-          }
-          if (Date.now() - start >= timeoutMs) {
-            warn("Timed out waiting for Retell API", {
-              retellScriptInjected,
-              retellScriptLoaded
-            });
-            resolve(null);
-            return;
-          }
-          setTimeout(tick, 200);
-        };
-        tick();
-      });
-    }
-
-    // Function to open Retell chat
-    function openRetellChat(state = {}) {
-      // Try the API first (preferred)
-      const api = window.retellWidget || window.RetellWidget || window.retell;
-      if (api && typeof api.open === 'function') {
-        log("Opening chat via Retell API");
-        api.open();
-        return true;
-      }
-      log("Retell API not available yet");
-
-      // Try to find the Retell widget button
-      if (!state.widgetClicked) {
-        const selectors = [
-          'div[style*="position: fixed"][style*="bottom: 24px"]',
-          'div[style*="position: fixed"][style*="right: 24px"]',
-          'div[style*="z-index: 999999"]'
-        ];
-        
-        for (const selector of selectors) {
-          const widget = document.querySelector(selector);
-          if (widget) {
-            const btn = widget.querySelector('button') || widget.firstElementChild || widget;
-            if (btn) {
-              log("Opening chat via widget button");
-              btn.click();
-              state.widgetClicked = true;
-              return true;
-            }
-          }
-        }
-      }
-
-      // Fallback: Retell widget listens for this custom event
-      if (!state.eventDispatched) {
-        log("Falling back to retell-open event");
-        window.dispatchEvent(new CustomEvent('retell-open'));
-        document.dispatchEvent(new CustomEvent('retell-open'));
-        state.eventDispatched = true;
-      }
-      return false;
-    }
-
-    function getRetellChatWindow() {
-      // Search in light DOM first
-      const direct = document.querySelector('#retell-chat.retell-chat-window');
-      if (direct) return direct;
-
-      // Search within open shadow roots (Retell may render there)
-      const queue = Array.from(document.querySelectorAll('*')).filter((el) => el.shadowRoot);
-      while (queue.length) {
-        const host = queue.shift();
-        if (!host || !host.shadowRoot) continue;
-        const found = host.shadowRoot.querySelector('#retell-chat.retell-chat-window');
-        if (found) return found;
-        queue.push(...Array.from(host.shadowRoot.querySelectorAll('*')).filter((el) => el.shadowRoot));
-      }
-
-      return null;
-    }
-
-    // Ensure the chat window is visible (Retell uses display toggling)
-    function showRetellChatWindow() {
-      if (!openRequested) return false;
-      const chatWindow = getRetellChatWindow();
-      if (chatWindow) {
-        const display = window.getComputedStyle(chatWindow).display;
-        if (display === 'none') {
-          log("Ensuring chat window display");
-          chatWindow.style.setProperty('display', 'flex', 'important');
-        }
-        return true;
-      }
-      return false;
-    }
-
-    // Watch for the chat window to be injected, then force-show it
-    function observeRetellChatWindow() {
-      const watcher = new MutationObserver(() => {
-        // Attempt to force show on any DOM mutation since widget may mount detached
-        if (showRetellChatWindow()) {
-          watcher.disconnect();
-        }
-      });
-
-      watcher.observe(document.body, { childList: true, subtree: true, attributes: true });
-
-      // Stop watching after 20s to avoid leaks
-      setTimeout(() => watcher.disconnect(), 20000);
-    }
-
-    // Setup click handler when DOM is ready
-    function setupClickHandler() {
-      const trigger = document.getElementById('retell-chat-trigger');
-      if (!trigger) {
-        warn("Retell trigger button not found");
-        return;
-      }
-      log("Retell trigger ready");
-      dumpRetellState("Trigger ready");
-
-      trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        log("Retell trigger clicked");
-        dumpRetellState("Before open attempt");
-        openRequested = true;
-        const openState = { widgetClicked: false, eventDispatched: false };
-
-        // Start observing for injected window early
-        observeRetellChatWindow();
-
-        // Try immediately
-        openRetellChat(openState);
-        showRetellChatWindow();
-
-        // Wait for API readiness, then try again
-        waitForRetellApi().then((api) => {
-          if (api && typeof api.open === "function") {
-            log("Opening chat after API ready");
-            api.open();
-            showRetellChatWindow();
-            return;
-          }
-
-          // Retry if widget isn't ready yet
-          let attempts = 0;
-          const interval = setInterval(() => {
-            attempts++;
-            const opened = openRetellChat(openState);
-            const shown = showRetellChatWindow();
-            if (opened || shown || attempts >= 80) {
-              if (!opened && !shown) {
-                warn("Failed to open chat after retries");
-                dumpRetellState("Final retry state");
-              }
-              clearInterval(interval);
-            }
-          }, 250);
-        });
-      });
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setupClickHandler);
-    } else {
-      setupClickHandler();
-    }
-  })();
-</script>
 
 <script>
   // Intersection Observer for scroll animations

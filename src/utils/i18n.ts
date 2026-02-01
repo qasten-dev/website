@@ -10,20 +10,15 @@ export function getSafeCurrentLocale(locale: string | undefined) {
 const translations = {
   en: {
     metaDescription: {
-      home: "Qasten is the AI workspace for teams that replaces shadow AI. Collaborate with models, workflows, and data in one secure platform built for productivity.",
-      aboutUs:
-        "At Qasten, we believe the future of work is collective intelligence. Learn our mission, beliefs, and vision for secure, collaborative AI.",
-      security:
-        "Qasten puts security first: EU hosting, zero retention, admin controls, and built-in safeguards to replace risky Shadow AI.",
-      blog: "Insights on AI adoption, team productivity, and security. Explore Qasten's blog for practical strategies and expert perspectives.",
+      home: "Stop losing HVAC jobs to missed calls. Qasten builds a custom AI receptionist that answers customer questions and books appointments directly on your team's calendar. Live in 30 days.",
     },
     aboutUs: "About us",
     contactUs: "Start your Free 7-Day Pilot",
     pricing: "Pricing",
     nav: {
       problem: "The Problem",
-      solution: "Our Solution",
-      whyUs: "Why Us",
+      solution: "HVAC Voice Agent",
+      whyUs: "Why Qasten",
       faq: "FAQ",
     },
     price: {
@@ -270,7 +265,7 @@ const translations = {
       emailPlaceholder: "Enter your email",
       subscribe: "Subscribe",
       copyright: "© 2026 Qasten. All rights reserved.",
-      eu: "Privacy-first infrastructure",
+      eu: "Privacy-first infrastructure • You own your agent and data",
     },
     privacyPolicy: "Privacy policy",
     deepDives: "Deep Dives",
@@ -308,17 +303,18 @@ const translations = {
     },
     homePage: {
       meta: {
-        title: "Qasten - Revenue Agents That Turn Leads Into Meetings",
-        description: "We build two production-grade revenue agents inside your CRM and inbox. Live in 30 days. Full ownership with no vendor lock-in.",
+        title: "HVAC AI Receptionist | Qasten",
+        description:
+          "Stop losing HVAC jobs to missed calls. Qasten builds a custom AI voice agent that answers customer questions and books appointments directly on your team's calendar. Live in 30 days.",
       },
       hero: {
-        title: "Stop losing inbound leads to slow follow-up.",
+        title: "Stop losing HVAC jobs to missed calls.",
         subhead:
-          "Qasten builds a custom Lead Response Agent inside your CRM and inbox. It qualifies and categorizes every form submission, then books a meeting with the right rep’. Live in 30 days.",
+          "Qasten builds a custom AI receptionist for HVAC companies that answers every call, reply to customer questions, and books an appointment on the right person's calendar while the customer is still on the line. Live in 30 days.",
         trustChips: [
-          "Built in your stack (HubSpot, Salesforce, Gmail)",
-          "Goes live in 30 days",
-          "Full ownership, no vendor lock-in",
+          "Works with your existing software",
+          "24/7 call answering",
+          "Full ownership",
         ],
         ctas: {
           primary: "Start your Free 7-Day Pilot",
@@ -333,28 +329,31 @@ const translations = {
         },
       },
       stats: {
-        title: "Speed-to-Lead by the Numbers",
+        title: "Missed Calls by the Numbers",
         items: [
           {
-            value: "80%",
-            caption: "Teams respond after 5 minutes and 30% never respond at all.",
+            value: "24/7",
+            caption:
+              "Answers calls after-hours, weekends, and during peak-season spikes.",
           },
           {
-            value: "4h 50m",
-            caption: "Average first response time.",
+            value: "5 sec",
+            caption: "Pickup guarantee.",
           },
           {
-            value: "7x",
-            caption: "More likely to qualify leads when contacted within 1 hour.",
+            value: "1 call",
+            caption:
+              "Answers questions and books the appointment in the same call - no phone tag.",
           },
         ],
         banner: {
-          text: "78% of B2B buyers purchase from the first responder.",
+          text: "The first company that answers usually gets the job.",
         },
       },
       offers: {
-        title: "You're losing money to missed conversations",
-        subtitle: "You are paying for leads you never get to speak to. When response time slips, routing breaks and follow up turns generic. Buyers move on to whoever replies first.",
+        title: "You're losing money to missed calls.",
+        subtitle:
+          "In HVAC, speed wins. When a call hits voicemail during a heat wave, after hours, or while your team is on another line, customers don't wait. They call the next company until someone answers. Qasten fixes that by making sure every caller gets answers and a booked slot immediately.",
         recommended: "",
         labels: {
           bestFor: "Why teams deploy this",
@@ -451,20 +450,29 @@ const translations = {
         },
       },
       whyAgentBetter: {
-        title: "Why use AI Agents?",
-        subtitle: "Speed matters. Our AI agents respond instantly, qualify leads accurately, and never miss an opportunity, 24/7.",
+        title: "Why use an AI voice agent in HVAC?",
+        subtitle:
+          "Because your best leads don't come in neatly - they call. And if you don't answer fast, you don't get the job.",
+        bullets: [
+          "Answer common questions (service area, availability, pricing ranges, brands/equipment, warranties, membership plans - based on your rules)",
+          "Collect the right details (issue description, urgency, address, access notes, equipment type)",
+          "Route to the right person (service vs. maintenance vs. install/estimate - based on how you run your team)",
+          "Book directly on the calendar so the customer leaves the call with a confirmed appointment",
+        ],
+        insightLabel: "HVAC Insight",
         highlight: {
-          text: "78% of B2B buyers purchase from the first responder.",
+          text: "The first company that answers usually gets the job.",
         },
+        insightTagline: "This is why speed matters",
       },
       whyQasten: {
         title: "Why Choose Qasten",
-        subtitle: "Custom-built. Stack-native. Production-grade.",
+        subtitle: "Custom-built. Calendar-native. Production-grade.",
         reasons: [
-          "100% custom development tailored to your workflows and goals",
+          "100% custom voice agent tailored to your call flow, service area, and scheduling rules",
+          "Books on the right calendar (any calendar) with routing logic for the right person",
           "Full ownership with no vendor lock-in",
-          "Built by engineers who shipped systems at OpenAI, AWS, Uber, and Accor",
-          "Production-ready with audit logs and enterprise integrations",
+          "Production-ready with call summaries, audit logs, and safe escalation rules",
         ],
         builtByLabel: "Built by engineers from",
         companies: [
@@ -475,9 +483,9 @@ const translations = {
         ],
       },
       integrations: {
-        title: "Connects to Your Existing Stack",
+        title: "Connects to your calendar (and the tools you already use)",
         subtitle:
-          "Native integrations with Salesforce, HubSpot, Gmail, Slack, and 50+ tools, so your AI agents work where your team works.",
+          "No CRM? No problem. Qasten connects your voice agent directly to your team calendars so it can schedule immediately. If you do have tools, we can integrate those too - but the calendar is enough to start. We handle setup end-to-end: call flow, business rules, knowledge base, and calendar integration.",
         logos: [
           "Salesforce",
           "HubSpot",
@@ -528,10 +536,19 @@ const translations = {
         ctaSubtext: "",
       },
       midpageCta: {
-        title: "See Our Inbound Agent in Action",
+        title: "See the HVAC Voice Agent in action",
         text:
-          "Book a free 30-minute consultation. We'll show you how our AI agent can transform your response time, qualify leads instantly, and book more meetings while you focus on closing deals.",
+          "See it in the video then test it yourself. Call the number below and experience how the agent picks up in seconds, answers HVAC questions, qualifies the request, and books the right slot with the right person.",
         cta: "Start your Free 7-Day Pilot",
+        demoTitle: "Try Our Voice Agent",
+        demoText:
+          "Experience fast call handling, intelligent routing, and instant appointment booking.",
+        demoCta: "Try the Voice Agent",
+      },
+      bookMeetingCta: {
+        title: "Start your Free 7-Day Pilot",
+        text:
+          "Book a free 30-minute consultation. We'll show you how our AI agent can transform your response time, qualify leads instantly, and book more meetings while you focus on important work.",
       },
       booking: {
         title: "Book a Free Call",
@@ -542,54 +559,59 @@ const translations = {
         title: "Your Questions, Answered",
         items: [
           {
-            question: "What exactly is the Inbound AI Agent?",
+            question: "What exactly is the HVAC Voice Agent?",
             answer:
-              "Our Inbound AI Agent is a purpose-built system that instantly responds to new leads, qualifies them based on your criteria, and books meetings directly into your calendar, all while integrating seamlessly with your CRM and email.",
+              "It's a custom AI phone agent built for HVAC companies. It answers inbound calls, responds to customer questions, gathers the right info, and books an appointment directly on the right calendar.",
+          },
+          {
+            question: "Do I need a CRM?",
+            answer:
+              "Not necessarily. If you have one we integrate seamlessly with it. If you don't have one, we can run everything from your calendars. If you want more visibility, we'll set up a lightweight call/lead log so you have a simple system without adopting a full CRM.",
+          },
+          {
+            question: "What if I already have a receptionist?",
+            answer:
+              "You can use it as a supplement to your existing receptionist. When the receptionist is not available, the AI voice agent can answer common questions, book appointments, and log calls/leads. Enabling and disabling the AI voice agent is easy and can be done in seconds based on your business needs.",
+          },
+          {
+            question: "Can it answer customer questions during the call?",
+            answer:
+              "Yes. We train it on your services, policies, coverage area, and FAQs so it can handle the full conversation - not just \"take a message.\"",
+          },{
+            question: "What if the agent isn't confident about something?",
+            answer:
+              "It's designed to know its limits. It escalates to your team with full context instead of guessing.",
+          },
+          {
+            question: "Can it book directly with the right person?",
+            answer:
+              "Yes. We configure routing rules so the agent schedules with the right calendar/person based on the request type (service vs. maintenance vs. estimate, etc.).",
           },
           {
             question: "How fast can I get started?",
             answer:
-              "Setup typically takes 2-3 weeks. We integrate with your CRM, configure qualification criteria, and train the agent on your business. You can start with a 7-day pilot to see results before committing.",
+              "Setup is typically 2-3 weeks, and fully live in about 30 days depending on complexity. You can start with a 7-day pilot.",
           },
           {
             question: "What's included in the 7-day risk-free pilot?",
             answer:
-              "During the pilot, our agent handles your inbound leads in real-time. If you're not satisfied with the results within 7 days, you can opt out without paying anything. No contracts, no commitments, just results.",
+              "The agent handles an agreed slice of your inbound calls (for example: after-hours or overflow). If you're not satisfied within 7 days, you can opt out without paying - no contracts, no commitments.",
+          },
+          
+          {
+            question: "How do you prevent double-booking or scheduling conflicts?",
+            answer:
+              "We use calendar checks and collision rules to avoid conflicts and book only valid slots.",
           },
           {
-            question: "How does the agent qualify leads?",
+            question: "Is my data secure?",
             answer:
-              "The agent asks intelligent questions based on your ideal customer profile, validates budget and timeline, assesses fit, and scores leads automatically. It only escalates qualified opportunities to your team.",
+              "Yes. You maintain ownership and control. We implement audit logs and privacy-first practices.",
           },
-          {
-            question: "What happens to unqualified leads?",
-            answer:
-              "Unqualified leads are automatically added to nurture sequences with appropriate follow-up cadences. Nothing falls through the cracks; every lead gets a proper response and path forward.",
-          },
-          {
-            question: "Can the agent book meetings directly?",
-            answer:
-              "Yes! Once a lead is qualified, the agent can access your team's calendars and book meetings instantly, eliminating back-and-forth scheduling delays.",
-          },
-          {
-            question: "What if the agent isn't confident about something?",
-            answer:
-              "The agent is designed to know its limits. When it encounters uncertainty, it escalates to your team with full context rather than guessing or providing incorrect information.",
-          },
-          {
-            question: "How do you prevent conflicts with my sales team?",
-            answer:
-              "Smart collision detection checks CRM ownership and recent activity. The agent automatically defers to human reps when they're actively working a lead, ensuring seamless collaboration.",
-        },
-        {
-          question: "Is my data secure?",
-          answer:
-              "Absolutely. Your data is protected with enterprise-grade security. You maintain full ownership and control. We maintain comprehensive audit logs and never use your data for training.",
-        },
           {
             question: "What guarantees do you offer?",
             answer:
-              "<strong>7-Day Risk-Free Pilot:</strong> Try the agent for 7 days. If you're not satisfied, opt out without paying anything.<br><br><strong>Response Time Guarantee:</strong> First response within 2 minutes, 24/7.<br><br><strong>Integration Support:</strong> We handle all technical setup and CRM integration; you don't lift a finger.",
+              "• <strong>7-Day Risk-Free Pilot:</strong> Opt out within 7 days if you're not satisfied.<br><br>• <strong>Response Time Guarantee:</strong> Pickup within 2 minutes, 24/7 (typically seconds).<br><br>• <strong>Integration Support:</strong> We handle setup and calendar integration; you don't lift a finger.",
           },
         ],
       },
