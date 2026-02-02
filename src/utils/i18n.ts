@@ -314,7 +314,7 @@ const translations = {
         trustChips: [
           "Works with your existing software",
           "24/7 call answering",
-          "Full ownership",
+          "Knows your business",
         ],
         ctas: {
           primary: "Start your Free 7-Day Pilot",
