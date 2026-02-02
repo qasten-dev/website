@@ -10,7 +10,7 @@ export function getSafeCurrentLocale(locale: string | undefined) {
 const translations = {
   en: {
     metaDescription: {
-      home: "Stop losing HVAC jobs to missed calls. Qasten builds a custom AI receptionist that answers customer questions and books appointments directly on your team's calendar. Live in 30 days.",
+      home: "Stop losing HVAC jobs to missed calls. Qasten builds a custom AI receptionist that answers customer questions and books appointments directly on your team's calendar. Live in 48 hours.",
     },
     aboutUs: "About us",
     contactUs: "Start your Free 7-Day Pilot",
@@ -305,12 +305,12 @@ const translations = {
       meta: {
         title: "HVAC AI Receptionist | Qasten",
         description:
-          "Stop losing HVAC jobs to missed calls. Qasten builds a custom AI voice agent that answers customer questions and books appointments directly on your team's calendar. Live in 30 days.",
+          "Stop losing HVAC jobs to missed calls. Qasten builds a custom AI voice agent that answers customer questions and books appointments directly on your team's calendar. Live in 48 hours.",
       },
       hero: {
         title: "Stop losing HVAC jobs to missed calls.",
         subhead:
-          "Qasten builds a custom AI receptionist for HVAC companies that answers every call, reply to customer questions, and books an appointment on the right person's calendar while the customer is still on the line. Live in 30 days.",
+          "Qasten builds a custom AI receptionist for HVAC companies that answers every call, reply to customer questions, and books an appointment on the right person's calendar while the customer is still on the line. Live in 48 hours.",
         trustChips: [
           "Works with your existing software",
           "24/7 call answering",
@@ -501,7 +501,7 @@ const translations = {
         ],
       },
       howItWorks: {
-        title: "Live in 30 Days - Without Disrupting Your CRM",
+        title: "Live in 48 hours - Without Disrupting Your CRM",
         subtitle:
           "A production-safe rollout: build in isolation, launch with guardrails, and improve weekly-so you get meetings, not mess.",
         phases: [
@@ -592,7 +592,7 @@ const translations = {
           {
             question: "How fast can I get started?",
             answer:
-              "Setup is typically 2-3 weeks, and fully live in about 30 days depending on complexity. You can start with a 7-day pilot.",
+              "Setup is typically 48 hours, and fully live in about 30 days depending on complexity. You can start with a 7-day pilot free of charges.",
           },
           {
             question: "What's included in the 7-day risk-free pilot?",
