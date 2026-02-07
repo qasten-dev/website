@@ -18,6 +18,7 @@ const translations = {
     nav: {
       problem: "The Problem",
       solution: "HVAC Voice Agent",
+      howItWorks: "How It Works",
       whyUs: "Why Qasten",
       faq: "FAQ",
     },
@@ -305,12 +306,14 @@ const translations = {
       meta: {
         title: "HVAC AI Receptionist | Qasten",
         description:
-          "Stop losing HVAC jobs to missed calls. Qasten builds a custom AI voice agent that answers customer questions and books appointments directly on your team's calendar. Live in 48 hours.",
+          "Stop losing $3,900/month to missed leads. Qasten captures HVAC leads 24/7, answers instantly, and books jobs automatically.",
       },
       hero: {
-        title: "Stop losing HVAC jobs to missed calls.",
+        titlePrefix: "Stop Losing",
+        titleHighlight: "$3,900/month",
+        titleSuffix: "to Missed Leads",
         subhead:
-          "Qasten builds a custom AI receptionist for HVAC companies that answers every call, reply to customer questions, and books an appointment on the right person's calendar while the customer is still on the line. Live in 48 hours.",
+          "Every unanswered inquiry is a job going to your competitor. Qasten captures leads 24/7 across calls, web forms, and follow-ups, then books jobs automatically.",
         trustChips: [
           "Works with your existing software",
           "24/7 call answering",

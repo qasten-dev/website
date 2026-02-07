@@ -32,7 +32,7 @@ const pageTitle = details?.title ?? "Agent Specification";
         </p>
         <a
           href={bookCallUrl}
-          class="bg-primary hover:bg-primary/90 text-primary-foreground inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors"
+          class="cta-button inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold"
         >
           {p.hero.ctas.primary}
           <Icon name="mdi:calendar-blank" class="text-base" />
@@ -43,7 +43,7 @@ const pageTitle = details?.title ?? "Agent Specification";
     <section class="mx-auto w-full max-w-6xl px-4 pb-20 sm:px-6">
       <div class="grid gap-6 md:grid-cols-2">
         {details.sections.map((section) => (
-          <div class="animate-on-scroll rounded-2xl bg-card/60 p-6 shadow-sm ring-1 ring-border/15">
+          <div class="airvvy-card animate-on-scroll p-6">
             <h2 class="text-lg font-semibold">{section.heading}</h2>
             <ul class="mt-4 space-y-2 text-sm text-muted-foreground">
               {section.bullets.map((bullet) => (
