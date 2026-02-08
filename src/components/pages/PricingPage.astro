@@ -66,7 +66,7 @@ const trustBadges = [
       <div class="absolute right-8 bottom-10 h-80 w-80 rounded-full bg-[var(--brand-accent)]/10 blur-[120px]"></div>
 
       <div class="container-custom relative z-10 py-20 text-center md:py-28 lg:py-32">
-        <div class="animate-on-scroll mx-auto max-w-4xl">
+        <div class="mx-auto max-w-4xl">
           <span class="badge badge-dark mb-8">Pricing</span>
           <h1 class="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Investment That{" "}
@@ -75,8 +75,8 @@ const trustBadges = [
             </span>
           </h1>
           <p class="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-neutral-300 sm:text-2xl">
-            The average HVAC company loses $47,000/year to missed leads. Our
-            clients typically see 10x ROI with multi-channel intake.
+            Every HVAC company is different. Get a custom quote tailored to your
+            call volume, channels, and service area.
           </p>
 
           <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -117,7 +117,7 @@ const trustBadges = [
 
           <div class="pricing-main-card airvvy-card">
             <!-- Card Header -->
-            <div class="text-center pt-8 pb-2 px-6">
+            <div class="text-center pt-8 pb-4 px-6">
               <h2 class="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
                 Multi-Channel HVAC Intake
               </h2>
@@ -126,47 +126,18 @@ const trustBadges = [
               </p>
             </div>
 
-            <!-- Pricing Boxes -->
-            <div class="grid gap-4 px-6 py-6 sm:grid-cols-2 sm:px-8">
-              <div class="pricing-box">
-                <span class="pricing-box-label">One-Time Setup</span>
-                <div class="pricing-box-amount">
-                  <span class="pricing-dollar">$5,000</span>
-                  <span class="pricing-separator">–</span>
-                  <span class="pricing-dollar">$7,500</span>
-                </div>
-                <p class="pricing-box-desc">
-                  All channels, AI training, integrations, testing
-                </p>
-              </div>
-
-              <div class="pricing-box pricing-box-highlight">
-                <span class="pricing-box-label pricing-box-label-highlight">Monthly Operations</span>
-                <div class="pricing-box-amount">
-                  <span class="pricing-dollar">$2,000</span>
-                  <span class="pricing-separator">–</span>
-                  <span class="pricing-dollar">$4,000</span>
-                  <span class="pricing-suffix">/mo</span>
-                </div>
-                <p class="pricing-box-desc">
-                  24/7 multi-channel intake, booking, follow-ups, support
-                </p>
-              </div>
-            </div>
-
-            <!-- Annual Recovery -->
+            <!-- Custom Quote Message -->
             <div class="mx-6 mb-6 sm:mx-8">
-              <div class="pricing-recovery">
-                <div class="flex items-center gap-3">
-                  <span class="pricing-recovery-icon">
-                    <Icon name="mdi:trending-up" class="text-xl text-primary" />
-                  </span>
-                  <div>
-                    <p class="text-base font-bold text-neutral-900">Average Annual Recovery</p>
-                    <p class="text-sm text-neutral-500">Based on typical HVAC company results</p>
-                  </div>
+              <div class="pricing-quote-box">
+                <span class="pricing-quote-icon">
+                  <Icon name="mdi:tune-variant" class="text-2xl text-primary" />
+                </span>
+                <div>
+                  <p class="text-base font-bold text-neutral-900">Custom Pricing for Your Business</p>
+                  <p class="mt-1 text-sm leading-relaxed text-neutral-500">
+                    Every HVAC company is different. We tailor pricing based on your call volume, channels, and service area — so you only pay for what you need.
+                  </p>
                 </div>
-                <span class="pricing-recovery-amount">$47,000+</span>
               </div>
             </div>
 
@@ -185,11 +156,8 @@ const trustBadges = [
               ))}
             </div>
 
-            <!-- Disclaimer + CTA -->
+            <!-- CTA -->
             <div class="px-6 pb-8 text-center sm:px-8">
-              <p class="mb-5 text-sm text-neutral-400">
-                Pricing varies based on call volume. Get an exact quote after your free audit.
-              </p>
               <a
                 href={bookCallURL}
                 class="cta-button group inline-flex min-h-14 px-9 py-4 text-base font-bold"
@@ -355,101 +323,26 @@ const trustBadges = [
     border-color: color-mix(in srgb, var(--primary), var(--border) 50%);
   }
 
-  /* Pricing Boxes */
-  .pricing-box {
-    border-radius: 0.85rem;
-    border: 1px solid var(--border);
-    padding: 1.25rem 1rem;
-    text-align: center;
-    background: var(--background);
-  }
-
-  .pricing-box-highlight {
-    border-color: var(--primary);
-    border-width: 2px;
-    background: rgb(74 125 189 / 0.04);
-  }
-
-  .pricing-box-label {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #64748b;
-    margin-bottom: 0.6rem;
-  }
-
-  .pricing-box-label-highlight {
-    color: var(--primary);
-  }
-
-  .pricing-box-amount {
+  /* Custom Quote Box */
+  .pricing-quote-box {
     display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 0.25rem;
-    flex-wrap: wrap;
-  }
-
-  .pricing-dollar {
-    font-family: var(--font-display);
-    font-size: clamp(1.6rem, 3.5vw, 2.15rem);
-    font-weight: 800;
-    color: #0f172a;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-  }
-
-  .pricing-separator {
-    font-size: 1.1rem;
-    color: #94a3b8;
-    margin-inline: 0.1rem;
-  }
-
-  .pricing-suffix {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #94a3b8;
-  }
-
-  .pricing-box-desc {
-    margin-top: 0.55rem;
-    font-size: 0.78rem;
-    line-height: 1.4;
-    color: #64748b;
-  }
-
-  /* Recovery */
-  .pricing-recovery {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
     gap: 1rem;
     border-radius: 0.85rem;
     border: 1px solid var(--border);
     background: rgb(74 125 189 / 0.04);
-    padding: 1rem 1.25rem;
+    padding: 1.25rem 1.5rem;
   }
 
-  .pricing-recovery-icon {
+  .pricing-quote-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 999px;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
     background: rgb(74 125 189 / 0.12);
     flex-shrink: 0;
-  }
-
-  .pricing-recovery-amount {
-    font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 800;
-    color: var(--primary);
-    letter-spacing: -0.02em;
-    white-space: nowrap;
   }
 
   /* Features grid inside pricing card */
