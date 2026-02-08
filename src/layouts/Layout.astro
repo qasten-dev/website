@@ -4,21 +4,17 @@ import FaviconLinks from "@/components/FaviconLinks.astro";
 import LanguageButton from "@/components/LanguageButton.astro";
 import Logo from "@/components/Logo.astro";
 import "@/styles/global.css";
-import { getRedirectUrl, SUBSCRIBE_FORM_URL } from "@/utils/forms";
 import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
-import { Icon } from "astro-icon/components";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import path from "path";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 const t = getTranslations(currentLocale);
-
-const subscribeSuccessUrl = getRedirectUrl({
-  path: "subscription-success",
-  url: Astro.url,
-  site: Astro.site,
+const homeURL = getRelativeLocaleUrl(currentLocale, "/").replace(/\/$/, "");
+const howItWorksURL = getRelativeLocaleUrl(
   currentLocale,
-});
+  "/how-it-works",
+).replace(/\/$/, "");
 
 const contactUsURL = getRelativeLocaleUrl(
   currentLocale,
@@ -47,10 +43,8 @@ const fontFilesGlob = import.meta.glob("/public/fonts/*.woff2", {
 const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
 
 const navItems = [
-  { label: t.nav.problem, href: "#offers" },
-  { label: t.nav.solution, href: "#why-agent-better" },
-  { label: t.nav.whyUs, href: "#why-qasten" },
-  { label: t.nav.faq, href: "#faq" },
+  { label: t.nav.howItWorks, href: howItWorksURL },
+  { label: t.nav.faq, href: `${homeURL}/#faq` },
 ];
 ---
 
@@ -76,6 +70,12 @@ const navItems = [
     <FaviconLinks />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     {
       fontFiles.map((file) => (
@@ -111,33 +111,42 @@ const navItems = [
   >
     {!noBackground && <BackgroundStripes />}
     <header
-      class="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/40 shadow-sm"
+      class="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-xl"
     >
-      <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
-        <div class="flex-1">
+      <div class="container-custom relative flex h-16 items-center md:h-20">
+        <!-- Logo — left-aligned, takes equal space -->
+        <div class="flex flex-1 items-center justify-start min-w-0">
           <a
-            class="group flex cursor-pointer items-center space-x-2.5 transition-opacity hover:opacity-80"
+            class="group inline-flex items-center gap-2.5"
             href={getRelativeLocaleUrl(currentLocale, "/")}
-            ><Logo width={42} height={42} /><span
-              class="text-2xl font-bold tracking-tight">Qasten</span
-            ></a
           >
+            <span
+              class="rounded-xl border border-primary/20 p-1.5 shadow-md shadow-primary/25 transition-shadow group-hover:shadow-lg group-hover:shadow-primary/30"
+            >
+              <Logo width={30} height={30} />
+            </span>
+            <span class="font-[var(--font-display)] text-2xl font-bold tracking-tight">
+              Qasten
+            </span>
+          </a>
         </div>
 
-        <nav class="hidden items-center space-x-2 font-medium md:flex lg:space-x-4">
+        <!-- Nav — centered absolutely so it stays perfectly centered -->
+        <nav class="hidden items-center justify-center gap-1 font-medium md:flex md:absolute md:left-1/2 md:-translate-x-1/2 md:z-20 whitespace-nowrap">
           {navItems.map((item) => (
             <a
               href={item.href}
-              class="hover:bg-secondary hover:text-foreground rounded-lg px-4 py-2.5 transition-all text-muted-foreground"
+              class="rounded-lg px-4 py-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <div class="hidden flex-1 justify-end sm:flex">
+        <!-- CTA — right-aligned, takes equal space -->
+        <div class="hidden flex-1 items-center justify-end sm:flex min-w-0">
           <a
-            class="bg-primary hover:bg-primary/90 text-primary-foreground flex w-fit cursor-pointer items-center rounded-lg px-5 py-2.5 font-semibold shadow-sm transition-all hover:shadow-md"
+            class="cta-button min-h-12 px-6 py-3 text-sm font-bold"
             href={contactUsURL}
           >
             {t.contactUs}
@@ -147,7 +156,7 @@ const navItems = [
         <button
           id="hamburger"
           aria-label="Open menu"
-          class="flex cursor-pointer flex-col space-y-1.5 hover:space-y-2 sm:hidden transition-all p-2 rounded-lg hover:bg-secondary"
+          class="flex cursor-pointer flex-col space-y-1.5 rounded-lg p-2 transition-all hover:bg-secondary sm:hidden md:hidden"
         >
           <span class="bg-foreground h-0.5 w-6 rounded-full"></span>
           <span class="bg-foreground h-0.5 w-6 rounded-full"></span>
@@ -156,51 +165,60 @@ const navItems = [
       </div>
     </header>
 
-      <div
-        id="mobile-menu"
-        class="dark text-foreground bg-background/95 backdrop-blur-lg fixed inset-0 z-50 hidden h-screen w-screen"
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 hidden h-screen w-screen bg-neutral-950/95 text-white backdrop-blur-lg"
+    >
+      <button
+        id="close-mobile-menu-button"
+        class="absolute top-6 right-6 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full text-5xl transition-colors hover:bg-white/10 hover:text-[var(--brand-accent)]"
       >
-        <button
-          id="close-mobile-menu-button"
-          class="absolute top-6 right-6 cursor-pointer text-5xl hover:text-primary transition-colors rounded-full w-14 h-14 flex items-center justify-center hover:bg-secondary"
-        >
-          &times;
-        </button>
-        <nav
-          class="flex h-screen flex-col items-center justify-center space-y-10 text-3xl font-bold px-8"
-        >
-          {navItems.map((item) => (
-            <a href={item.href} class="hover:text-primary transition-colors hover:scale-105 transform"> {item.label} </a>
-          ))}
-          <a href={contactUsURL} class="bg-primary text-primary-foreground px-8 py-4 rounded-xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"> {t.contactUs} </a>
-          <div class="flex gap-3 pt-4">
-            <LanguageButton locale="en" size="lg" />
-          </div>
-        </nav>
-      </div>
-    </header>
+        &times;
+      </button>
+      <nav
+        class="flex h-screen flex-col items-center justify-center space-y-8 px-8 text-3xl font-bold"
+      >
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="rounded-xl px-4 py-2 transition-colors hover:bg-white/10 hover:text-[var(--brand-accent)]"
+          >
+            {item.label}
+          </a>
+        ))}
+        <a href={contactUsURL} class="cta-button min-h-14 px-10 py-4 text-lg">
+          {t.contactUs}
+        </a>
+        <div class="flex gap-3 pt-2">
+          <LanguageButton locale="en" size="lg" />
+        </div>
+      </nav>
+    </div>
 
     <slot />
 
     <!-- Force sticky footer -->
     <main class="flex-1"></main>
-    <footer class="text-foreground bg-card mx-auto mt-32 w-full border-t border-border/40">
-      <div class="mx-auto max-w-7xl px-6 py-16">
+    <footer class="text-foreground mt-32 w-full bg-background">
+      <div class="container-custom py-16">
         <div class="flex flex-col gap-12 md:flex-row md:justify-between md:gap-24">
           <div>
             <a
               href={getRelativeLocaleUrl(currentLocale, "/")}
-              class="group flex items-center space-x-2.5 transition-opacity hover:opacity-80"
-              ><Logo width={42} height={42} /><span
-                class="text-2xl font-bold tracking-tight">Qasten</span
+              class="group inline-flex items-center gap-2.5"
+              ><span
+                class="rounded-xl border border-primary/20 p-1.5 shadow-sm shadow-primary/20"
+                ><Logo width={30} height={30} /></span
+              ><span class="font-[var(--font-display)] text-2xl font-bold tracking-tight"
+                >Qasten</span
               ></a
             >
-            <p class="text-muted-foreground mt-3 text-sm font-medium sm:text-base">
+            <p class="text-muted-foreground mt-3 text-sm font-medium sm:text-base md:whitespace-nowrap">
               {t.footer.eu}
             </p>
-            <ul class="text-foreground/70 mt-10 space-y-4 text-sm font-medium">
+            <ul class="mt-10 space-y-4 text-sm font-medium text-neutral-700">
               <li>
-                <a href={contactUsURL} class="hover:text-primary transition-colors hover:underline underline-offset-4"
+                <a href={contactUsURL} class="transition-colors hover:text-primary hover:underline underline-offset-4"
                   >{t.contactUs}</a
                 >
               </li>
@@ -209,15 +227,15 @@ const navItems = [
                   href="https://www.linkedin.com/company/qasten"
                   target="_blank"
                   rel="noopener"
-                  class="hover:text-primary transition-colors hover:underline underline-offset-4">LinkedIn</a
+                  class="transition-colors hover:text-primary hover:underline underline-offset-4">LinkedIn</a
                 >
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="mx-auto mt-12 flex items-center border-t border-border/40 pt-8">
-          <div class="text-muted-foreground text-xs font-medium sm:text-sm">
+        <div class="mx-auto mt-12 flex items-center justify-center border-t border-border/80 pt-8">
+          <div class="text-muted-foreground text-center text-xs font-medium sm:text-sm whitespace-nowrap">
             {t.footer.copyright}
           </div>
         </div>

@@ -4,6 +4,18 @@
 
 @theme {
   --font-inter: "Inter", var(--font-sans);
+  --font-display: "Space Grotesk", "Inter", var(--font-sans);
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #020617;
 }
 
 /* https://gwfh.mranftl.com/fonts/inter?subsets=latin */
@@ -79,70 +91,72 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Default theme styles - Soft blue palette from Coolors
-   https://coolors.co/palette/edf2fb-e2eafc-d7e3fc-ccdbfd-c1d3fe-b6ccfe-abc4ff */
+/* Soft blue palette — neutralised cards/borders so content blends
+   Primary accent from Coolors blue scale, surfaces kept near-white */
 :root {
-  --radius: 0.75rem;
-  /* Light theme with soft blue palette */
-  --card: #ffffff; /* Clean white cards */
-  --card-foreground: #1a2744; /* Dark navy for contrast */
+  --radius: 1rem;
+  --card: #ffffff;
+  --card-foreground: #1e3a5f;
   --popover: #ffffff;
-  --popover-foreground: #1a2744;
-  --primary: #4a7dbd; /* Rich blue for primary actions */
+  --popover-foreground: #1e3a5f;
+  --primary: #4a7dbd;
   --primary-foreground: #ffffff;
-  --secondary: #f1f5fd; /* Very light blue */
+  --secondary: #f1f5f9;
   --secondary-foreground: #2c4a6e;
-  --muted: #e8eef9; /* Soft blue */
-  --muted-foreground: #5a6a8a; /* Medium blue-gray for muted text */
-  --accent: #e2eafc; /* Light blue accent */
-  --accent-foreground: #1a2744;
-  --destructive: #dc2626; /* Red for destructive actions */
-  --border: #d7e3fc; /* Subtle blue border */
-  --input: #f8faff; /* Very light blue input background */
-  --ring: #4a7dbd; /* Match primary for focus ring */
-  --chart-1: #4a7dbd; /* Blue */
-  --chart-2: #059669; /* Emerald */
-  --chart-3: #dc2626; /* Red */
-  --chart-4: #7c3aed; /* Violet */
-  --chart-5: #0891b2; /* Cyan */
-  --sidebar: #f8faff; /* Light blue sidebar */
-  --sidebar-foreground: #1a2744;
+  --muted: #f1f5f9;
+  --muted-foreground: #4a6a8a;
+  --accent: #dbeafe;
+  --accent-foreground: #1e3a5f;
+  --destructive: #dc2626;
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #4a7dbd;
+  --chart-1: #4a7dbd;
+  --chart-2: #059669;
+  --chart-3: #dc2626;
+  --chart-4: #7c3aed;
+  --chart-5: #0891b2;
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #1e3a5f;
   --sidebar-primary: #4a7dbd;
-  --sidebar-primary-foreground: #f8faff;
-  --sidebar-accent: #e2eafc;
-  --sidebar-accent-foreground: #1a2744;
-  --sidebar-border: #d7e3fc;
+  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-accent: #dbeafe;
+  --sidebar-accent-foreground: #1e3a5f;
+  --sidebar-border: #e2e8f0;
   --sidebar-ring: #4a7dbd;
-  --background: #f8faff; /* Lightest blue background */
-  --foreground: #1a2744; /* Dark navy text */
+  --background: #f8fafc;
+  --foreground: #1e3a5f;
+  --brand-secondary: #4a7dbd;
+  --brand-secondary-dark: #1e3a5f;
+  --brand-secondary-light: #93b4e4;
+  --brand-accent: #6b9fff;
 }
 
 .dark {
-  /* Dark theme with deep blue palette */
-  --background: #0f172a; /* Very dark blue background */
-  --foreground: #edf2fb; /* Lightest blue for text */
-  --card: #1e293b; /* Dark blue-gray card */
+  --background: #0f172a;
+  --foreground: #edf2fb;
+  --card: #1e293b;
   --card-foreground: #e2eafc;
   --popover: #1e293b;
   --popover-foreground: #e2eafc;
-  --primary: #6b9fff; /* Bright blue for dark mode */
+  --primary: #6b9fff;
   --primary-foreground: #0f172a;
-  --secondary: #334155; /* Dark slate secondary */
+  --secondary: #334155;
   --secondary-foreground: #d7e3fc;
-  --muted: #283548; /* Dark muted blue */
-  --muted-foreground: #94a3b8; /* Slate for muted text */
-  --accent: #3b5998; /* Medium dark blue accent */
+  --muted: #283548;
+  --muted-foreground: #94a3b8;
+  --accent: #3b5998;
   --accent-foreground: #e2eafc;
-  --destructive: #ef4444; /* Red for dark mode */
-  --border: #475569; /* Slate border */
-  --input: #1e293b; /* Dark input background */
-  --ring: #6b9fff; /* Match primary for focus ring */
-  --chart-1: #6b9fff; /* Blue */
-  --chart-2: #34d399; /* Emerald */
-  --chart-3: #f87171; /* Red */
-  --chart-4: #a78bfa; /* Violet */
-  --chart-5: #22d3ee; /* Cyan */
-  --sidebar: #1a2744; /* Dark blue sidebar */
+  --destructive: #ef4444;
+  --border: #475569;
+  --input: #1e293b;
+  --ring: #6b9fff;
+  --chart-1: #6b9fff;
+  --chart-2: #34d399;
+  --chart-3: #f87171;
+  --chart-4: #a78bfa;
+  --chart-5: #22d3ee;
+  --sidebar: #1a2744;
   --sidebar-foreground: #d7e3fc;
   --sidebar-primary: #6b9fff;
   --sidebar-primary-foreground: #0f172a;
@@ -156,35 +170,169 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
-  
-  /* Improved scrollbar styling */
+
+  h1,
+  h2 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    line-height: 1.08;
+  }
+
+  h2 {
+    line-height: 1.12;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.25;
+  }
+
+  a {
+    transition: color 0.2s ease;
+  }
+
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
-  
+
   ::-webkit-scrollbar-track {
-    @apply bg-muted/30;
+    @apply bg-secondary;
   }
-  
+
   ::-webkit-scrollbar-thumb {
-    @apply bg-muted-foreground/30 rounded-full;
+    @apply bg-muted-foreground/40 rounded-full;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/50;
+    @apply bg-muted-foreground/70;
   }
-  
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Better focus visible styles */
+
   *:focus-visible {
     @apply outline-2 outline-offset-2 outline-ring;
+  }
+}
+
+@layer components {
+  .container-custom {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1280px;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-custom {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding-inline: 3rem;
+    }
+  }
+
+  .section-spacing {
+    padding-block: 4.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-spacing {
+      padding-block: 6rem;
+    }
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .badge-dark {
+    border: 1px solid rgb(255 255 255 / 0.15);
+    background: rgb(255 255 255 / 0.08);
+    color: rgb(248 250 252 / 0.92);
+    backdrop-filter: blur(6px);
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    box-shadow: 0 4px 14px rgb(74 125 189 / 0.22);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-1px);
+    background: color-mix(in srgb, var(--primary), #000 8%);
+    box-shadow: 0 6px 20px rgb(74 125 189 / 0.3);
+  }
+
+  .cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgb(74 125 189 / 0.18);
+  }
+
+  .cta-outline {
+    border: 2px solid rgb(255 255 255 / 0.25);
+    color: rgb(248 250 252 / 0.95);
+    transition: all 0.25s ease;
+  }
+
+  .cta-outline:hover {
+    border-color: rgb(255 255 255 / 0.45);
+    background: rgb(255 255 255 / 0.08);
+  }
+
+  .airvvy-card {
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgb(15 23 42 / 0.04);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .airvvy-card:hover {
+    border-color: color-mix(in srgb, var(--primary), var(--border) 60%);
+    box-shadow: 0 4px 12px rgb(15 23 42 / 0.07);
+  }
+
+  .hero-mesh {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(at 40% 20%, rgb(74 125 189 / 0.26) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgb(182 204 254 / 0.22) 0px, transparent 50%),
+      radial-gradient(at 0% 0%, rgb(215 227 252 / 0.16) 0px, transparent 50%),
+      radial-gradient(at 80% 100%, rgb(30 58 95 / 0.28) 0px, transparent 55%);
+    opacity: 0.74;
   }
 }
