@@ -47,12 +47,12 @@ const faqData = p.faq.items;
           <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="#book-call"
-              class="cta-button group min-h-16 px-10 py-5 text-lg font-bold"
+              class="cta-button group min-h-16 whitespace-nowrap px-10 py-5 text-lg font-bold"
             >
               {p.hero.ctas.primary}
               <Icon
                 name="mdi:calendar-blank"
-                class="text-xl transition-transform group-hover:translate-x-0.5"
+                class="text-xl shrink-0 transition-transform group-hover:translate-x-0.5"
               />
             </a>
             <a
@@ -106,7 +106,7 @@ const faqData = p.faq.items;
         <div class="animate-on-scroll">
           <div class="grid gap-6 md:grid-cols-3">
             {p.stats.items.map((item) => (
-              <div class="airvvy-card group px-6 py-8 text-center md:px-7 md:py-10">
+              <div class="airvvy-card group flex h-full flex-col items-center justify-center px-6 py-8 text-center md:px-7 md:py-10">
                 <div class="flex flex-col gap-2">
                   <div class="text-5xl font-extrabold text-primary transition-transform group-hover:scale-105 sm:text-6xl">
                     {item.value}
@@ -122,12 +122,12 @@ const faqData = p.faq.items;
           <div class="mt-12 flex flex-col items-center justify-center gap-4">
             <a
               href="#book-call"
-              class="cta-button group min-h-14 px-9 py-4 text-base font-bold"
+              class="cta-button group min-h-14 whitespace-nowrap px-9 py-4 text-base font-bold"
             >
               Start your Free 7-Day Pilot
               <Icon
                 name="mdi:arrow-right"
-                class="text-lg transition-transform group-hover:translate-x-1"
+                class="text-lg transition-transform group-hover:translate-x-1 shrink-0"
               />
             </a>
             <p class="text-sm font-medium text-neutral-600">
@@ -232,7 +232,7 @@ const faqData = p.faq.items;
     </section>
 
     <!-- Why Qasten Section -->
-    <section id="why-qasten" class="section-spacing">
+    <section id="why-qasten" class="section-spacing bg-background">
       <div class="container-custom">
         <div class="animate-on-scroll mb-16 text-center">
           <h2 class="mb-6 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
@@ -301,7 +301,7 @@ const faqData = p.faq.items;
         calLink: "qasten/ai-agents-consultation",
       });
 
-      Cal.ns["ai-agents-consultation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#007ea7"},"dark":{"cal-brand":"#80ced7"}},"hideEventTypeDetails":false,"layout":"month_view"});
+      Cal.ns["ai-agents-consultation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#4a7dbd"},"dark":{"cal-brand":"#6b9fff"}},"hideEventTypeDetails":false,"layout":"month_view"});
     </script>
 
 <script>
@@ -420,7 +420,7 @@ const faqData = p.faq.items;
       background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary), var(--accent) 40%));
       display: inline-block;
       flex-shrink: 0;
-      box-shadow: 0 3px 8px rgb(0 126 167 / 0.3);
+      box-shadow: 0 3px 8px rgb(74 125 189 / 0.3);
     }
 
     .agent-card {
@@ -465,7 +465,7 @@ const faqData = p.faq.items;
       width: 6px;
       border-radius: 999px;
       background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary), var(--accent) 40%));
-      box-shadow: 0 1px 3px rgb(0 126 167 / 0.3);
+      box-shadow: 0 1px 3px rgb(74 125 189 / 0.3);
     }
 
   </style>

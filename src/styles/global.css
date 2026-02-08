@@ -91,77 +91,79 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* Soft blue palette — neutralised cards/borders so content blends
+   Primary accent from Coolors blue scale, surfaces kept near-white */
 :root {
   --radius: 1rem;
   --card: #ffffff;
-  --card-foreground: #003249;
+  --card-foreground: #1e3a5f;
   --popover: #ffffff;
-  --popover-foreground: #003249;
-  --primary: #007ea7;
-  --primary-foreground: #f8fcff;
-  --secondary: #eaf3f4;
-  --secondary-foreground: #16465b;
-  --muted: #f1f7f8;
-  --muted-foreground: #4c6d7c;
-  --accent: #80ced7;
-  --accent-foreground: #003249;
-  --destructive: #ef4444;
-  --border: #d6e7ea;
+  --popover-foreground: #1e3a5f;
+  --primary: #4a7dbd;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #2c4a6e;
+  --muted: #f1f5f9;
+  --muted-foreground: #4a6a8a;
+  --accent: #dbeafe;
+  --accent-foreground: #1e3a5f;
+  --destructive: #dc2626;
+  --border: #e2e8f0;
   --input: #ffffff;
-  --ring: #007ea7;
-  --chart-1: #007ea7;
-  --chart-2: #80ced7;
-  --chart-3: #9ad1d4;
-  --chart-4: #003249;
-  --chart-5: #ccdbdc;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #003249;
-  --sidebar-primary: #007ea7;
-  --sidebar-primary-foreground: #f8fcff;
-  --sidebar-accent: #eaf3f4;
-  --sidebar-accent-foreground: #16465b;
-  --sidebar-border: #d6e7ea;
-  --sidebar-ring: #007ea7;
+  --ring: #4a7dbd;
+  --chart-1: #4a7dbd;
+  --chart-2: #059669;
+  --chart-3: #dc2626;
+  --chart-4: #7c3aed;
+  --chart-5: #0891b2;
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #1e3a5f;
+  --sidebar-primary: #4a7dbd;
+  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-accent: #dbeafe;
+  --sidebar-accent-foreground: #1e3a5f;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #4a7dbd;
   --background: #f8fafc;
-  --foreground: #003249;
-  --brand-secondary: #007ea7;
-  --brand-secondary-dark: #003249;
-  --brand-secondary-light: #80ced7;
-  --brand-accent: #9ad1d4;
+  --foreground: #1e3a5f;
+  --brand-secondary: #4a7dbd;
+  --brand-secondary-dark: #1e3a5f;
+  --brand-secondary-light: #93b4e4;
+  --brand-accent: #6b9fff;
 }
 
 .dark {
-  --background: #001f2f;
-  --foreground: #e9f5f7;
-  --card: #08283a;
-  --card-foreground: #e9f5f7;
-  --popover: #08283a;
-  --popover-foreground: #e9f5f7;
-  --primary: #80ced7;
-  --primary-foreground: #003249;
-  --secondary: #10354a;
-  --secondary-foreground: #ccdbdc;
-  --muted: #134159;
-  --muted-foreground: #9ad1d4;
-  --accent: #9ad1d4;
-  --accent-foreground: #003249;
-  --destructive: #f87171;
-  --border: #245369;
-  --input: #08283a;
-  --ring: #80ced7;
-  --chart-1: #80ced7;
-  --chart-2: #007ea7;
+  --background: #0f172a;
+  --foreground: #edf2fb;
+  --card: #1e293b;
+  --card-foreground: #e2eafc;
+  --popover: #1e293b;
+  --popover-foreground: #e2eafc;
+  --primary: #6b9fff;
+  --primary-foreground: #0f172a;
+  --secondary: #334155;
+  --secondary-foreground: #d7e3fc;
+  --muted: #283548;
+  --muted-foreground: #94a3b8;
+  --accent: #3b5998;
+  --accent-foreground: #e2eafc;
+  --destructive: #ef4444;
+  --border: #475569;
+  --input: #1e293b;
+  --ring: #6b9fff;
+  --chart-1: #6b9fff;
+  --chart-2: #34d399;
   --chart-3: #f87171;
-  --chart-4: #9ad1d4;
-  --chart-5: #ccdbdc;
-  --sidebar: #001f2f;
-  --sidebar-foreground: #e9f5f7;
-  --sidebar-primary: #80ced7;
-  --sidebar-primary-foreground: #003249;
-  --sidebar-accent: #10354a;
-  --sidebar-accent-foreground: #ccdbdc;
-  --sidebar-border: #245369;
-  --sidebar-ring: #80ced7;
+  --chart-4: #a78bfa;
+  --chart-5: #22d3ee;
+  --sidebar: #1a2744;
+  --sidebar-foreground: #d7e3fc;
+  --sidebar-primary: #6b9fff;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #d7e3fc;
+  --sidebar-border: #475569;
+  --sidebar-ring: #6b9fff;
 }
 
 @layer base {
@@ -279,23 +281,24 @@
     gap: 0.5rem;
     border-radius: 1rem;
     border: 1px solid transparent;
-    background: linear-gradient(
-      90deg,
-      var(--brand-secondary) 0%,
-      var(--brand-secondary-dark) 100%
-    );
+    background: var(--primary);
     color: var(--primary-foreground);
-    box-shadow: 0 8px 26px rgb(0 126 167 / 0.3);
+    box-shadow: 0 4px 14px rgb(74 125 189 / 0.22);
     transition:
-      transform 0.25s ease,
-      box-shadow 0.25s ease,
-      filter 0.25s ease;
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
   }
 
   .cta-button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.02);
-    box-shadow: 0 12px 34px rgb(0 126 167 / 0.38);
+    transform: translateY(-1px);
+    background: color-mix(in srgb, var(--primary), #000 8%);
+    box-shadow: 0 6px 20px rgb(74 125 189 / 0.3);
+  }
+
+  .cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgb(74 125 189 / 0.18);
   }
 
   .cta-outline {
@@ -310,27 +313,26 @@
   }
 
   .airvvy-card {
-    border: 1px solid color-mix(in srgb, var(--border), transparent 10%);
+    border: 1px solid var(--border);
     background: var(--card);
     border-radius: 1rem;
-    box-shadow: 0 8px 24px rgb(15 23 42 / 0.06);
-    transition: all 0.25s ease;
+    box-shadow: 0 1px 3px rgb(15 23 42 / 0.04);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
   }
 
   .airvvy-card:hover {
-    border-color: color-mix(in srgb, var(--primary), var(--border) 55%);
-    box-shadow: 0 18px 34px rgb(15 23 42 / 0.11);
-    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--primary), var(--border) 60%);
+    box-shadow: 0 4px 12px rgb(15 23 42 / 0.07);
   }
 
   .hero-mesh {
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(at 40% 20%, rgb(0 126 167 / 0.26) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, rgb(128 206 215 / 0.22) 0px, transparent 50%),
-      radial-gradient(at 0% 0%, rgb(154 209 212 / 0.16) 0px, transparent 50%),
-      radial-gradient(at 80% 100%, rgb(0 50 73 / 0.28) 0px, transparent 55%);
+      radial-gradient(at 40% 20%, rgb(74 125 189 / 0.26) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgb(182 204 254 / 0.22) 0px, transparent 50%),
+      radial-gradient(at 0% 0%, rgb(215 227 252 / 0.16) 0px, transparent 50%),
+      radial-gradient(at 80% 100%, rgb(30 58 95 / 0.28) 0px, transparent 55%);
     opacity: 0.74;
   }
 }
