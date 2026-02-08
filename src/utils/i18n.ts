@@ -553,7 +553,7 @@ const translations = {
       bookMeetingCta: {
         title: "Start your Free 7-Day Pilot",
         text:
-          "Book a free 30-minute consultation. We'll show you how our AI agent can transform your response time, qualify leads instantly, and book more meetings while you focus on important work.",
+          "Book a free 20-minute consultation. We'll show you how our AI agent can transform your response time, qualify leads instantly, and book more meetings while you focus on important work.",
       },
       booking: {
         title: "Book a Free Call",

@@ -21,6 +21,11 @@ const contactUsURL = getRelativeLocaleUrl(
   "/#book-call",
 ).replace(/\/$/, "");
 
+const pricingURL = getRelativeLocaleUrl(
+  currentLocale,
+  "/pricing",
+).replace(/\/$/, "");
+
 const { noBackground } = Astro.props;
 
 const {
@@ -44,6 +49,7 @@ const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
 
 const navItems = [
   { label: t.nav.howItWorks, href: howItWorksURL },
+  { label: "Pricing", href: pricingURL },
   { label: t.nav.faq, href: `${homeURL}/#faq` },
 ];
 ---
