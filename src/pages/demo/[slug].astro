@@ -1,0 +1,8 @@
+---
+import DemoPage from "@/components/pages/DemoPage.astro";
+
+// Server-rendered so any slug works for tracking; no getStaticPaths needed
+export const prerender = false;
+---
+
+<DemoPage />
