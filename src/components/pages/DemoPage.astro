@@ -71,11 +71,17 @@ const p = t.homePage;
           <!-- Summary Copy -->
           <div class="mb-10">
             <div class="mx-auto max-w-4xl">
-              <div class="grid gap-6 sm:grid-cols-3 sm:gap-4">
-                <!-- Problem -->
+              <div
+                class="flex flex-col items-center gap-6 sm:flex-row sm:justify-between"
+              >
                 <div
-                  class="demo-summary-card group relative overflow-hidden rounded-2xl border-2 border-red-500/30 bg-gradient-to-br from-red-950/40 via-red-900/30 to-orange-950/40 p-6 text-center backdrop-blur-sm transition-all hover:border-red-500/50 hover:shadow-xl hover:shadow-red-500/20"
+                  class="demo-summary-card group relative mx-auto w-60 flex-1 overflow-hidden rounded-2xl border-2 border-red-500/30 bg-gradient-to-br from-red-950/40 via-red-900/30 to-orange-950/40 p-6 text-center backdrop-blur-sm transition-all hover:border-red-500/50 hover:shadow-xl hover:shadow-red-500/20 sm:mx-0 sm:w-auto"
                 >
+                  <div
+                    class="mb-2 text-xs font-bold tracking-wider text-red-400 uppercase"
+                  >
+                    Before
+                  </div>
                   <div class="demo-icon-wrapper mb-4 flex justify-center">
                     <div
                       class="rounded-full bg-red-500/20 p-4 ring-2 ring-red-500/30"
@@ -86,32 +92,38 @@ const p = t.homePage;
                       />
                     </div>
                   </div>
-                  <div
-                    class="mb-2 text-xs font-bold tracking-wider text-red-400 uppercase"
-                  >
-                    Problem
-                  </div>
                   <div class="text-base font-bold text-white">Missed calls</div>
                   <div class="mt-1 text-sm font-medium text-neutral-300">
                     Lost jobs
                   </div>
                 </div>
 
-                <!-- Solution -->
+                <!-- Arrow 1 -->
+                <div class="demo-arrow flex-shrink-0">
+                  <Icon
+                    name="mdi:arrow-right"
+                    class="text-primary/60 hidden text-4xl sm:block"
+                  />
+                  <Icon
+                    name="mdi:arrow-down"
+                    class="text-primary/60 text-4xl sm:hidden"
+                  />
+                </div>
+
                 <div
-                  class="demo-summary-card group border-primary/40 from-primary/20 via-primary/15 hover:border-primary/60 hover:shadow-primary/30 relative overflow-hidden rounded-2xl border-2 bg-gradient-to-br to-[var(--brand-secondary)]/20 p-6 text-center backdrop-blur-sm transition-all hover:shadow-xl"
+                  class="demo-summary-card group border-primary/40 from-primary/20 via-primary/15 hover:border-primary/60 hover:shadow-primary/30 relative mx-auto w-60 flex-1 overflow-hidden rounded-2xl border-2 bg-gradient-to-br to-[var(--brand-secondary)]/20 p-6 text-center backdrop-blur-sm transition-all hover:shadow-xl sm:mx-0 sm:w-auto"
                 >
+                  <div
+                    class="text-primary mb-2 text-xs font-bold tracking-wider uppercase"
+                  >
+                    After
+                  </div>
                   <div class="demo-icon-wrapper mb-4 flex justify-center">
                     <div
                       class="bg-primary/30 ring-primary/40 rounded-full p-4 ring-2"
                     >
                       <Icon name="mdi:robot" class="text-primary text-3xl" />
                     </div>
-                  </div>
-                  <div
-                    class="text-primary mb-2 text-xs font-bold tracking-wider uppercase"
-                  >
-                    Solution
                   </div>
                   <div class="text-base font-bold text-white">
                     AI answers 24/7
@@ -121,10 +133,26 @@ const p = t.homePage;
                   </div>
                 </div>
 
-                <!-- Result -->
+                <!-- Arrow 2 -->
+                <div class="demo-arrow flex-shrink-0">
+                  <Icon
+                    name="mdi:arrow-right"
+                    class="hidden text-4xl text-green-400/60 sm:block"
+                  />
+                  <Icon
+                    name="mdi:arrow-down"
+                    class="text-4xl text-green-400/60 sm:hidden"
+                  />
+                </div>
+
                 <div
-                  class="demo-summary-card group relative overflow-hidden rounded-2xl border-2 border-green-500/30 bg-gradient-to-br from-green-950/40 via-green-900/30 to-emerald-950/40 p-6 text-center backdrop-blur-sm transition-all hover:border-green-500/50 hover:shadow-xl hover:shadow-green-500/20"
+                  class="demo-summary-card group relative mx-auto w-60 flex-1 overflow-hidden rounded-2xl border-2 border-green-500/30 bg-gradient-to-br from-green-950/40 via-green-900/30 to-emerald-950/40 p-6 text-center backdrop-blur-sm transition-all hover:border-green-500/50 hover:shadow-xl hover:shadow-green-500/20 sm:mx-0 sm:w-auto"
                 >
+                  <div
+                    class="mb-2 text-xs font-bold tracking-wider text-green-400 uppercase"
+                  >
+                    Result
+                  </div>
                   <div class="demo-icon-wrapper mb-4 flex justify-center">
                     <div
                       class="rounded-full bg-green-500/20 p-4 ring-2 ring-green-500/30"
@@ -134,11 +162,6 @@ const p = t.homePage;
                         class="text-3xl text-green-400"
                       />
                     </div>
-                  </div>
-                  <div
-                    class="mb-2 text-xs font-bold tracking-wider text-green-400 uppercase"
-                  >
-                    Result
                   </div>
                   <div class="text-base font-bold text-white">
                     More bookings
@@ -163,7 +186,7 @@ const p = t.homePage;
                 class="shrink-0 text-xl transition-transform group-hover:translate-x-1"
               />
             </a>
-            <p class="text-sm font-medium text-neutral-400">
+            <p class="text-center text-sm font-medium text-neutral-400">
               <Icon name="mdi:shield-check" class="text-primary inline" />
               {" "}
               7-day risk-free trial • No payment required • Cancel anytime
@@ -188,26 +211,13 @@ const p = t.homePage;
     position: relative;
   }
 
-  .demo-summary-card:not(:last-child)::after {
-    content: "→";
-    position: absolute;
-    right: -1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    color: rgb(156 163 175);
-    font-weight: 300;
-    z-index: 10;
+  .demo-arrow {
+    transition: transform 0.3s ease;
   }
 
-  @media (max-width: 640px) {
-    .demo-summary-card:not(:last-child)::after {
-      content: "↓";
-      right: 50%;
-      top: auto;
-      bottom: -1.5rem;
-      transform: translateX(50%);
-    }
+  .demo-summary-card:hover + .demo-arrow,
+  .demo-arrow:hover {
+    transform: scale(1.2);
   }
 
   .demo-icon-wrapper {
