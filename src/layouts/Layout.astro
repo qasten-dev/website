@@ -1,8 +1,6 @@
 ---
-import BackgroundStripes from "@/components/BackgroundStripes.astro";
 import FaviconLinks from "@/components/FaviconLinks.astro";
 import LanguageButton from "@/components/LanguageButton.astro";
-import Logo from "@/components/Logo.astro";
 import "@/styles/global.css";
 import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
@@ -10,27 +8,20 @@ import path from "path";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 const t = getTranslations(currentLocale);
-const homeURL = getRelativeLocaleUrl(currentLocale, "/").replace(/\/$/, "");
-const howItWorksURL = getRelativeLocaleUrl(
-  currentLocale,
-  "/how-it-works",
-).replace(/\/$/, "");
 
-const contactUsURL = getRelativeLocaleUrl(
-  currentLocale,
-  "/#book-call",
-).replace(/\/$/, "");
+const homePath = getRelativeLocaleUrl(currentLocale, "/");
 
-const pricingURL = getRelativeLocaleUrl(
-  currentLocale,
-  "/pricing",
-).replace(/\/$/, "");
-
-const { noBackground } = Astro.props;
+function anchor(id: string) {
+  const base = homePath.replace(/\/$/, "");
+  if (!base) {
+    return `/#${id}`;
+  }
+  return `${base}#${id}`;
+}
 
 const {
-  title = "Qasten",
-  description = "Qasten is the AI workspace for teams.",
+  title = t.meta.title,
+  description = t.meta.description,
   openGraphMetadata,
   author,
 } = Astro.props;
@@ -47,15 +38,11 @@ const fontFilesGlob = import.meta.glob("/public/fonts/*.woff2", {
 });
 const fontFiles = Object.keys(fontFilesGlob).map((file) => path.basename(file));
 
-const navItems = [
-  { label: t.nav.howItWorks, href: howItWorksURL },
-  { label: "Pricing", href: pricingURL },
-  { label: t.nav.faq, href: `${homeURL}/#faq` },
-];
+const linkedInCompany = "https://www.linkedin.com/company/qasten";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLocale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -66,6 +53,10 @@ const navItems = [
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:type" content={openGraphMetadata?.type ?? "website"} />
     <meta property="og:site_name" content="Qasten" />
+    <meta
+      property="og:locale"
+      content={currentLocale === "fr" ? "fr_FR" : "en_US"}
+    />
     <meta property="og:image" content={openGraphImageURL} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="675" />
@@ -79,7 +70,7 @@ const navItems = [
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
@@ -106,180 +97,78 @@ const navItems = [
         />
       )
     }
-    <script
-      type="text/javascript"
-      src="https://app.lemlist.com/api/visitors/tracking?k=v7XsBnqRtkr1K08oY9a035A9Dq9o5BWM4xAY8ZeBf0A%3D&t=tea_KK7uf4qxXLcLuM2Jy"
-    ></script>
   </head>
 
   <body
-    class="text-foreground selection:bg-primary selection:text-primary-foreground bg-background font-inter flex min-h-screen flex-col overflow-x-hidden"
+    class="text-foreground bg-background flex min-h-screen flex-col antialiased"
   >
-    {!noBackground && <BackgroundStripes />}
     <header
-      class="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-xl"
+      class="border-border/80 bg-background/95 sticky top-0 z-50 border-b backdrop-blur-md"
     >
-      <div class="container-custom relative flex h-16 items-center md:h-20">
-        <!-- Logo — left-aligned, takes equal space -->
-        <div class="flex flex-1 items-center justify-start min-w-0">
-          <a
-            class="group inline-flex items-center gap-2.5"
-            href={getRelativeLocaleUrl(currentLocale, "/")}
-          >
-            <span
-              class="rounded-xl border border-primary/20 p-1.5 shadow-md shadow-primary/25 transition-shadow group-hover:shadow-lg group-hover:shadow-primary/30"
-            >
-              <Logo width={30} height={30} />
-            </span>
-            <span class="font-[var(--font-display)] text-2xl font-bold tracking-tight">
-              Qasten
-            </span>
-          </a>
-        </div>
-
-        <!-- Nav — centered absolutely so it stays perfectly centered -->
-        <nav class="hidden items-center justify-center gap-1 font-medium md:flex md:absolute md:left-1/2 md:-translate-x-1/2 md:z-20 whitespace-nowrap">
-          {navItems.map((item) => (
-            <a
-              href={item.href}
-              class="rounded-lg px-4 py-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        <!-- CTA — right-aligned, takes equal space -->
-        <div class="hidden flex-1 items-center justify-end sm:flex min-w-0">
-          <a
-            class="cta-button min-h-12 px-6 py-3 text-sm font-bold"
-            href={contactUsURL}
-          >
-            {t.contactUs}
-          </a>
-        </div>
-
-        <button
-          id="hamburger"
-          aria-label="Open menu"
-          class="flex cursor-pointer flex-col space-y-1.5 rounded-lg p-2 transition-all hover:bg-secondary sm:hidden md:hidden"
+      <div
+        class="container-consulting flex h-14 items-center justify-between gap-3 md:h-16"
+      >
+        <a
+          href={homePath}
+          class="text-foreground shrink-0 text-base font-semibold tracking-tight md:text-lg"
         >
-          <span class="bg-foreground h-0.5 w-6 rounded-full"></span>
-          <span class="bg-foreground h-0.5 w-6 rounded-full"></span>
-          <span class="bg-foreground h-0.5 w-6 rounded-full"></span>
-        </button>
+          Qasten
+        </a>
+        <div
+          class="flex min-w-0 flex-1 items-center justify-end gap-2 sm:gap-4 md:gap-6"
+        >
+          <nav class="hidden items-center gap-1 text-sm font-medium sm:flex">
+            <a
+              href={anchor("farouk")}
+              class="text-muted-foreground hover:text-foreground rounded-md px-2 py-1 transition-colors"
+            >
+              {t.nav.farouk}
+            </a>
+            <a
+              href={anchor("achraf")}
+              class="text-muted-foreground hover:text-foreground rounded-md px-2 py-1 transition-colors"
+            >
+              {t.nav.achraf}
+            </a>
+            <a
+              href={anchor("contact")}
+              class="text-muted-foreground hover:text-foreground rounded-md px-2 py-1 transition-colors"
+            >
+              {t.nav.contact}
+            </a>
+          </nav>
+          <div class="flex shrink-0 items-center gap-1">
+            <LanguageButton locale="en" />
+            <LanguageButton locale="fr" />
+          </div>
+        </div>
       </div>
     </header>
 
-    <div
-      id="mobile-menu"
-      class="fixed inset-0 z-50 hidden h-screen w-screen bg-neutral-950/95 text-white backdrop-blur-lg"
-    >
-      <button
-        id="close-mobile-menu-button"
-        class="absolute top-6 right-6 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full text-5xl transition-colors hover:bg-white/10 hover:text-[var(--brand-accent)]"
-      >
-        &times;
-      </button>
-      <nav
-        class="flex h-screen flex-col items-center justify-center space-y-8 px-8 text-3xl font-bold"
-      >
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class="rounded-xl px-4 py-2 transition-colors hover:bg-white/10 hover:text-[var(--brand-accent)]"
-          >
-            {item.label}
-          </a>
-        ))}
-        <a href={contactUsURL} class="cta-button min-h-14 px-10 py-4 text-lg">
-          {t.contactUs}
-        </a>
-        <div class="flex gap-3 pt-2">
-          <LanguageButton locale="en" size="lg" />
-        </div>
-      </nav>
+    <div class="flex flex-1 flex-col">
+      <slot />
     </div>
 
-    <slot />
-
-    <!-- Force sticky footer -->
-    <main class="flex-1"></main>
-    <footer class="text-foreground w-full bg-background">
-      <div class="container-custom py-16">
-        <div class="flex flex-col gap-12 md:flex-row md:justify-between md:gap-24">
-          <div>
-            <a
-              href={getRelativeLocaleUrl(currentLocale, "/")}
-              class="group inline-flex items-center gap-2.5"
-              ><span
-                class="rounded-xl border border-primary/20 p-1.5 shadow-sm shadow-primary/20"
-                ><Logo width={30} height={30} /></span
-              ><span class="font-[var(--font-display)] text-2xl font-bold tracking-tight"
-                >Qasten</span
-              ></a
-            >
-            <p class="text-muted-foreground mt-3 text-sm font-medium sm:text-base md:whitespace-nowrap">
-              {t.footer.eu}
-            </p>
-            <ul class="mt-10 space-y-4 text-sm font-medium text-neutral-700">
-              <li>
-                <a href={contactUsURL} class="transition-colors hover:text-primary hover:underline underline-offset-4"
-                  >{t.contactUs}</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/company/qasten"
-                  target="_blank"
-                  rel="noopener"
-                  class="transition-colors hover:text-primary hover:underline underline-offset-4">LinkedIn</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="mx-auto mt-12 flex items-center justify-center border-t border-border/80 pt-8">
-          <div class="text-muted-foreground text-center text-xs font-medium sm:text-sm whitespace-nowrap">
-            {t.footer.copyright}
+    <footer class="border-border/80 bg-background border-t">
+      <div
+        class="container-consulting flex flex-col gap-3 py-8 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <p class="text-muted-foreground text-sm">{t.footer.copyright}</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a
+            href={linkedInCompany}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-primary text-sm font-medium hover:underline"
+          >
+            {t.footer.companyLinkedin}
+          </a>
+          <div class="flex items-center gap-1">
+            <LanguageButton locale="en" />
+            <LanguageButton locale="fr" />
           </div>
         </div>
       </div>
     </footer>
-
-    <style>
-      html,
-      body {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-      }
-    </style>
-
-    <script>
-      function main() {
-        const hamburger = document.getElementById("hamburger");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const closeMobileMenuBtn = document.getElementById(
-          "close-mobile-menu-button",
-        );
-
-        if (!hamburger || !mobileMenu || !closeMobileMenuBtn) {
-          console.warn("Could not find selector for mobile menu");
-          return;
-        }
-
-        const toggleOpen = () => {
-          mobileMenu.classList.toggle("hidden");
-          document.body.classList.toggle("overflow-hidden"); // Disable scrolling through menu
-        };
-
-        hamburger.addEventListener("click", toggleOpen);
-        closeMobileMenuBtn.addEventListener("click", toggleOpen);
-      }
-
-      main();
-    </script>
   </body>
 </html>

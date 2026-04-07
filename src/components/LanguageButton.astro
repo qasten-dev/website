@@ -8,23 +8,32 @@ const { pathname } = Astro.url;
 
 const selected = locale === currentLocale;
 
-const localeFreePathname = pathname.startsWith(`/${currentLocale}/`)
-  ? pathname.replace(`/${currentLocale}`, "")
-  : pathname;
+let pathWithoutLocale = pathname;
+if (pathname.startsWith("/fr/")) {
+  pathWithoutLocale = pathname.slice(3) || "/";
+} else if (pathname === "/fr") {
+  pathWithoutLocale = "/";
+}
+
+const switchHref = getRelativeLocaleUrl(locale, pathWithoutLocale);
 
 const selectedClasses = selected
-  ? "bg-secondary/80 text-foreground shadow-sm ring-2 ring-primary/20"
-  : "text-muted-foreground border-2 border-border/50 hover:bg-secondary/50 hover:text-foreground hover:border-primary/30 cursor-pointer";
+  ? "bg-secondary text-foreground shadow-sm ring-2 ring-primary/25 cursor-default"
+  : "text-muted-foreground border border-border/80 hover:bg-secondary/80 hover:text-foreground hover:border-primary/35";
 
-const sizeClasses = size === "lg" ? "px-7 py-3.5 text-lg" : "px-4 py-2 text-sm";
+const sizeClasses =
+  size === "lg" ? "px-7 py-3.5 text-lg" : "px-3 py-1.5 text-sm";
+const baseClasses = `${sizeClasses} inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-200 ${selectedClasses}`;
 ---
 
-<button
-  class={`${sizeClasses} rounded-lg font-semibold transition-all duration-200 ${selectedClasses}`}
-  disabled={selected}
-  onclick={selected
-    ? undefined
-    : `location='${getRelativeLocaleUrl(locale, localeFreePathname)}'`}
->
-  {locale.toUpperCase()}
-</button>
+{
+  selected ? (
+    <span class={baseClasses} aria-current="true">
+      {locale.toUpperCase()}
+    </span>
+  ) : (
+    <a class={baseClasses} href={switchHref}>
+      {locale.toUpperCase()}
+    </a>
+  )
+}

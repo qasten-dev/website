@@ -1,492 +1,390 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import FAQ from "@/components/FAQ.astro";
-import { Icon } from "astro-icon/components";
 import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
-import { getRelativeLocaleUrl } from "astro:i18n";
+import { team } from "@/utils/team";
+import { Image } from "astro:assets";
 
 const currentLocale = getSafeCurrentLocale(Astro.currentLocale);
 const t = getTranslations(currentLocale);
-const p = t.homePage;
-const howItWorksUrl = getRelativeLocaleUrl(
-  currentLocale,
-  "/how-it-works",
-).replace(/\/$/, "");
+const p = t.profiles;
+const farouk = team.farouk;
+const achraf = team.achraf;
 
-const faqData = p.faq.items;
+const sectionRule = "border-t border-border/90";
 ---
 
-<Layout
-  title={p.meta.title}
-  description={p.meta.description}
-  noBackground={true}
->
+<Layout title={t.meta.title} description={t.meta.description}>
   <main class="w-full">
-    <!-- Hero Section -->
-    <section
-      id="hero"
-      class="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950"
-    >
-      <div class="hero-mesh"></div>
-      <div class="absolute top-20 left-8 h-72 w-72 rounded-full bg-primary/20 blur-[110px]"></div>
-      <div class="absolute right-8 bottom-10 h-80 w-80 rounded-full bg-[var(--brand-accent)]/10 blur-[120px]"></div>
-
-      <div class="container-custom relative z-10 py-20 text-center md:py-28 lg:py-32">
-        <div class="animate-on-scroll mx-auto max-w-4xl">
-          <span class="badge badge-dark mb-8">Built for HVAC Companies</span>
-          <h1 class="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            {p.hero.titlePrefix}{" "}
-            <span class="bg-gradient-to-r from-[var(--brand-secondary)] to-[var(--brand-secondary-light)] bg-clip-text text-transparent">
-              {p.hero.titleHighlight}
-            </span>{" "}
-            {p.hero.titleSuffix}
-          </h1>
-          <p class="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-neutral-300 sm:text-2xl">
-            {p.hero.subhead}
-          </p>
-          <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href="#book-call"
-              class="cta-button group min-h-16 whitespace-nowrap px-10 py-5 text-lg font-bold"
-            >
-              {p.hero.ctas.primary}
-              <Icon
-                name="mdi:calendar-blank"
-                class="text-xl shrink-0 transition-transform group-hover:translate-x-0.5"
-              />
-            </a>
-            <a
-              href={howItWorksUrl}
-              class="cta-outline inline-flex min-h-16 items-center justify-center rounded-2xl px-10 py-5 text-lg font-semibold"
-            >
-              See How It Works
-            </a>
-          </div>
-
-          <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <span class="hero-trust-item">
-              <Icon
-                name="mdi:check-circle-outline"
-                class="text-[var(--brand-accent)] text-base"
-              />
-              No Long-Term Contracts
-            </span>
-            <span class="hero-trust-item">
-              <Icon
-                name="mdi:check-circle-outline"
-                class="text-[var(--brand-accent)] text-base"
-              />
-              Cancel Anytime
-            </span>
-            <span class="hero-trust-item">
-              <Icon
-                name="mdi:check-circle-outline"
-                class="text-[var(--brand-accent)] text-base"
-              />
-              HVAC-Specific
-            </span>
-          </div>
-        </div>
+    <!-- Hero -->
+    <section class="relative overflow-hidden" aria-labelledby="hero-heading">
+      <div
+        class="pointer-events-none absolute inset-0 opacity-[0.35]"
+        aria-hidden="true"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 50% 35%, rgb(79 142 247 / 0.09) 0%, transparent 55%),
+            linear-gradient(rgba(13 13 15 / 0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(13 13 15 / 0.035) 1px, transparent 1px)`,
+          backgroundSize: "100% 100%, 32px 32px, 32px 32px",
+        }}
+      >
       </div>
-    </section>
-
-    <!-- Why you're losing money + Speed-to-Lead -->
-    <section id="offers" class="section-spacing bg-neutral-50">
-      <div class="container-custom">
-        <div class="animate-on-scroll mb-16 text-center">
-          <span class="badge mb-4 bg-primary/10 text-primary">The Problem</span>
-          <h2 class="mb-6 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
-            {p.offers.title}
-          </h2>
-          <p class="mx-auto max-w-3xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
-            {p.offers.subtitle}
-          </p>
-        </div>
-
-        <div class="animate-on-scroll">
-          <div class="grid gap-6 md:grid-cols-3">
-            {p.stats.items.map((item) => (
-              <div class="airvvy-card group flex h-full flex-col items-center justify-center px-6 py-8 text-center md:px-7 md:py-10">
-                <div class="flex flex-col gap-2">
-                  <div class="text-5xl font-extrabold text-primary transition-transform group-hover:scale-105 sm:text-6xl">
-                    {item.value}
-                  </div>
-                  <p class="text-base font-semibold leading-relaxed text-neutral-700">
-                    {item.caption}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div class="mt-12 flex flex-col items-center justify-center gap-4">
-            <a
-              href="#book-call"
-              class="cta-button group min-h-14 whitespace-nowrap px-9 py-4 text-base font-bold"
-            >
-              Start your Free 7-Day Pilot
-              <Icon
-                name="mdi:arrow-right"
-                class="text-lg transition-transform group-hover:translate-x-1 shrink-0"
-              />
-            </a>
-            <p class="text-sm font-medium text-neutral-600">
-              <Icon name="mdi:shield-check" class="text-primary inline" />
-              {" "}
-              7-day risk-free trial • No payment required • Cancel anytime
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Our Agent is Better Section -->
-    <section id="why-agent-better" class="section-spacing">
-      <div class="container-custom">
-      <div class="animate-on-scroll mb-16 text-center">
-        <h2 class="mb-6 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
-          {p.whyAgentBetter.title}
-        </h2>
-        <p class="mx-auto max-w-3xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
-          {p.whyAgentBetter.subtitle}
+      <div class="container-consulting section-spacing relative">
+        <h1
+          id="hero-heading"
+          class="text-foreground max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl md:text-[2.35rem]"
+        >
+          {t.hero.headline}
+        </h1>
+        <p
+          class="text-muted-foreground mt-6 max-w-2xl text-base leading-[1.65] sm:text-lg"
+        >
+          {t.hero.subline}
         </p>
-      </div>
-
-      <div class="animate-on-scroll mx-auto max-w-4xl space-y-8">
-        <div class="agent-card airvvy-card p-8 sm:p-10">
-          <ul class="agent-bullets space-y-4 text-left text-base leading-relaxed text-neutral-700 sm:text-lg">
-            {p.whyAgentBetter.bullets.map((bullet) => (
-              <li>{bullet}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div class="airvvy-card group relative border-2 border-primary/20 p-10 sm:p-14">
-          <!-- Accent line at top -->
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[var(--brand-secondary)] to-transparent opacity-70"></div>
-
-          <div class="text-center">
-            <div class="mb-8">
-              <span class="inline-block rounded-lg bg-primary/10 px-6 py-2.5 text-sm font-bold uppercase tracking-wider text-primary shadow-sm">
-                <Icon name="mdi:chart-line" class="inline mr-1.5 text-base" />
-                {p.whyAgentBetter.insightLabel}
-              </span>
-            </div>
-            <p class="text-4xl font-extrabold leading-tight text-neutral-900 sm:text-5xl lg:text-6xl">
-              {p.whyAgentBetter.highlight.text}
-            </p>
-            <div class="mt-8 flex justify-center">
-              <div class="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-sm font-semibold text-accent-foreground">
-                <Icon name="mdi:check-circle" class="text-base" />
-                {p.whyAgentBetter.insightTagline}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-
-    <!-- Retell Voice Agent Demo Section -->
-    <section id="try-demo" class="section-spacing bg-neutral-50">
-      <div class="container-custom">
-      <div class="animate-on-scroll mb-16 text-center">
-        <h2 class="mb-6 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
-          {p.midpageCta.title}
-        </h2>
-        <p class="mx-auto max-w-2xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
-          {p.midpageCta.text}
-        </p>
-      </div>
-
-      <div class="animate-on-scroll flex flex-col items-center gap-10">
-        <div class="demo-video-wrapper w-full max-w-4xl overflow-hidden rounded-2xl border border-neutral-200 bg-card shadow-xl">
-          <div class="aspect-video w-full bg-muted/50">
-            <video
-              data-src="/demo.mp4"
-              preload="none"
-              controls
-              playsinline
-              class="demo-video w-full h-full object-contain"
-              width="896"
-              height="504"
-              aria-label="HVAC Voice Agent demo"
-            ></video>
-          </div>
-        </div>
-
-        <div class="flex flex-col items-center gap-2">
-          <p class="text-sm font-medium uppercase tracking-wider text-neutral-500">
-            {p.midpageCta.phoneLabel}
-          </p>
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a
-            href={`tel:${p.midpageCta.phoneNumber.replace(/\D/g, "")}`}
-            class="demo-phone-number airvvy-card inline-flex items-center gap-3 px-6 py-4 text-xl font-semibold tracking-tight text-neutral-900 sm:text-2xl"
+            href={`mailto:${farouk.email}`}
+            class="border-primary text-primary hover:bg-primary hover:text-primary-foreground inline-flex min-h-11 items-center justify-center rounded-lg border-2 px-6 py-2.5 text-sm font-semibold transition-colors"
           >
-            <Icon name="mdi:phone" class="text-primary text-2xl shrink-0" />
-            <span>{p.midpageCta.phoneNumber}</span>
+            {t.hero.ctaFarouk}
+          </a>
+          <a
+            href={`mailto:${achraf.email}`}
+            class="border-primary text-primary hover:bg-primary hover:text-primary-foreground inline-flex min-h-11 items-center justify-center rounded-lg border-2 px-6 py-2.5 text-sm font-semibold transition-colors"
+          >
+            {t.hero.ctaAchraf}
           </a>
         </div>
       </div>
-      </div>
     </section>
 
-    <!-- Why Qasten Section -->
-    <section id="why-qasten" class="section-spacing bg-background">
-      <div class="container-custom">
-        <div class="animate-on-scroll mb-16 text-center">
-          <h2 class="mb-6 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
-            {p.whyQasten.title}
-          </h2>
-          <p class="mx-auto max-w-2xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
-            {p.whyQasten.subtitle}
-          </p>
-        </div>
-
-        <div class="animate-on-scroll mx-auto mb-16 max-w-5xl">
-          <div class="grid gap-5 sm:grid-cols-2">
-            {p.whyQasten.reasons.map((reason) => (
-              <div class="airvvy-card group flex items-start gap-3.5 p-5 text-base leading-relaxed">
-                <span class="why-qasten-dot mt-2 transition-transform group-hover:scale-125"></span>
-                <span class="font-medium text-neutral-700">{reason}</span>
-              </div>
-            ))}
+    <!-- Farouk -->
+    <section
+      id="farouk"
+      class:list={[sectionRule, "scroll-mt-24"]}
+      aria-labelledby="farouk-heading"
+    >
+      <div
+        class="container-consulting section-spacing grid gap-12 md:grid-cols-2 md:gap-14"
+      >
+        <div class="flex flex-col gap-6">
+          <Image
+            src={farouk.image}
+            alt=""
+            class="border-border aspect-square w-full max-w-xs rounded-lg border object-cover"
+            widths={[320, 480, 640]}
+            sizes="(max-width: 768px) 100vw, 320px"
+          />
+          <div>
+            <h2
+              id="farouk-heading"
+              class="text-foreground text-2xl font-bold tracking-tight"
+            >
+              {p.farouk.name}
+            </h2>
+            <p class="text-primary mt-1 text-sm font-semibold tracking-wide">
+              {p.farouk.title}
+            </p>
+          </div>
+          <div
+            class="text-muted-foreground space-y-4 text-sm leading-[1.65] sm:text-base"
+          >
+            {p.farouk.bio.map((para) => <p>{para}</p>)}
+          </div>
+          <ul
+            class="border-primary/70 text-muted-foreground space-y-2 border-l-2 py-0.5 pl-4 text-sm sm:text-base"
+          >
+            {p.farouk.credentials.map((line) => <li>{line}</li>)}
+          </ul>
+          <div class="flex flex-wrap gap-4 text-sm">
+            <a
+              href={farouk.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-muted-foreground hover:text-primary inline-flex items-center gap-2 transition-colors"
+            >
+              <svg
+                class="h-4 w-4 shrink-0"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                ></path>
+              </svg>
+              {p.linkLinkedin}
+            </a>
+            <a
+              href={`mailto:${farouk.email}`}
+              class="text-muted-foreground hover:text-primary inline-flex items-center gap-2 transition-colors"
+            >
+              <svg
+                class="h-4 w-4 shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              {p.linkEmail}
+            </a>
           </div>
         </div>
-
-      <div class="animate-on-scroll why-qasten-logos">
-        <p class="text-muted-foreground mb-8 text-center text-sm font-semibold uppercase tracking-widest">
-          {p.whyQasten.builtByLabel}
-        </p>
-        <div class="flex flex-wrap items-center justify-center gap-10 sm:gap-16">
-          {p.whyQasten.companies.map((company) => (
-            <div class="why-qasten-logo" aria-label={company.name}>
-              <img src={company.logo} alt={company.name} loading="lazy" />
-            </div>
-          ))}
+        <div class="flex flex-col gap-6">
+          <p
+            class="text-primary text-xs font-semibold tracking-[0.14em] uppercase"
+          >
+            {p.servicesLabel}
+          </p>
+          <ul class="flex flex-col gap-3">
+            {
+              p.farouk.services.map((item) => (
+                <li class="border-border bg-card rounded-lg border px-4 py-4">
+                  <h3 class="text-foreground text-base font-semibold">
+                    {item.name}
+                  </h3>
+                  <p class="text-muted-foreground mt-2 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </li>
+              ))
+            }
+          </ul>
+          <ul class="flex flex-wrap gap-2">
+            {p.farouk.skillTags.map((tag) => <li class="skill-chip">{tag}</li>)}
+          </ul>
         </div>
       </div>
-      </div>
     </section>
 
-    <!-- Cal.com Booking Section: CTA to book meetings -->
-    <section id="book-call" class="section-spacing bg-neutral-50">
-      <div class="container-custom max-w-6xl">
-      <div class="animate-on-scroll mb-12 text-center">
-        <h2 class="mb-6 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
-          {p.bookMeetingCta.title}
-        </h2>
-        <p class="mx-auto max-w-2xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
-          {p.bookMeetingCta.text}
-        </p>
-      </div>
-
-      <div class="animate-on-scroll cal-embed-shell airvvy-card p-3 sm:p-4">
-        <div
-          class="w-full overflow-hidden rounded-lg"
-          style="min-height:700px;height:700px;"
-          id="my-cal-inline-ai-agents-consultation"
-        ></div>
-      </div>
-      </div>
-    </section>
-
-    <script type="text/javascript">
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", "ai-agents-consultation", {origin:"https://app.cal.com"});
-
-      Cal.ns["ai-agents-consultation"]("inline", {
-        elementOrSelector:"#my-cal-inline-ai-agents-consultation",
-        config: {"layout":"month_view"},
-        calLink: "qasten/ai-agents-consultation",
-      });
-
-      Cal.ns["ai-agents-consultation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#4a7dbd"},"dark":{"cal-brand":"#6b9fff"}},"hideEventTypeDetails":false,"layout":"month_view"});
-    </script>
-
-<script>
-  // Lazy-load demo video when it enters viewport (saves bandwidth, improves LCP)
-  (function() {
-    const video = document.querySelector('.demo-video[data-src]');
-    if (!video) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const v = entry.target;
-        if (!v.dataset.src) return;
-        v.src = v.dataset.src;
-        v.preload = 'metadata';
-        delete v.dataset.src;
-        io.unobserve(v);
-      });
-    }, { rootMargin: '100px' });
-    io.observe(video);
-  })();
-</script>
-
-    <!-- FAQ Section -->
+    <!-- Achraf -->
     <section
-      id="faq"
-      class="section-spacing relative left-1/2 w-screen -translate-x-1/2 bg-gradient-to-b from-neutral-50 to-neutral-100"
+      id="achraf"
+      class:list={[sectionRule, "scroll-mt-24"]}
+      aria-labelledby="achraf-heading"
     >
-      <div class="container-custom mx-auto w-full max-w-4xl">
-        <div class="animate-on-scroll mb-12 text-center">
-          <h2 class="mb-6 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
-            {p.faq.title}
-          </h2>
+      <div
+        class="container-consulting section-spacing grid gap-12 md:grid-cols-2 md:gap-14"
+      >
+        <div class="order-2 flex flex-col gap-6 md:order-1">
+          <p
+            class="text-primary text-xs font-semibold tracking-[0.14em] uppercase"
+          >
+            {p.servicesLabel}
+          </p>
+          <ul class="flex flex-col gap-3">
+            {
+              p.achraf.services.map((item) => (
+                <li class="border-border bg-card rounded-lg border px-4 py-4">
+                  <h3 class="text-foreground text-base font-semibold">
+                    {item.name}
+                  </h3>
+                  <p class="text-muted-foreground mt-2 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </li>
+              ))
+            }
+          </ul>
+          <ul class="flex flex-wrap gap-2">
+            {p.achraf.skillTags.map((tag) => <li class="skill-chip">{tag}</li>)}
+          </ul>
         </div>
-        <div class="animate-on-scroll airvvy-card p-10 sm:p-14">
-          <FAQ faq={faqData} />
+        <div class="order-1 flex flex-col gap-6 md:order-2">
+          <Image
+            src={achraf.image}
+            alt={p.achraf.name}
+            class="border-border aspect-square w-full max-w-xs rounded-lg border object-cover"
+            widths={[320, 480, 640]}
+            sizes="(max-width: 768px) 100vw, 320px"
+          />
+          <div>
+            <h2
+              id="achraf-heading"
+              class="text-foreground text-2xl font-bold tracking-tight"
+            >
+              {p.achraf.name}
+            </h2>
+            <p class="text-primary mt-1 text-sm font-semibold tracking-wide">
+              {p.achraf.title}
+            </p>
+          </div>
+          <div
+            class="text-muted-foreground space-y-4 text-sm leading-[1.65] sm:text-base"
+          >
+            {p.achraf.bio.map((para) => <p>{para}</p>)}
+          </div>
+          <ul
+            class="border-primary/70 text-muted-foreground space-y-2 border-l-2 py-0.5 pl-4 text-sm sm:text-base"
+          >
+            {p.achraf.credentials.map((line) => <li>{line}</li>)}
+          </ul>
+          <div class="flex flex-wrap gap-4 text-sm">
+            <a
+              href={achraf.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-muted-foreground hover:text-primary inline-flex items-center gap-2 transition-colors"
+            >
+              <svg
+                class="h-4 w-4 shrink-0"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                ></path>
+              </svg>
+              {p.linkLinkedin}
+            </a>
+            <a
+              href={achraf.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-muted-foreground hover:text-primary inline-flex items-center gap-2 transition-colors"
+            >
+              <svg
+                class="h-4 w-4 shrink-0"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                ></path>
+              </svg>
+              {p.linkGithub}
+            </a>
+            <a
+              href={`mailto:${achraf.email}`}
+              class="text-muted-foreground hover:text-primary inline-flex items-center gap-2 transition-colors"
+            >
+              <svg
+                class="h-4 w-4 shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              {p.linkEmail}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section
+      id="contact"
+      class:list={[sectionRule, "scroll-mt-24"]}
+      aria-labelledby="contact-heading"
+    >
+      <div class="container-consulting section-spacing">
+        <h2
+          id="contact-heading"
+          class="text-foreground text-2xl font-bold tracking-tight"
+        >
+          {t.contact.headline}
+        </h2>
+        <p class="text-muted-foreground mt-3 max-w-2xl leading-[1.65]">
+          {t.contact.subline}
+        </p>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <div class="border-border bg-card rounded-lg border p-6">
+            <h3 class="text-foreground text-lg font-semibold">
+              {p.farouk.name}
+            </h3>
+            <p class="text-muted-foreground mt-1 text-sm">{p.farouk.title}</p>
+            <a
+              href={`mailto:${farouk.email}`}
+              class="bg-primary text-primary-foreground mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold transition-opacity hover:opacity-90 sm:w-auto"
+            >
+              {t.contact.emailButton}
+            </a>
+            <a
+              href={farouk.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-primary mt-4 inline-flex items-center gap-2 text-sm font-medium hover:underline"
+            >
+              <svg
+                class="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                ></path>
+              </svg>
+              {p.linkLinkedin}
+            </a>
+          </div>
+          <div class="border-border bg-card rounded-lg border p-6">
+            <h3 class="text-foreground text-lg font-semibold">
+              {p.achraf.name}
+            </h3>
+            <p class="text-muted-foreground mt-1 text-sm">{p.achraf.title}</p>
+            <a
+              href={`mailto:${achraf.email}`}
+              class="bg-primary text-primary-foreground mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold transition-opacity hover:opacity-90 sm:w-auto"
+            >
+              {t.contact.emailButton}
+            </a>
+            <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:gap-6">
+              <a
+                href={achraf.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary inline-flex items-center gap-2 text-sm font-medium hover:underline"
+              >
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  ></path>
+                </svg>
+                {p.linkLinkedin}
+              </a>
+              <a
+                href={achraf.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary inline-flex items-center gap-2 text-sm font-medium hover:underline"
+              >
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  ></path>
+                </svg>
+                {p.linkGithub}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 </Layout>
-
-  <style>
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), 
-                  transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .animate-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .hero-trust-chip {
-      border: 1px solid rgb(255 255 255 / 0.16);
-      background: rgb(255 255 255 / 0.08);
-      color: rgb(226 232 240 / 0.96);
-      border-radius: 9999px;
-      padding: 0.45rem 0.95rem;
-      font-size: 0.85rem;
-      font-weight: 500;
-      backdrop-filter: blur(5px);
-    }
-
-    .hero-trust-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      color: rgb(156 163 175);
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    #my-cal-inline-ai-agents-consultation iframe {
-      display: block;
-      width: 100% !important;
-      height: 100% !important;
-      border: 0;
-      background: transparent;
-    }
-
-    .why-qasten-logos {
-      border-top: 2px solid color-mix(in srgb, var(--border), transparent 30%);
-      padding-top: 48px;
-    }
-
-    .why-qasten-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 64px;
-      padding: 14px 24px;
-      transition: all 0.3s ease;
-    }
-
-    .why-qasten-logo img {
-      height: 40px;
-      max-width: 160px;
-      width: auto;
-      object-fit: contain;
-      filter: grayscale(100%) opacity(0.6);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .why-qasten-logo:hover img {
-      opacity: 1;
-      filter: grayscale(0%) opacity(1);
-      transform: scale(1.1);
-    }
-
-    .why-qasten-dot {
-      height: 10px;
-      width: 10px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary), var(--accent) 40%));
-      display: inline-block;
-      flex-shrink: 0;
-      box-shadow: 0 3px 8px rgb(74 125 189 / 0.3);
-    }
-
-    .agent-card {
-      backdrop-filter: blur(4px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .agent-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), color-mix(in srgb, var(--primary), var(--accent) 50%));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .agent-card:hover::before {
-      opacity: 1;
-    }
-
-    .agent-bullets {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    .agent-bullets li {
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .agent-bullets li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.65em;
-      height: 6px;
-      width: 6px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary), var(--accent) 40%));
-      box-shadow: 0 1px 3px rgb(74 125 189 / 0.3);
-    }
-
-  </style>
-
-<script>
-  // Intersection Observer for scroll animations
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, observerOptions);
-  
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    observer.observe(el);
-  });
-</script>
