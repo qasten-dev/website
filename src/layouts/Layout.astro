@@ -1,6 +1,7 @@
 ---
 import FaviconLinks from "@/components/FaviconLinks.astro";
 import LanguageButton from "@/components/LanguageButton.astro";
+import Logo from "@/components/Logo.astro";
 import "@/styles/global.css";
 import { getSafeCurrentLocale, getTranslations } from "@/utils/i18n";
 import { getRelativeLocaleUrl } from "astro:i18n";
@@ -110,9 +111,17 @@ const linkedInCompany = "https://www.linkedin.com/company/qasten";
       >
         <a
           href={homePath}
-          class="text-foreground shrink-0 text-base font-semibold tracking-tight md:text-lg"
+          class="text-foreground group inline-flex shrink-0 items-center gap-2.5"
         >
-          Qasten
+          <span
+            class="border-border text-primary flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border md:h-10 md:w-10"
+          >
+            <Logo width={28} height={28} />
+          </span>
+          <span
+            class="text-base leading-none font-semibold tracking-tight md:text-lg"
+            >Qasten</span
+          >
         </a>
         <div
           class="flex min-w-0 flex-1 items-center justify-end gap-2 sm:gap-4 md:gap-6"
@@ -129,12 +138,6 @@ const linkedInCompany = "https://www.linkedin.com/company/qasten";
               class="text-muted-foreground hover:text-foreground rounded-md px-2 py-1 transition-colors"
             >
               {t.nav.achraf}
-            </a>
-            <a
-              href={anchor("contact")}
-              class="text-muted-foreground hover:text-foreground rounded-md px-2 py-1 transition-colors"
-            >
-              {t.nav.contact}
             </a>
           </nav>
           <div class="flex shrink-0 items-center gap-1">

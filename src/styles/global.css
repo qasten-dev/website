@@ -216,6 +216,46 @@
     border: 1px solid var(--border);
     background: var(--card);
     color: var(--foreground);
+    cursor: default;
+    transition:
+      transform 0.18s ease,
+      border-color 0.18s ease,
+      box-shadow 0.18s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .skill-chip:hover {
+      transform: translateY(-1px);
+      border-color: color-mix(in srgb, var(--primary) 38%, var(--border));
+      box-shadow: 0 3px 10px rgb(13 13 15 / 0.06);
+    }
+  }
+
+  .expertise-card {
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .expertise-card:hover {
+      border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+      box-shadow: 0 6px 18px rgb(79 142 247 / 0.07);
+      transform: translateY(-2px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skill-chip,
+    .expertise-card {
+      transition: none;
+    }
+
+    .skill-chip:hover,
+    .expertise-card:hover {
+      transform: none;
+    }
   }
 
   .container-custom {
