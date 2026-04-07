@@ -10,31 +10,35 @@ export function getSafeCurrentLocale(locale: string | undefined) {
 const translations = {
   en: {
     meta: {
-      title:
-        "Qasten — Farouk Faiz (ex-AWS, ex-Uber) & Achraf El Masdouri (ex-OpenAI) | Independent consultants",
+      title: "Qasten — Senior Engineering & Security Consultants",
       description:
-        "Farouk Faiz — ex-AWS, ex-Uber — and Achraf El Masdouri — ex-OpenAI — independently available for remote contracts in backend engineering, cloud infrastructure, offensive security, and red teaming.",
+        "Qasten is a two-person consulting team: Farouk Faiz (ex-AWS, ex-Uber) and Achraf El Masdouri (ex-OpenAI) — available for remote contracts in backend engineering, cloud infrastructure, and cybersecurity.",
     },
     nav: {
       farouk: "Farouk",
       achraf: "Achraf",
     },
+    teamBridge:
+      "We take on missions independently or together depending on what the problem requires. Here's what each of us brings.",
     hero: {
       headline:
-        "Ex-AWS · ex-Uber engineering. Ex-OpenAI security. Available for contract.",
+        "A senior engineering and security team. Available for contract.",
       subline:
-        "Farouk Faiz (ex-AWS, ex-Uber) and Achraf El Masdouri (ex-OpenAI) — independently available for remote work in software engineering, cloud infrastructure, and cybersecurity.",
+        "Qasten is a two-person consulting team combining deep engineering expertise (ex-AWS, ex-Uber) and offensive security (ex-OpenAI). We work remotely with technical teams on problems that require genuine seniority.",
+      ctaFarouk: "Work with Farouk",
+      ctaAchraf: "Work with Achraf",
     },
     profiles: {
       servicesLabel: "What I work on",
+      pillarEngineering: "Engineering",
+      pillarSecurity: "Security",
       linkLinkedin: "LinkedIn",
       linkGithub: "GitHub",
       linkEmail: "Email",
       farouk: {
         name: "Farouk Faiz",
         title: "Senior Software Engineer · ex-AWS · ex-Uber · Backend & cloud",
-        contactCta:
-          "Remote contracts for backend, AWS, platform engineering, and performance — reach out.",
+        contactCta: "Available for remote contracts — reach out directly.",
         bio: [
           "I spent 3+ years at Amazon (AWS) building internal developer tooling with hard performance constraints — cutting graph loading times by 25×, pipeline execution times by 60×. Before that, I worked on reliability infrastructure at Uber, where I led failover monitoring and reduced failover time from 15 minutes to 2 minutes.",
           "I work best on complex backend and infrastructure problems where there is no obvious solution — performance bottlenecks, distributed systems, AWS architecture, CI/CD at scale. I can also take full ownership of full-stack features when needed.",
@@ -141,6 +145,11 @@ const translations = {
         ],
       },
     },
+    contact: {
+      headline: "Work with us",
+      subline:
+        "We're available for remote contracts — independently or as a team. Reach out directly to whoever fits your need.",
+    },
     footer: {
       copyright: "© 2026 Qasten",
       companyLinkedin: "Qasten on LinkedIn",
@@ -148,23 +157,28 @@ const translations = {
   },
   fr: {
     meta: {
-      title:
-        "Qasten — Farouk Faiz (ex-AWS, ex-Uber) & Achraf El Masdouri (ex-OpenAI) | Consultants indépendants",
+      title: "Qasten — Consultants Senior en Ingénierie & Sécurité",
       description:
-        "Farouk Faiz — ex-AWS, ex-Uber — et Achraf El Masdouri — ex-OpenAI — disponibles pour des missions à distance en ingénierie backend, infrastructure cloud, sécurité offensive et red teaming.",
+        "Qasten est une équipe de deux consultants : Farouk Faiz (ex-AWS, ex-Uber) et Achraf El Masdouri (ex-OpenAI) — disponibles pour des missions à distance en ingénierie backend, infrastructure cloud et cybersécurité.",
     },
     nav: {
       farouk: "Farouk",
       achraf: "Achraf",
     },
+    teamBridge:
+      "Nous intervenons indépendamment ou ensemble selon ce que le problème requiert. Voici ce que chacun apporte.",
     hero: {
       headline:
-        "Ingénierie ex-AWS · ex-Uber. Sécurité ex-OpenAI. Disponibles en mission.",
+        "Une équipe senior en ingénierie et sécurité. Disponible en mission.",
       subline:
-        "Farouk Faiz (ex-AWS, ex-Uber) et Achraf El Masdouri (ex-OpenAI) — disponibles indépendamment pour des missions à distance en ingénierie logicielle, infrastructure cloud et cybersécurité.",
+        "Qasten est une équipe de deux consultants alliant expertise en ingénierie (ex-AWS, ex-Uber) et sécurité offensive (ex-OpenAI). Nous travaillons à distance avec des équipes techniques sur des problèmes qui requièrent une vraie séniorité.",
+      ctaFarouk: "Travailler avec Farouk",
+      ctaAchraf: "Travailler avec Achraf",
     },
     profiles: {
       servicesLabel: "Mes domaines d'intervention",
+      pillarEngineering: "Ingénierie",
+      pillarSecurity: "Sécurité",
       linkLinkedin: "LinkedIn",
       linkGithub: "GitHub",
       linkEmail: "E-mail",
@@ -172,7 +186,7 @@ const translations = {
         name: "Farouk Faiz",
         title: "Ingénieur logiciel senior · ex-AWS · ex-Uber · Backend & cloud",
         contactCta:
-          "Missions à distance sur backend, AWS, plateforme et performance — écrivez-moi.",
+          "Disponible pour des missions à distance — contactez directement.",
         bio: [
           "J'ai passé plus de 3 ans chez Amazon (AWS) à construire des outils internes avec des contraintes de performance élevées — réduction du temps de chargement des graphes de 25×, des temps d'exécution de 60×. Avant ça, j'ai travaillé sur l'infrastructure de fiabilité chez Uber, où j'ai réduit le temps de bascule de 15 minutes à 2 minutes.",
           "J'interviens sur des problèmes complexes de backend et d'infrastructure sans solution évidente — goulots d'étranglement de performance, systèmes distribués, architecture AWS, CI/CD à grande échelle. Je peux aussi prendre en charge des fonctionnalités full-stack de bout en bout.",
@@ -226,7 +240,7 @@ const translations = {
         name: "Achraf El Masdouri",
         title: "Expert Cybersécurité · Red Teamer · ex-OpenAI",
         contactCta:
-          "Red teaming, tests d'intrusion et évaluation de la sécurité IA — écrivez-moi.",
+          "Disponible pour des missions à distance — contactez directement.",
         bio: [
           "Je suis ingénieur en sécurité offensive — red teaming, tests d'intrusion et évaluation adversariale. J'ai réalisé plus de 140 pentests sur des systèmes bancaires, des infrastructures gouvernementales (dont des services d'urgence 911) et des réseaux d'entreprise.",
           "En tant que contractor pour OpenAI, j'ai contribué à l'évaluation de sécurité de plus de 20 modèles frontier pré-déploiement et j'ai été mentionné dans leur Operator System Card (2025). J'interviens également comme Security Engineer chez Accor sur la sécurisation des infrastructures critiques de paiement et de réservation.",
@@ -278,6 +292,11 @@ const translations = {
           "Reverse Engineering",
         ],
       },
+    },
+    contact: {
+      headline: "Travailler avec nous",
+      subline:
+        "Nous sommes disponibles pour des missions à distance — indépendamment ou en équipe. Contactez directement la personne qui correspond à votre besoin.",
     },
     footer: {
       copyright: "© 2026 Qasten",
