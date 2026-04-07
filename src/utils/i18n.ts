@@ -21,9 +21,9 @@ const translations = {
     meetTheTeam: "Meet the team",
     hero: {
       headline:
-        "A senior engineering and security team, available for contract. We take on missions independently or together — depending on what the problem requires.",
+        "A senior engineering and security team, available for contract.",
       subline:
-        "Qasten is a two-person consulting team combining deep engineering expertise (ex-AWS, ex-Uber) and offensive security (ex-OpenAI). We work remotely with technical teams on problems that require genuine seniority.",
+        "Qasten is a two-person consulting team combining deep engineering expertise (ex-AWS, ex-Uber) and offensive security (ex-OpenAI). We work remotely with technical teams on problems that require genuine seniority. We take on missions independently or together — depending on what the problem requires.",
       ctaEngineering: "Engineering & infrastructure",
       ctaSecurity: "Security & red teaming",
     },
@@ -32,7 +32,6 @@ const translations = {
       pillarEngineering: "Engineering",
       pillarSecurity: "Security",
       linkLinkedin: "LinkedIn",
-      linkGithub: "GitHub",
       linkEmail: "Email",
       farouk: {
         name: "Farouk Faiz",
@@ -172,7 +171,6 @@ const translations = {
       pillarEngineering: "Ingénierie",
       pillarSecurity: "Sécurité",
       linkLinkedin: "LinkedIn",
-      linkGithub: "GitHub",
       linkEmail: "E-mail",
       farouk: {
         name: "Farouk Faiz",

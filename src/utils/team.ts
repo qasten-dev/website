@@ -7,13 +7,11 @@ export const team = {
     image: farouk,
     url: "https://www.linkedin.com/in/faizfarouk/",
     email: "farouk@qasten.com",
-    github: "https://github.com/faroukfaiz10",
   },
   achraf: {
     displayName: "Achraf El Masdouri",
     image: achraf,
     url: "https://www.linkedin.com/in/achraf-el-masdouri-68675a174/",
     email: "achraf@qasten.com",
-    github: "https://github.com/n3k0m4",
   },
 } as const;
