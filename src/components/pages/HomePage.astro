@@ -31,7 +31,7 @@ const sectionRule = "border-t border-border/90";
       <div class="container-consulting section-spacing relative">
         <h1
           id="hero-heading"
-          class="text-foreground max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl md:text-[2.35rem]"
+          class="text-foreground max-w-4xl text-3xl font-bold tracking-tight sm:text-4xl md:text-[2.35rem]"
         >
           {t.hero.headline}
         </h1>
@@ -45,26 +45,24 @@ const sectionRule = "border-t border-border/90";
             href="#farouk"
             class="border-primary text-primary hover:bg-primary hover:text-primary-foreground inline-flex min-h-11 items-center justify-center rounded-lg border-2 px-6 py-2.5 text-sm font-semibold transition-colors"
           >
-            {t.hero.ctaFarouk}
+            {t.hero.ctaEngineering}
           </a>
           <a
             href="#achraf"
             class="border-primary text-primary hover:bg-primary hover:text-primary-foreground inline-flex min-h-11 items-center justify-center rounded-lg border-2 px-6 py-2.5 text-sm font-semibold transition-colors"
           >
-            {t.hero.ctaAchraf}
+            {t.hero.ctaSecurity}
           </a>
         </div>
       </div>
     </section>
 
     <div
-      class="border-border/80 container-consulting border-t py-8 text-center"
+      class="border-border/80 container-consulting border-t py-10 text-center"
     >
-      <p
-        class="text-muted-foreground mx-auto max-w-2xl text-sm leading-relaxed"
-      >
-        {t.teamBridge}
-      </p>
+      <h2 class="text-foreground text-lg font-bold tracking-tight sm:text-xl">
+        {t.meetTheTeam}
+      </h2>
     </div>
 
     <section
@@ -108,13 +106,15 @@ const sectionRule = "border-t border-border/90";
             >
               {p.farouk.credentials.map((line) => <li>{line}</li>)}
             </ul>
-            <div class="border-border bg-card/90 rounded-lg border p-4">
-              <p class="text-muted-foreground text-sm leading-relaxed">
+            <div
+              class="border-primary/30 bg-primary/[0.06] ring-primary/15 rounded-lg border p-4 shadow-sm ring-1"
+            >
+              <p class="text-foreground/90 text-sm leading-relaxed font-medium">
                 {p.farouk.contactCta}
               </p>
               <a
                 href={`mailto:${farouk.email}`}
-                class="text-muted-foreground hover:text-primary mt-3 inline-flex items-center gap-2 text-sm font-medium transition-colors"
+                class="text-primary hover:text-primary/85 mt-3 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
               >
                 <svg
                   class="h-4 w-4 shrink-0"
@@ -272,13 +272,15 @@ const sectionRule = "border-t border-border/90";
             >
               {p.achraf.credentials.map((line) => <li>{line}</li>)}
             </ul>
-            <div class="border-border bg-card/90 rounded-lg border p-4">
-              <p class="text-muted-foreground text-sm leading-relaxed">
+            <div
+              class="border-primary/30 bg-primary/[0.06] ring-primary/15 rounded-lg border p-4 shadow-sm ring-1"
+            >
+              <p class="text-foreground/90 text-sm leading-relaxed font-medium">
                 {p.achraf.contactCta}
               </p>
               <a
                 href={`mailto:${achraf.email}`}
-                class="text-muted-foreground hover:text-primary mt-3 inline-flex items-center gap-2 text-sm font-medium transition-colors"
+                class="text-primary hover:text-primary/85 mt-3 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
               >
                 <svg
                   class="h-4 w-4 shrink-0"
@@ -336,24 +338,6 @@ const sectionRule = "border-t border-border/90";
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section
-      id="contact"
-      class:list={[sectionRule, "scroll-mt-24"]}
-      aria-labelledby="contact-heading"
-    >
-      <div class="container-consulting section-spacing">
-        <h2
-          id="contact-heading"
-          class="text-foreground text-2xl font-bold tracking-tight"
-        >
-          {t.contact.headline}
-        </h2>
-        <p class="text-muted-foreground mt-3 max-w-2xl leading-[1.65]">
-          {t.contact.subline}
-        </p>
       </div>
     </section>
   </main>

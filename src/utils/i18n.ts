@@ -18,15 +18,14 @@ const translations = {
       farouk: "Farouk",
       achraf: "Achraf",
     },
-    teamBridge:
-      "We take on missions independently or together depending on what the problem requires. Here's what each of us brings.",
+    meetTheTeam: "Meet the team",
     hero: {
       headline:
-        "A senior engineering and security team. Available for contract.",
+        "A senior engineering and security team, available for contract. We take on missions independently or together — depending on what the problem requires.",
       subline:
         "Qasten is a two-person consulting team combining deep engineering expertise (ex-AWS, ex-Uber) and offensive security (ex-OpenAI). We work remotely with technical teams on problems that require genuine seniority.",
-      ctaFarouk: "Work with Farouk",
-      ctaAchraf: "Work with Achraf",
+      ctaEngineering: "Engineering & infrastructure",
+      ctaSecurity: "Security & red teaming",
     },
     profiles: {
       servicesLabel: "What I work on",
@@ -91,8 +90,7 @@ const translations = {
       achraf: {
         name: "Achraf El Masdouri",
         title: "Cybersecurity Expert · Red Teamer · ex-OpenAI",
-        contactCta:
-          "Red teaming, penetration testing, and AI security evaluations — reach out.",
+        contactCta: "Available for remote contracts — reach out directly.",
         bio: [
           "I'm a security engineer with a focus on offensive security — red teaming, penetration testing, and adversarial evaluation. I've conducted 140+ pentests across banking systems, government infrastructure (including 911 emergency services), and enterprise networks.",
           "As a contractor for OpenAI, I contributed to the safety evaluation of 20+ pre-release frontier models and was acknowledged in their Operator System Card (2025). I currently also serve as Security Engineer at Accor, managing their bug bounty program and securing critical payment and reservation infrastructure.",
@@ -145,11 +143,6 @@ const translations = {
         ],
       },
     },
-    contact: {
-      headline: "Work with us",
-      subline:
-        "We're available for remote contracts — independently or as a team. Reach out directly to whoever fits your need.",
-    },
     footer: {
       copyright: "© 2026 Qasten",
       companyLinkedin: "Qasten on LinkedIn",
@@ -165,15 +158,14 @@ const translations = {
       farouk: "Farouk",
       achraf: "Achraf",
     },
-    teamBridge:
-      "Nous intervenons indépendamment ou ensemble selon ce que le problème requiert. Voici ce que chacun apporte.",
+    meetTheTeam: "Rencontrez l'équipe",
     hero: {
       headline:
-        "Une équipe senior en ingénierie et sécurité. Disponible en mission.",
+        "Une équipe senior en ingénierie et sécurité, disponible en mission. Nous intervenons indépendamment ou ensemble — selon ce que le problème requiert.",
       subline:
         "Qasten est une équipe de deux consultants alliant expertise en ingénierie (ex-AWS, ex-Uber) et sécurité offensive (ex-OpenAI). Nous travaillons à distance avec des équipes techniques sur des problèmes qui requièrent une vraie séniorité.",
-      ctaFarouk: "Travailler avec Farouk",
-      ctaAchraf: "Travailler avec Achraf",
+      ctaEngineering: "Ingénierie & infrastructure",
+      ctaSecurity: "Sécurité & red team",
     },
     profiles: {
       servicesLabel: "Mes domaines d'intervention",
@@ -292,11 +284,6 @@ const translations = {
           "Reverse Engineering",
         ],
       },
-    },
-    contact: {
-      headline: "Travailler avec nous",
-      subline:
-        "Nous sommes disponibles pour des missions à distance — indépendamment ou en équipe. Contactez directement la personne qui correspond à votre besoin.",
     },
     footer: {
       copyright: "© 2026 Qasten",
