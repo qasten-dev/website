@@ -24,8 +24,6 @@ const translations = {
         "A senior engineering and security team, available for contract.",
       subline:
         "Qasten is a two-person consulting team combining deep engineering expertise (ex-AWS, ex-Uber) and offensive security (ex-OpenAI). We work remotely with technical teams on problems that require genuine seniority. We take on missions independently or together — depending on what the problem requires.",
-      ctaEngineering: "Engineering & infrastructure",
-      ctaSecurity: "Security & red teaming",
     },
     profiles: {
       servicesLabel: "What I work on",
@@ -163,8 +161,6 @@ const translations = {
         "Une équipe senior en ingénierie et sécurité, disponible en mission. Nous intervenons indépendamment ou ensemble — selon ce que le problème requiert.",
       subline:
         "Qasten est une équipe de deux consultants alliant expertise en ingénierie (ex-AWS, ex-Uber) et sécurité offensive (ex-OpenAI). Nous travaillons à distance avec des équipes techniques sur des problèmes qui requièrent une vraie séniorité.",
-      ctaEngineering: "Ingénierie & infrastructure",
-      ctaSecurity: "Sécurité & red team",
     },
     profiles: {
       servicesLabel: "Mes domaines d'intervention",
