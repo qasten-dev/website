@@ -40,7 +40,7 @@ const translations = {
           "I work best on hard, ambiguous problems, slow systems, infrastructure that hasn't kept up with growth, codebases with years of technical debt. I'm autonomous, I communicate directly with stakeholders, and I don't need oversight on the engineering or infrastructure side.",
         ],
         credentials: [
-          "Amazon (AWS) - Software Engineer - 2022-2025",
+          "Amazon (AWS) - Software Engineer - 2022-2026",
           "Uber - Software Engineer - 2021",
           "Rank 2 - Raise Your Hack 2025",
         ],
@@ -77,8 +77,8 @@ const translations = {
           "As a contractor for OpenAI, I contributed to the safety evaluation of 20+ pre-release frontier models and was acknowledged in their Operator System Card (2025). I currently also serve as Security Engineer at Accor, managing their bug bounty program and securing critical payment and reservation infrastructure.",
         ],
         credentials: [
-          "OpenAI - Red Teamer (contractor) - 2024-present",
-          "Accor SA - Security Engineer - 2022-present",
+          "OpenAI - Red Teamer (contractor) - 2024-2026",
+          "Accor SA - Security Engineer - 2022-2026",
           "Rank 2 - Raise Your Hack 2025",
           "Top 600 worldwide - Hack The Box",
         ],
@@ -159,7 +159,7 @@ const translations = {
           "Je suis à l'aise sur les problèmes complexes et mal définis : systèmes lents, infrastructure qui n'a pas suivi la croissance, bases de code avec des années de dette technique. Je travaille de manière autonome, je communique directement avec les parties prenantes, et je n'ai pas besoin d'encadrement côté ingénierie ou infrastructure.",
         ],
         credentials: [
-          "Amazon (AWS) - Ingénieur Logiciel - 2022-2025",
+          "Amazon (AWS) - Ingénieur Logiciel - 2022-2026",
           "Uber - Ingénieur Logiciel - 2021",
           "Rang 2 - Raise Your Hack 2025",
         ],
@@ -196,8 +196,8 @@ const translations = {
           "En tant que contractor pour OpenAI, j'ai contribué à l'évaluation de sécurité de plus de 20 modèles frontier pré-déploiement et j'ai été mentionné dans leur Operator System Card (2025). J'interviens également comme Security Engineer chez Accor sur la sécurisation des infrastructures critiques de paiement et de réservation.",
         ],
         credentials: [
-          "OpenAI - Red Teamer (contractor) - 2024-présent",
-          "Accor SA - Security Engineer - 2022-présent",
+          "OpenAI - Red Teamer (contractor) - 2024-2026",
+          "Accor SA - Security Engineer - 2022-2026",
           "Rang 2 - Raise Your Hack 2025",
           "Top 600 mondial - Hack The Box",
         ],
