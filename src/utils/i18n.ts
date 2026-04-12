@@ -67,9 +67,9 @@ const translations = {
               "Internal tooling, build systems, CI/CD pipelines at scale, developer experience. At AWS, the CI/CD system I built was used 10,000+ times by 50+ developers across teams.",
           },
           {
-            name: "Full-Stack",
+            name: "End-to-End Ownership",
             description:
-              "I can own features end-to-end when the mission calls for it, from API design to UI, without creating handoff bottlenecks.",
+              "I can own features end-to-end when the mission calls for it, from infrastructure to UI, without creating handoff bottlenecks.",
           },
         ],
         skillTags: [],
@@ -187,14 +187,14 @@ const translations = {
               "Conception et implémentation d'agents IA et de systèmes multi-agents, orchestration de LLMs, workflows IA avec supervision humaine. Agents déployés en production à l'échelle AWS sur des programmes de modernisation d'envergure.",
           },
           {
-            name: "Outils Développeur & Platform Engineering",
+            name: "Outils Développeur & Platformes",
             description:
               "Outils internes, systèmes de build, pipelines CI/CD à grande échelle, expérience développeur. Chez AWS, le système CI/CD que j'ai mis en place a été utilisé plus de 10 000 fois par plus de 50 développeurs.",
           },
           {
-            name: "Full-Stack",
+            name: "Autonomie de Bout en Bout",
             description:
-              "Je peux porter des fonctionnalités de bout en bout quand la mission le demande, de la conception de l'API à l'interface, sans créer de points de friction entre équipes.",
+              "Je peux porter des fonctionnalités de bout en bout quand la mission le demande, de l'infrastructure à l'interface, sans créer de points de friction entre équipes.",
           },
         ],
         skillTags: [],
