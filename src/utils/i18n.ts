@@ -36,7 +36,8 @@ const translations = {
         title: "Senior Software Engineer · ex-AWS · ex-Uber · Backend & cloud",
         contactCta: "Available for remote contracts, reach out directly.",
         bio: [
-          "I spent 3+ years at Amazon (AWS) building internal developer tooling with hard performance constraints, cutting graph loading times by 25x, pipeline execution times by 60x. Before that, I worked on reliability infrastructure at Uber, where I led failover monitoring and reduced failover time from 15 minutes to 2 minutes.",
+          "I spent 3+ years at Amazon (AWS) building internal developer tooling with hard performance constraints, cutting graph loading times by 25x, pipeline execution times by 60x. During that time I also worked on AI-powered agents for large-scale mainframe modernization, automating code transformation and testing across COBOL-to-Java migrations.",
+          "Before that, I worked on reliability infrastructure at Uber, where I led failover monitoring and reduced failover time from 15 minutes to 2 minutes.",
           "I work best on hard, ambiguous problems, slow systems, infrastructure that hasn't kept up with growth, codebases with years of technical debt. I'm autonomous, I communicate directly with stakeholders, and I don't need oversight on the engineering or infrastructure side.",
         ],
         credentials: [
@@ -48,12 +49,17 @@ const translations = {
           {
             name: "Backend Engineering & Performance",
             description:
-              "Distributed services, high-throughput APIs, latency investigations, memory and CPU profiling. I've optimized systems processing millions of nodes and built services handling failover at Uber's scale.",
+              "Distributed services, high-throughput APIs, latency investigations, profiling. I've optimized systems processing millions of nodes and built reliability infrastructure at Uber's scale.",
           },
           {
             name: "AWS & Cloud Infrastructure",
             description:
-              "Architecture reviews, infrastructure as code, security, observability and monitoring. I'm comfortable owning the full infrastructure layer, from design to implementation.",
+              "Architecture reviews, infrastructure as code, security, observability and monitoring. I'm comfortable owning the full infrastructure layer, from design to production.",
+          },
+          {
+            name: "Agentic AI",
+            description:
+              "Design and implementation of AI agents and multi-agent systems, task automation, LLM orchestration, tool use, and human-in-the-loop workflows. Built AI agents in production at AWS scale for large modernization programs.",
           },
           {
             name: "Developer Tooling & Platform",
@@ -155,7 +161,8 @@ const translations = {
         title: "Ingénieur logiciel senior · ex-AWS · ex-Uber · Backend & cloud",
         contactCta: "Disponible pour des missions. Contactez directement.",
         bio: [
-          "J'ai passé plus de 3 ans chez Amazon (AWS) à construire des outils internes pour les développeurs sous des contraintes de performance élevées, réduction des temps de chargement de graphes de 25x, des temps d'exécution de pipelines de 60x. Avant ça, j'ai travaillé sur l'infrastructure de fiabilité chez Uber, où j'ai piloté la supervision des bascules et réduit le temps de failover de 15 minutes à 2 minutes.",
+          "J'ai passé plus de 3 ans chez Amazon (AWS) à concevoir des outils internes pour les développeurs, dont une infrastructure CI/CD utilisée plus de 10 000 fois par plus de 50 développeurs. J'ai également travaillé sur des optimisations de performance critiques, réduisant le temps de chargement de graphes de 25x et les temps d'exécution de 60x, ainsi que sur des agents IA pour des programmes de modernisation mainframe, en automatisant la transformation de code et les tests sur des migrations COBOL vers Java.",
+          "Avant ça, j'ai travaillé sur l'infrastructure de fiabilité chez Uber, où j'ai piloté la supervision des bascules et réduit le temps de failover de 15 minutes à 2 minutes.",
           "Je suis à l'aise sur les problèmes complexes et mal définis : systèmes lents, infrastructure qui n'a pas suivi la croissance, bases de code avec des années de dette technique. Je travaille de manière autonome, je communique directement avec les parties prenantes, et je n'ai pas besoin d'encadrement côté ingénierie ou infrastructure.",
         ],
         credentials: [
@@ -167,12 +174,17 @@ const translations = {
           {
             name: "Backend & Performance",
             description:
-              "Services distribués, APIs à fort débit, investigations de latence, profilage mémoire et CPU. J'ai optimisé des systèmes traitant des millions de nœuds et construit des services gérant les bascules à l'échelle d'Uber.",
+              "Services distribués, APIs à fort débit, investigations de latence, profilage. J'ai optimisé des systèmes traitant des millions de nœuds et construit des services gérant les bascules à l'échelle d'Uber.",
           },
           {
             name: "AWS & Infrastructure Cloud",
             description:
               "Revues d'architecture, infrastructure as code, sécurité, observabilité et monitoring. Je peux prendre en charge l'intégralité de la couche infrastructure, de la conception à la mise en production.",
+          },
+          {
+            name: "Agents IA",
+            description:
+              "Conception et implémentation d'agents IA et de systèmes multi-agents, orchestration de LLMs, workflows IA avec supervision humaine. Agents déployés en production à l'échelle AWS sur des programmes de modernisation d'envergure.",
           },
           {
             name: "Outils Développeur & Platform Engineering",
