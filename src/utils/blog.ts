@@ -1,40 +1,3 @@
-import { getCollection, type CollectionEntry } from "astro:content";
-
-function capitalizeFirst(str: string) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-export function formatDate(date: Date, locale: string | undefined) {
-  return capitalizeFirst(
-    date.toLocaleString(locale, {
-      year: "numeric",
-      month: "long",
-    }),
-  );
-}
-
-export async function getPosts(locale: string | undefined) {
-  const posts = await getCollection(getCollectionName(locale));
-
-  return posts.sort((a, b) => {
-    return b.data.publishedDate.getTime() - a.data.publishedDate.getTime();
-  });
-}
-
-export async function getStaticPathsImpl(locale: string | undefined) {
-  const posts = await getCollection(getCollectionName(locale));
-
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
-}
-
-export const getCollectionName = (locale: string | undefined) =>
-  locale === "fr" ? "blogFr" : "blog";
-
-export type Blog = CollectionEntry<"blog">;
-
 export const topics = {
   "artificial-intelligence": {
     en: "Artificial intelligence",
@@ -81,4 +44,4 @@ export const topics = {
     fr: "Shadow AI",
     wikidata: "https://www.wikidata.org/wiki/Q132778447",
   },
-};
+} as const;
