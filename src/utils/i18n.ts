@@ -31,6 +31,7 @@ const translations = {
       pillarSecurity: "Security",
       linkLinkedin: "LinkedIn",
       linkEmail: "Email",
+      linkResume: "Resume",
       farouk: {
         name: "Farouk Faiz",
         title: "Senior Software Engineer · ex-AWS · ex-Uber · Backend & cloud",
@@ -156,6 +157,7 @@ const translations = {
       pillarSecurity: "Sécurité",
       linkLinkedin: "LinkedIn",
       linkEmail: "E-mail",
+      linkResume: "CV",
       farouk: {
         name: "Farouk Faiz",
         title: "Ingénieur logiciel senior · ex-AWS · ex-Uber · Backend & cloud",
